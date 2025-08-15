@@ -1,0 +1,43 @@
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of comment components for discussion and collaborative communication interfaces.
+
+## Comment Item Props
+
+Properties that define the visual state and interactive behavior of individual comment elements within discussion systems and collaborative content interfaces.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### size: variant
+
+Controls the dimensional scale and content presentation of the comment item to accommodate different interface contexts and discussion hierarchies.
+
+#### flush: variant
+
+Controls the spacing configuration of the comment item, determining whether standard or minimal padding is applied for different layout densities.
+
+#### has-avatar: boolean
+
+Controls the visibility of a user avatar element that provides visual identification and personalization within the comment display.
+
+#### has-voting: boolean
+
+Controls the visibility of voting functionality that allows users to rate, report, or interact with comment content through feedback mechanisms.
+
+#### has-separator: boolean
+
+Controls the visibility of visual separator elements that provide clear boundaries and organization between comment items in discussion threads.
+
+## Comment Form Props
+
+Properties that control the layout and functionality of comment input interfaces that enable content creation and submission within discussion systems.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### flush: variant
+
+Controls the spacing configuration of the comment form, determining whether standard or minimal padding is applied for different input interface layouts.

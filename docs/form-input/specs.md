@@ -1,0 +1,25 @@
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of form components. These specifications ensure consistent implementation across design tools and development environments.
+
+**Legend:**
+
+- Brackets ([ ]) denote a component variant placeholder.
+- Full emphasis indicates a value specific to that variant.
+- Dimmed indicates a value unchanged from the default variant.
+
+## Form Input Component
+
+Specifications for individual input elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each input variant.
+
+### Design Tokens
+
+Standardized design values used in form input components. Includes specifications for each variant and state-dependent styling rules.
+
+## Form Field Component
+
+Specifications for complete form field layouts including spacing relationships and component composition guidelines. These specifications ensure proper alignment and hierarchy across different form field configurations.
+
+### Design Tokens
+
+Standardized design values used in form field components for layout structure and visual organization.

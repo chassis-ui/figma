@@ -1,0 +1,47 @@
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of carousel components for sequential content presentation and interactive browsing interfaces.
+
+## Hero Carousel Props
+
+Properties that define the visual state and content presentation of prominent display elements that showcase featured content through sequential navigation.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### size: variant
+
+Controls the dimensional scale and content presentation of the hero carousel to optimize visual impact across different screen sizes and device capabilities.
+
+#### has-pagination: boolean
+
+Controls the visibility of pagination indicators that provide navigation feedback and position awareness within the carousel sequence.
+
+## Card Carousel Props
+
+Properties that define the visual state and content organization of container elements that present collections of related content through horizontal scrolling navigation.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### size: variant
+
+Controls the dimensional scale and content presentation of the card carousel to optimize browsing usability across different screen sizes and device capabilities.
+
+#### has-pagination: boolean
+
+Controls the visibility of pagination indicators that provide navigation feedback and position awareness within the card collection sequence.
+
+## Small Carousel Props
+
+Properties that define the visual state and content organization of touch-optimized display elements designed specifically for mobile environments with simplified interaction patterns.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### layout: variant
+
+Controls the layout configuration and image positioning within the mobile carousel structure, determining the visual hierarchy and content flow for touch-based navigation.

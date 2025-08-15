@@ -1,0 +1,25 @@
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of form check components. These specifications ensure consistent implementation across design tools and development environments.
+
+**Legend:**
+
+- Brackets ([ ]) denote a component variant placeholder.
+- Full emphasis indicates a value specific to that variant.
+- Dimmed indicates a value unchanged from the default variant.
+
+## Check Input Component
+
+Specifications for individual selection input elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each check input variant.
+
+### Design Tokens
+
+Standardized design values used in check input components. Includes specifications for each variant and state-dependent styling rules.
+
+## Form Check Component
+
+Specifications for complete form check layouts including spacing relationships and component composition guidelines. These specifications ensure proper alignment and hierarchy across different form check configurations.
+
+### Design Tokens
+
+Standardized design values used in form check components for layout structure and visual organization.

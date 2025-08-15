@@ -1,0 +1,34 @@
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of story components. These specifications ensure consistent implementation across design tools and development environments.
+
+**Legend:**
+
+- Brackets ([ ]) denote a component variant placeholder.
+- Full emphasis indicates a value specific to that variant.
+- Dimmed indicates a value unchanged from the default variant.
+
+## Story Button Component
+
+Specifications for story button elements including measurements, colors, typography, and interactive styling attributes. These values define the visual presentation and state management properties for compact story access implementations.
+
+### Design Tokens
+
+Standardized design values used in story button components. Includes specifications for each type and state variant, circular presentation styling, and interaction feedback rules for consistent story access appearance and behavior across all story button implementations.
+
+## Story Card Component
+
+Specifications for story card elements including measurements, colors, typography, and content organization styling attributes. These values define the visual presentation and state management properties for expanded story content implementations.
+
+### Design Tokens
+
+Standardized design values used in story card components. Includes specifications for each state variant, expanded content presentation styling, and visual emphasis rules for consistent story display appearance and behavior across all story card implementations.
+
+## Story Carousel Component
+
+Specifications for story carousel elements including measurements, colors, typography, and horizontal navigation styling attributes. These values define the sequential presentation and collection organization properties for story browsing implementations.
+
+### Design Tokens
+
+Standardized design values used in story carousel components. Includes specifications for each type variant, horizontal navigation styling, and collection presentation rules for consistent story browsing appearance and behavior across all story carousel implementations.
+

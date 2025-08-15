@@ -1,0 +1,64 @@
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of dropdown components for option selection and menu interaction management.
+
+## Dropdown Item Props
+
+Properties that define the visual state and interactive behavior of individual selectable option elements within dropdown menu interfaces.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### type: variant
+
+Controls the content structure and functional purpose of the dropdown item element based on its role within the menu organization.
+
+#### state: variant
+
+Controls the interactive state and visual feedback of the dropdown item based on user interaction and current selection status.
+
+#### has-icon: boolean
+
+Controls the visibility of an icon element that provides visual identification and categorization within the dropdown item.
+
+#### icon-instance: instance-swap
+
+Specifies which icon component to display when has-icon property is enabled.
+
+#### has-disclosure: boolean
+
+Controls the visibility of a disclosure indicator that signals the dropdown item contains additional submenu options or nested content.
+
+
+## Dropdown Menu Props
+
+Properties that define the visual state and organizational structure of container elements that present dropdown option collections.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### variant: variant
+
+Controls the layout configuration and presentation approach of the dropdown menu container based on content organization requirements.
+
+#### has-search: boolean
+
+Controls the visibility of a search input field within the dropdown menu for filtering and finding specific options.
+
+#### has-scrollbar: boolean
+
+Controls the visibility of scrollbar elements when dropdown content exceeds the available menu height and requires vertical navigation.
+
+## Dropdown Button Props
+
+Properties that define the visual state and positioning behavior of trigger elements that initiate dropdown menu display and interaction.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### menu-position: variant
+
+Controls the positioning and alignment of the dropdown menu overlay relative to the trigger button element based on interface layout requirements.

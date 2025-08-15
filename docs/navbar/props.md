@@ -1,0 +1,55 @@
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of navbar components for navigation interfaces and user interaction management.
+
+## Nav Link Props
+
+Properties that define the visual state and interactive behavior of individual navigation elements within navbar structures.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### state: variant
+
+Controls the interactive state and visual feedback of the navigation item based on user interaction and current page status.
+
+#### has-icon: boolean
+
+Controls the visibility of an icon element within the navigation item for enhanced visual communication.
+
+#### icon-instance: instance-swap
+
+Specifies which icon component to display when the icon property is enabled.
+
+#### has-text: boolean
+
+Controls the visibility of text label content within the navigation link for textual identification.
+
+#### has-badge: boolean
+
+Controls the visibility of a badge element for displaying notifications or status indicators.
+
+#### is-dropdown: boolean
+
+Controls the visibility of a dropdown indicator that signals submenu or additional navigation options.
+
+## Navbar Props
+
+Properties that define the visual state and responsive behavior of navigation container elements for comprehensive site navigation.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### size: variant
+
+Controls the dimensional scale and responsive behavior of the navbar component to optimize usability across different screen sizes and interface contexts.
+
+#### is-expanded: boolean
+
+Controls the visibility and expansion state of navigation content specifically for mobile responsive interfaces.
+
+#### has-theme-menu: boolean
+
+Controls the visibility of theme selection dropdown functionality within the navbar interface.

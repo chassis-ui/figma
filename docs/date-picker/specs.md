@@ -1,0 +1,73 @@
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of date picker components. These specifications ensure consistent implementation across design tools and development environments.
+
+**Legend:**
+
+- Brackets ([ ]) denote a component variant placeholder.
+- Full emphasis indicates a value specific to that variant.
+- Dimmed indicates a value unchanged from the default variant.
+
+## Day Item Component
+
+Specifications for individual date elements including measurements, colors, typography, and interactive styling attributes. These values define the core appearance and state-dependent properties for calendar date implementations.
+
+### Design Tokens
+
+Standardized design values used in day item components. Includes specifications for sizing, typography, state styling, and temporal feedback across all date element variants.
+
+## Nav Item Component
+
+Specifications for temporal navigation elements including measurements, colors, iconography, and interactive styling attributes. These values define the core appearance and functionality properties for calendar navigation implementations.
+
+### Design Tokens
+
+Standardized design values used in navigation item components. Includes specifications for sizing, icon styling, state feedback, and temporal navigation behavior across all navigation variants.
+
+## Label Item Component
+
+Specifications for interactive text and month selection elements including measurements, colors, typography, and interactive styling attributes. These values define the core appearance and selection properties for temporal navigation implementations.
+
+### Design Tokens
+
+Standardized design values used in month item components. Includes specifications for sizing, typography, state styling, and selection feedback across all month element variants.
+
+## Title Component
+
+Specifications for calendar header elements including measurements, colors, typography, and navigation styling attributes. These values define the structural appearance and control properties for date picker title implementations.
+
+### Design Tokens
+
+Standardized design values used in title components. Includes specifications for header sizing, typography, navigation controls, and temporal display formatting across all title variants.
+
+## Weekdays Component
+
+Specifications for day-of-week header elements including measurements, colors, typography, and organizational styling attributes. These values define the structural appearance and label properties for calendar weekday implementations.
+
+### Design Tokens
+
+Standardized design values used in weekdays components. Includes specifications for label sizing, typography, spacing, and header formatting across all weekday display variants.
+
+## Time Component
+
+Specifications for time input elements including measurements, colors, typography, and input styling attributes. These values define the core appearance and interaction properties for time selection implementations.
+
+### Design Tokens
+
+Standardized design values used in time components. Includes specifications for input sizing, typography, field styling, and temporal input behavior across all time selection variants.
+
+## Dates Component
+
+Specifications for calendar template elements including measurements, colors, layout properties, and organizational styling attributes. These values define the structural appearance and optimization properties for date display implementations.
+
+### Design Tokens
+
+Standardized design values used in dates components. Includes specifications for template sizing, layout optimization, spacing, and calendar organization across all date template variants.
+
+## Date Picker Component
+
+Specifications for complete date selection interfaces including measurements, colors, layout properties, and comprehensive styling attributes. These values define the overall appearance and functionality properties for date picker implementations.
+
+### Design Tokens
+
+Standardized design values used in date picker components. Includes specifications for interface sizing, layout organization, component integration, and comprehensive date selection behavior across all picker variants.

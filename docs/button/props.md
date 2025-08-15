@@ -1,0 +1,47 @@
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of button components.
+
+## Button Component Props
+
+Properties that define the visual state and interactive behavior of button elements.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### context: variant
+
+Controls the visual style and semantic meaning of the button based on its intended purpose and importance.
+
+#### size: variant
+
+Controls the dimensional scale and proportional relationships of the button component.
+
+#### state: variant
+
+Controls the interactive state and visual feedback of the button based on user interaction.
+
+#### has-icon-start: boolean
+
+Controls the visibility of an icon element positioned before the button label.
+
+#### icon-start-instance: instance-swap
+
+Specifies which icon component to display when icon-start property is enabled.
+
+#### has-badge: boolean
+
+Controls the visibility of a badge element positioned after the button label for displaying counts or notifications.
+
+#### is-dropdown: boolean
+
+Controls the visibility of a dropdown indicator that signals additional actions or options.
+
+#### has-icon-end: boolean
+
+Controls the visibility of an icon element positioned after the button label.
+
+#### icon-end-instance: instance-swap
+
+Specifies which icon component to display when icon-end property is enabled.

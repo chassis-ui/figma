@@ -1,0 +1,99 @@
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of notification components for messaging and communication interfaces.
+
+## Notification Component Props
+
+Properties that define the visual state and interactive behavior of basic notification elements with essential messaging capabilities.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### context: variant
+
+Controls the visual style and semantic meaning of the notification based on message type, urgency, and intended purpose.
+
+#### style: variant
+
+Controls the background treatment and visual prominence of the notification component.
+
+#### dismissible: boolean
+
+Controls the visibility of a dismiss action that allows users to permanently remove the notification.
+
+#### has-icon: boolean
+
+Controls the visibility of an icon element positioned at the start of the notification content area.
+
+#### icon-instance: instance-swap
+
+Specifies which icon component to display when has-icon property is enabled.
+
+#### has-slot: boolean
+
+Controls the visibility of a custom content slot for additional elements or media within the notification.
+
+#### slot-instance: instance-swap
+
+Specifies which component to display within the custom content slot when has-slot property is enabled.
+
+#### has-actions: boolean
+
+Controls the visibility of action elements that provide interactive options for users to respond to the notification.
+
+#### has-2nd-action: boolean
+
+Controls the visibility of a secondary action element when multiple response options are needed.
+
+#### has-3rd-action: boolean
+
+Controls the visibility of a tertiary action element for complex notification scenarios requiring multiple user options.
+
+## Rich Notification Component Props
+
+Properties that control the layout and content structure of enhanced notification elements with comprehensive messaging capabilities and advanced interactive features.
+
+### Figma Component Props
+
+Component properties specific to Figma design system implementation.
+
+#### context: variant
+
+Controls the visual style and semantic meaning of the rich notification based on message type, urgency, and intended purpose.
+
+#### style: variant
+
+Controls the background treatment and visual prominence of the rich notification component.
+
+#### dismissible: boolean
+
+Controls the visibility of a dismiss action that allows users to permanently remove the rich notification.
+
+#### has-icon: boolean
+
+Controls the visibility of an icon element positioned at the start of the rich notification content area.
+
+#### icon-instance: instance-swap
+
+Specifies which icon component to display when has-icon property is enabled.
+
+#### has-slot: boolean
+
+Controls the visibility of a custom content slot for additional elements, media, or complex content within the rich notification.
+
+#### slot-instance: instance-swap
+
+Specifies which component to display within the custom content slot when has-slot property is enabled.
+
+#### has-actions: boolean
+
+Controls the visibility of action elements that provide interactive options for users to respond to the rich notification.
+
+#### has-2nd-action: boolean
+
+Controls the visibility of a secondary action element when multiple response options are needed.
+
+#### has-3rd-action: boolean
+
+Controls the visibility of a tertiary action element for complex rich notification scenarios requiring multiple user options.

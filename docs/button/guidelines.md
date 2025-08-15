@@ -1,0 +1,131 @@
+# Guidelines
+
+Design and implementation principles for creating effective, accessible, and consistent button experiences. These guidelines ensure buttons serve their functional purpose while maintaining visual harmony and usability standards across all interface contexts.
+
+## Accessibility Considerations
+
+Accessibility standards and inclusive design practices that ensure button components remain usable for all users regardless of their abilities or interaction methods.
+
+### Color Contrast
+
+Ensure sufficient contrast between button text and background colors to meet WCAG accessibility standards. Button variants must maintain readable contrast ratios across all states and contexts.
+
+### Focus States
+
+Provide distinct visual indicators for keyboard navigation and screen reader users. Focus states should be clearly visible and consistent across all button variants without compromising the overall design aesthetic.
+
+### ARIA Labels
+
+Include descriptive labels and appropriate semantic markup for buttons containing only icons or contextual actions. Clear labeling ensures assistive technologies can properly communicate button purpose and functionality.
+
+## Design Principles
+
+Core design principles that guide button implementation decisions, ensuring consistency, clarity, and optimal user experience across all interface contexts.
+
+### Visual Hierarchy
+
+Establish clear importance levels through appropriate button variants. Primary actions should use prominent styling, while secondary and tertiary actions maintain visual balance without competing for attention.
+
+### Consistency
+
+Apply button variants systematically throughout the interface. Similar actions should use the same button treatment, creating predictable patterns that users can rely on for navigation and task completion.
+
+### Spacing and Proportions
+
+Maintain consistent sizing, padding, and spacing relationships across all button implementations. Proper proportions ensure buttons remain accessible and visually balanced across different screen sizes and contexts.
+
+## Content Strategy
+
+Guidelines for button labeling, messaging, and content hierarchy that enhance user understanding and task completion efficiency.
+
+### Clear Action Labels
+
+Write button labels that immediately communicate the action being performed. Avoid ambiguous terms that leave users uncertain about the outcome of clicking the button.
+
+#### Do
+
+Use specific, action-oriented language that describes the exact outcome.
+
+#### Don't
+
+Use generic labels that don't clearly indicate the button's function or purpose.
+
+### Appropriate Context Variants
+
+Select button variants based on the action's importance and potential impact. Destructive actions require warning styling, while primary actions should guide users toward intended goals.
+
+#### Do
+
+Use danger variants for destructive or irreversible actions to signal caution.
+
+#### Don't
+
+Use primary styling for destructive actions that could cause data loss or system changes.
+
+### Text and Iconography
+
+Combine text and icons thoughtfully to reinforce button meaning and improve recognition. Ensure icon choices are intuitive and culturally appropriate for the intended audience.
+
+#### Do
+
+Use icons that clearly support and reinforce the text label's meaning.
+
+#### Don't
+
+Rely solely on icons for complex actions without accompanying text labels.
+
+## Visual Consistency
+
+Standards for maintaining cohesive button appearance and behavior patterns across all interface contexts and user interactions.
+
+### Design Token Usage
+
+Apply standardized design tokens for all button styling properties. Consistent token usage ensures visual harmony and enables efficient theme customization across the entire design system.
+
+#### Do
+
+Use predefined design tokens for colors, typography, spacing, and sizing properties.
+
+#### Don't
+
+Create custom styling that deviates from established design token values.
+
+### Button Grouping
+
+Organize related buttons with logical spacing and hierarchy. Avoid placing multiple primary buttons in close proximity, which can confuse user decision-making and dilute action importance.
+
+#### Do
+
+Use one primary button per interface section with supporting secondary options.
+
+#### Don't
+
+Place multiple high-emphasis buttons together without clear hierarchy or separation.
+
+## Interaction Patterns
+
+Best practices for button behavior, state management, and user feedback that enhance the overall interaction experience and system reliability.
+
+### Contextual Actions
+
+Group related actions using appropriate interface patterns. Organize contextual options within dropdown menus or action sheets rather than displaying multiple separate buttons that clutter the interface.
+
+#### Do
+
+Use dropdown menus to contain related actions and maintain clean interface layouts.
+
+#### Don't
+
+Display numerous individual buttons when actions can be logically grouped together.
+
+### Loading and Feedback States
+
+Provide clear visual feedback during button interactions and processing states. Replace button content with appropriate loading indicators while maintaining button structure and accessibility requirements.
+
+#### Do
+
+Replace button icons with loading spinners during processing to indicate system activity.
+
+#### Do
+
+Use skeleton states for buttons in loading interfaces to maintain layout stability.
