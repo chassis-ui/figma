@@ -10,7 +10,7 @@ Individual collapsible content section properties that control the visual appear
 
 Component properties specific to Figma design system implementation.
 
-#### flush: variant
+#### flush: `variant`
 
 Controls the spacing relationship and visual separation between accordion items and surrounding elements. This property determines whether items display with standard spacing and borders or connect seamlessly for unified content presentation.
 

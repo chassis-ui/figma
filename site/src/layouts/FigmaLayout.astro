@@ -1,0 +1,128 @@
+---
+import type { MarkdownHeading } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+import BaseLayout from '@chassis-ui/docs/layouts/BaseLayout.astro'
+import FigmaSidebar from '@components/FigmaSidebar.astro'
+import TableOfContents from '@chassis-ui/docs/components/TableOfContents.astro'
+import { sortTabs } from '@libs/figma'
+import { getConfig } from '@libs/config'
+import type { LayoutOverridesHTMLAttributes } from '@chassis-ui/docs'
+
+interface Props {
+  frontmatter: any
+  headings?: MarkdownHeading[]
+  id?: string
+  component: string
+  tab: string
+  tabs: string[]
+}
+
+const { frontmatter, headings, id, component, tab, tabs } = Astro.props
+
+// Sort tabs according to preferred order
+const sortedTabs = sortTabs(tabs)
+
+// Create tab navigation items
+const tabItems = sortedTabs.map((tabName) => ({
+  label: tabName.charAt(0).toUpperCase() + tabName.slice(1),
+  href: `/figma/${component}/${tabName}`,
+  active: tabName === tab
+}))
+
+const bodyProps: LayoutOverridesHTMLAttributes<'body'> = {}
+
+if (frontmatter.toc) {
+  bodyProps['data-cx-spy'] = 'scroll'
+  bodyProps['data-cx-target'] = '#TableOfContents'
+}
+
+const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).replace('-', ' ')} - ${tab.charAt(0).toUpperCase() + tab.slice(1)}`
+---
+
+<BaseLayout
+  frontmatter={{
+    ...frontmatter,
+    title: pageTitle
+  }}
+  layout="docs"
+  overrides={{ body: bodyProps }}
+>
+  <div slot="main" class="container-fluid cxd-gutter cxd-layout">
+    <aside class="cxd-sidebar">
+      <div
+        class="offcanvas-large offcanvas-start"
+        tabindex="-1"
+        id="cxdSidebar"
+        aria-labelledby="cxdSidebarOffcanvasLabel"
+      >
+        <div class="offcanvas-header border-bottom">
+          <h5 class="offcanvas-title" id="cxdSidebarOffcanvasLabel">Browse docs</h5>
+          <button
+            type="button"
+            class="close-button"
+            data-cx-dismiss="offcanvas"
+            aria-label="Close"
+            data-cx-target="#cxdSidebar"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <FigmaSidebar currentPath={`/figma/${component}/${tab}`} currentComponent={component} />
+        </div>
+      </div>
+    </aside>
+
+    <main class="cxd-main">
+      <div class="cxd-intro">
+        <h1>{pageTitle}</h1>
+        <p>{frontmatter.description}</p>
+      </div>
+
+      {
+        headings && (
+          <div class="cxd-toc">
+            <button
+              class="button default mb-large text-decoration-none cxd-toc-toggle d-medium-none"
+              type="button"
+              data-cx-toggle="collapse"
+              data-cx-target="#tocContents"
+              aria-expanded="false"
+              aria-controls="tocContents"
+            >
+              On this page
+              <svg class="icon icon-small" aria-hidden="true">
+                <use xlink:href="#chevron-sort-solid" />
+              </svg>
+            </button>
+            <strong class="d-none d-medium-block h6 my-xsmall">On this page</strong>
+            <hr class="d-none d-medium-block my-xsmall" />
+            <div class="collapse cxd-toc-collapse" id="tocContents">
+              <nav id="TableOfContents">
+                <TableOfContents headings={headings} config={getConfig()} />
+              </nav>
+            </div>
+          </div>
+        )
+      }
+
+      <div class="cxd-content">
+        <nav class="nav nav-tabs mb-3xlarge">
+          {
+            tabItems.map((item) => (
+              <a
+                class={`nav-link ${item.active ? 'active' : ''}`}
+                href={item.href}
+                role="tab"
+                aria-selected={item.active}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+
+        <!-- Content -->
+        <slot />
+      </div>
+    </main>
+  </div>
+</BaseLayout>
