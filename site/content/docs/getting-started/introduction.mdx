@@ -1,205 +1,116 @@
 ---
-title: Welcome to Chassis Tokens
-description: Introduction to migrating design tokens to Chassis
+title: Welcome to Chassis Figma
+description: A comprehensive set of variables, styles, components, and guidelines to help designers create cohesive and user-friendly interfaces that adapt to multiple brands and platforms.
 toc: true
-added:
-  show_badge: true
-  version: 1.0.0
-sections:
-  - title: Design Tokens
-    description: Centralized design tokens for consistent theming across platforms.
-  - title: CSS Framework
-    description: Token-powered CSS utilities and components for UI development in sync with Figma.
-  - title: Asset Distribution
-    description: Automated delivery of icons and images optimized for web and mobile platforms.
-  - title: Figma Components
-    description: Ready-to-use Figma components linked to design tokens for seamless design handoff.
-  - title: Icon Generator
-    description: Customizable icon generation tools for consistent branding across platforms.
-  - title: AI Integration
-    description: AI-assisted design in Figma using Chassis Components.
 aliases:
  - "/getting-started"
  - "[[docsref:/getting-started]]"
 
 ---
-import { getConfig } from '@libs/config'
 
-## Tests
+# Overview
 
-```html
-<p>Hello, world!</p>
-```
-```css
-p {
-  color: red;
-}
-```
-```sh
-pnpm tokens --brand=chassis --theme=light --app=docs --screen=large
-```
+Chassis Figma is a comprehensive design system library for Figma that provides everything a product, design, and development team needs to create enterprise-scale, multi-brand, multi-platform applications. Built on top of the Chassis Design System, it offers a complete set of design tokens, components, templates, and guidelines for creating consistent, accessible, and brand-adaptable user interfaces.
 
-## Overview
+## What Makes Chassis Figma Unique
 
-Chassis Tokens provides a comprehensive system for transforming design tokens into platform-ready assets. This introduction covers the core concepts and the token transformation process.
+### Complete Design Material Library
 
-## Token Transformation Process
+Chassis Figma goes beyond standard UI component libraries by including:
 
-Chassis Tokens uses a robust build system to transform design tokens (from JSON or Figma variables) into platform-ready assets (SCSS, CSS, iOS, Android, etc.). The process is highly configurable, supporting multiple brands, themes, apps, and screens.
+- **UI Components**: All standard interface elements (buttons, forms, cards, etc.)
+- **IA Diagraming Tools**: Information architecture and flowchart components
+- **Design Documentation**: Style guide and specification components
+- **Templates**: Pre-built page and section templates for rapid prototyping
 
-### Source of Truth
+### Fully Tokenized System
 
-- **Tokens are defined in JSON files** under the `tokens/` directory.
-- Each token set can represent a brand, theme, app, or screen size.
-- `$themes.json` describes all available theme permutations.
+Everything in Chassis Figma is fully tokenized and synchronized with [Chassis Tokens](https://github.com/chassis-ui/tokens) using **Tokens Studio plugin**, enabling:
 
-### Build Orchestration
+- **Universal Theme Switching**: Change brands/themes across entire designs instantly
+- **Design-to-Code Consistency**: Direct mapping between Figma variables and production tokens
+- **Bidirectional Sync**: Tokens flow from Git repository to Figma Variables via Tokens Studio
+- **Future-Proof Designs**: Non-breaking updates when token values change
+- **Documentation Theming**: Even IA diagrams and documentation can switch themes
 
-- The main build script is `build/tokens/build.js`.
-- It uses [Style Dictionary](https://amzn.github.io/style-dictionary/) and [@tokens-studio/sd-transforms](https://github.com/tokens-studio/sd-transforms) for transformation logic.
-- The build can be filtered by CLI parameters:
+### Single-File Component Structure
 
-```sh
-pnpm tokens --brand=chassis --theme=light --app=docs --screen=large
-```
+Each component exists as a separate Figma file, providing:
 
-<Code lang="sh" code={`pnpm tokens --brand=chassis --theme=light --app=docs --screen=large`} />
+- **Framework Alignment**: Similar structure to UI framework component organization
+- **Built-in Documentation**: Every component includes its own guideline pages
+- **Test Pages**: Special pages prevent accidental override losses during design iterations
+- **Version Control**: Easier
 
-### Task Generation
+ team collaboration and change tracking
 
-- The build script generates a list of transformation tasks for all combinations of:
-  - **Brand** (e.g., `chassis`)
-  - **Theme** (e.g., `light`, `dark`)
-  - **App** (e.g., `docs`)
-  - **Screen** (e.g., `small`, `large`)
-- Each task defines:
-  - The source token files
-  - The output platform (web, iOS, Android, etc.)
-  - The output file(s) and format(s)
+### Component Asset System
 
-### Transformation Steps
+Components use special "asset" components for their content layers (text, icon, image, etc.), allowing you to:
 
-1. **Preprocessing**
-   Custom preprocessors (e.g., `cx/global`) can modify tokens before transformation.
-2. **Filtering**
-   Only relevant tokens for the current brand/theme/app/screen are included.
-3. **Transforms**
-   Custom and standard transforms (e.g., color conversion, size scaling) are applied.
-4. **Formatting**
-   Output files are generated in the required format (SCSS variables, CSS custom properties, Swift, XML, etc.).
-5. **File Headers**
-   Each output file includes a standard header with version and license info.
+- **Modify Without Detaching**: Change content and style while staying in sync with source
+- **State Variations**: Swap text assets with skeleton assets for loading states
+- **Flexible Customization**: adapt components without losing library connection
 
-### Output
+## Design System Ecosystem
 
-- **Web:** SCSS/CSS files in `icons/package/` and `build/`
-- **iOS:** Swift files
-- **Android:** XML files
-- **Other platforms** as configured
+Chassis Figma is part of a comprehensive multi-repository design system with unified documentation:
 
-#### Test title
+### Core Repositories
 
-as dkf;alsdf asldfasdf asdf as
+- **[chassis-tokens](https://github.com/chassis-ui/tokens)**: Design token generation and management
+- **[chassis-assets](https://github.com/chassis-ui/assets)**: Asset management and distribution
+- **[chassis-icons](https://github.com/chassis-ui/icons)**: Icon generation and sprite creation
+- **[chassis-css](https://github.com/chassis-ui/css)**: Production CSS framework
+- **chassis-figma**: Figma library and design tools (this project)
 
-##### Test 2 title
+### Documentation Architecture
 
-sdjf alskjdfhl askjdflas
+All Chassis project documentation sites use **@chassis-ui/docs** shared package for consistency:
 
-###### Test 3 title
+- **Unified Experience**: Single cohesive website at [chassis-ui.com](https://chassis-ui.com)
+- **Shared Components**: Common layouts, navigation, and UI components
+- **Independent Deployment**: Each project deploys separately to Vercel
+- **Proxy Routing**: Main site routes /docs/* paths to project-specific sites
 
-sdjf alskjdfhl askjdflas
+## Key Benefits
 
-### Customization
+### For Designers
 
-- **Add new brands/themes/apps/screens** by editing `package.json` and `tokens/$themes.json`.
-- **Add new transforms/filters/formats** in `build/tokens/transforms.js`, `filters.js`, and `formats.js`.
-- **Configure output** in `build/tokens/config.js`.
+- **Rapid Prototyping**: Pre-built components and templates accelerate design work
+- **Brand Flexibility**: Switch between brand themes instantly with variables
+- **Design Documentation**: Create spec sheets and guidelines within your design files
+- **Consistent Quality**: Tokenized system ensures visual consistency across all work
 
-### Example: Adding a New Theme
+### For Product Teams
 
-1. Add the theme to `package.json` under `chassis.build.themes`.
-2. Add the theme permutation to `tokens/$themes.json`.
-3. Add or update token files in `tokens/`.
-4. Run the build:
-    ```sh
-    pnpm tokens --theme=newtheme
-    ```
+- **Multi-Brand Management**: Manage multiple brands from a single design system
+- **Scalability**: Enterprise-ready structure supports large organizations
+- **Cross-Platform**: Design once, deploy to web, iOS, and Android
+- **Living Documentation**: IA diagrams and specs stay up-to-date with design changes
 
-### CLI Usage
+### For Developers
 
-- **Build all tokens:**
-  `pnpm tokens`
-- **Build for a specific brand/theme/app/screen:**
-  `pnpm tokens --brand=chassis --theme=dark --app=docs --screen=large`
+- **Design-Code Parity**: Figma variables map directly to production tokens
+- **Component Library Sync**: Figma structure mirrors code component organization
+- **Automated Handoff**: Token synchronization reduces manual specification work
+- **Predictable Implementation**: Consistent component props and behaviors
 
-### Extending the System
+## Getting Started
 
-- **Add new output platforms** by updating `config.js` and providing new formatters.
-- **Integrate with Figma/Token Studio** by updating token import scripts.
+Ready to use Chassis Figma in your projects? Continue to the next sections:
 
-### Troubleshooting
+1. **[Library Setup](./library-setup)** - Install and configure the Figma library
+2. **[Component Assets](./component-assets)** - Understand the asset component system
+3. **[Variables & Styles](./variables-styles)** - Learn about design tokens and theming
+4. **[Design Guidelines](../design-guidelines/working-with-templates)** - Best practices and workflows
 
-- **Deprecation warnings:** See the build output and update your tokens or config as needed.
-- **Custom transforms/filters:** Ensure they are registered in the build script.
+## Support and Community
 
-### References
+- **Documentation**: [https://chassis-ui.com/figma](https://chassis-ui.com/figma)
+- **GitHub**: [https://github.com/chassis-ui/figma](https://github.com/chassis-ui/figma)
+- **Issues**: [Report bugs and request features](https://github.com/chassis-ui/figma/issues)
 
-- [Style Dictionary Documentation](https://amzn.github.io/style-dictionary/)
-- [Tokens Studio SD Transforms](https://github.com/tokens-studio/sd-transforms)
-- [Chassis Tokens GitHub](https://github.com/chassis-ui/tokens)
+## License
 
-**For more details, see the source code in `build/tokens/` and the README in the project root.**
-
-<Example code={`<p>Hello, world!</p>`} />
-
-Test: [overview]([[docsref:build-scripts/overview]])
-
-<Callout name="css-docs" />
-
-<Blockquote>Lorem</Blockquote>
-
-ge.json` under `chassis.build.themes`.
-2. Add the theme permutation to `tokens/$themes.json`.
-3. Add or update token files in `tokens/`.
-4. Run the build:
-
-```sh
-pnpm tokens --theme=newtheme
-```
-
-### CLI Usage
-
-- **Build all tokens:**
-  `pnpm tokens`
-- **Build for a specific brand/theme/app/screen:**
-  `pnpm tokens --brand=chassis --theme=dark --app=docs --screen=large`
-
-### Extending the System
-
-- **Add new output platforms** by updating `config.js` and providing new formatters.
-- **Integrate with Figma/Token Studio** by updating token import scripts.
-
-### Troubleshooting
-
-- **Deprecation warnings:** See the build output and update your tokens or config as needed.
-- **Custom transforms/filters:** Ensure they are registered in the build script.
-
-### References
-
-- [Style Dictionary Documentation](https://amzn.github.io/style-dictionary/)
-- [Tokens Studio SD Transforms](https://github.com/tokens-studio/sd-transforms)
-- [Chassis Tokens GitHub](https://github.com/chassis-ui/tokens)
-
-**For more details, see the source code in `build/tokens/` and the README in the project root.**
-
-<Example code={`<p>Hello, world!</p>`} />
-```html
-<p>Hello, world!</p>
-<p>Hello, world!</p>
-<p>Hello, world!</p>
-```sh
-
-Test: [overview]([[docsref:build-scripts/overview]])
-
-<Callout name="css-docs" />
-<Blockquote>Lorem</Blockquote>
+Chassis Figma is open source and available under the [MIT License](https://github.com/chassis-ui/figma/blob/main/LICENSE).

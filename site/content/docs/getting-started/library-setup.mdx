@@ -1,0 +1,350 @@
+---
+title: Library Setup
+description: Instructions for setting up the Chassis Figma library in your design environment, including installation steps, configuration options, and troubleshooting tips to ensure a smooth integration with your design workflow.
+toc: true
+---
+
+# Overview
+
+Setting up the Chassis Figma library in your workspace involves obtaining the library files, publishing them to your Figma organization, and configuring library settings for your team. This guide walks you through the complete setup process from initial file acquisition to enabling the library for your design team.
+
+## Prerequisites
+
+Before setting up Chassis Figma, ensure you have:
+
+- **Figma Account**: Professional or Organization plan (required for libraries)
+- **Edit Access**: Permission to publish libraries in your organization
+- **Familiarity with Figma**: Basic understanding of Figma components and styles
+
+## Getting Figma Files
+
+There are multiple ways to obtain Chassis Figma library files depending on your needs and preferences.
+
+### Option 1: Figma Community (Recommended)
+
+The easiest way to get started is through Figma Community.
+
+1. Visit [Chassis Figma Community page](https://www.figma.com/community/chassis-ui)
+2. Click **"Duplicate"** on the library file
+3. Files will be added to your **Drafts**
+4. Move files to appropriate team/project folder
+
+**Advantages**:
+- ✅ Always up-to-date with latest version
+- ✅ One-click installation
+- ✅ Automatic update notifications
+- ✅ No manual file management
+
+**Best for**: Quick starts, individual designers, small teams
+
+### Option 2: GitHub Release
+
+Download official release packages from GitHub.
+
+1. Go to [Chassis Figma Releases](https://github.com/chassis-ui/figma/releases)
+2. Download latest `.fig` file package
+3. Import files into Figma via **File → Import**
+4. Organize in your team structure
+
+**Advantages**:
+- ✅ Version control friendly
+- ✅ Offline access to files
+- ✅ Custom modification possible
+- ✅ Enterprise security compliance
+
+**Best for**: Enterprise teams, version-controlled workflows, customized implementations
+
+### Option 3: Direct Clone
+
+For contributors and advanced users.
+
+```bash
+git clone https://github.com/chassis-ui/figma.git
+cd chassis-figma
+```
+
+Access `.fig` files in the repository and import to Figma.
+
+**Advantages**:
+- ✅ Full source access
+- ✅ Contribution capability
+- ✅ Pre-release features
+- ✅ Custom build options
+
+**Best for**: Contributors, custom builds, bleeding-edge features
+
+## File Structure
+
+Chassis Figma uses a single-file component architecture:
+
+```
+Chassis Figma Library/
+├── Assets/
+│   ├── Text Assets.fig
+│   ├── Icon Assets.fig
+│   ├── Background Assets.fig
+│   ├── Skeleton Assets.fig
+│   └── Switch Assets.fig
+├── Components/
+│   ├── Accordion.fig
+│   ├── Alert.fig
+│   ├── Button.fig
+│   ├── Card.fig
+│   └── ... (additional components)
+├── Templates/
+│   ├── Dashboard.fig
+│   ├── Form Pages.fig
+│   └── List Views.fig
+├── Documentation/
+│   ├── Style Guide.fig
+│   ├── IA Diagrams.fig
+│   └── Specs Templates.fig
+└── Tokens/
+    ├── Variables.fig
+    └── Styles.fig
+```
+
+### Organization Recommendations
+
+**For Small Teams** (< 10 designers):
+```
+Team/
+└── Chassis Library/
+    ├── All component files
+    └── Assets folder
+```
+
+**For Medium Teams** (10-50 designers):
+```
+Team/
+├── Chassis Library/
+│   └── Core Components/
+└── Brand Libraries/
+    ├── Brand A customizations/
+    └── Brand B customizations/
+```
+
+**For Large Organizations** (50+ designers):
+```
+Organization/
+├── Design Systems Team/
+│   └── Chassis Core Library/
+├── Product Team A/
+│   └── Product-specific components/
+└── Product Team B/
+    └── Product-specific components/
+```
+
+## First Publish
+
+Once files are imported, publish them as a library for your team to use.
+
+### Publishing Steps
+
+1. **Open the file** you want to publish
+2. **Click the library icon** in the toolbar (book icon)
+3. **Select "Publish library"** from dropdown
+4. **Review changes** in the publish dialog
+5. **Add release notes** describing the version
+6. **Click "Publish"** to make available to team
+
+### Initial Publish Checklist
+
+Before publishing for the first time:
+
+- [ ] All component names follow conventions
+- [ ] Variables are properly configured
+- [ ] Styles are organized and named correctly
+- [ ] Test pages validate component behavior
+- [ ] Documentation pages are complete
+- [ ] Asset components are properly linked
+
+### Publish Settings
+
+Configure library settings for optimal team usage:
+
+#### Library Name
+```
+Chassis UI - [Component Category]
+Example: "Chassis UI - Buttons"
+```
+
+#### Description
+```markdown
+Chassis UI component library for [purpose].
+Version: X.X.X
+Last updated: [Date]
+Maintained by: [Team name]
+```
+
+#### Library Permissions
+
+**Recommended settings**:
+- **View**: Everyone in organization
+- **Use**: Everyone in organization
+- **Edit**: Design systems team only
+
+## Enabling for Team Use
+
+After publishing, designers need to enable the library in their files.
+
+### For Library Consumers
+
+1. Open your design file
+2. Click **Assets panel** (Alt/Opt + 2)
+3. Click **Library icon** (book icon in panel header)
+4. Find **"Chassis UI"** in the list
+5. Toggle **ON** for each library you need
+6. Click **"Save"** to confirm
+
+### Bulk Enable for Teams
+
+Administrators can pre-enable libraries:
+
+1. Go to **Team settings**
+2. Navigate to **Libraries** section
+3. Select Chassis libraries
+4. Click **"Enable for team"**
+5. Choose teams/projects to auto-enable
+
+## Swapping Libraries
+
+If you need to replace an existing library with Chassis:
+
+### Preparation
+
+1. **Audit current usage**: Document which components are used where
+2. **Map components**: Create mapping between old and new components
+3. **Test file**: Create copy of design to test swap
+4. **Communication plan**: Notify team of upcoming changes
+
+### Swap Process
+
+1. Open design file
+2. Go to **Assets panel**
+3. Click **Team library** button (book icon)
+4. Find old library
+5. Click **"..."** menu
+6. Select **"Swap library"**
+7. Choose Chassis library as replacement
+8. Review component matches
+9. Confirm swap
+
+### Post-Swap Validation
+
+- [ ] All components swapped correctly
+- [ ] No detached instances
+- [ ] Styles applied properly
+- [ ] Variables linked correctly
+- [ ] No missing components
+- [ ] Performance acceptable
+
+## Updating Library
+
+Keep your Chassis library up-to-date with latest improvements.
+
+### Update Notifications
+
+Figma notifies you when library updates are available:
+
+1. **Blue dot** appears on library icon in file
+2. **Update banner** shows in Assets panel
+3. **Review updates** dialog shows changes
+
+### Update Process
+
+1. Click **"Review updates"** in notification
+2. **Preview changes** for each component
+3. **Select components** to update (or "Update all")
+4. **Review instances** affected in your file
+5. **Click "Update"** to apply changes
+
+### Update Best Practices
+
+**Do**:
+- ✅ Read release notes before updating
+- ✅ Test updates in copy of file first
+- ✅ Update during low-activity periods
+- ✅ Communicate updates to team
+- ✅ Review major version changes carefully
+
+**Don't**:
+- ❌ Auto-update without review
+- ❌ Skip version increments
+- ❌ Update during active design sprints
+- ❌ Ignore breaking change warnings
+
+### Version Strategy
+
+**Semantic Versioning**: Chassis follows semver (X.Y.Z)
+
+- **Major (X)**: Breaking changes, component restructuring
+- **Minor (Y)**: New features, new components, non-breaking changes
+- **Patch (Z)**: Bug fixes, small improvements
+
+**Update Frequency Recommendations**:
+- **Patches**: Update immediately for bug fixes
+- **Minor**: Update monthly or per sprint
+- **Major**: Plan migration, test thoroughly, update quarterly
+
+## Troubleshooting
+
+### Library Not Appearing
+
+**Issue**: Can't find Chassis library in Assets panel
+
+**Solutions**:
+1. Verify library is published
+2. Check team membership
+3. Refresh Figma (Cmd/Ctl + R)
+4. Check library permissions
+5. Contact team admin
+
+### Components Not Loading
+
+**Issue**: Components show as missing or broken
+
+**Solutions**:
+1. Check internet connection
+2. Verify library is enabled
+3. Update to latest version
+4. Clear Figma cache
+5. Re-enable library
+
+### Variable Errors
+
+**Issue**: Variables not applying correctly
+
+**Solutions**:
+1. Verify Variables file is published
+2. Check variable collection names
+3. Ensure modes are properly configured
+4. Re-link variable references
+5. Contact support with file example
+
+### Performance Issues
+
+**Issue**: Library making file slow
+
+**Solutions**:
+1. Limit enabled libraries to needed ones
+2. Use components over instances where possible
+3. Avoid excessive nesting
+4. Optimize large asset files
+5. Consider splitting into focused libraries
+
+## Next Steps
+
+Now that your library is set up:
+
+1. **[Learn about Component Assets](./component-assets)** - Understand the asset system
+2. **[Explore Variables & Styles](./variables-styles)** - Configure tokens and theming
+3. **[Read Design Guidelines](../design-guidelines/working-with-templates)** - Best practices
+4. **[Browse Components](/figma)** - Explore available components
+
+## Getting Help
+
+- **Documentation**: [chassis-ui.com/figma](https://chassis-ui.com/figma)
+- **Issues**: [GitHub Issues](https://github.com/chassis-ui/figma/issues)
+- **Community**: [Figma Community](https://www.figma.com/community/chassis-ui)
+- **Email**: support@chassis-ui.com

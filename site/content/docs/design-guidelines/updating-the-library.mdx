@@ -1,0 +1,570 @@
+---
+title: Updating the Library
+description: Learn how to maintain, update, and version the Chassis Figma library, including best practices for managing changes, publishing updates, and communicating with your design team.
+toc: true
+---
+
+# Overview
+
+Maintaining Chassis Figma as an enterprise-scale design system requires systematic version management, clear change communication, and coordinated updates across the ecosystem. This guide covers how library maintainers publish updates and how teams consume those changes while maintaining design consistency.
+
+## Library Maintenance Roles
+
+### Core Team Responsibilities
+
+**Library Maintainers** (Core Team):
+- Publish component updates to library
+- Manage version releases and changelogs
+- Coordinate with token/code repositories
+- Review and approve component contributions
+- Maintain documentation and guidelines
+- Monitor library health and usage
+
+**Contributors** (Design Team):
+- Propose component improvements
+- Report bugs and inconsistencies
+- Request new components or variants
+- Test updates before wide release
+- Provide feedback on changes
+
+## Update Types
+
+### Patch Updates (v2.4.1 → v2.4.2)
+
+**Minor fixes and refinements**:
+
+- Bug fixes in component behavior
+- Token value adjustments
+- Documentation typo corrections
+- Accessibility improvements
+- Performance optimizations
+
+**Impact**: Minimal, safe to adopt immediately
+
+**Example**:
+```
+- Fixed button icon alignment
+- Updated tooltip arrow positioning
+- Corrected dark mode contrast on badge
+```
+
+### Minor Updates (v2.4.0 → v2.5.0)
+
+**New features and additions**:
+
+- New component variants
+- Additional component sizes
+- New icon additions
+- Expanded variable modes
+- New templates or patterns
+
+**Impact**: Additive, backward compatible
+
+**Example**:
+```
++ Added "ghost" button variant
++ New "sm" size for cards
++ 24 new icons in communication category
++ Brand mode for multi-brand support
+```
+
+### Major Updates (v2.0.0 → v3.0.0)
+
+**Breaking changes and redesigns**:
+
+- Component API changes (renamed properties)
+- Removed deprecated components
+- Token structure reorganization
+- Significant visual redesigns
+- Architecture changes
+
+**Impact**: High, requires migration planning
+
+**Example**:
+```
+BREAKING CHANGES:
+- Removed "outline" button variant (use "secondary")
+- Renamed spacing variables (spacing-md → space-4)
+- Updated color token hierarchy
+- Card component structure changed
+```
+
+## Publishing Updates
+
+### Pre-Publish Checklist
+
+Before publishing library update:
+
+- [ ] **All components tested** across themes and modes
+- [ ] **Documentation updated** for changes
+- [ ] **Changelog prepared** with clear descriptions
+- [ ] **Breaking changes documented** with migration guide
+- [ ] **Token sync completed** with Chassis Tokens repo
+- [ ] **Version number determined** (semantic versioning)
+- [ ] **Team notified** of upcoming changes
+- [ ] **Beta testing completed** (if major update)
+
+### Publishing Process
+
+**Step-by-step**:
+
+1. **Prepare the release**
+   - Review all pending changes
+   - Test components thoroughly
+   - Update internal documentation
+   - Create changelog document
+
+2. **Version the library**
+   - Open library file in Figma
+   - Right-click library in Assets panel
+   - Select `Publish library...`
+   - Choose version strategy:
+     - **Update**: Patch/minor changes
+     - **Major release**: Breaking changes
+   - Add version notes
+
+3. **Write release notes**
+   ```
+   ## v2.5.0 - Component Enhancements
+
+   ### Added
+   - Button: Ghost variant for subtle actions
+   - Card: Small size variant for compact layouts
+   - Icons: 24 new communication icons
+
+   ### Changed
+   - Modal: Updated animation duration (300ms → 200ms)
+   - Badge: Increased minimum width for better alignment
+
+   ### Fixed
+   - Tooltip: Arrow positioning in dark mode
+   - Input: Focus state visibility in compact mode
+
+   ### Deprecated
+   - Button outline variant (use secondary instead)
+   ```
+
+4. **Publish to library**
+   - Click `Publish` button
+   - Library becomes available to team
+   - Figma notifies users of updates
+
+5. **Announce the release**
+   - Post in team Slack/Teams channel
+   - Send email summary for major updates
+   - Update design system documentation site
+   - Schedule office hours for questions
+
+### Publishing Strategies
+
+**Rolling releases** (recommended):
+- Frequent small updates
+- Minimal disruption
+- Easy to adopt incrementally
+- Quick feedback cycles
+
+**Scheduled releases**:
+- Batched updates (e.g., monthly)
+- Predictable cadence
+- Time for thorough testing
+- Coordinated with sprint cycles
+
+**On-demand releases**:
+- Critical bug fixes
+- High-priority requests
+- Security/accessibility fixes
+- Immediate needs
+
+## Consuming Updates
+
+### Checking for Updates
+
+**Figma notifications**:
+- Blue dot on library icon in Assets panel
+- Notification badge with update count
+- "Update available" banner in file
+
+**Manual check**:
+1. Open file using Chassis library
+2. Open Assets panel (Alt/Opt + 2)
+3. hover over library name
+4. Click "View library" → See version info
+
+### Reviewing Changes
+
+**Before updating**:
+
+1. **Read release notes**
+   - Understand what changed
+   - Identify breaking changes
+   - Note deprecated features
+
+2. **Check impact**
+   - View specific changes in file
+   - Filter by component type
+   - Assess scope of changes
+
+3. **Test in branch**
+   - Duplicate file or branch
+   - Apply updates in safe environment
+   - Verify nothing breaks
+
+### Applying Updates
+
+**Selective updates** (recommended):
+
+1. **Open Assets panel**
+2. **Expand library** to see components
+3. **Review each updated component**:
+   - Click component to see changes
+   - Review "Changes" panel
+4. **Update individually**:
+   - Right-click component
+   - "Update" or "Update all [component]"
+5. **Review changes** after update
+6. **Commit incrementally** if using version control
+
+**Bulk updates** (use cautiously):
+
+1. **Click "Review updates"** in notification
+2. **Select components** to update (or all)
+3. **Click "Update"** button
+4. **Review impact** across file
+5. **Undo if needed** (Cmd/Ctrl + Z)
+
+### Update Best Practices
+
+✅ **Do**:
+- Update in a branch/duplicate first
+- Review changes before applying
+- Update one component type at a time
+- Test after updating
+- Commit updates separately from other work
+- Read release notes carefully
+- Ask questions before bulk updating
+
+❌ **Don't**:
+- Auto-update without reviewing
+- Update before important deadlines
+- Skip testing after updates
+- Mix updates with other changes
+- Ignore deprecated warnings
+- Update production files without backup
+
+## Managing Breaking Changes
+
+### Identifying Breaking Changes
+
+**Breaking change indicators**:
+- Version jumps to next major (v2.x → v3.0)
+- "BREAKING CHANGE" in release notes
+- Deprecated variant warnings
+- Component API changes
+- Token reorganization
+
+### Migration Planning
+
+**For major updates**:
+
+1. **Assess impact**
+   - Audit files using affected components
+   - Estimate work required
+   - Identify high-risk areas
+
+2. **Create migration plan**
+   - Schedule updates during low-activity period
+   - Allocate time for testing
+   - Plan rollback strategy if needed
+   - Coordinate with development team
+
+3. **Prepare team**
+   - Share migration guide
+   - Schedule training session
+   - Set up support channel
+   - Document common issues
+
+4. **Execute migration**
+   - Update files systematically
+   - Test thoroughly after each
+   - Document problems encountered
+   - Provide feedback to library team
+
+5. **Validate results**
+   - Review all updated files
+   - Test prototypes and interactions
+   - Verify design consistency
+   - Confirm handoff accuracy
+
+### Rollback Strategy
+
+If update causes major issues:
+
+**Immediate rollback**:
+1. **Undo updates** (Cmd/Ctrl + Z)
+2. **Close file without saving** (if already saved)
+3. **Restore from version history**:
+   - File menu → Show version history
+   - Find pre-update version
+   - Duplicateor restore
+
+**Long-term rollback**:
+1. **Contact library maintainers**
+2. **Report specific issues** encountered
+3. **Use previous library version** if available
+4. **Wait for patch release** addressing issues
+
+## Version Control Integration
+
+### Branching for Updates
+
+**Git-style workflow for Figma**:
+
+```
+main
+  ├── feature/adopt-v3.0.0
+  │   ├── Update button components
+  │   ├── Update form components
+  │   ├── Update navigation components
+  │   └── Test and merge
+  └── Keep stable until verified
+```
+
+**Using Figma branching** (if available):
+1. Create branch from main file
+2. Apply library updates in branch
+3. Review and test changes
+4. Merge branch to main when validated
+
+### File Version History
+
+**Leverage Figma's version history**:
+
+**Creating restore points**:
+1. Before major updates, save named version:
+   - File menu → Save to version history
+   - Name: "Before library v3.0.0 update"
+   - Add description
+
+2. After successful update:
+   - Save version history
+   - Name: "After library v3.0.0 update - validated"
+
+**Restoring versions**:
+- File menu → Show version history
+- Browse timeline
+- Click version to preview
+- Click "Restore this version" if needed
+
+## Coordinating with Code
+
+### Syncing Design and Development
+
+**Alignment strategy**:
+
+```
+Design System Timeline:
+Figma v3.0.0 published
+  ↓ (export tokens)
+Tokens repo updated
+  ↓ (build process)
+CSS package v3.0.0 released
+  ↓ (development integration)
+Code matches design
+```
+
+**Communication between teams**:
+
+1. **Pre-release coordination**
+   - Notify developers of upcoming changes
+   - Share component spec changes
+   - Align on version numbers
+   - Schedule synchronized releases
+
+2. **Release synchronization**
+   - Publish Figma library
+   - Export and commit tokens
+   - Build and publish code packages
+   - Update documentation site
+
+3. **Post-release support**
+   - Designer available for questions
+   - Developer feedback on implementation
+   - Track issues and edge cases
+   - Plan patch releases if needed
+
+### Token Version Matching
+
+**Keep versions synchronized**:
+
+```
+chassis-figma:     v3.0.0
+chassis-tokens:    v3.0.0
+chassis-css:       v3.0.0
+chassis-icons:     v3.0.0
+chassis-assets:    v3.0.0
+```
+
+**Benefits**:
+- Clear compatibility understanding
+- Simplified dependency management
+- Easier troubleshooting
+- Coordinated release notes
+
+## Communication Best Practices
+
+### Announce Updates Effectively
+
+**Update announcement template**:
+
+```markdown
+# 🎨 Chassis Figma Update: v2.5.0
+
+## Summary
+Added ghost button variant, small card size, and 24 new icons.
+
+## What's Changed
+- **Added**:
+  - Button ghost variant
+  - Card small size
+  - 24 communication icons
+- **Fixed**: Tooltip dark mode positioning
+- **Deprecated**: Button outline variant
+
+## Action Required
+- Review changes before updating
+- Test in branch first
+- Outline button users: switch to secondary variant
+
+## Resources
+- [Full Changelog](link)
+- [Migration Guide](link) (if applicable)
+- [Office Hours](time) for questions
+
+## Questions?
+Reach out in #design-system channel
+```
+
+### Support Channels
+
+**Establish clear support**:
+
+- **Slack/Teams channel**: #chassis-design-system
+- **Office hours**: Weekly or bi-weekly
+- **Documentation site**: Self-service help
+- **GitHub issues**: Bug reports and requests
+- **Email list**: Important announcements
+
+### Feedback Collection
+
+**Gather team input**:
+
+- Post-update surveys
+- Usage analytics (via Figma API)
+- Regular check-ins with teams
+- Component request process
+- Bug report workflow
+
+## Monitoring Library Health
+
+### Usage Analytics
+
+**Track library adoption**:
+
+- Components used most/least
+- Update adoption rate
+- File coverage across teams
+- Detached instance incidents
+- Version distribution
+
+**Tools**:
+- Figma API for programmatic analysis
+- Plugins like "Library Analytics"
+- Custom scripts for reporting
+
+### Quality Metrics
+
+**Maintain quality standards**:
+
+- Zero critical bugs in published library
+- All components accessible (WCAG 2.1 AA)
+- Complete documentation coverage
+- Consistent token usage (100%)
+- Minimal detached instances (<5%)
+- Fast update adoption (80% within 2 weeks)
+
+### Component Deprecation
+
+**Phasing out components**:
+
+1. **Announce deprecation** (1-2 versions ahead)
+   ```
+   ⚠️ DEPRECATED: Button outline variant
+   Use secondary variant instead
+   Will be removed in v3.0.0
+   ```
+
+2. **Provide migration path**
+   - Document alternative component
+   - Create migration script if possible
+   - Offer support for migration
+
+3. **Mark visibly** in library
+   - Add [DEPRECATED] to component name
+   - Update description
+   - Link to replacement
+
+4. **Remove in major version**
+   - Clear removal announcement
+   - Final migration support
+   - Monitor for stragglers
+
+## Troubleshooting Updates
+
+### Common Update Issues
+
+**Problem**: "Can't update component"
+
+**Solutions**:
+- Ensure you have edit access to file
+- Check library is enabled in file
+- Verify library is published (not draft)
+- Restart Figma if stuck
+
+**Problem**: "Updates break my designs"
+
+**Solutions**:
+- Revert using Cmd/Ctrl + Z
+- Restore from version history
+- Update selectively instead of bulk
+- Report issue to library maintainers
+
+**Problem**: "Not seeing latest updates"
+
+**Solutions**:
+- Refresh library: Assets panel → Library menu → Refresh
+- Re-enable library in file settings
+- Check you're not using old file version
+- Verify library was actually published
+
+**Problem**: "Detached instances after update"
+
+**Solutions**:
+- Indicates component was removed from library
+- Check release notes for breaking changes
+- Manually reconnect if component renamed
+- Replace with alternative component
+
+## Next Steps
+
+- **[Exporting Assets](./exporting-assets)** - Export updated components
+- **[Theme Switching](./theme-switching)** - Manage theme updates
+- **[Variables & Styles](../getting-started/variables-styles)** - Token update process
+- **[Library Setup](../getting-started/library-setup)** - Initial library configuration
+
+## Resources
+
+- **Figma Library Management**: [help.figma.com/libraries](https://help.figma.com/hc/en-us/articles/360041051154-Guide-to-libraries-in-Figma)
+- **Version History**: [help.figma.com/version-history](https://help.figma.com/hc/en-us/articles/360038006754-View-a-file-s-version-history)
+- **Semantic Versioning**: [semver.org](https://semver.org/)
+- **Changelog Format**: [keepachangelog.com](https://keepachangelog.com/)
+- **Chassis Releases**: GitHub releases across repositories

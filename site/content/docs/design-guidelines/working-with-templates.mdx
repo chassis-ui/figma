@@ -1,0 +1,338 @@
+---
+title: Working with Templates
+description: Guidelines and best practices for working with templates in the Chassis Figma design system, including how to use pre-built templates, customize them for your projects, and maintain consistency across your designs.
+toc: true
+---
+
+# Overview
+
+Chassis Figma provides a comprehensive set of pre-built templates that accelerate design workflows while maintaining system consistency. Templates combine components, layouts, and content patterns into reusable page structures and sections, allowing designers to quickly prototype and iterate on common interface patterns.
+
+## Template Categories
+
+### Page Templates
+
+Complete page layouts for common application screens.
+
+#### Dashboard Templates
+- Overview dashboards with metrics and charts
+- Analytics dashboards with data visualization
+- Admin control panels with settings
+- Monitoring dashboards with real-time data
+
+#### Form Templates
+- Single-column forms for simple data entry
+- Multi-column forms for complex inputs
+- Wizard/stepped forms for guided workflows
+- Settings forms with grouped controls
+
+#### List View Templates
+- Data tables with sorting and filtering
+- Card grid layouts for visual content
+- List items with actions and metadata
+- Search result layouts
+
+#### Detail View Templates
+- Product detail pages with media galleries
+- User profile pages with activities
+- Content article pages with rich formatting
+- Settings detail pages with configurations
+
+### Section Templates
+
+Reusable page sections and content blocks.
+
+#### Hero Sections
+- Marketing heroes with CTA buttons
+- Dashboard heroes with key metrics
+- Profile headers with actions
+- Search and filter heroes
+
+#### Content Sections
+- Feature grids with icons and descriptions
+- Testimonial carousels with quotes
+- FAQ accordions with Q&A pairs
+- Pricing tiers with feature comparisons
+
+#### Navigation Sections
+- Top navigation bars with menus
+- Bottom navigation for mobile apps
+- Sidebar navigation with hierarchy
+- Breadcrumb navigation trails
+
+#### Footer Sections
+- Marketing footers with links and social
+- Application footers with utilities
+- Mobile app footers with navigation
+- Legal footers with compliance links
+
+## Using Templates
+
+### Starting from Template
+
+1. **Browse templates** in Chassis Templates library
+2. **Duplicate template page** to your file (Cmd/Ctrl + D)
+3. **Rename page** to match your purpose
+4. **Customize content** using asset swapping
+5. **Adjust layout** to fit requirements
+6. **Test responsiveness** across breakpoints
+
+### Template Anatomy
+
+Templates are built with:
+
+```
+Template Frame
+├── Layout Grid (responsive breakpoints)
+├── Auto-layout Sections
+│   ├── Component Instances
+│   │   └── Asset Instances (swappable content)
+│   └── Spacing Variables
+└── Variables for all styling
+```
+
+### Customizing Templates
+
+#### Content Customization
+
+**Swap Asset Instances**:
+- Replace text assets with your content
+- Swap icon assets for contextual icons
+- Change image assets for your media
+- Update data in placeholder components
+
+**Examples**:
+```
+Dashboard Header
+├── Title Text Asset → "Sales Dashboard"
+├── Icon Asset → chart-line-up
+└── Date Range → "Jan 1 - Dec 31, 2024"
+```
+
+#### Layout Customization
+
+**Auto-layout Adjustments**:
+1. Modify spacing between sections
+2. Change alignment and distribution
+3. Add or remove content blocks
+4. Adjust responsive behavior
+
+**Grid Customization**:
+1. Change column count per breakpoint
+2. Modify gutter widths
+3. Adjust margins and padding
+4. Configure grid behavior
+
+#### Styling Customization
+
+**Variable Overrides**:
+- Apply different variable modes (themes)
+- Override component-level variables
+- Adjust spacing and sizing variables
+- Customize color treatments
+
+**Style Application**:
+- Apply text styles to custom content
+- Use effect styles for elevation
+- Apply Fill styles for surfaces
+- Maintain token-based styling
+
+## Template Best Practices
+
+### Do's
+
+✅ **Start with templates** for common patterns
+✅ **Maintain component connections** to library
+✅ **Use asset swapping** for content changes
+✅ **Test across breakpoints** before finalizing
+✅ **Document customizations** for team reference
+✅ **Share custom templates** back to team
+
+### Don'ts
+
+❌ **Don't detach components** for customization
+❌ **Don't hardcode values** that should use tokens
+❌ **Don't break auto-layout** structure unnecessarily
+❌ **Don't ignore responsive behavior** configuration
+❌ **Don't skip accessibility** considerations
+❌ **Don't mix template patterns** inconsistently
+
+## Responsive Templates
+
+All Chassis templates are built with responsive design principles.
+
+### Breakpoint Strategy
+
+**Desktop First Approach**:
+```
+Desktop (1200px+)   → Design base layout
+  ↓ adapt to
+Tablet (768-1199px) → Adjust columns and spacing
+  ↓ adapt to
+Mobile (< 768px)    → Stack and simplify
+```
+
+### Auto-layout for Responsiveness
+
+Templates use auto-layout features:
+
+**Horizontal Resizing**:
+- `Fill container`:
+
+ For fluid sections
+- `Hug contents`: For fixed-width elements
+- `Fixed width`: For controlled sizing
+
+**Vertical Resizing**:
+- `Hug contents`: For content-driven height
+- `Fixed height`: For hero sections, headers
+
+**Spacing**:
+- Variable-based gap values
+- Responsive padding via variables
+- Consistent margins system-wide
+
+### Testing Responsive Behavior
+
+1. **Set frame constraints** properly
+2. **Resize frame** between breakpoints
+3. **Verify content wrapping** behaves correctly
+4. **Check spacing adjustments** are appropriate
+5. **Test with real content** of varying lengths
+6. **Validate accessibility** at all sizes
+
+## Creating Custom Templates
+
+When standard templates don't fit your needs:
+
+### Planning
+
+1. **Identify pattern**: Document recurring design pattern
+2. **Analyze requirements**: List all necessary components
+3. **Define structure**: Sketch out layout hierarchy
+4. **Plan responsiveness**: Consider breakpoint adaptations
+5. **Choose components**: Select Chassis components to use
+6. **Document usage**: Create guidelines for template
+
+### Building
+
+1. **Create base frame** at largest breakpoint
+2. **Apply layout grid** for alignment
+3. **Add auto-layout** sections
+4. **Insert component instances**
+5. **Configure asset swapping**
+6. **Apply variables** throughout
+7. **Test responsiveness**
+8. **Add annotations** and documentation
+
+### Publishing
+
+1. **Create template page** in Templates library file
+2. **Add cover image** for template thumbnail
+3. **Write description** with usage guidelines
+4. **Include examples** showing variations
+5. **Test with team** before official publish
+6. **Publish to library** for team access
+7. **Announce and document** new template
+
+## Working with IA Diagram Templates
+
+Chassis includes templates for information architecture diagrams.
+
+### Diagram Types
+
+#### User Flow Diagrams
+- User journey paths
+- Decision points and branches
+- Error and success states
+- Entry and exit points
+
+#### Site Map Diagrams
+- Page hierarchy structures
+- Navigation relationships
+- Content organization
+- Information groupings
+
+#### System Architecture Diagrams
+- Component relationships
+- Data flow patterns
+- Integration points
+- Service dependencies
+
+### Diagramming Components
+
+**Nodes**:
+- Screen/Page nodes
+- Decision nodes
+- Process nodes
+- Database/System nodes
+
+**Connectors**:
+- Flow arrows (directional)
+- Relationship lines (non-directional)
+- Annotated connectors with labels
+- Conditional branching indicators
+
+**Annotations**:
+- Text labels and descriptions
+- Process step numbers
+- Status indicators
+- Notes and callouts
+
+### Theme Support for Diagrams
+
+IA diagrams are fully tokenized:
+
+✅ **Theme-switchable** - Works across Light/Dark modes
+✅ **Brand-adaptable** - Matches brand color systems
+✅ **Print-friendly** - Optimized for documentation export
+✅ **Accessible** - Appropriate contrast and sizing
+
+## Template Workflow Examples
+
+### Example 1: Creating Dashboard from Template
+
+1. Open **Dashboard Template** from library
+2. Duplicate to project file
+3. Swap header title text → "Sales Analytics"
+4. Replace metric cards with relevant KPIs
+5. Update chart data and labels
+6. Customize color mode for brand
+7. Test at mobile, tablet, desktop sizes
+8. Export or handoff to development
+
+### Example 2: Building Form from Scratch
+
+1. Start with **Form Template** (multi-column)
+2. Keep form structure and validation patterns
+3. Remove unnecessary form fields
+4. Add project-specific field types
+5. Adjust column layout for content
+6. Configure form submission behavior notes
+7. Add custom help text and tooltips
+8. Document form validation rules
+
+### Example 3: Customizing List View
+
+1. Choose **List View Template** (card grid)
+2. Adjust grid columns for data type
+3. Swap card content assets with your data
+4. Configure sort and filter options
+5. Add pagination or infinite scroll notes
+6. Set up empty and loading states
+7. Define interaction behaviors
+8. Create responsive mobile layout
+
+## Next Steps
+
+- **[Theme Switching](./theme-switching)** - Apply themes to templates
+- **[Exporting Assets](./exporting-assets)** - Export template designs
+- **[Component Documentation](/figma)** - Explore individual components
+- **[Variables & Styles](../getting-started/variables-styles)** - Understand token usage
+
+## Resources
+
+- **Templates Library**: `Chassis_Templates.fig` in library
+- **Pattern Library**: Browse complete template collection
+- **Figma Best Practices**: [help.figma.com/best-practices](https://help.figma.com/hc/en-us/categories/360002042553-Best-practices)
+- **Auto-layout Guide**: [help.figma.com/auto-layout](https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties)

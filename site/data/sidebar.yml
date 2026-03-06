@@ -5,27 +5,15 @@
   icon_color: yellow
   pages:
     - title: Introduction
-    - title: Test
-    - title: Readme
+    - title: Library Setup
+    - title: Variables & Styles
+    - title: Component Assets
 
-- title: Tokens Studio
-  icon: swatchbook-solid
-  icon_color: yellow
+- title: Design Guidelines
+  icon: lightbulb-solid
+  icon_color: blue
   pages:
-    - title: Figma Tokens
-
-- title: Style Dictionary
-  icon: gear-solid
-  icon_color: indigo
-  pages:
-    - title: Token Transforms
-
-- title: Build Scripts
-  icon: file-solid
-  icon_color: indigo
-  pages:
-    - title: overview
-    - title: build js
-    - title: config js
-    - title: filters js
-    - title: formats js
+    - title: Working with Templates
+    - title: Exporting Assets
+    - title: Theme Switching
+    - title: Updating the Library
