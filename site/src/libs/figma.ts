@@ -1,12 +1,12 @@
 import { getCollection } from 'astro:content'
 
-export const tabs = ['props', 'specs', 'tokens', 'variants'] as const
+export const tabs = ['props', 'specs', 'tokens', 'variants', 'guides'] as const
 export type TabType = (typeof tabs)[number]
 
 export type ComponentType = string
 
 export function sortTabs(tabs: string[]): TabType[] {
-  const order: TabType[] = ['variants', 'props', 'specs', 'tokens']
+  const order: TabType[] = ['variants', 'props', 'specs', 'tokens', 'guides']
   return tabs
     .filter((tab): tab is TabType => order.includes(tab as TabType))
     .sort((a, b) => order.indexOf(a) - order.indexOf(b))
