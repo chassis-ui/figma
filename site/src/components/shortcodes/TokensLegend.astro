@@ -1,0 +1,27 @@
+---
+interface Props {
+  component?: String
+}
+
+const component = Astro.props.component
+---
+
+<div class="legend cx-token">
+  <h6>Legend:</h6>
+  <ul>
+    <li>
+      <span class="icon icon-circle-solid granular"></span> Granular tokens that affect only this component.
+    </li>
+    <li>
+      <span class="icon icon-circle-solid shared"></span> Granular tokens that affect all {
+        component ? `${component}` : 'similar'
+      } components.
+    </li>
+    <li>
+      <span class="icon icon-circle-solid semantic"></span> Semantic tokens that affect the whole application.
+    </li>
+    <li>
+      <span class="icon icon-circle-solid base"></span> Base tokens that affect the whole application.
+    </li>
+  </ul>
+</div>

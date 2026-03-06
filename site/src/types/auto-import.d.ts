@@ -11,6 +11,13 @@ export declare global {
   export const CxTable: typeof import('@chassis-ui/docs/shortcodes/CxTable.astro').default
   export const Blockquote: typeof import('@shortcodes/Blockquote.astro').default
   export const Code: typeof import('@shortcodes/Code.astro').default
+  export const CxProp: typeof import('@shortcodes/CxProp.astro').default
+  export const CxSpec: typeof import('@shortcodes/CxSpec.astro').default
+  export const CxToken: typeof import('@shortcodes/CxToken.astro').default
+  export const CxVariant: typeof import('@shortcodes/CxVariant.astro').default
+  export const Embed: typeof import('@shortcodes/Embed.astro').default
   export const Example: typeof import('@shortcodes/Example.astro').default
   export const ResponsiveImage: typeof import('@shortcodes/ResponsiveImage.astro').default
+  export const SpecsLegend: typeof import('@shortcodes/SpecsLegend.astro').default
+  export const TokensLegend: typeof import('@shortcodes/TokensLegend.astro').default
 }

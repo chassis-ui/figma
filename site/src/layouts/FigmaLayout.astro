@@ -7,6 +7,7 @@ import TableOfContents from '@chassis-ui/docs/components/TableOfContents.astro'
 import { sortTabs } from '@libs/figma'
 import { getConfig } from '@libs/config'
 import type { LayoutOverridesHTMLAttributes } from '@chassis-ui/docs'
+import { getSlug, processMarkdownToHtml } from '@chassis-ui/docs'
 
 interface Props {
   frontmatter: any
@@ -25,7 +26,7 @@ const sortedTabs = sortTabs(tabs)
 // Create tab navigation items
 const tabItems = sortedTabs.map((tabName) => ({
   label: tabName.charAt(0).toUpperCase() + tabName.slice(1),
-  href: `/figma/${component}/${tabName}`,
+  href: `/figma/docs/components/${component}/${tabName}`,
   active: tabName === tab
 }))
 
@@ -66,15 +67,47 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
         </div>
 
         <div class="offcanvas-body">
-          <FigmaSidebar currentPath={`/figma/${component}/${tab}`} currentComponent={component} />
+          <FigmaSidebar currentComponent={component} />
         </div>
       </div>
     </aside>
 
     <main class="cxd-main">
       <div class="cxd-intro">
-        <h1>{pageTitle}</h1>
-        <p>{frontmatter.description}</p>
+        <div
+          class="d-medium-flex flex-medium-row-reverse justify-content-between align-items-start"
+        >
+          <div class="mb-medium mb-medium-0 d-flex text-nowrap">
+            {
+              // This is needed because we want to show the badge if show_badge isn't present or is set to false
+              frontmatter.added &&
+                ((frontmatter.added.show_badge !== undefined &&
+                  frontmatter.added.show_badge === true) ||
+                  frontmatter.added.show_badge === undefined) && (
+                  <span class="badge success smooth rounded-medium me-xsmall">
+                    Added in v{frontmatter.added.version}
+                  </span>
+                )
+            }
+            <a
+              class="button default small"
+              href={`${getConfig().repo}/blob/site/content/figma/${component}/${tab}.mdx`}
+              title="View and edit this file on GitHub"
+              target="_blank"
+              rel="noopener"
+            >
+              View on GitHub
+            </a>
+          </div>
+          <h1 class="cxd-title mb-small" id="content">{frontmatter.title}</h1>
+        </div>
+        <div class="cxd-subtitle">
+          {
+            frontmatter.description && (
+              <Fragment set:html={processMarkdownToHtml(frontmatter.description)} />
+            )
+          }
+        </div>
       </div>
 
       {
@@ -104,7 +137,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
         )
       }
 
-      <div class="cxd-content">
+      <div class={`cxd-content cxd-figma cxd-${tab}`}>
         <nav class="nav nav-tabs mb-3xlarge">
           {
             tabItems.map((item) => (

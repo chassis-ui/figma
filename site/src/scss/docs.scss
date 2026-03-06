@@ -12,4 +12,184 @@
 // Shared docs styles
 @import "@chassis-ui/docs/scss/main";
 
-// Tokens docs styles
+// Figma docs styles
+
+.cxd-figma {
+  h1 {
+    display: none;
+  }
+  .cxd-example {
+    text-align: center;
+    background-color: var(--cx-bg-even);
+    border-width: 0;
+  }
+
+  .legend {
+    padding: var(--cx-space-xlarge) var(--cx-space-3xlarge);
+    margin-bottom: var(--cx-space-3xlarge);
+    // @include font-size(var(--cx-font-size-text-small));
+    // @include line-height(var(--cx-line-height-text-small));
+    background-color: var(--cx-bg-even);
+    @include border-radius(var(--cx-border-radius-medium));
+    h6 {
+      margin-bottom: .5em;
+    }
+    ul {
+      padding-left: 1em;
+      margin-bottom: 0;
+    }
+    &.cx-token ul {
+      padding-left: 1.5em;
+    }
+    .icon {
+      margin-right: .25em;
+    }
+  }
+}
+
+.cx-spec {
+  h3 {
+    @include font-size(var(--cx-font-size-text-large));
+    > .number {
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      padding-top: .25em;
+      margin-right: .75em;
+      margin-left: -2.75em;
+      @include font-size(var(--cx-font-size-text-medium));
+      font-weight: var(--cx-font-weight-medium);
+      color: var(--cx-white);
+      text-align: center;
+      vertical-align: middle;
+      background-color: var(--cx-warning);
+      @include border-radius(50%);
+    }
+  }
+
+  dt {
+    float: left;
+    margin-right: .25em;
+    margin-bottom: 0;
+    clear: left;
+
+    &:not(.variant) {
+      // display: inline-block;
+      font-family: var(--cx-font-family-code);
+      font-weight: var(--cx-font-weight-normal);
+      color: $pink;
+    }
+
+  }
+
+  dd {
+    margin-bottom: 0;
+    // display: inline-block;
+    &:not(.variant + dd) {
+      font-family: var(--cx-font-family-code);
+
+      &:has(+ .variant) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .variant + dd:not(:has(+ .variant)) {
+    margin-bottom: .25em;
+  }
+
+  dt:has(em),
+  dt:has(em) + dd {
+    opacity: var(--cx-opacity-fg-slight);
+  }
+  dt > em {
+    font-style: normal;
+  }
+
+}
+
+.cx-token {
+  table {
+    width: 100%;
+    margin-bottom: 1em;
+    tr:not(thead > tr) {
+      font-family: var(--cx-font-family-code);
+    }
+    th:nth-child(1) {
+      width: 50%;
+    }
+  }
+  .icon {
+    --cx-icon-size: 1em;
+    margin-left: -1.5em;
+    &.granular {
+      --cx-icon-color: var(--cx-success);
+    }
+    &.shared {
+      --cx-icon-color: var(--cx-info);
+    }
+    &.semantic {
+      --cx-icon-color: var(--cx-warning);
+    }
+    &.base {
+      --cx-icon-color: var(--cx-danger);
+    }
+  }
+
+}
+
+.cx-variant {
+  display: flex;
+  gap: var(--cx-space-3xlarge);
+  &.wide {
+    flex-direction: column-reverse;
+    gap: var(--cx-space-medium);
+  }
+}
+
+.cx-prop {
+  .type {
+    // float: right;
+    padding: var(--cx-space-2xsmall) var(--cx-space-xsmall);
+    margin-left: .5em;
+    // font-family: var(--cx-font-family-code);
+    font-weight: var(--cx-font-weight-normal);
+    // color: var(--cx-fg-subtle);
+    vertical-align: middle;
+    background-color: var(--cx-bg-evident);
+    @include font-size(var(--cx-font-size-text-medium));
+    @include line-height(var(--cx-line-height-text-medium));
+    @include border-radius(var(--cx-border-radius-medium));
+  }
+
+  ul {
+    padding: 0;
+    @include font-size(var(--cx-font-size-text-small));
+    @include line-height(var(--cx-line-height-text-small));
+  }
+
+  ul::after {
+    display: table;
+    margin-bottom: 2rem;
+    clear: both;
+    content: " ";
+  }
+
+  li {
+    float: left;
+    padding: var(--cx-space-3xsmall) var(--cx-space-xsmall);
+    margin-right: .5em;
+    list-style: none;
+    background-color: var(--cx-bg-even);
+    @include border-radius(var(--cx-border-radius-small));
+    border: var(--cx-border-width-medium) solid var(--cx-border-subtle);
+    &:has(strong) {
+      background-color: var(--cx-bg-main);
+      border-color: var(--cx-border-main);
+    }
+    > strong {
+      font-weight: var(--cx-font-weight-text-strong) !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+}
+

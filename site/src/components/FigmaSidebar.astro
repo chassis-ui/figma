@@ -8,11 +8,10 @@ import { getSlug } from '@chassis-ui/docs'
 const sidebar = getData('sidebar')
 
 interface Props {
-  currentPath: string
   currentComponent?: string
 }
 
-const { currentPath, currentComponent } = Astro.props
+const { currentComponent = '' } = Astro.props
 
 const figmaComponents = await getFigmaSidebarData()
 
@@ -103,13 +102,13 @@ const formatComponentName = (component: string) => {
       })
     }
     <li class="cxd-links-group">
-      <strong class="cxd-links-heading">Figma Components</strong>
+      <strong class="cxd-links-heading">Components</strong>
       <ul>
         {
           figmaComponents.map((component) => (
             <li>
               <a
-                href={`/figma/${component.name}/variants`}
+                href={`/figma/docs/components/${component.name}/variants`}
                 class={`cxd-links-link ${currentComponent === component.name ? 'active' : ''}`}
               >
                 {formatComponentName(component.name)}

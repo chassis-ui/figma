@@ -60,10 +60,10 @@
     "@astrojs/mdx": "^4.3.5",
     "@astrojs/prism": "^3.3.0",
     "@astrojs/sitemap": "^3.6.0",
-    "@chassis-ui/docs": "^0.1.2",
-    "@chassis-ui/tokens": "github:chassis-ui/tokens#app/docs",
     "@chassis-ui/css": "github:chassis-ui/css#app/docs",
+    "@chassis-ui/docs": "^0.1.3",
     "@chassis-ui/icons": "github:chassis-ui/icons#app/docs",
+    "@chassis-ui/tokens": "github:chassis-ui/tokens#app/docs",
     "@docsearch/css": "^3.9.0",
     "@docsearch/js": "^3.9.0",
     "@eslint/js": "^9.36.0",
@@ -115,5 +115,8 @@
     "vnu-jar": "23.4.11",
     "zod": "^3.25.76"
   },
-  "packageManager": "pnpm@9.15.5+sha512.845196026aab1cc3f098a0474b64dfbab2afe7a1b4e91dd86895d8e4aa32a7a6d03049e2d0ad770bbe4de023a7122fb68c1a1d6e0d033c7076085f9d5d4800d4"
+  "packageManager": "pnpm@9.15.5+sha512.845196026aab1cc3f098a0474b64dfbab2afe7a1b4e91dd86895d8e4aa32a7a6d03049e2d0ad770bbe4de023a7122fb68c1a1d6e0d033c7076085f9d5d4800d4",
+  "dependencies": {
+    "remark-definition-list": "^2.0.0"
+  }
 }

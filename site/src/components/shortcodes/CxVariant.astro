@@ -1,0 +1,30 @@
+---
+import { getEntry } from 'astro:content'
+import { getSlug } from '@chassis-ui/docs'
+
+const { img, alt, wide } = Astro.props
+
+// Get component and tab from URL
+const path = Astro.url.pathname
+const matches = path.match(/\/figma\/([^\/]+)\/([^\/]+)/)
+
+let frontmatter = null
+if (matches) {
+  const [, component, tab] = matches
+  const entry = await getEntry('figma', `${component}/${tab}`)
+  frontmatter = entry?.data
+}
+---
+
+<div class={`cx-variant` + (wide ? ` wide` : '')}>
+  <div class="cxd-example">
+    <img
+      src={`https://placehold.co/256x96` +
+        (frontmatter?.title ? `?${getSlug(frontmatter?.title)}-${img}.svg` : '')}
+      alt={alt ? alt : `Variant example image ${frontmatter?.title}`}
+    />
+  </div>
+  <div class="cxd-variant-content">
+    <slot />
+  </div>
+</div>

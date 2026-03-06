@@ -9,9 +9,12 @@ import type { Element } from 'hast'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { getConfig } from './config'
 // import { rehypeCxTable } from './rehype'
+import { rehypeCxSpec, rehypeCxToken, rehypeCxProp } from './rehype'
 import { remarkCxConfig, remarkCxDocsref } from './remark'
 import { configurePrism } from './prism'
 import { rehypeCxTable } from '@chassis-ui/docs'
+import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-list'
+
 import {
   docsDirectory,
   getChassisDocsPath,
@@ -62,9 +65,15 @@ export function chassis(): AstroIntegration[] {
                     test: (element: Element) => element.tagName.match(headingsRangeRegex)
                   }
                 ],
-                rehypeCxTable
+                rehypeCxTable,
+                rehypeCxSpec,
+                rehypeCxToken,
+                rehypeCxProp
               ],
-              remarkPlugins: [remarkCxConfig, remarkCxDocsref]
+              remarkPlugins: [remarkCxConfig, remarkCxDocsref, remarkDefinitionList],
+              remarkRehype: {
+                handlers: defListHastHandlers
+              }
             }
           })
         },

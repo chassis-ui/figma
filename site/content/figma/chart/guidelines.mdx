@@ -1,0 +1,75 @@
+---
+title: Chart
+description: Data visualization components that represent information graphically through various chart types like bar, line, pie, and donut charts.
+---
+
+# Guidelines
+
+Comprehensive guidelines for customizing chart components and displaying accurate data while maintaining component integrity without the need for detaching components.
+
+## Gauge Chart Component
+
+Create personalized gauge visualizations by customizing arc parameters through the built-in arc tool settings. These adjustments allow for flexible gauge configurations while preserving component functionality.
+
+### Bottom Start Configuration
+
+Set the starting angle of circles to **90°** to position the gauge opening at the bottom. Adjust the sweep of the background arc to **100%** to create a complete circular gauge.
+
+**Use case**: Standard gauge implementations, dashboard metrics, or when the gauge reading naturally starts from the bottom position.
+
+### Top Start Configuration
+
+Set the starting angle of circles to **-90°** to position the gauge opening at the top. Adjust the sweep of the background arc to **100%** to create a complete circular gauge.
+
+**Use case**: Inverted gauges, countdown timers, or when visual hierarchy requires top-oriented reading patterns.
+
+### Semicircle Configuration
+
+Set the starting angle of circles to **180°** and adjust the sweep of the background to **50%** to create a semicircle gauge.
+
+**Use case**: Space-efficient dashboards, compact metric displays, or when vertical space is limited.
+
+### Horseshoe Configuration
+
+Set the starting angle of circles to **135°** and adjust the sweep of the background to **75%** to create a horseshoe-shaped gauge.
+
+**Use case**: Automotive-style dashboards, performance meters, or when creating familiar gauge aesthetics with clear start/end points.
+
+## Donut Chart Component
+
+Customize donut charts for accurate data representation through segment manipulation and visual adjustments while maintaining proportional accuracy.
+
+### Custom Data Values
+
+Adjust the **start angle** and **sweep values** of individual segments to create precise data representations that match your actual dataset proportions.
+
+**Best practice**: Ensure all segment values sum to 360° for complete data representation and visual accuracy.
+
+### Creating Segment Gaps
+
+To create visual separation between donut chart segments, reduce each segment's **sweep value by 0.25°**. This creates subtle gaps that improve segment distinction and visual clarity.
+
+**Implementation**: For better visual separation, subtract 0.25 from the calculated sweep value of each segment while maintaining proportional data accuracy.
+
+### Converting to Pie Charts
+
+Transform donut charts into pie charts by setting the **inner radius** of circles to **0**, setting the **stroke width** to **1**, and applying appropriate fill colors to create solid pie segments.
+
+**Use case**: When emphasizing total composition over individual segment comparison, or when space constraints favor pie chart presentation.
+
+## Bar Chart Component
+
+Create accurate bar chart representations through component variants and layout adjustments while maintaining responsive behavior.
+
+### Accurate Bar Values
+
+Utilize the **"_ Bar Value"** component variants to create data-driven bar heights that accurately represent your dataset values.
+
+**Best practice**: Map your data values to proportional bar heights for truthful data representation and maintain consistent scaling across all bars.
+
+### Responsive Bar Widths
+
+Adjust bar widths dynamically by modifying the **gap settings** in auto layout configurations. Bar components use auto layout with fill mode, allowing for flexible width adjustments.
+
+**Implementation**:     s.
+

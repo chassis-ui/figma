@@ -21,7 +21,8 @@ const docsSchema = z.object({
   sections: z
     .object({
       description: z.string(),
-      title: z.string()
+      title: z.string(),
+      slug: z.string().optional()
     })
     .array()
     .optional(),
@@ -33,6 +34,7 @@ const docsSchema = z.object({
 const figmaSchema = z.object({
   aliases: z.string().or(z.string().array()).optional(),
   description: z.string(),
+  link: z.string(),
   title: z.string(),
   toc: z.boolean().optional()
 })

@@ -1,0 +1,201 @@
+---
+title: Accordion
+description: Collapsible content sections that organize and display information in a space-efficient vertical layout, allowing users to expand and collapse panels to reveal or hide content.
+---
+
+import ResponsiveImage from "@chassis-ui/docs/components/ResponsiveImage.astro";
+
+# Specs
+
+Design specifications and implementation details for accordion components, defining precise measurements, spacing relationships, and visual properties across different variants and states. These specifications ensure consistent implementation and proper integration within design systems.
+
+<SpecsLegend />
+
+**Legend:**
+
+- Brackets ([ ]) denote a component variant placeholder.
+- Full emphasis indicates a value specific to that variant.
+- Dimmed indicates a value unchanged from the default variant.
+
+## Accordion Item Component
+
+Individual collapsible content section specifications that define the precise measurements, spacing relationships, and visual properties for single accordion elements across different size variants and interaction states.
+
+### Design Tokens
+
+Specific measurements and visual properties for accordion item headers, content areas, borders, and spacing that ensure consistent appearance and proper interaction affordances across all size variants and spacing configurations.
+
+<CxSpec>
+
+### 1. Accordion Item
+
+borderColor:
+: color.accordion.border-main
+
+borderWidthBottom:
+: borderWidth.accordion.main
+
+---
+
+### 2. Title Frame
+
+Description
+
+@ flush:
+: false
+
+@ open:
+: false
+
+verticalPadding:
+: space.accordion.medium-title-padding-y
+
+horizontalPadding:
+: space.accordion.medium-title-padding-x
+
+itemSpacing:
+: space.accordion.medium-gap
+
+fill:
+: color.accordion.title-bg-idle
+
+@ flush:
+: true
+
+_verticalPadding:_
+: space.accordion.medium-title-padding-y
+
+horizontalPadding:
+: none
+
+_itemSpacing:_
+: space.accordion.medium-gap
+
+_fill:_
+: color.accordion.title-bg-idle
+
+@ flush:
+: true
+
+_verticalPadding:_
+: space.accordion.medium-title-padding-y
+
+_horizontalPadding:_
+: space.accordion.medium-title-padding-x
+
+_itemSpacing:_
+: space.accordion.medium-gap
+
+fill:
+: color.accordion.title-bg-active
+
+---
+
+### 3. Body Frame
+
+@ flush:
+: false
+
+paddingTop:
+: space.accordion.medium-body-padding-t
+
+paddingRight:
+: space.accordion.medium-body-padding-e
+
+paddingBottom:
+: space.accordion.medium-body-padding-b
+
+paddingLeft:
+: space.accordion.medium-body-padding-s
+
+itemSpacing:
+: space.context.medium
+
+fill:
+: color.accordion.item-bg-color
+
+@ flush:
+: true
+
+_paddingTop:_
+: space.accordion.medium-body-padding-t
+
+paddingRight:
+: none
+
+_paddingBottom:_
+: space.accordion.medium-body-padding-b
+
+paddingLeft:
+: none
+
+_itemSpacing:_
+: space.context.medium
+
+_fill:_
+: color.accordion.item-bg-color
+
+### 4. Indicator Icon
+
+@ open:
+: false
+
+height:
+: size.accordion.medium-indicator
+
+width:
+: size.accordion.medium-indicator
+
+fill:
+: color.accordion.indicator-idle
+
+@ open:
+: true
+
+_height:_
+: size.accordion.medium-indicator
+
+_width:_
+: size.accordion.medium-indicator
+
+fill:
+: color.accordion.indicator-active
+
+### 5. Title Text
+
+@ open:
+: false
+
+fill:
+: color.accordion.title-fg-idle
+
+typography:
+: font.accordion.medium-title
+
+@ open:
+: true
+
+fill:
+: color.accordion.title-fg-active
+
+_typography:_
+: font.accordion.medium-title
+
+### 6. Body Text
+
+fill:
+: color.accordion.item-fg-color
+
+typography:
+: font.accordion.medium-body
+
+</CxSpec>
+
+## Accordion Component
+
+Complete accordion system specifications that define the overall measurements, spacing relationships, and visual coordination for multiple collapsible sections working together as unified content organization elements.
+
+### Design Tokens
+
+Group-level measurements and spacing specifications that control the visual relationship between multiple accordion items and ensure proper content hierarchy and interaction flow within accordion implementations.
+
