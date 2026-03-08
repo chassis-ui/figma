@@ -1,0 +1,44 @@
+---
+import Card from '@components/Card.astro'
+---
+
+<section class="py-6xlarge">
+  <div class="container">
+    <div class="row justify-content-center mb-5xlarge">
+      <div class="col-large-8 text-center">
+        <h2 class="font-hero mb-medium lh-small">
+          <span class="font-normal">Why Leading Teams Choose</span>
+          <span class="text-nowrap">Chassis Figma</span>
+        </h2>
+        <p class="font-lead">
+          Chassis Figma gives your team a complete design system foundation with production-ready
+          components, flexible theming, and comprehensive documentation—eliminating months of setup work.
+        </p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-medium-3">
+      <div class="col">
+        <Card
+          title="Start Building Immediately"
+          body="Skip the tedious component setup. Get 100+ production-ready components with variants, states, and responsive behavior built-in."
+          icon="rocket-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Design System Foundation"
+          body="Built on design tokens and variables for consistent theming. Switch between light/dark modes and create custom brand themes effortlessly."
+          icon="swatchbook-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Developer-Friendly Handoff"
+          body="Named properties, documented behaviors, and token-based styling ensure smooth design-to-development workflows with minimal confusion."
+          icon="code-outline"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import Card from '@components/Card.astro'
+---
+
+<section class="py-6xlarge">
+  <div class="container">
+    <div class="row justify-content-center mb-5xlarge">
+      <div class="col-large-8 text-center">
+        <h2 class="font-hero mb-medium">Complete Design System in Figma</h2>
+        <p class="font-lead">
+          Everything you need to design and document modern interfaces—components, patterns, tokens,
+          and guidelines—all built with best practices and easy to customize.
+        </p>
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-medium-2 g-xlarge">
+      <div class="col">
+        <Card
+          title="100+ UI Components"
+          body="Complete library of buttons, forms, navigation, modals, tables, and complex components. Every component includes variants, states, and responsive behavior."
+          icon="cube-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Design Token System"
+          body="Colors, typography, spacing, shadows, and more defined as variables. Create custom themes by swapping token values—no component rebuilding required."
+          icon="swatchbook-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Asset Components"
+          body="Text, icons, backgrounds, skeletons, and switches as swappable assets. Modify content without detaching from the main component library."
+          icon="image-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Documentation Templates"
+          body="Pre-built components for specs, grids, token tables, and style guides. Create professional documentation directly in Figma with consistent structure."
+          icon="book-open-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Light & Dark Modes"
+          body="Full theming support with semantic color tokens. Switch between modes instantly, preview components in both themes, and create custom color schemes."
+          icon="moon-outline"
+        />
+      </div>
+      <div class="col">
+        <Card
+          title="Responsive Components"
+          body="Auto-layout configured for responsive behavior. Components adapt to content and container sizes with mobile, tablet, and desktop variants included."
+          icon="phone-outline"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -15,7 +15,6 @@
   icon: book-solid
   icon_color: blue
   pages:
-    - title: Using Templates
     - title: Working With Themes
     - title: Updating Libraries
     - title: Exporting Assets
