@@ -1,0 +1,325 @@
+---
+title: Asset Libraries
+description: Purpose and guidelines for asset libraries that provide a comprehensive understanding of how to create cohesive and user-friendly interfaces using the Chassis Design System.
+toc: true
+---
+
+<Callout type="info">
+Asset library files (`cx.asset.*`) can be found on Figma Community page of Chassis UI. These files contain content layer components—text, icons, backgrounds, and more—that keep your designs consistent with the design system while allowing flexibility.
+</Callout>
+
+## Overview
+
+Asset libraries are collections of special Figma components that serve as the content layers for Chassis UI components. Instead of using plain text, icons, or images directly, Chassis components use swappable asset instances. 
+
+This approach allows you to modify component content and styling without detaching from the main component library, maintaining design system consistency while enabling flexibility.
+
+### The Problem
+
+In traditional Figma component libraries, customizing content often requires either:
+
+1. **Overriding text layers**: Limited to text changes only
+2. **Detaching instances**: Breaks connection to the source component
+3. **Creating variants**: Leads to exponential variant combinations
+
+### The Asset Solution
+
+Asset components solve these problems by making content layers swappable instances:
+
+```
+Button Component
+├─ Background   -> Swappable with multi-layer background asset (eg. liquid glass)
+├─ Text Asset   -> Swappable with skeleton for loading states
+└─ Icon Asset   -> Swappable with spinner while action is processing
+```
+
+**Benefits**:
+- ✅ Swap content without detaching
+- ✅ Maintain component updates from library
+- ✅ Support complex state changes (e.g., loading skeletons)
+- ✅ Enable consistent typography and iconography
+- ✅ Reduce variant proliferation
+
+### Assets vs Components
+
+Chassis uses two distinct types of components:
+
+- **Components** (formally "UI Components") are functional interface elements like buttons, cards, and modals. They have specific purposes and behaviors in your design.
+- **Assets** (formally "Asset Components") are content building blocks—text, icons, backgrounds, skeletons—that have no standalone meaning or function. They only become meaningful when used inside components as swappable content layers.
+
+This clear separation differs from Atomic Design, where the distinction between atoms and molecules can be ambiguous. In Chassis, if a component has no function or meaning by itself, it's an asset.
+
+## Text Assets
+
+Text assets provide consistent typography and enable advanced text presentations.
+
+### Basic Text
+
+Standard text components for labels, headings, body copy, button text, form labels, and menu items. They automatically adapt to text style variables and work seamlessly with auto-layout, ensuring consistent typography across all components.
+
+- Auto-layout compatible
+- Responds to text style variables
+- Consistent typography across themes
+
+### Stacked Text
+
+Multi-line text components for hierarchical information like card titles with subtitles, list items with descriptions, and form labels with helper text. These components maintain proper spacing between text elements and adapt to their container width.
+
+- Title + subtitle layouts with consistent spacing
+- Directional variants (horizontal/vertical)
+- Maintains hierarchical relationships
+
+### Description List
+
+Key-value pair text components for structured data like property specifications, data tables, details views, and settings configurations. Available in both horizontal and vertical layouts with consistent spacing.
+
+- Horizontal and vertical layouts
+- Consistent label-value spacing
+- Supports long-form values
+
+## Background Assets
+
+Background components provide consistent surface treatments and decorative elements.
+
+### Common Background
+
+Standard background shapes and patterns used for card backgrounds, section dividers, and surface elevation indicators. These backgrounds automatically respond to surface, border radius, and shadow variables for consistent theming.
+
+- Responds to surface variables
+- Supports border radius variables
+- Compatible with shadow variables
+
+### Separator Background
+
+Divider and rule components used for content section breaks, list item dividers, and navigation separators. Uses thickness variables and auto-layout to enable iOS-style indented separators that adapt to content.
+
+- Horizontal and vertical orientations
+- Variable-driven thickness control
+- Supports iOS-style content-indented layout
+
+### Balloon Background
+
+Speech bubble and callout backgrounds designed for tooltips, popovers, chat messages, and annotation callouts. These backgrounds include multiple pointer directions and rounded corner variants with shadow support for elevation.
+
+- Multiple pointer directions
+- Rounded corner variants
+- Shadow and elevation support
+
+## Icon Assets
+
+Icon assets ensure consistent iconography across all components. These assets provide a comprehensive library of icons, composite arrangements, and special symbols that adapt to your theme and maintain proper sizing.
+
+### Basic Icons
+
+Auto-layout glyph containers with pre-defined size variants using icon size variables. These containers hold glyph icons and provide consistent sizing across button icons, navigation icons, and status indicators.
+
+- Auto-layout glyph container
+- Size variants using icon size variables
+- Maintains consistent icon positioning
+
+### Stacked Icons
+
+Composite icon arrangements designed for icons with notification badges, layered status indicators, and icon + count combinations. Pre-defined stacking patterns ensure proper alignment across different badge positioning variants.
+
+- Pre-defined stacking patterns
+- Badge positioning variants
+- Maintains icon alignment
+
+### Glyphs
+
+Actual icon components (24×24 flattened vectors) masking a color layer. This structure ensures color overrides persist even when the icon component is swapped, making them ideal for any icon need across the interface.
+
+- 24×24 flattened vector icons
+- Color layer masking for persistent overrides
+- Ideal for all icon needs across the interface
+
+## Skeletons
+
+Skeleton assets provide loading state representations that replace actual content while data loads. These animated placeholders maintain the layout structure and give users visual feedback during loading.
+
+### Shape Skeletons
+
+Geometric placeholder shapes used for image placeholders, avatar loading states, and card media skeletons. Multiple geometric shapes with animated shimmer effects that respond to loading state variables.
+
+- Multiple geometric shapes
+- Animated shimmer effects
+- Responds to loading state variables
+
+### Text Skeletons
+
+Line-based placeholders for text content used in paragraph loading states, list item placeholders, and form label skeletons. Available in multiple line length variants with title + body combinations and animated loading effects.
+
+- Multiple line length variants
+- Title + body combinations
+- Animated loading effects
+
+**Example - Button Loading State**:
+
+```
+Normal State:  [Icon] Button Text
+Loading State: [Spinner] [Text Skeleton]
+```
+
+Swap text asset → text skeleton asset
+Swap icon asset → spinner asset
+
+## Spinners
+
+Animated loading indicators that signal processing or waiting states. These assets provide visual feedback for asynchronous operations with different styles for various contexts.
+
+### Circle Spinner
+
+Rotating circular loading indicator used for button loading states, page loading indicators, and async operation feedback. Available in multiple size variants with theme-aware colors and smooth rotation animation.
+
+- Multiple size variants
+- Theme-aware colors
+- Smooth rotation animation
+
+### Pulse Spinner
+
+Pulsing dot loading indicator used for inline loading states, subtle progress indicators, and chat typing indicators. Available in 1-3 dot variants with customizable pulse timing and a compact footprint for tight spaces.
+
+- 1-3 dot variants
+- Customizable pulse timing
+- Compact footprint
+
+## Switches
+
+Toggle and switch control assets that provide platform-specific switch designs. These interactive elements adapt to different design systems and platform guidelines.
+
+### Basic Switch
+
+Standard toggle switch component used for settings toggles, feature flags, and binary choice controls. Includes on/off and disabled states with touch-friendly sizing for comfortable interaction.
+
+- On/off and disabled states
+- Touch-friendly sizing
+- Theme-aware styling
+
+### iOS Switch
+
+Native iOS-style toggle switch designed for iOS app designs, platform-specific UIs, and applications requiring native feel. Fully compliant with iOS design guidelines including platform-accurate sizing and realistic animation timing.
+
+- iOS design guidelines compliant
+- Platform-accurate sizing
+- Realistic animation timing
+
+### Material Switch
+
+Native Material Design toggle switch for Android app designs and Material Design implementations. Follows Material Design 3 specifications with proper sizing, elevation, and state ripple effects.
+
+- Material Design 3 compliant
+- Android platform styling
+- State ripple animations
+
+## Image Assets
+
+Image placeholder assets provide easy-to-use containers for visual content. These assets feature empty image-fill layers that display as placeholders until filled with actual images through drag-drop or copy-paste.
+
+### Basic Placeholder
+
+Simple image placeholder with an empty image-fill layer over a cross mark. Appears as a placeholder when empty and automatically displays the image when filled by dragging, dropping, or pasting any image file.
+
+- Empty image-fill layer over cross mark indicator
+- Drag-drop and copy-paste image support
+- Color-mode visibility support
+
+### Media Asset
+
+Basic placeholder containers with predefined height variants for consistent media presentation. Ideal for adaptive cropping card images, video thumbnails, gallery items, and any content requiring fixed aspect ratios.
+
+- Predefined height variants
+- Consistent aspect ratio containers
+- Supports adaptive cropping patterns
+
+## Rating Assets
+
+Rating component assets provide visual feedback for ratings and reviews. These icon-based stacks offer flexible sizing and value variants for displaying user ratings, quality indicators, and review scores.
+
+### Stars Rating
+
+Icon stack rating component with star icons for traditional rating displays. Includes sizing variants and rating value options from 0 to 5 stars for displaying product ratings, reviews, and quality indicators.
+
+- Icon stack with sizing variants
+- Rating value variants (0-5 stars)
+- Traditional rating display pattern
+
+### Hearts Rating
+
+Icon stack rating component with heart icons for favorites and preference ratings. Offers sizing variants and rating value options for displaying user favorites, preference levels, and engagement metrics.
+
+- Icon stack with sizing variants
+- Rating value variants (heart-based)
+- Favorites and preference display pattern
+
+## Working with Assets
+
+### Swapping Assets
+
+1. Select component instance
+2. Find asset layer in right panel properties
+3. Click instance swap icon
+4. Choose new asset from menu
+
+### Best Practices
+
+**Do**:
+- ✅ Use assets for all content layers
+- ✅ Maintain asset library organization
+- ✅ Test asset swaps across themes
+- ✅ Document custom asset usage
+
+**Don't**:
+- ❌ Detach assets to make changes
+- ❌ Mix asset types incorrectly
+- ❌ Create duplicate custom assets
+- ❌ Override asset instance properties
+
+## Custom Assets
+
+When creating custom assets for your project:
+
+1. **Follow naming conventions**: `Asset/Category/Name`
+2. **Use auto-layout**: Enable responsive behavior
+3. **Apply variables**: Use variables for all styling
+4. **Test thoroughly**: Verify across all themes and sizes
+5. **Document usage**: Add descriptions and examples
+
+### Asset Library Structure
+
+```
+Assets/
+├── Text/
+│   ├── Basic/
+│   ├── Stacked/
+│   └── Description-List/
+├── Background/
+│   ├── Common/
+│   ├── Separator/
+│   └── Balloon/
+├── Icon/
+│   ├── Basic/
+│   ├── Stacked/
+│   └── Glyphs/
+├── Image/
+│   ├── Basic-Placeholder/
+│   └── Media-Asset/
+├── Skeleton/
+│   ├── Shape/
+│   └── Text/
+├── Spinner/
+│   ├── Circle/
+│   └── Pulse/
+├── Switch/
+│   ├── Basic/
+│   ├── iOS/
+│   └── Material/
+└── Rating/
+    ├── Stars/
+    └── Hearts/
+```
+
+## Next Steps
+
+- **[Variables & Styles](./variables-styles)** - Learn how assets respond to design variables
+- **[Working with Templates](../design-guidelines/working-with-templates)** - See assets in action
+- **[Component Documentation](/figma)** - Explore component-specific asset usage

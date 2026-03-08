@@ -6,14 +6,16 @@
   pages:
     - title: Introduction
     - title: Library Setup
-    - title: Variables & Styles
-    - title: Component Assets
+    - title: Tokens Library
+    - title: Asset Libraries
+    - title: Component Libraries
+    - title: Guide Libraries
 
-- title: Design Guidelines
-  icon: lightbulb-solid
+- title: Design with Chassis
+  icon: book-solid
   icon_color: blue
   pages:
-    - title: Working with Templates
+    - title: Using Templates
+    - title: Working With Themes
+    - title: Updating Libraries
     - title: Exporting Assets
-    - title: Theme Switching
-    - title: Updating the Library

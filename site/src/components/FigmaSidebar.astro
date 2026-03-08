@@ -1,5 +1,5 @@
 ---
-import { getFigmaSidebarData } from '../libs/figma'
+import { getFigmaComponentsData } from '@libs/figma'
 import { getData } from '@libs/data'
 import { getConfig } from '@libs/config'
 import { docsPages } from '@libs/content'
@@ -13,7 +13,7 @@ interface Props {
 
 const { currentComponent = '' } = Astro.props
 
-const figmaComponents = await getFigmaSidebarData()
+const figmaComponents = await getFigmaComponentsData()
 
 const formatComponentName = (component: string) => {
   return component

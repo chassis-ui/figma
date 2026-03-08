@@ -12,7 +12,14 @@ export function sortTabs(tabs: string[]): TabType[] {
     .sort((a, b) => order.indexOf(a) - order.indexOf(b))
 }
 
-export async function getFigmaSidebarData() {
+export function formatComponentName(component: string): string {
+  return component
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
+
+export async function getFigmaComponentsData() {
   const allFigma = await getCollection('figma')
   const componentMap = new Map<string, Set<TabType>>()
 
@@ -32,7 +39,7 @@ export async function getFigmaSidebarData() {
     .sort((a, b) => a.name.localeCompare(b.name))
 }
 
-export async function getAllComponents(): Promise<string[]> {
+export async function getFigmaComponents(): Promise<string[]> {
   const allFigma = await getCollection('figma')
   const components = new Set<string>()
 
