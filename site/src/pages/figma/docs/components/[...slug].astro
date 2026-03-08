@@ -25,9 +25,9 @@ const { figmaPage, component, tab, data } = Astro.props
 const { Content, headings } = await render(figmaPage)
 
 const frontmatter = {
+  ...figmaPage.data,
   title: figmaPage.data.title || `${component} - ${tab}`,
-  description: figmaPage.data.description || `${tab} for ${component} component`,
-  data: figmaPage.data
+  description: figmaPage.data.description || `${tab} for ${component} component`
 }
 
 // Get all tabs for this component
