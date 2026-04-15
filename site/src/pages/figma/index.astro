@@ -1,16 +1,15 @@
 ---
 import BaseLayout from '@chassis-ui/docs/layouts/BaseLayout.astro'
-import SectionHero from '@components/home/SectionHero.astro'
-import SectionTeams from '@components/home/SectionTeams.astro'
-import SectionRoles from '@components/home/SectionRoles.astro'
-import SectionFeatures from '@components/home/SectionFeatures.astro'
-import SectionHow from '@components/home/SectionHow.astro'
+import HeroSection from '@components/homepage/HeroSection.astro'
+import IntroSection from '@components/homepage/IntroSection.astro'
+import FeaturesSection from '@components/homepage/FeaturesSection.astro'
+import HowSection from '@components/homepage/HowSection.astro'
 ---
 
-<BaseLayout title="Chassis Figma - Production-Ready Design System Components">
-  <SectionHero />
-  <SectionTeams />
-  <SectionRoles />
-  <SectionFeatures />
-  <SectionHow />
+<BaseLayout title="Chassis Figma - Tokenized Figma Component System">
+  <HeroSection />
+  <hr class="hr container" />
+  <IntroSection />
+  <FeaturesSection />
+  <HowSection />
 </BaseLayout>

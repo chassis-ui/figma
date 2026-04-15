@@ -1,11 +1,11 @@
-title:                  "Chassis Figma Library"
+title:                  "Chassis Figma - Tokenized Figma Component Library"
 baseURL:                "https://chassis-ui.com/figma"
 
 docsDir:                "site"
 docsPath:                "/figma/docs"
 
-subtitle:               "A comprehensive SVG icon library with 478+ optimized icons for web and mobile applications."
-description:            "Chassis Icons provides a complete set of SVG icons with font generation, sprite optimization, and distribution packages for multiple platforms."
+subtitle:               "A comprehensive tokenized Figma component library for building scalable design systems."
+description:            "Chassis Figma provides a complete set of tokenized components with customizable themes, responsive layouts, and design tokens for consistent UI development."
 authors:                "Ozgur Gunes"
 
 current_version:        "0.1.0"
