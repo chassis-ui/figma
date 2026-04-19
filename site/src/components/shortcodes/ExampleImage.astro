@@ -1,0 +1,32 @@
+---
+import { getEntry } from 'astro:content'
+import ResponsiveImage from '@chassis-ui/docs/components/ResponsiveImage.astro'
+
+const { img, alt } = Astro.props
+
+// Get component and tab from URL
+const path = Astro.url.pathname
+const matches = path.match(/\/figma\/docs\/components\/([^\/]+)\/([^\/]+)/)
+
+let frontmatter = null
+let component = null
+if (matches) {
+  const [, comp, tab] = matches
+  component = comp
+  const entry = await getEntry('figma', `${comp}/${tab}`)
+  frontmatter = entry?.data
+}
+---
+
+<div class="cxd-example p-medium p-xlarge-3xlarge mb-xlarge">
+  <ResponsiveImage
+    imgPath={`/static/images/figma/${component}/light/${img}.png`}
+    alt={alt ? alt : `${frontmatter?.title} example image`}
+    classes="visible-light"
+  />
+  <ResponsiveImage
+    imgPath={`/static/images/figma/${component}/dark/${img}.png`}
+    alt={alt ? alt : `${frontmatter?.title} example image`}
+    classes="visible-dark"
+  />
+</div>

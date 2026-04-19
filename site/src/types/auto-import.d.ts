@@ -17,6 +17,7 @@ export declare global {
   export const CxVariant: typeof import('@shortcodes/CxVariant.astro').default
   export const Embed: typeof import('@shortcodes/Embed.astro').default
   export const Example: typeof import('@shortcodes/Example.astro').default
+  export const ExampleImage: typeof import('@shortcodes/ExampleImage.astro').default
   export const ResponsiveImage: typeof import('@shortcodes/ResponsiveImage.astro').default
   export const SpecsLegend: typeof import('@shortcodes/SpecsLegend.astro').default
   export const TokensLegend: typeof import('@shortcodes/TokensLegend.astro').default

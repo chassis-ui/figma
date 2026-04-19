@@ -1,9 +1,8 @@
 ---
 import { getEntry } from 'astro:content'
-import { getSlug } from '@chassis-ui/docs'
 import ResponsiveImage from '@chassis-ui/docs/components/ResponsiveImage.astro'
 
-const { img, alt, wide } = Astro.props
+const { img, alt, wide, large } = Astro.props
 
 // Get component and tab from URL
 const path = Astro.url.pathname
@@ -17,22 +16,22 @@ if (matches) {
   const entry = await getEntry('figma', `${comp}/${tab}`)
   frontmatter = entry?.data
 }
-
-// Construct image path - img prop should contain full filename with extension
-const imageSrc = component
-  ? `/static/images/figma/${component}/${img}`
-  : `https://placehold.co/256x96`
 ---
 
-<div class={`cx-variant` + (wide ? ` wide` : '')}>
-  <div class="cxd-example">
+<div
+  class={`cx-variant mb-xlarge` + (wide ? ` flex-column-reverse gap-medium` : ' gap-xlarge-xlarge')}
+>
+  <div
+    class={`cxd-example p-medium p-xlarge-3xlarge align-content-center` +
+      (!wide ? (large ? ` col-xlarge-7` : ' col-xlarge-5') : '')}
+  >
     <ResponsiveImage
-      imgPath={`${imageSrc}.png`}
+      imgPath={`/static/images/figma/${component}/light/${img}.png`}
       alt={alt ? alt : `${frontmatter?.title} variant example image`}
       classes="visible-light"
     />
     <ResponsiveImage
-      imgPath={`${imageSrc}-dark.png`}
+      imgPath={`/static/images/figma/${component}/dark/${img}.png`}
       alt={alt ? alt : `${frontmatter?.title} variant example image`}
       classes="visible-dark"
     />

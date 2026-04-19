@@ -10,7 +10,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { getConfig } from './config'
 // import { rehypeCxTable } from './rehype'
 import { rehypeCxSpec, rehypeCxToken, rehypeCxProp } from './rehype'
-import { remarkCxConfig, remarkCxDocsref } from './remark'
+import { remarkCxConfig, remarkCxDocsref, remarkCxSpec } from './remark'
 import { configurePrism } from './prism'
 import { rehypeCxTable } from '@chassis-ui/docs'
 import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-list'
@@ -70,7 +70,7 @@ export function chassis(): AstroIntegration[] {
                 rehypeCxToken,
                 rehypeCxProp
               ],
-              remarkPlugins: [remarkCxConfig, remarkCxDocsref, remarkDefinitionList],
+              remarkPlugins: [remarkCxConfig, remarkCxDocsref, remarkCxSpec, remarkDefinitionList],
               remarkRehype: {
                 handlers: defListHastHandlers
               }

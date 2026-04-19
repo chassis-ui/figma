@@ -33,6 +33,7 @@ const tabItems = sortedTabs.map((tabName) => ({
 const bodyProps: LayoutOverridesHTMLAttributes<'body'> = {}
 
 if (frontmatter.toc) {
+  bodyProps['class'] = 'docs-body'
   bodyProps['data-cx-spy'] = 'scroll'
   bodyProps['data-cx-target'] = '#TableOfContents'
 }

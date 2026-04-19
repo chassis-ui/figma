@@ -37,47 +37,6 @@ export const rehypeCxSpec: Plugin<[], Root> = function () {
                 firstChild.value = firstChild.value.substring(1)
               }
             }
-
-            // Process paragraph elements - check for lines starting with "%" followed by a number
-            if (childNode.tagName === 'p' && childNode.children) {
-              const firstChild = childNode.children[0]
-              if (firstChild?.type === 'text') {
-                const match = firstChild.value.match(/^%(\d+)(.*)/)
-                if (match) {
-                  // Add a class to the paragraph instead of wrapping
-                  if (!childNode.properties) {
-                    childNode.properties = {}
-                  }
-                  const existingClass = childNode.properties.class
-                  childNode.properties.class = existingClass ? `${existingClass} number` : 'number'
-                  // Remove the "%" character
-                  firstChild.value = firstChild.value.substring(1)
-                }
-              }
-            }
-
-            // Process h3 elements - wrap number in span if starts with number followed by dot
-            if (childNode.tagName === 'h3' && childNode.children) {
-              const firstChild = childNode.children[0]
-              if (firstChild?.type === 'text') {
-                const match = firstChild.value.match(/^(\d+)\.\s*(.*)/)
-                if (match) {
-                  const number = match[1]
-                  const remainingText = match[2]
-                  // Replace the first child with a span containing the number and the remaining text
-                  childNode.children[0] = {
-                    type: 'element',
-                    tagName: 'span',
-                    properties: { class: 'number' },
-                    children: [{ type: 'text', value: number }]
-                  }
-                  // Add the remaining text if it exists
-                  if (remainingText) {
-                    childNode.children.splice(1, 0, { type: 'text', value: remainingText })
-                  }
-                }
-              }
-            }
           })
         }
       },
@@ -172,7 +131,7 @@ export const rehypeCxProp: Plugin<[], Root> = function () {
         if (isCxProp) {
           // Process all h4 children of CxProp
           visit(node, 'element', (childNode) => {
-            if (childNode.tagName === 'h4' && childNode.children) {
+            if (childNode.tagName === 'h3' && childNode.children) {
               const firstChild = childNode.children[0]
               if (firstChild?.type === 'text' && firstChild.value.includes(':')) {
                 const colonIndex = firstChild.value.indexOf(':')
