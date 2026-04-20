@@ -2,6 +2,31 @@ import type { Root } from 'hast'
 import type { Plugin } from 'unified'
 import { visit } from 'unist-util-visit'
 
+// Helper function to process dl and dt elements
+function processDlDt(childNode: any) {
+  // Process <dl> elements - add "row" class
+  if (childNode.tagName === 'dl') {
+    if (!childNode.properties) {
+      childNode.properties = {}
+    }
+    // childNode.properties.class = existingClass ? `${existingClass} row` : 'row'
+  }
+
+  // Process <dt> elements - add "variant" class if text starts with "@"
+  if (childNode.tagName === 'dt' && childNode.children) {
+    const firstChild = childNode.children[0]
+    if (firstChild?.type === 'text' && firstChild.value.startsWith('@')) {
+      if (!childNode.properties) {
+        childNode.properties = {}
+      }
+      const existingClass = childNode.properties.class
+      childNode.properties.class = existingClass ? `${existingClass} variant` : 'variant'
+      // Remove the "@" character
+      firstChild.value = firstChild.value.substring(1)
+    }
+  }
+}
+
 // A rehype plugin to apply custom formatting to content within `<cxSpec>` or `<CxSpec>` tags
 export const rehypeCxSpec: Plugin<[], Root> = function () {
   return function rehypeCxSpecPlugin(ast) {
@@ -16,27 +41,30 @@ export const rehypeCxSpec: Plugin<[], Root> = function () {
         if (isCxSpec) {
           // Process all children of cxSpec
           visit(node, 'element', (childNode) => {
-            // Process <dl> elements - add "row" class
-            if (childNode.tagName === 'dl') {
-              if (!childNode.properties) {
-                childNode.properties = {}
-              }
-              // childNode.properties.class = existingClass ? `${existingClass} row` : 'row'
-            }
+            processDlDt(childNode)
+          })
+        }
+      },
+      true
+    )
+  }
+}
 
-            // Process <dt> elements - add "variant" class if text starts with "@"
-            if (childNode.tagName === 'dt' && childNode.children) {
-              const firstChild = childNode.children[0]
-              if (firstChild?.type === 'text' && firstChild.value.startsWith('@')) {
-                if (!childNode.properties) {
-                  childNode.properties = {}
-                }
-                const existingClass = childNode.properties.class
-                childNode.properties.class = existingClass ? `${existingClass} variant` : 'variant'
-                // Remove the "@" character
-                firstChild.value = firstChild.value.substring(1)
-              }
-            }
+// A rehype plugin to apply custom formatting to content within `<CxVariant>` tags
+export const rehypeCxVariant: Plugin<[], Root> = function () {
+  return function rehypeCxVariantPlugin(ast) {
+    visit(
+      ast,
+      (node) => {
+        // Check if we're entering a CxVariant component (any case variation)
+        const isCxVariant =
+          node.type === 'mdxJsxFlowElement' &&
+          (node.name === 'CxVariant' || node.name === 'cxVariant' || node.name === 'cxvariant')
+
+        if (isCxVariant) {
+          // Process all children of CxVariant
+          visit(node, 'element', (childNode) => {
+            processDlDt(childNode)
           })
         }
       },
@@ -59,6 +87,8 @@ export const rehypeCxToken: Plugin<[], Root> = function () {
         if (isCxToken) {
           // Process all children of CxToken
           visit(node, 'element', (childNode) => {
+            processDlDt(childNode)
+
             if (!childNode.children) return
 
             // Process text nodes that contain :pattern:
@@ -131,6 +161,8 @@ export const rehypeCxProp: Plugin<[], Root> = function () {
         if (isCxProp) {
           // Process all h4 children of CxProp
           visit(node, 'element', (childNode) => {
+            processDlDt(childNode)
+
             if (childNode.tagName === 'h3' && childNode.children) {
               const firstChild = childNode.children[0]
               if (firstChild?.type === 'text' && firstChild.value.includes(':')) {

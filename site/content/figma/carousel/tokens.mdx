@@ -1,6 +1,7 @@
 ---
 title: Carousel
 description: Slideshow components that cycle through multiple pieces of content such as images or cards in a rotating display format.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,23 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all carousel components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: space.page.large-padding-y | :base: \{space.unit.32\} |
+| :shared: space.page.large-padding-x | :base: \{space.unit.32\} |
+| :shared: space.page.large-gap | :base: \{grid.gutter.medium\} |
+| :shared: space.page.small-padding-y | :base: \{space.unit.16\} |
+| :shared: space.page.small-padding-x | :base: \{space.unit.16\} |
+| :shared: space.page.small-gap | :base: \{grid.gutter.medium\} |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.small | :base: \{size.unit.12\} |
+</CxTable>
+
+</CxToken>

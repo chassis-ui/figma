@@ -1,120 +1,218 @@
 ---
 title: Date Picker
 description: Input components that provide a calendar interface for users to select dates, date ranges, or specific time periods.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of date picker components for temporal selection and calendar navigation management.
 
-## Day Item Props
+## Day Item
 
 Properties that define the visual state and interactive behavior of individual date elements within calendar structures.
 
-### Figma Component Props
+<ExampleImage img="day-item-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### state: variant
+### state: variant
 
 Controls the visual state and interactive feedback of the day element based on date context, user interaction, and selection status.
 
-## Nav Item Props
+- **default**
+- today
+- weekend
+- outside
+- active
+- range-start
+- range-end
+- range-middle
+- range-today
+- hover
+- hover-today
 
-Properties that define the visual state and navigation functionality of temporal movement elements within date picker interfaces.
+</CxProp>
 
-### Figma Component Props
+## Nav Item
 
-Component properties specific to Figma design system implementation.
+Properties that define the visual type, state, and navigation functionality of temporal movement elements within date picker interfaces.
 
-#### type: variant
+<ExampleImage img="nav-item-props" />
 
-Controls the navigation functionality and presentation format of the navigation element based on temporal movement requirements.
+<CxProp>
 
-#### state: variant
+### type: variant
+
+Controls the navigation functionality and directional role of the navigation element based on temporal movement requirements.
+
+- **dropdown**
+- prev
+- next
+
+### state: variant
 
 Controls the interactive state and visual feedback of the navigation element based on user interaction and availability status.
 
-#### has-caret: boolean
+- **idle**
+- hover
+- press
 
-Controls the visibility of dropdown indicator that signals available dropdown functionality for direct month or year selection within navigation components.
+### has-caret: boolean
 
-## Month Item Props
+@type:
+: dropdown
 
-Properties that define the visual state and interactive behavior of individual month elements within year selection interfaces.
+Controls the visibility of a dropdown indicator that signals available selection functionality for direct month or year navigation.
 
-### Figma Component Props
+- **true**
+- false
 
-Component properties specific to Figma design system implementation.
+</CxProp>
 
-#### state: variant
+## Label Item
 
-Controls the visual state and interactive feedback of the month element based on user interaction and selection status.
+Properties that define the visual state and interactive behavior of label elements within year and month selection interfaces.
 
-## Title Props
+<ExampleImage img="label-item-props" />
 
-Properties that define the visual state and navigation functionality of header elements that provide temporal context and navigation controls.
+<CxProp>
 
-### Figma Component Props
+### state: variant
 
-Component properties specific to Figma design system implementation.
+Controls the visual state and interactive feedback of the label element based on user interaction and selection status.
 
-#### type: variant
+- **idle**
+- hover
+- active
 
-Controls the navigation interface structure and temporal display format of the title element based on date picker complexity requirements.
+</CxProp>
 
-## Weekdays Props
+## Title Row
 
-Properties that define the visual state and content presentation of weekday header elements within calendar layouts.
+Properties that define the navigation interface structure and temporal display format of header elements within calendar layouts.
 
-### Figma Component Props
+<ExampleImage img="title-row-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
-Controls the weekday label presentation format and space utilization of the weekdays component based on calendar layout requirements.
+Controls the navigation interface structure and temporal display format of the title row based on date picker complexity requirements.
 
-## Time Props
+- **basic**
+- separate
+- today
 
-Properties that define the visual state and input functionality of time selection elements within date-time picker interfaces.
+</CxProp>
 
-### Figma Component Props
+## Weekdays Row
 
-Component properties specific to Figma design system implementation.
+Properties that define the weekday label presentation format of header elements within calendar layouts.
 
-#### type: variant
+<ExampleImage img="weekday-rows-props" />
 
-Controls the time input structure and entry method of the time component based on temporal specification requirements.
+<CxProp>
 
-## Dates Props
+### type: variant
 
-Properties that define the visual state and layout configuration of calendar template elements for optimized date display structures.
+Controls the weekday label presentation format and space utilization of the weekdays row based on calendar layout requirements.
 
-### Figma Component Props
+- **letters**
+- short
 
-Component properties specific to Figma design system implementation.
+</CxProp>
 
-#### type: variant
+## Time Row
 
-Controls the calendar template organization and week arrangement of the dates component based on month layout optimization requirements.
+Properties that define the time input structure and entry method of time selection elements within date-time picker interfaces.
 
-## Date Picker Props
+<ExampleImage img="time-row-props" />
 
-Properties that define the visual state and interface configuration of complete date selection systems for comprehensive temporal interaction.
+<CxProp>
 
-### Figma Component Props
+### type: variant
 
-Component properties specific to Figma design system implementation.
+Controls the time input structure and entry method of the time row based on temporal specification requirements.
 
-#### type: variant
+- **text**
+- select
 
-Controls the date picker interface structure and selection capabilities based on temporal selection complexity and layout requirements.
+</CxProp>
 
-#### has-time: boolean
+## Dates Block
+
+Properties that define the calendar template organization and layout configuration of calendar grid elements.
+
+<ExampleImage img="dates-block-props" />
+
+<CxProp>
+
+### type: variant
+
+Controls the calendar template organization and week arrangement of the dates block based on month layout optimization requirements.
+
+- **basic**
+- jan-70
+- feb-70
+- march-70
+- feb-71
+- months
+- years
+
+### has-week-5: boolean
+
+@type:
+: basic
+
+Controls the visibility of the 5th week row in months view.
+
+- **true**
+- false
+
+### has-week-6: boolean
+
+@type:
+: basic
+
+Controls the visibility of the 6th week row in months view.
+
+- **true**
+- false
+
+</CxProp>
+
+## Date Picker
+
+Properties that define the interface structure, selection capabilities, and optional features of complete date selection components.
+
+<ExampleImage img="date-picker-props" />
+
+<CxProp>
+
+### type: variant
+
+Controls the interface structure and selection functionality of the date picker component, determining single-month or dual-month range selection with vertical or horizontal layouts.
+
+- **single**
+- vertical
+- horizontal
+
+### has-time: boolean
 
 Controls the visibility and inclusion of time selection functionality within the date picker interface for date-time input requirements.
 
-#### has-presets: boolean
+- **true**
+- false
+
+### has-presets: boolean
+
+@type:
+: horizontal
 
 Controls the visibility and inclusion of preset date range shortcuts within the date picker interface for quick selection convenience.
+
+- **true**
+- false
+
+</CxProp>

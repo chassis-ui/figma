@@ -1,80 +1,135 @@
 ---
 title: Breadcrumb
 description: Navigation components that display the current page location within the site hierarchy, enabling users to understand their position and navigate to parent pages.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of breadcrumb components for hierarchical navigation and way-finding interfaces.
 
-## Large Breadcrumb Props
+## Large Breadcrumb
 
 Properties that define the visual state and navigation structure of breadcrumb elements optimized for desktop and tablet environments with expanded screen real estate.
 
-### Figma Component Props
+<ExampleImage img="large-breadcrumb-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the visual presentation method and separator styling of the breadcrumb navigation, determining whether text-based or icon-based separators are used for path hierarchy.
 
-#### flush: variant
+- **text-separator**
+- icon-separator
+
+### flush: variant
 
 Controls the spacing configuration of the breadcrumb navigation, determining whether standard or minimal padding is applied for different layout density requirements.
 
-#### separator-text: text
+- **false**
+- true
+
+### separator-text: text
+
+@type:
+: text-separator
 
 Specifies the text content used as separators between navigation elements when using text-based separator presentation for hierarchical path display.
 
-#### separator-icon: instance-swap
+### separator-icon: instance-swap
+
+@type:
+: icon-separator
 
 Specifies which icon component to display as separators between navigation elements when using icon-based separator presentation for enhanced visual hierarchy.
 
-#### has-home-icon: boolean
+- **Icon Placeholder**
+
+### has-home-icon: boolean
 
 Controls the visibility of a home icon element that provides quick access to the root navigation level and serves as the starting point for breadcrumb navigation.
 
-#### has-level-1: boolean
+- **true**
+- false
+
+### has-level-1: boolean
 
 Controls the visibility of the first hierarchical level in the breadcrumb path, representing the primary navigation category or section within the site structure.
 
-#### has-level-2: boolean
+- **true**
+- false
+
+### has-level-2: boolean
 
 Controls the visibility of the second hierarchical level in the breadcrumb path, representing the secondary navigation category or subsection within the site structure.
 
-#### has-level-3: boolean
+- **true**
+- false
+
+### has-level-3: boolean
 
 Controls the visibility of the third hierarchical level in the breadcrumb path, representing the tertiary navigation category or deeper subsection within the site structure.
 
-#### has-level-4: boolean
+- **true**
+- false
+
+### has-level-4: boolean
 
 Controls the visibility of the fourth hierarchical level in the breadcrumb path, representing the quaternary navigation category or deepest subsection within the site structure.
 
-## Small Breadcrumb Props
+- **true**
+- false
+
+</CxProp>
+
+## Small Breadcrumb
 
 Properties that define the visual state and navigation structure of breadcrumb elements optimized for mobile devices and space-constrained environments with simplified interaction patterns.
 
-### Figma Component Props
+<ExampleImage img="small-breadcrumb-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the interaction pattern and navigation approach of the mobile breadcrumb, determining whether simplified text display, icon-based navigation, or parent-focused back button functionality is used.
 
-#### flush: variant
+- **text-separator**
+- icon-separator
+- parent-button
+
+### flush: variant
 
 Controls the spacing configuration of the mobile breadcrumb navigation, determining whether standard or minimal padding is applied for different mobile layout requirements.
 
-#### separator-text: text
+- **false**
+- true
+
+### separator-text: text
+
+@type:
+: text-separator
 
 Specifies the text content used as separators between navigation elements when using text-based presentation for mobile hierarchical path display.
 
-#### separator-icon: instance-swap
+### separator-icon: instance-swap
+
+@type:
+: icon-separator
 
 Specifies which icon component to display as separators between navigation elements when using icon-based presentation for mobile navigation hierarchy.
 
-#### has-levels: boolean
+- **Icon Placeholder**
+
+### has-levels: boolean
+
+@type:
+: text-separator, icon-separator
 
 Controls the visibility of an ellipsis icon that indicates additional navigation levels are available, providing visual cue for expandable path information in space-constrained mobile interfaces.
+
+- **true**
+- false
+
+</CxProp>

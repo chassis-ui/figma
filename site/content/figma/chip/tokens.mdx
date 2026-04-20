@@ -1,6 +1,7 @@
 ---
 title: Chip
-description: Compact elements representing input, attributes, or actions, often used for tags, filters, or selections that can be added or removed.
+description: Compact interactive elements that represent attributes, filters, or selections, often used for tags, categories, or removable choices.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,137 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all chip components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Colors
+
+Color tokens are listed for the default variant only. Other context variants follow the same token pattern with variant-specific color values.
+
+@context:
+: default
+
+@style:
+: solid
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-idle | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-hover | :base: rgba(\{color.base.context.light.default.fg-main\}, \{opacity.level.90\}) |
+| :semantic: color.context.default.fg-press | :base: rgba(\{color.base.context.light.default.fg-main\}, \{opacity.level.90\}) |
+| :semantic: color.context.default.fg-disabled | :base: rgba(\{color.base.context.light.default.fg-main\}, \{opacity.context.fg-slight\}) |
+| :semantic: color.context.default.bg-idle | :base: \{color.base.context.light.default.bg-main\} |
+| :semantic: color.context.default.bg-hover | :base: \{color.base.context.light.default.bg-even\} |
+| :semantic: color.context.default.bg-press | :base: \{color.base.context.light.default.bg-evident\} |
+| :semantic: color.context.default.bg-disabled | :base: \{color.base.palette.light.neutral.20\} |
+| :semantic: color.context.default.border-main | :base: \{color.base.palette.light.neutral.40\} |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+</CxTable>
+
+@context:
+: default
+
+@style:
+: smooth
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.palette.light.neutral.90\} |
+| :semantic: color.context.default.bg-even | :base: \{color.base.palette.light.neutral.05\} |
+| :semantic: color.context.default.fg-slight | :base: rgba(\{color.base.context.light.default.fg-main\}, \{opacity.context.fg-slight\}) |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+</CxTable>
+
+@context:
+: default
+
+@style:
+: outline
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.base-color | :base: \{color.base.palette.light.black.base\} |
+| :semantic: color.context.default.fg-slight | :base: rgba(\{color.base.context.light.default.fg-main\}, \{opacity.context.fg-slight\}) |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.chip.medium | :base: \{font.text.small.strong\} |
+| :granular: font.chip.large | :base: \{font.text.medium.strong\} |
+| :granular: font.chip.small | :base: \{font.text.xsmall.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.chip.medium-main | :base: \{size.unit.32\} |
+| :granular: size.chip.medium-avatar | :base: \{size.unit.24\} |
+| :granular: size.chip.medium-icon | :base: \{size.unit.20\} |
+| :granular: size.chip.large-main | :base: \{size.unit.40\} |
+| :granular: size.chip.large-avatar | :base: \{size.unit.32\} |
+| :granular: size.chip.large-icon | :base: \{size.unit.24\} |
+| :granular: size.chip.small-main | :base: \{size.unit.24\} |
+| :granular: size.chip.small-avatar | :base: \{size.unit.20\} |
+| :granular: size.chip.small-icon | :base: \{size.unit.16\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.chip.medium-padding-y | :base: \{space.unit.4\} |
+| :granular: space.chip.medium-padding-x | :base: \{space.unit.4\} |
+| :granular: space.chip.medium-gap | :base: \{space.unit.8\} |
+| :granular: space.chip.medium-nudge | :base: \{space.unit.4\} |
+| :granular: space.chip.large-padding-y | :base: \{space.unit.4\} |
+| :granular: space.chip.large-padding-x | :base: \{space.unit.4\} |
+| :granular: space.chip.large-gap | :base: \{space.unit.12\} |
+| :granular: space.chip.large-nudge | :base: \{space.unit.4\} |
+| :granular: space.chip.small-padding-y | :base: \{space.unit.2\} |
+| :granular: space.chip.small-padding-x | :base: \{space.unit.2\} |
+| :granular: space.chip.small-gap | :base: \{space.unit.8\} |
+| :granular: space.chip.small-nudge | :base: \{space.unit.4\} |
+</CxTable>
+
+### Border Width
+
+@style:
+: solid, smooth
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.chip.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+@style:
+: outline
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderWidth.context.large | :base: \{size.unit.d15\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.chip.medium | :granular: \{borderRadius.base.chip.medium\} |
+| :granular: borderRadius.chip.large | :granular: \{borderRadius.base.chip.large\} |
+| :granular: borderRadius.chip.small | :granular: \{borderRadius.base.chip.small\} |
+</CxTable>
+
+</CxToken>

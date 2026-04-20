@@ -1,46 +1,150 @@
 ---
 title: Table
 description: Structured data displays that organize information into rows and columns, enabling users to scan, sort, and analyze tabular data.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of table components. These specifications ensure consistent implementation across design tools and development environments for tabular data presentation and interaction.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
+## Table Data Cell
 
-## Table Data Cell Component
+Specifications for individual data cell elements including measurements, colors, and typography attributes that define the core appearance and content presentation properties for each cell.
 
-Specifications for individual data cell elements including measurements, colors, typography, and content styling attributes. These values define the core appearance and data presentation properties for each cell variant, ensuring consistent content display across different data types and interactive states.
+<ExampleImage img="table-data-cell-specs" />
 
-### Design Tokens
+<CxSpec>
 
-Standardized design values used in table data cell components. Includes specifications for each content variant and state-dependent styling rules for consistent data presentation and interaction feedback across all cell implementations.
+### 1. Table Data Cell
 
-## Table Head Cell Component
+verticalPadding:
+: space.table.cell-padding-y
 
-Specifications for table header elements including measurements, colors, typography, and functional styling attributes. These values define the structural properties, visual hierarchy, and interactive capabilities for column organization and data operation controls within table contexts.
+horizontalPadding:
+: space.table.cell-padding-x
 
-### Design Tokens
+itemSpacing:
+: space.table.cell-gap
 
-Standardized design values used in table head cell components for column identification, sorting indicators, filtering elements, and organizational structure within tabular layouts.
+### 2. Text
 
-## Table Row Component
+fill:
+: color.table.fg-data
 
-Specifications for horizontal container elements including measurements, colors, spacing, and state styling attributes. These values define the structural properties, visual separation, and interactive feedback for data organization and user navigation within table structures.
+typography:
+: font.table.data-text
 
-### Design Tokens
+</CxSpec>
 
-Standardized design values used in table row components. Includes specifications for alternating patterns, hover states, selection feedback, and edit mode styling rules for consistent row presentation and interaction.
+## Table Head Cell
 
-## Table Container Component
+Specifications for table header cell elements including measurements, colors, typography, and interactive indicator attributes that define the structural properties for column organization and sorting controls.
 
-Specifications for table wrapper elements including measurements, layout constraints, scrolling behavior, and supplementary feature styling attributes. These values define the overall structural framework and navigation capabilities for comprehensive table presentation and data management.
+<ExampleImage img="table-head-cell-specs" />
 
-### Design Tokens
+<CxSpec>
 
-Standardized design values used in table container components. Includes specifications for sticky positioning, pagination controls, search functionality, and responsive behavior styling rules for optimal table presentation across different contexts and screen sizes.
+### 1. Table Head Cell
+
+verticalPadding:
+: space.table.cell-padding-y
+
+horizontalPadding:
+: space.table.cell-padding-x
+
+itemSpacing:
+: space.table.cell-gap
+
+### 2. Title Frame
+
+itemSpacing:
+: space.context.2xsmall
+
+### 3. Title Text
+
+fill:
+: color.table.fg-head
+
+typography:
+: font.table.head-text
+
+### 4. Sort Icon
+
+height:
+: size.icon.glyph.xsmall
+
+width:
+: size.icon.glyph.xsmall
+
+fill:
+: color.table.icon-sort
+
+### 5. Check Frame
+
+verticalPadding:
+: space.unit.6
+
+</CxSpec>
+
+## Table Row
+
+Specifications for horizontal container elements including fill, border color, and border width attributes that define the visual separation and state styling for data organization within the table structure.
+
+<ExampleImage img="table-row-specs" />
+
+<CxSpec>
+
+### 1. Table Row
+
+fill:
+: color.table.bg-[type]
+
+borderColor:
+: color.table.border-main
+
+borderWidthBottom:
+: borderWidth.table.main
+
+</CxSpec>
+
+## Table Container
+
+Specifications for table wrapper elements including layout, border, shadow, and header styling attributes that define the overall structural framework and navigation capabilities for comprehensive table presentation.
+
+<ExampleImage img="table-container-specs" />
+
+<CxSpec>
+
+### 1. Table Container
+
+itemSpacing:
+: space.context.medium
+
+### 2. Table Frame
+
+borderColor:
+: color.table.border-main
+
+borderRadius:
+: borderRadius.table.main
+
+borderWidth:
+: borderWidth.table.main
+
+### 3. Sticky Frame
+
+boxShadow:
+: shadow.common.nav-left
+
+### 4. Table Header
+
+fill:
+: color.section.fg-medium
+
+typography:
+: font.section.header-medium
+
+</CxSpec>

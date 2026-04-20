@@ -8,6 +8,7 @@ import { sortTabs } from '@libs/figma'
 import { getConfig } from '@libs/config'
 import type { LayoutOverridesHTMLAttributes } from '@chassis-ui/docs'
 import { getSlug, processMarkdownToHtml } from '@chassis-ui/docs'
+import Callout from '@chassis-ui/docs/shortcodes/Callout.astro'
 
 interface Props {
   frontmatter: any
@@ -32,8 +33,9 @@ const tabItems = sortedTabs.map((tabName) => ({
 
 const bodyProps: LayoutOverridesHTMLAttributes<'body'> = {}
 
+bodyProps['class'] = 'docs-body'
+
 if (frontmatter.toc) {
-  bodyProps['class'] = 'docs-body'
   bodyProps['data-cx-spy'] = 'scroll'
   bodyProps['data-cx-target'] = '#TableOfContents'
 }
@@ -139,20 +141,33 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
       }
 
       <div class={`cxd-content cxd-figma cxd-${tab}`}>
-        <nav class="nav nav-tabs mb-3xlarge">
-          {
-            tabItems.map((item) => (
-              <a
-                class={`nav-link ${item.active ? 'active' : ''}`}
-                href={item.href}
-                role="tab"
-                aria-selected={item.active}
-              >
-                {item.label}
-              </a>
-            ))
-          }
+        <nav class="mb-4xlarge sticky-top bg-main pt-xsmall" style="top:65px;">
+          <ul class="nav nav-underline">
+            {
+              tabItems.map((item) => (
+                <li class="nav-item">
+                  <a
+                    class={`nav-link ${item.active ? 'active' : ''}`}
+                    href={item.href}
+                    role="tab"
+                    aria-selected={item.active}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
         </nav>
+        <Callout type="warning">
+          This documentation is a work in progress and may contain incomplete or outdated
+          information. If you have any feedback or suggestions, please <a
+            href={`${getConfig().repo}/issues`}
+            class="fg-reset"
+            target="_blank"
+            rel="noopener">open an issue on GitHub</a
+          >.
+        </Callout>
 
         <!-- Content -->
         <slot />

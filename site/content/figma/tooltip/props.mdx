@@ -1,42 +1,81 @@
 ---
 title: Tooltip
 description: Small informational popups that appear on hover or focus, providing additional context, help text, or descriptions for UI elements.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of tooltip components for contextual information and guidance interfaces.
 
-## Tooltip Props
+## Tooltips
 
 Properties that define the visual state and interactive behavior of contextual overlay elements with informational and guidance capabilities.
 
-### Figma Component Props
+<ExampleImage img="tooltip-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### context: variant
+### context: variant
 
 Controls the visual style and semantic meaning of the tooltip based on information type, importance, and intended purpose.
 
-#### rich: variant
+- **default**
+- alternate
+- black
+- white
+
+### rich: variant
 
 Controls the content structure and layout complexity of the tooltip, determining the information hierarchy and visual organization.
 
-#### has-title: boolean
+- **basic**
+- rich
+
+### has-title: boolean
+
+@rich:
+: true
 
 Controls the visibility of a title element that provides primary identification and context for the tooltip content.
 
-#### has-slot: boolean
+- **true**
+- false
+
+### has-slot: boolean
+
+@rich:
+: true
 
 Controls the visibility of a custom content slot for additional elements or media within the tooltip.
 
-#### slot-instance: instance-swap
+- **true**
+- false
 
-Specifies which component to display within the custom content slot when has-slot property is enabled.
+### slot-instance: instance-swap
 
-#### background-position: variant
+@has-slot:
+: true
+
+Allows to freely add and arrange content directly inside a tooltip without detaching it.
+
+### background -> position: variant
 
 Controls the positioning and directional orientation of the tooltip bubble arrow, determining the visual connection point between the tooltip and its triggering element.
+
+- **bottom**
+- bottom-left
+- bottom-right
+- left
+- left-bottom
+- left-top
+- right
+- right-bottom
+- right-top
+- top
+- top-left
+- top-right
+
+</CxProp>
 
 

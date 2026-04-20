@@ -1,54 +1,82 @@
 ---
 title: Chart
 description: Data visualization components that represent information graphically through various chart types like bar, line, pie, and donut charts.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of chart components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
-
-## Area Chart Component
-
-Specifications for continuous data visualization elements including measurements, colors, typography, and trend styling attributes. These values define the visual presentation and data interpretation properties for area chart implementations.
-
-### Design Tokens
-
-Standardized design values used in area chart components. Includes specifications for each graph variant, trend styling, axis configurations, and data point presentation rules for consistent appearance and behavior across all area chart implementations.
-
-## Vertical Bar Chart Component
+## Bar Value
 
 Specifications for comparative data visualization elements with vertical bar orientation including measurements, colors, typography, and categorical styling attributes. These values define the visual presentation and comparison properties for vertical bar chart implementations.
 
-### Design Tokens
+<ExampleImage img="bar-chart-specs" />
 
-Standardized design values used in vertical bar chart components. Includes specifications for each bar variant, vertical scaling, axis configurations, and comparative presentation rules for consistent appearance and behavior across all vertical bar chart implementations.
+<CxSpec>
 
-## Horizontal Bar Chart Component
+### 1. _ Bar Value - Vertical
 
-Specifications for comparative data visualization elements with horizontal bar orientation including measurements, colors, typography, and categorical styling attributes. These values define the visual presentation and comparison properties for horizontal bar chart implementations.
+This container adjusts the heights of "_ Bar Item" components from 10% to 100% for flexible display.
 
-### Design Tokens
+### 2. _ Bar Item - Vertical
 
-Standardized design values used in horizontal bar chart components. Includes specifications for each bar variant, horizontal scaling, axis configurations, and comparative presentation rules for consistent appearance and behavior across all horizontal bar chart implementations.
+The nested component's height varies from 10% to 100% of the "_ Bar Value" component.
 
-## Gauge Chart Component
+fill:
+: color.context.primary.base-color
+
+borderRadiusTopRight:
+: borderRadius.context.small
+
+borderRadiusTopLeft:
+: borderRadius.context.small
+
+### 3. Gradient
+
+Rectangle shape within the Bar Item component.
+
+@blend:
+: soft light
+
+fill:
+: gradient.palette.white.l-180
+
+</CxSpec>
+
+## _ Gauge Graph
 
 Specifications for single metric visualization elements including measurements, colors, typography, and indicator styling attributes. These values define the visual presentation and performance monitoring properties for gauge chart implementations.
 
-### Design Tokens
+<ExampleImage img="gauge-graph-specs" />
 
-Standardized design values used in gauge chart components. Includes specifications for each graph variant, circular scaling, performance indicators, and metric presentation rules for consistent appearance and behavior across all gauge chart implementations.
+<CxSpec>
 
-## Donut Chart Component
+### 1. Background
 
-Specifications for proportional data visualization elements including measurements, colors, typography, and segmentation styling attributes. These values define the visual presentation and compositional analysis properties for donut chart implementations.
+Intersect selection boolean operation to visualize the graph base.
 
-### Design Tokens
+fill:
+: color.context.default.dim-slight
 
-Standardized design values used in donut chart components. Includes specifications for each layout variant, proportional scaling, legend configurations, and compositional presentation rules for consistent appearance and behavior across all donut chart implementations.
+### 2. Value
+
+Intersect selection boolean operation to visualize the graph value.
+
+fill:
+: color.context.primary.base-color
+
+### 3. Overlay
+
+Intersect selection boolean operation to add gradient overlay to the value.
+
+@blend:
+: soft light
+
+fill:
+: gradient.palette.white.l-270
+
+</CxSpec>

@@ -1,8 +1,6 @@
 # This file holds all sidebar menu's entries for Chassis Icons.
 
 - title: Getting Started
-  icon: rocket-solid
-  icon_color: yellow
   pages:
     - title: Introduction
     - title: Library Setup
@@ -12,8 +10,6 @@
     - title: Guide Libraries
 
 - title: Design with Chassis
-  icon: book-solid
-  icon_color: blue
   pages:
     - title: Working With Themes
     - title: Updating Libraries

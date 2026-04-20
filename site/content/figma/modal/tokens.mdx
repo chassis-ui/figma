@@ -1,6 +1,7 @@
 ---
 title: Modal
 description: Dialog components that overlay the main content, focusing user attention on critical information or tasks that require interaction before returning to the main interface.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,86 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options for comprehensive modal styling and behavior control.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all modal components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.bg-main | :base: \{color.base.context.light.default.bg-main\} |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.border-subtle | :base: \{color.base.context.light.default.border-subtle\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.modal.large-title | :base: \{font.text.xlarge.strong\} |
+| :granular: font.modal.large-subtitle | :base: \{font.text.medium.normal\} |
+| :granular: font.modal.medium-title | :base: \{font.text.large.strong\} |
+| :granular: font.modal.medium-subtitle | :base: \{font.text.medium.normal\} |
+| :granular: font.modal.small-title | :base: \{font.text.medium.strong\} |
+| :granular: font.modal.small-subtitle | :base: \{font.text.medium.normal\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Value |
+| --- | --- |
+| :granular: size.modal.window-xlarge-w | :value: 1140 |
+| :granular: size.modal.window-large-w | :value: 800 |
+| :granular: size.modal.window-medium-w | :value: 560 |
+| :granular: size.modal.window-xlarge-h | :value: 720 |
+| :granular: size.modal.window-large-h | :value: 600 |
+| :granular: size.modal.window-medium-h | :value: 480 |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.modal.large-padding-y | :base: \{space.unit.32\} |
+| :granular: space.modal.large-padding-x | :base: \{space.unit.32\} |
+| :granular: space.modal.large-gap | :base: \{space.unit.32\} |
+| :granular: space.modal.medium-padding-y | :base: \{space.unit.24\} |
+| :granular: space.modal.medium-padding-x | :base: \{space.unit.24\} |
+| :granular: space.modal.medium-gap | :base: \{space.unit.24\} |
+| :granular: space.modal.small-padding-y | :base: \{space.unit.16\} |
+| :granular: space.modal.small-padding-x | :base: \{space.unit.16\} |
+| :granular: space.modal.small-gap | :base: \{space.unit.16\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.modal.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.modal.main | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.modal.main | :base: \{shadow.elevation.default.40\} |
+</CxTable>
+
+</CxToken>
+

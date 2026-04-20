@@ -1,60 +1,92 @@
 ---
 title: Navbar
-description: Primary navigation components positioned at the top of pages, containing site branding and main navigation links.
+description: Navigation bar components that provide primary site navigation with links, branding, and interactive elements for consistent horizontal navigation interfaces.
+toc: true
 ---
 
 # Props
 
-Configurable properties that control the appearance, behavior, and functionality of navbar components for navigation interfaces and user interaction management.
+Configurable properties that control the appearance, behavior, and functionality of navbar components for primary navigation interfaces.
 
-## Nav Link Props
+## Nav Link
 
-Properties that define the visual state and interactive behavior of individual navigation elements within navbar structures.
+Properties that define the visual state and interactive behavior of individual navigation link elements within the navbar.
 
-### Figma Component Props
+<ExampleImage img="nav-link-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### state: variant
+### state: variant
 
-Controls the interactive state and visual feedback of the navigation item based on user interaction and current page status.
+Controls the interactive state and visual feedback of the nav link based on user interaction and current navigation context.
 
-#### has-icon: boolean
+- **idle**
+- hover
+- active
+- disabled
 
-Controls the visibility of an icon element within the navigation item for enhanced visual communication.
+### has-icon: boolean
 
-#### icon-instance: instance-swap
+Controls the visibility of an icon element positioned before the navigation link label.
 
-Specifies which icon component to display when the icon property is enabled.
+- true
+- **false**
 
-#### has-text: boolean
+### icon-instance: instance-swap
 
-Controls the visibility of text label content within the navigation link for textual identification.
+@has-icon:
+: true
 
-#### has-badge: boolean
+Specifies which icon component to display when has-icon property is enabled.
 
-Controls the visibility of a badge element for displaying notifications or status indicators.
+- **Icon Placeholder**
 
-#### is-dropdown: boolean
+### has-text: boolean
 
-Controls the visibility of a dropdown indicator that signals submenu or additional navigation options.
+Controls the visibility of the text label within the navigation link element.
 
-## Navbar Props
+- **true**
+- false
 
-Properties that define the visual state and responsive behavior of navigation container elements for comprehensive site navigation.
+### has-badge: boolean
 
-### Figma Component Props
+Controls the visibility of a badge element for displaying counts or notifications on the nav link.
 
-Component properties specific to Figma design system implementation.
+- **true**
+- false
 
-#### size: variant
+### is-dropdown: boolean
 
-Controls the dimensional scale and responsive behavior of the navbar component to optimize usability across different screen sizes and interface contexts.
+Controls the visibility of a dropdown indicator that signals available submenu navigation options.
 
-#### is-expanded: boolean
+- **true**
+- false
 
-Controls the visibility and expansion state of navigation content specifically for mobile responsive interfaces.
+</CxProp>
 
-#### has-theme-menu: boolean
+## Navbar
 
-Controls the visibility of theme selection dropdown functionality within the navbar interface.
+Properties that define the scale, expansion state, and feature configuration of the navbar container.
+
+<ExampleImage img="navbar-props" />
+
+<CxProp>
+
+### size: variant
+
+Controls the dimensional scale and content presentation of the navbar to optimize usability across different layout requirements.
+
+- **large**
+- small
+
+### is-expanded: boolean
+
+@size:
+: small
+
+Controls the expansion state of the navbar, determining whether the navigation menu is shown in its expanded or collapsed presentation.
+
+- **true**
+- false
+
+</CxProp>

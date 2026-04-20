@@ -1,0 +1,141 @@
+---
+title: Button Solid
+description: Interactive elements that trigger actions, submit forms, or navigate users to different pages when clicked or tapped.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of button components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Solid Buttons
+
+Specifications for button elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each button variant.
+
+<ExampleImage img="button-specs" />
+
+<CxSpec>
+
+### 1. Solid Button
+
+minHeight:
+: size.button.[size]-main
+
+minWidth:
+: size.button.[size]-main
+
+verticalPadding:
+: space.button.[size]-padding-y
+
+horizontalPadding:
+: space.button.[size]-padding-x
+
+itemSpacing:
+: space.button.[size]-gap
+
+fill:
+: color.button.[context].bg-[state]
+
+borderColor:
+: color.button.[context].border-[state]
+
+borderRadius:
+: borderRadius.button.[size]
+
+borderWidth:
+: borderWidth.button.main
+
+### 2. Icon Start
+
+height:
+: size.button.[size]-icon
+
+width:
+: size.button.[size]-icon
+
+fill:
+: color.button.[context].fg-[state]
+
+### 3. Label Frame
+
+Text only buttons require additional spacing.
+
+horizontalPadding:
+: space.button.[size]-nudge
+
+### 4. Label Text
+
+fill:
+: color.button.[context].fg-[state]
+
+typography:
+: font.button.[size]
+
+### 5. Badge Frame
+
+@state:
+: idle, hover, press
+
+opacity:
+: opacity.level.solid
+
+@state:
+: disabled
+
+opacity:
+: opacity.context.fg-slight
+
+### 6. Caret Icon
+
+height:
+: size.button.[size]-caret
+
+width:
+: size.button.[size]-caret
+
+fill:
+: color.button.[context].fg-[state]
+
+### 7. Icon End
+
+height:
+: size.button.[size]-icon
+
+width:
+: size.button.[size]-icon
+
+fill:
+: color.button.[context].fg-[state]
+
+### 8. Solid Icon-Button
+
+minHeight:
+: size.button.[size]-main
+
+minWidth:
+: size.button.[size]-main
+
+verticalPadding:
+: space.button.[size]-padding-y
+
+horizontalPadding:
+: space.button.[size]-padding-y
+
+itemSpacing:
+: space.button.[size]-gap
+
+fill:
+: color.button.[context].bg-[state]
+
+borderColor:
+: color.button.[context].border-[state]
+
+borderRadius:
+: borderRadius.button.[size]
+
+borderWidth:
+: borderWidth.button.main
+
+</CxSpec>

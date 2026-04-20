@@ -1,6 +1,7 @@
 ---
 title: Notification
 description: Temporary messages that inform users about system events, updates, or changes, typically appearing as toast messages or banner alerts.
+toc: true
 ---
 
 # Tokens
@@ -11,10 +12,70 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all notification components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+@context:
+: default
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.bg-main | :base: \{color.base.context.light.default.bg-main\} |
+| :semantic: color.context.default.bg-solid | :base: \{color.base.context.light.default.bg-solid\} |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-solid | :base: \{color.base.context.light.default.fg-solid\} |
+| :semantic: color.context.default.transparent-color | :base: \{color.base.context.light.default.transparent-color\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.notification.title | :base: \{font.text.large.strong\} |
+| :granular: font.notification.message | :base: \{font.text.medium.normal\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.notification.icon | :base: \{size.unit.28\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.notification.padding-y | :base: \{space.unit.12\} |
+| :granular: space.notification.padding-x | :base: \{space.unit.16\} |
+| :granular: space.notification.gap | :base: \{space.unit.16\} |
+| :semantic: space.context.small | :base: \{size.unit.12\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.2xsmall | :base: \{size.unit.4\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.notification.main | :base: \{borderRadius.context.medium\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.notification.main | :base: \{borderWidth.context.medium\} |
+</CxTable>
+
+</CxToken>
 

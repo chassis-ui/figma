@@ -1,55 +1,527 @@
 ---
 title: Message
-description: Contextual feedback components that communicate information, success confirmations, warnings, or errors to users in response to their actions.
+description: Real-time communication components that display conversational messages, embedded content, and form elements for messaging and chat interface contexts.
+toc: true
 ---
 
 # Specs
 
-Technical specifications and measurements for message components that ensure consistent implementation and precise visual rendering across different messaging platforms and conversational interface contexts.
+Technical specifications and design system values that define the visual and structural properties of message components. These specifications ensure consistent implementation across design tools and development environments for messaging and conversational interface contexts.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
+## Chat Message
 
-## Chat Message Component
+Specifications for individual message elements including measurements, colors, typography, and styling attributes. These values define the conversational content presentation and behavior properties for each message variant with received, sent, and group message capabilities.
 
-Individual message elements that display conversational content with precise dimensional and spacing specifications for consistent messaging visualization and optimal conversation readability.
+<ExampleImage img="chat-message-specs" />
 
-### Design Tokens
+<CxSpec>
 
-Standardized design values used in message item components. Includes specifications for message positioning, spacing variants, content organization, and visual hierarchy across all message presentation variants.
+### 1. Chat Message
 
-## Message Status Component
+Container row for message bubble.
 
-Status indication elements that display message delivery states with precise dimensional and visual specifications for consistent status communication and clear delivery feedback.
+@type:
+: group
 
-### Design Tokens
+@is-final:
+: true
 
-Standardized design values used in message status components. Includes specifications for status indicators, delivery states, read confirmations, and visual feedback across all message status variants.
+paddingRight:
+: space.base.36
 
-## Embed Item Component
+paddingBottom:
+: space.base.36
 
-Rich content elements that display embedded media within messages with precise dimensional and layout specifications for consistent content integration and optimal media presentation.
+paddingLeft:
+: space.base.36
 
-### Design Tokens
+@type:
+: group
 
-Standardized design values used in embed item components. Includes specifications for content presentation, media integration, reply threading, and visual hierarchy across all embedded content variants.
+@is-final:
+: false
 
-## Message Form Component
+_paddingRight:_
+: space.base.36
 
-Input interface elements that enable message creation with precise dimensional and interaction specifications for consistent content input and optimal user experience.
+_paddingBottom:_
+: space.base.36
 
-### Design Tokens
+paddingLeft:
+: space.base.8
 
-Standardized design values used in message form components. Includes specifications for input sizing, interaction areas, submission controls, and interface organization across all message creation variants.
+@type:
+: received
 
-## Chat Status Component
+@is-final:
+: true
 
-Conversation-level status elements that display chat states with precise dimensional and visual specifications for consistent status communication and clear conversation context.
+paddingRight:
+: space.base.64
 
-### Design Tokens
+paddingBottom:
+: space.base.12
 
-Standardized design values used in chat status components. Includes specifications for status presentation, conversation indicators, activity states, and visual feedback across all chat status variants.
+paddingLeft:
+: space.base.8
 
+@type:
+: received
+
+@is-final:
+: false
+
+_paddingRight:_
+: space.base.64
+
+paddingBottom:
+: space.base.8
+
+_paddingLeft:_
+: space.base.8
+
+@type:
+: sent
+
+@is-final:
+: true
+
+paddingRight:
+: space.base.8
+
+paddingBottom:
+: space.base.12
+
+paddingLeft:
+: space.base.64
+
+@type:
+: sent
+
+@is-final:
+: false
+
+_paddingRight:_
+: space.base.8
+
+paddingBottom:
+: space.base.8
+
+_paddingLeft:_
+: space.base.64
+
+### 2. Content Frame
+
+@type:
+: received, group
+
+verticalPadding:
+: space.base.8
+
+fill:
+: color.message.bg-received
+
+borderRadius:
+: borderRadius.context.medium
+
+boxShadow:
+: shadow.message.main
+
+@type:
+: sent
+
+_verticalPadding:_
+: space.base.8
+
+fill:
+: color.message.bg-sent
+
+_borderRadius:_
+: borderRadius.context.medium
+
+_boxShadow:_
+: shadow.message.main
+
+### 3. Message Frame
+
+horizontalPadding:
+: space.base.12
+
+### 4. Message Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.medium.normal
+
+### 5. Sender Frame
+
+horizontalPadding:
+: space.base.12
+
+itemSpacing:
+: space.context.2xsmall
+
+### 6. Sender Name
+
+fill:
+: color.context.default.icon-main
+
+typography:
+: font.text.medium.strong
+
+### 7. Sender Role
+
+fill:
+: color.message.fg-received
+
+typography:
+: font.text.medium.normal
+
+opacity:
+: opacity.context.fg-subtle
+
+### 8. Shared Frame
+
+horizontalPadding:
+: space.base.12
+
+itemSpacing:
+: space.base.8
+
+opacity:
+: opacity.context.fg-subtle
+
+### 9. Shared Icon
+
+@type:
+: received, group
+
+width:
+: size.icon.glyph.small
+
+height:
+: size.icon.glyph.small
+
+fill:
+: color.message.fg-received
+
+@type:
+: sent
+
+_width:_
+: size.icon.glyph.small
+
+_height:_
+: size.icon.glyph.small
+
+fill:
+: color.message.fg-sent
+
+### 10. Shared Text
+
+@type:
+: received, group
+
+fill:
+: color.message.fg-received
+
+typography:
+: font.text.small.normal
+
+@type:
+: sent
+
+fill:
+: color.message.fg-sent
+
+_typography:_
+: font.text.small.normal
+
+### 11. Time Text
+
+@type:
+: received, group
+
+fill:
+: color.message.fg-received
+
+typography:
+: font.text.xsmall.normal
+
+opacity:
+: opacity.context.fg-subtle
+
+@type:
+: sent
+
+fill:
+: color.message.fg-sent
+
+_typography:_
+: font.text.xsmall.normal
+
+_opacity:_
+: opacity.context.fg-subtle
+
+### 12. Status Icon
+
+@status:
+: pending
+
+width:
+: size.icon.glyph.2xsmall
+
+height:
+: size.icon.glyph.2xsmall
+
+fill:
+: color.context.default.fg-slight
+
+@status:
+: seen
+
+_width:_
+: size.icon.glyph.2xsmall
+
+_height:_
+: size.icon.glyph.2xsmall
+
+fill:
+: color.context.default.icon-main
+
+### 13. Avatar
+
+width:
+: size.base.32
+
+height:
+: size.base.32
+
+</CxSpec>
+
+## Message Form
+
+Specifications for message input interface elements including measurements, colors, and interaction styling attributes. These values define the form structure and content creation properties for message composition with attachment and submission capabilities.
+
+<ExampleImage img="message-form-specs" />
+
+<CxSpec>
+
+### 1. Message Form
+
+verticalPadding:
+: space.base.8
+
+horizontalPadding:
+: space.base.8
+
+itemSpacing:
+: space.base.8
+
+fill:
+: color.message.bg-form
+
+### 2. Message Button
+
+width:
+: size.base.40
+
+height:
+: size.base.40
+
+### 3. Button Icon
+
+width:
+: size.base.32
+
+height:
+: size.base.32
+
+fill:
+: color.message.fg-form
+
+### 4. Attachment Preview
+
+width:
+: size.base.64
+
+height:
+: size.base.64
+
+borderRadius:
+: borderRadius.context.medium
+
+### 5. Disabled Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.small.normal
+
+</CxSpec>
+
+## Embed Item
+
+Specifications for embedded content elements including measurements, colors, and layout styling attributes. These values define the rich media integration and reply threading properties for embedded content variants with image and text display capabilities.
+
+<ExampleImage img="embed-item-specs" />
+
+<CxSpec>
+
+### 1. _ Embed Message
+
+verticalPadding:
+: space.base.8
+
+horizontalPadding:
+: space.base.8
+
+### 2. Content Frame
+
+@type:
+: image
+
+fill:
+: color.message.bg-embed
+
+borderRadius:
+: borderRadius.context.small
+
+@type:
+: reply, image-reply
+
+_fill:_
+: color.context.default.dim-slight
+
+_borderRadius:_
+: borderRadius.context.small
+
+borderColor:
+: color.context.default.cue-main
+
+borderWidthLeft:
+: borderWidth.asset.indicator
+
+### 3. Text Frame
+
+verticalPadding:
+: space.base.8
+
+horizontalPadding:
+: space.base.12
+
+### 4. Embed Text
+
+fill:
+: color.message.fg-embed
+
+typography:
+: font.text.small.normal
+
+### 5. Shared Frame
+
+@variant:
+: default
+
+horizontalPadding:
+: space.base.12
+
+paddingTop:
+: space.base.4
+
+itemSpacing:
+: space.base.8
+
+opacity:
+: opacity.context.fg-subtle
+
+### 6. Image Frame
+
+width:
+: size.base.64
+
+height:
+: size.base.64
+
+</CxSpec>
+
+## Chat Status
+
+Specifications for chat status indicator elements including measurements, colors, and typography styling attributes. These values define the delivery status and conversation state properties for status message variants with compact, detailed, and emphasized display capabilities.
+
+<ExampleImage img="chat-status-specs" />
+
+<CxSpec>
+
+### 1. Chat Status
+
+horizontalPadding:
+: space.base.8
+
+paddingTop:
+: space.base.4
+
+paddingBottom:
+: space.base.16
+
+### 2. Text Frame
+
+@type:
+: compact, detailed
+
+verticalPadding:
+: space.base.2
+
+horizontalPadding:
+: space.base.8
+
+fill:
+: color.context.default.bg-evident
+
+borderRadius:
+: borderRadius.context.small
+
+@type:
+: emphasized
+
+_verticalPadding:_
+: space.context.3xsmall
+
+_horizontalPadding:_
+: space.context.small
+
+fill:
+: color.context.black.dim-main
+
+_borderRadius:_
+: borderRadius.context.small
+
+boxShadow:
+: shadow.message.main
+
+### 4. Status Text
+
+@type:
+: compact, detailed
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.small.normal
+
+@type:
+: emphasized
+
+fill:
+: color.context.black.fg-solid
+
+_typography:_
+: font.text.small.normal
+
+</CxSpec>

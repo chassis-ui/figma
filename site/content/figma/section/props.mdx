@@ -1,104 +1,188 @@
 ---
 title: Section
 description: Structural components that divide page content into thematically related areas, providing clear visual separation and content organization.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of section components for content organization and structured layout interfaces.
 
-## Section Header Props
+## Section Header
 
 Properties that define the visual state and content presentation of header elements that provide section identification and contextual information.
 
-### Figma Component Props
+<ExampleImage img="section-header-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### size: variant
+### size: variant
 
 Controls the dimensional scale and content presentation of the section header to optimize usability across different screen sizes and content hierarchy requirements.
 
-#### flush: variant
+- large
+- **medium**
+- small
+
+### flush: variant
 
 Controls the spacing configuration of the section header, determining whether standard or minimal padding is applied for different layout density requirements.
 
-#### has-icon: boolean
+- true
+- **false**
+
+### has-icon: boolean
 
 Controls the visibility of an icon element that provides visual identification and contextual representation within the section header.
 
-#### icon-instance: instance-swap
+- **true**
+- false
 
-Specifies which icon component to display when providing visual identification and contextual representation within the section header.
+### icon-instance: instance-swap
 
-#### has-assist: boolean
+@has-icon:
+: true
+
+Specifies which icon component to display when has-icon property is enabled.
+
+- **Icon Placeholder**
+
+### has-assist: boolean
 
 Controls the visibility of supplementary elements that provide additional functionality and contextual information within the section header.
 
-#### has-separator: boolean
+- **true**
+- false
+
+### has-separator: boolean
+
+@flush:
+: false
 
 Controls the visibility of visual separator elements that provide clear boundaries and organization between the section header and content areas.
 
-## Section Footer Props
+- **true**
+- false
+
+</CxProp>
+
+## Section Footer
 
 Properties that define the visual state and action organization of footer elements that provide section functionality and interactive controls.
 
-### Figma Component Props
+<ExampleImage img="section-footer-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the layout arrangement and button organization of the section footer based on action patterns and space utilization requirements.
 
-#### size: variant
+- **right**
+- left
+- fill
+- stack
+- action
+
+### size: variant
 
 Controls the dimensional scale and action element presentation of the section footer to optimize usability across different screen sizes and interaction requirements.
 
-#### flush: variant
+- large
+- **medium**
+- small
+
+### flush: variant
 
 Controls the spacing configuration of the section footer, determining whether standard or minimal padding is applied for different layout density requirements.
 
-#### has-2nd-action: boolean
+- true
+- **false**
+
+### has-2nd-action: boolean
 
 Controls the visibility of a secondary action element that provides additional functionality and interaction options within the section footer.
 
-#### has-3rd-action: boolean
+- **true**
+- false
+
+### has-3rd-action: boolean
+
+@type:
+: right, left, fill, stack
 
 Controls the visibility of a tertiary action element that provides supplementary functionality and extended interaction options within the section footer.
 
-#### has-assist: boolean
+- **true**
+- false
+
+### has-assist: boolean
+
+@type:
+: action
 
 Controls the visibility of supplementary elements that provide additional functionality and contextual information within the section footer.
 
-#### has-separator: boolean
+- **true**
+- false
+
+### has-separator: boolean
+
+@flush:
+: false
 
 Controls the visibility of visual separator elements that provide clear boundaries and organization between the section footer and content areas.
 
-## Section Block Props
+- **true**
+- false
+
+</CxProp>
+
+## Section Block
 
 Properties that define the visual state and content organization of block elements that provide section structure and layout containers.
 
-### Figma Component Props
+<ExampleImage img="section-block-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the content organization and layout structure of the section block based on content presentation and visual hierarchy requirements.
 
-#### flush: variant
+- **basic**
+- bordered
+- elevated
+
+### flush: variant
 
 Controls the spacing configuration of the section block, determining whether standard or minimal padding is applied for different layout density requirements.
 
-#### has-header: boolean
+- **false**
+- true
+
+### has-header: boolean
 
 Controls the visibility of header elements that provide section identification and contextual information within the section block container.
 
-#### has-footer: boolean
+- **true**
+- false
+
+### has-footer: boolean
 
 Controls the visibility of footer elements that provide action functionality and interactive controls within the section block container.
 
-#### has-separator: boolean
+- **true**
+- false
+
+### has-separator: boolean
+
+@flush:
+: false
 
 Controls the visibility of visual separator elements that provide clear boundaries and separation between the section and page content or other sections.
+
+- true
+- **false**
+
+</CxProp>

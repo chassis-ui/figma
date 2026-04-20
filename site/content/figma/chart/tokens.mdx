@@ -1,6 +1,7 @@
 ---
 title: Chart
 description: Data visualization components that represent information graphically through various chart types like bar, line, pie, and donut charts.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,54 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all chart components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.dim-slight | :base: \{color.base.context.light.default.dim-slight\} |
+| :semantic: color.context.primary.base-color | :base: \{color.base.context.light.primary.base-color\} |
+| :base: gradient.palette.primary.l-50-000 | :value: linear-gradient(0deg, \{color.palette.primary.transparent\} 0%, \{color.palette.primary.base\} 100%) |
+| :base: gradient.palette.white.l-180 | :value: linear-gradient(180deg, \{color.palette.white.transparent\} 0%, \{color.palette.white.base\} 100%) |
+| :base: gradient.palette.white.l-270 | :value: linear-gradient(270deg, \{color.palette.white.transparent\} 0%, \{color.palette.white.base\} 100%) |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.xsmall.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.xsmall\}, fontSize: \{typography.fontSize.text.xsmall\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.xlarge.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.xlarge\}, fontSize: \{typography.fontSize.text.xlarge\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: space.unit.8 | :value: \{dimension.base.8\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderRadius.context.small | :semantic: \{borderRadius.base.context.small\} |
+</CxTable>
+
+### Opacity
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: opacity.level.10 | :value: 0.1 |
+</CxTable>
+
+</CxToken>

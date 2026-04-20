@@ -9,7 +9,7 @@ import type { Element } from 'hast'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import { getConfig } from './config'
 // import { rehypeCxTable } from './rehype'
-import { rehypeCxSpec, rehypeCxToken, rehypeCxProp } from './rehype'
+import { rehypeCxSpec, rehypeCxVariant, rehypeCxToken, rehypeCxProp } from './rehype'
 import { remarkCxConfig, remarkCxDocsref, remarkCxSpec } from './remark'
 import { configurePrism } from './prism'
 import { rehypeCxTable } from '@chassis-ui/docs'
@@ -67,6 +67,7 @@ export function chassis(): AstroIntegration[] {
                 ],
                 rehypeCxTable,
                 rehypeCxSpec,
+                rehypeCxVariant,
                 rehypeCxToken,
                 rehypeCxProp
               ],

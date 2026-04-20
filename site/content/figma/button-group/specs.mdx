@@ -1,38 +1,205 @@
 ---
 title: Button Group
-description: Collections of related buttons organized into cohesive sets, providing users with multiple related action options in a single component.
+description: Container components that organize multiple related buttons together as a unified control group with shared visual treatment and logical connection.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of button group components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
+## Button Group Item
 
-## Button Group Item Component
+Specifications for individual button group item elements within grouped button structures.
 
-Specifications for individual button elements within grouped interfaces including measurements, colors, typography, and interactive styling attributes. These values define the visual presentation and interaction properties for button group item implementations.
+<ExampleImage img="button-group-item-props" />
 
-### Design Tokens
+<CxSpec>
 
-Standardized design values used in button group item components. Includes specifications for each type, context, size, and state variant, with interaction feedback rules for consistent appearance and behavior across all button group item implementations.
+### 1. Button Group Item
 
-## Button Group Component
+verticalPadding:
+: space.button.[size]-padding-y
 
-Specifications for container elements that organize collections of related buttons including measurements, colors, layout styling, and grouping attributes. These values define the visual organization and coordination properties for button group implementations.
+horizontalPadding:
+: space.button.[size]-padding-x
 
-### Design Tokens
+itemSpacing:
+: space.button.[size]-gap
 
-Standardized design values used in button group components. Includes specifications for each context and layout variant, with coordination styling rules for consistent appearance and behavior across all button group implementations.
+fill:
+: color.button.[context].bg-[state]
 
-## Cart Button Group Component
+### 2. Icon Start
 
-Specifications for specialized quantity control elements designed for e-commerce interactions including measurements, colors, typography, and e-commerce-specific styling attributes. These values define the visual presentation and functional properties for cart button group implementations.
+height:
+: size.button.[size]-icon
 
-### Design Tokens
+width:
+: size.button.[size]-icon
 
-Standardized design values used in cart button group components. Includes specifications for each layout and size variant, with e-commerce interaction rules for consistent appearance and behavior across all cart button group implementations.
+fill:
+: color.button.[context].fg-[state]
+
+### 3. Label Frame
+
+Text only buttons require additional spacing.
+
+horizontalPadding:
+: space.button.[size]-nudge
+
+### 4. Label Text
+
+fill:
+: color.button.[context].fg-[state]
+
+typography:
+: font.button.[size]
+
+### 5. Badge Frame
+
+@state:
+: idle, hover, press
+
+opacity:
+: opacity.base.solid
+
+@state:
+: disabled
+
+opacity:
+: opacity.context.fg-slight
+
+### 6. Caret Icon
+
+height:
+: size.button.[size]-caret
+
+width:
+: size.button.[size]-caret
+
+fill:
+: color.button.[context].fg-[state]
+
+### 7. Icon End
+
+height:
+: size.button.[size]-icon
+
+width:
+: size.button.[size]-icon
+
+fill:
+: color.button.[context].fg-[state]
+
+### 8. Solid Icon-Button
+
+verticalPadding:
+: space.button.[size]-padding-y
+
+horizontalPadding:
+: space.button.[size]-padding-y
+
+itemSpacing:
+: space.button.[size]-gap
+
+fill:
+: color.button.[context].bg-[state]
+
+</CxSpec>
+
+## Button Group
+
+Specifications for the container element that groups collections of related buttons into a unified visual structure.
+
+<ExampleImage img="button-group-props" />
+
+<CxSpec>
+
+### 1. Button Group
+
+itemSpacing:
+: space.base.1
+
+fill:
+: color.button.default.border-idle
+
+borderColor:
+: color.button.default.border-idle
+
+borderRadius:
+: borderRadius.button.medium
+
+borderWidth:
+: borderWidth.button.main
+
+</CxSpec>
+
+## Cart Button Group
+
+Specifications for the specialized quantity control grouping with increment and decrement buttons and a numeric count display for e-commerce contexts.
+
+<ExampleImage img="cart-button-group-props" />
+
+<CxSpec>
+
+### 1. Component
+
+itemSpacing:
+: space.base.1
+
+fill:
+: color.button.primary.bg-idle
+
+borderColor:
+: color.button.primary.bg-idle
+
+borderRadius:
+: borderRadius.button.[size]
+
+borderWidth:
+: borderWidth.button.main
+
+### 2. Count Frame
+
+height:
+: size.button.medium-main
+
+width:
+: size.button.medium-main
+
+fill:
+: color.button.primary.bg-idle
+
+### 3. Count Text
+
+@size:
+: medium
+
+fill:
+: color.button.primary.fg-idle
+
+typography:
+: font.text.large.strong
+
+@size:
+: large
+
+_fill:_
+: color.button.primary.fg-idle
+
+typography:
+: font.text.xlarge.strong
+
+@size:
+: small
+
+_fill:_
+: color.button.primary.fg-idle
+
+typography:
+: font.text.medium.strong
+
+</CxSpec>

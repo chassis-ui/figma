@@ -1,39 +1,106 @@
 ---
 title: Carousel
 description: Slideshow components that cycle through multiple pieces of content such as images or cards in a rotating display format.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of carousel components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
-
-## Hero Carousel Component
+## Hero Carousel
 
 Specifications for prominent display carousel elements including measurements, colors, typography, and sequential presentation styling attributes. These values define the visual impact and navigation properties for featured content showcase implementations.
 
-### Design Tokens
+<ExampleImage img="hero-carousel-specs" />
 
-Standardized design values used in hero carousel components. Includes specifications for each size variant, pagination styling, and sequential navigation presentation rules for consistent visual prominence and behavior across all hero carousel implementations.
+<CxSpec>
 
-## Card Carousel Component
+### 1. Hero Carousel
+
+Basic container
+
+### 2. Pager Frame
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: auto
+
+</CxSpec>
+
+## Card Carousel
 
 Specifications for content collection carousel elements including measurements, colors, typography, and horizontal scrolling styling attributes. These values define the browsing experience and card organization properties for sequential content navigation implementations.
 
-### Design Tokens
+<ExampleImage img="card-carousel-specs" />
 
-Standardized design values used in card carousel components. Includes specifications for each size variant, card spacing, pagination indicators, and horizontal navigation presentation rules for consistent browsing experience and behavior across all card carousel implementations.
+<CxSpec>
 
-## Small Carousel Component
+### 1. Card Carousel
+
+verticalPadding:
+: space.page.[size]-padding-y
+
+horizontalPadding:
+: space.page.[size]-padding-x
+
+### 2. Cards Frame
+
+itemSpacing:
+: space.page.[size]-gap
+
+### 2. Pager Frame
+
+@size:
+: large
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: auto
+
+@size:
+: small
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+itemSpacing:
+: none
+
+</CxSpec>
+
+## Small Carousel
 
 Specifications for mobile-optimized carousel elements including measurements, colors, typography, and touch interaction styling attributes. These values define the simplified navigation and content presentation properties for mobile-specific carousel implementations.
 
-### Design Tokens
+<ExampleImage img="small-carousel-specs" />
 
-Standardized design values used in small carousel components. Includes specifications for mobile layout variants, touch interaction parameters, and simplified presentation rules for consistent mobile navigation experience and behavior across all small carousel implementations.
+<CxSpec>
 
+### 1. Small Carousel
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.small
+
+</CxSpec>

@@ -1,6 +1,7 @@
 ---
 title: Dropdown
 description: Menu components that reveal a list of options or actions when activated, allowing users to select from multiple choices in a compact space.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,87 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all dropdown components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.dropdown.bg-idle | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.dropdown.fg-idle | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.dropdown.icon-idle | :semantic: \{color.context.default.icon-main\} |
+| :granular: color.dropdown.bg-hover | :semantic: \{color.context.default.bg-highlight\} |
+| :granular: color.dropdown.fg-hover | :semantic: \{color.context.default.fg-highlight\} |
+| :granular: color.dropdown.icon-hover | :semantic: \{color.context.default.fg-highlight\} |
+| :granular: color.dropdown.bg-active | :semantic: \{color.context.primary.bg-solid\} |
+| :granular: color.dropdown.fg-active | :semantic: \{color.context.primary.fg-solid\} |
+| :granular: color.dropdown.icon-active | :semantic: \{color.context.primary.fg-solid\} |
+| :granular: color.dropdown.bg-disabled | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.dropdown.fg-disabled | :semantic: \{color.context.default.fg-slight\} |
+| :granular: color.dropdown.icon-disabled | :semantic: \{color.context.default.icon-slight\} |
+| :granular: color.dropdown.bg-header | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.dropdown.fg-header | :semantic: \{color.context.default.fg-subtle\} |
+| :granular: color.dropdown.separator | :semantic: \{color.context.default.border-subtle\} |
+| :granular: color.dropdown.bg-base | :semantic: \{color.context.default.bg-main\} |
+| :granular: color.dropdown.border-base | :semantic: \{color.context.default.transparent-color\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.dropdown-menu.title | :base: \{font.text.small.strong\} |
+| :granular: font.dropdown-menu.item | :base: \{font.text.medium.normal\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :shared: size.icon.glyph.xsmall | :base: \{size.unit.16\} |
+| :shared: size.asset.separator | :base: \{size.unit.1\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.small | :base: \{size.unit.12\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.2xsmall | :base: \{size.unit.4\} |
+| :semantic: space.context.zero | :base: \{size.unit.0\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.dropdown.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.dropdown.main | :semantic: \{borderRadius.context.medium\} |
+| :granular: borderRadius.dropdown.item | :semantic: \{borderRadius.context.small\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.dropdown.main | :base: \{shadow.elevation.default.40\} |
+</CxTable>
+
+</CxToken>
