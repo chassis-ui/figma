@@ -1,0 +1,191 @@
+---
+title: Dropdown
+description: Menu components that reveal a list of options or actions when activated, allowing users to select from multiple choices in a compact space.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of dropdown components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Dropdown Item
+
+Specifications for individual dropdown option elements including measurements, colors, typography, and interactive styling attributes. These values define the selectable item appearance.
+
+<ExampleImage img="dropdown-item-specs" />
+
+<CxSpec>
+
+### 1. Dropdown Item
+
+@type:
+: action
+
+verticalPadding:
+: space.context.xsmall
+
+horizontalPadding:
+: space.context.small
+
+itemSpacing:
+: space.context.small
+
+fill:
+: color.dropdown.bg-[state]
+
+borderRadius:
+: borderRadius.dropdown.item
+
+@type:
+: header
+
+_verticalPadding:_
+: space.context.xsmall
+
+_horizontalPadding:_
+: space.context.small
+
+_itemSpacing:_
+: space.context.small
+
+fill:
+: color.dropdown.bg-header
+
+_borderRadius:_
+: borderRadius.dropdown.item
+
+@type:
+: separator
+
+_verticalPadding:_
+: space.context.xsmall
+
+_horizontalPadding:_
+: space.context.small
+
+_itemSpacing:_
+: space.context.small
+
+fill:
+: color.dropdown.bg-header
+
+_borderRadius:_
+: borderRadius.dropdown.item
+
+### 2. Icon
+
+height:
+: size.icon.glyph.medium
+
+width:
+: size.icon.glyph.medium
+
+fill:
+: color.dropdown.icon-[state]
+
+### 3. Action Text
+
+fill:
+: color.dropdown.fg-[state]
+
+typography:
+: font.dropdown.item
+
+### 4. Disclosure Icon
+
+height:
+: size.icon.glyph.xsmall
+
+width:
+: size.icon.glyph.xsmall
+
+fill:
+: color.dropdown.fg-[state]
+
+### 5. Header Text
+
+fill:
+: color.dropdown.fg-header
+
+typography:
+: font.dropdown.header
+
+### 6. Separator Line
+
+height:
+: size.asset.separator
+
+fill:
+: color.dropdown.separator
+
+</CxSpec>
+
+## Dropdown Menu
+
+Specifications for dropdown container elements including measurements, colors, layout properties, and organizational styling attributes. These values define the menu container appearance.
+
+<ExampleImage img="dropdown-menu-specs" />
+
+<CxSpec>
+
+### 1. Dropdown Menu
+
+verticalPadding:
+: space.context.2xsmall
+
+horizontalPadding:
+: space.context.2xsmall
+
+fill:
+: color.dropdown.bg-base
+
+borderColor:
+: color.dropdown.border-base
+
+borderRadius:
+: borderRadius.dropdown.main
+
+borderWidth:
+: borderWidth.dropdown.main
+
+boxShadow:
+: shadow.dropdown.main
+
+### 2. Filter Frame
+
+@type:
+: searchable
+
+verticalPadding:
+: space.context.xsmall
+
+horizontalPadding:
+: space.context.xsmall
+
+### 3. items
+
+Scrollable container slot for dropdown items.
+
+</CxSpec>
+
+## Dropdown Button
+
+Specifications for dropdown trigger elements including measurements, colors, typography, and activation styling attributes. These values define the core appearance and interaction properties for dropdown button implementations.
+
+<ExampleImage img="dropdown-button-specs" />
+
+<CxSpec>
+
+### 1. dropdown
+
+An absolutely positioned dropdown container slot with auto-layout. Its position, constraints, and auto-layout alignment are not documented here and depend on the direction property.
+
+height:
+: size.unit.0
+
+verticalPadding:
+: space.unit.4
+
+</CxSpec>

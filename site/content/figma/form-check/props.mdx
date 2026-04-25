@@ -1,0 +1,102 @@
+---
+title: Form Check
+description: Selection controls including checkboxes and radio buttons that allow users to make binary choices or select from predefined options.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of form check components for selection interfaces.
+
+## Check Input
+
+Properties that define the visual state and interactive behavior of individual selection input elements.
+
+<ExampleImage img="check-input-props" />
+
+<CxProp>
+
+### type: variant 
+
+Controls the selection input method and visual presentation of the check input.
+
+- **checkbox**
+- radio
+- indeterminate
+
+### checked: boolean
+
+Controls the selection state of the input element, determining whether it appears selected or unselected.
+
+- **true**
+- false
+
+### size: variant
+
+Controls the dimensional scale of the check input component.
+
+- large
+- **medium**
+- small
+
+### state: variant
+
+Controls the interactive state and visual feedback of the component.
+
+- **idle**
+- disabled
+- error
+- success
+- primary
+
+</CxProp>
+
+## Form Check
+
+Properties that control the layout and content structure of complete form check elements including labels and helper text.
+
+<ExampleImage img="form-check-props" />
+
+<CxProp>
+
+### type: variant
+
+Controls the check input component type used within the form check structure.
+
+- **checkbox**
+- radio
+- indeterminate
+
+### checked: boolean
+
+Controls the selection state of the check input component used within the form check structure.
+
+- **true**
+- false
+
+### size: variant
+
+Controls the dimensional scale of the complete form check component.
+
+- large
+- **medium**
+- small
+
+### state: variant
+
+Controls the interactive state and visual feedback of the entire form check element.
+
+- **idle**
+- disabled
+- error
+- success
+- primary
+
+### help: boolean
+
+Controls the visibility of instructional or validation text positioned to the right of the form check component.
+
+- **true**
+- false
+
+</CxProp>

@@ -1,0 +1,136 @@
+---
+title: Badge
+description: Small status indicators and labels that display concise information such as counts, categories, or brief descriptive text adjacent to other UI elements.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across badge components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Colors
+
+Color tokens are listed for the default context variant only. Other context variants follow the same token pattern with variant-specific color values.
+
+@context:
+: default
+
+@style:
+: solid
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-solid | :base: \{color.base.palette.light.black.base\} |
+| :semantic: color.context.default.bg-solid | :base: \{color.base.context.light.default.bg-evident\} |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+</CxTable>
+
+@context:
+: default
+
+@style:
+: smooth
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.palette.light.neutral.90\} |
+| :semantic: color.context.default.bg-even | :base: \{color.base.palette.light.neutral.05\} |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+</CxTable>
+
+@context:
+: default
+
+@style:
+: outline
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.base-color | :base: \{color.base.palette.light.black.base\} |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.badge.medium | :base: \{font.text.small.strong\} |
+| :granular: font.badge.large | :base: \{font.text.medium.strong\} |
+| :granular: font.badge.small | :base: \{font.text.xsmall.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.badge.medium-main | :base: \{size.unit.24\} |
+| :granular: size.badge.medium-icon | :base: \{size.unit.16\} |
+| :granular: size.badge.large-main | :base: \{size.unit.28\} |
+| :granular: size.badge.large-icon | :base: \{size.unit.20\} |
+| :granular: size.badge.small-main | :base: \{size.unit.20\} |
+| :granular: size.badge.small-icon | :base: \{size.unit.12\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.badge.medium-padding-y | :base: \{space.unit.2\} |
+| :granular: space.badge.medium-padding-x | :base: \{space.unit.4\} |
+| :granular: space.badge.medium-gap | :base: \{space.unit.0\} |
+| :granular: space.badge.medium-nudge | :base: \{space.unit.4\} |
+| :granular: space.badge.large-padding-y | :base: \{space.unit.2\} |
+| :granular: space.badge.large-padding-x | :base: \{space.unit.4\} |
+| :granular: space.badge.large-gap | :base: \{space.unit.0\} |
+| :granular: space.badge.large-nudge | :base: \{space.unit.6\} |
+| :granular: space.badge.small-padding-y | :base: \{space.unit.1\} |
+| :granular: space.badge.small-padding-x | :base: \{space.unit.4\} |
+| :granular: space.badge.small-gap | :base: \{space.unit.0\} |
+| :granular: space.badge.small-nudge | :base: \{space.unit.4\} |
+</CxTable>
+
+### Border Width
+
+@style:
+: solid, smooth
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.badge.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+@style:
+: outline
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderWidth.context.large | :base: \{size.unit.d15\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.badge.medium | :semantic: \{borderRadius.base.badge.medium\} |
+| :granular: borderRadius.badge.large | :semantic: \{borderRadius.base.badge.large\} |
+| :granular: borderRadius.badge.small | :semantic: \{borderRadius.base.badge.small\} |
+</CxTable>
+
+</CxToken>

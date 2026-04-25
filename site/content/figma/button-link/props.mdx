@@ -1,0 +1,98 @@
+---
+title: Button Link
+description: Link-styled interactive elements that combine button functionality with hyperlink visual presentation for consistent inline action and navigation triggers.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of link button components.
+
+## Link Buttons
+
+Properties that define the visual state and interactive behavior of button elements.
+
+<ExampleImage img="button-props" />
+
+<CxProp>
+
+### context: variant
+
+Controls the visual style and semantic meaning of the button based on its intended purpose and importance.
+
+- **default**
+- alternate
+- primary
+- secondary
+- neutral
+- danger
+- success
+- warning
+- info
+- black
+- white
+
+### size: variant
+
+Controls the dimensional scale and proportional relationships of the button component.
+
+- large
+- **medium**
+- small
+
+### state: variant
+
+Controls the interactive state and visual feedback of the button based on user interaction.
+
+- **idle**
+- hover
+- press
+- disabled
+
+### has-icon-start: boolean
+
+Controls the visibility of an icon element positioned before the button label.
+
+- **true**
+- false
+
+### icon-start-instance: instance-swap
+
+@has-icon-start:
+: true
+
+Specifies which icon component to display when icon-start property is enabled. Depends on `has-icon-start`.
+
+- **Icon Placeholder**
+
+### has-badge: boolean
+
+Controls the visibility of a badge element positioned after the button label for displaying counts or notifications.
+
+- **true**
+- false
+
+### is-dropdown: boolean
+
+Controls the visibility of a dropdown indicator that signals additional actions or options.
+
+- **true**
+- false
+
+### has-icon-end: boolean
+
+Controls the visibility of an icon element positioned after the button label.
+
+- **true**
+- false
+
+### icon-end-instance: instance-swap
+
+@has-icon-end:
+: true
+
+Specifies which icon component to display when icon-end property is enabled. Depends on `has-icon-end`.
+
+- **Icon Placeholder**
+
+</CxProp>

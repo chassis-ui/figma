@@ -1,0 +1,373 @@
+---
+title: Theme Switching
+description: Design for multiple brands and platforms using Chassis Figma's theming system. Learn how to switch themes, design with multiple modes, and hand off multi-theme designs to development.
+toc: true
+---
+
+## Overview
+
+Chassis Figma enables seamless theme switching across entire designs with a single click. Built on Figma's variables and modes system, you can design for multiple brands and color modes simultaneously while maintaining a single source of truth for all components.
+
+This multi-theme capability allows designers to:
+- Switch between brand identities instantly
+- Design and validate both light and dark modes
+- Preview platform-specific variations (web, mobile, tablet)
+- Present designs in different themes without duplication
+- Hand off complete theme specifications to developers
+
+### Understanding Themes
+
+Chassis organizes themes using Figma's variable collections and modes. Each collection controls different aspects of the design, and each mode contains unique values for the same variable names, allowing instant theme switching without changing component structure.
+
+- **Brand Collection** - Brand identity (colors, typography, border radius)
+    - Brand A
+    - Brand B
+    - ...
+- **Theme Collection** - Color modes, accessibility preferences, seasonal themes, etc.
+    - Light 
+    - Dark 
+    - ...
+- **App Collection** - Specific design variations for different applications or platforms
+    - App A
+    - App B
+    - ...
+
+Brand and Theme collections handle most theming needs of an application design. When designing a web application, you typically work in the web app mode throughout. 
+
+App collection's mode switching for a design becomes relevant only when you need platform-specific customization—like designing distinct iOS and Android experiences within a single mobile app project, or maintaining separate interfaces for an operations dashboard across web, desktop, and mobile platforms.
+
+For detailed information about variable architecture, reference chains, and sync with Chassis Tokens, see [Variables & Styles](../getting-started/variables-styles). For creating custom themes and managing token values, see the [Chassis Tokens documentation](https://chassis-ui.com/tokens).
+
+## Switching Themes
+
+Figma's variables and modes system provides multiple levels for switching themes. You can apply theme changes at the page level (affecting all frames and sections), frame level (affecting a specific screen), component level (affecting individual instances), or use switch variables for theme-specific content.
+
+### Page-Level Switching
+
+Apply themes across your entire Figma page, affecting all frames and sections simultaneously.
+
+1. Deselect everything on the canvas.
+2. From the Page section of the right sidebar, click Apply variable mode (color swatches icon).
+3. Change mode for each collection:
+   - **Brand**: Switch between brand identities
+   - **Theme**: Switch between Light, Dark, or High Contrast
+   - **App**: Switch modes if using platform variants
+4. All frames, sections, and components on the page update instantly
+
+This is useful when you want to preview your entire design file in a different theme at once.
+
+### Object-Level Switching
+
+Apply themes to specific groups, components, frames, and sections by changing variable modes on individual objects.
+
+1. Select the layer, group, or container object.
+2. From the Appearance section of the right sidebar, click  Apply variable mode (color swatches icon).
+3. Change mode for each collection as needed:
+   - **Brand**: Switch between brand identities
+   - **Theme**: Switch between Light, Dark, or High Contrast
+   - **App**: Switch modes if using platform variants
+4. All nested layers within that object update instantly
+
+Applying themes on sections is the effective method for designing multi-theme experiences. Set a frame to Dark mode to design dark theme layouts, or switch brand modes to preview how that specific screen looks with different brand identities.
+
+### Component Overrides
+
+Override theme settings for specific component instances when you need exceptions to the frame-level theme.
+
+1. Select the component instance
+2. From the Appearance section of the right sidebar, click  Apply variable mode (color swatches icon).
+3. Change mode independently from the parent frame
+
+**Common use cases**:
+- Light components on dark backgrounds in landing pages
+- Brand-specific components within neutral layouts
+- Platform-agnostic components in platform-specific designs
+
+### Theme-Specific Content
+
+Some content needs to change based on the active theme—like brand logos that differ between light and dark modes. Chassis includes switch variables that control layer visibility based on active modes:
+
+**Example - Theme-specific logos**:
+```
+Header Component
+├─ Logo Light → Visibility: figma/switch/theme/mode-1 (visible in Light mode)
+└─ Logo Dark  → Visibility: figma/switch/theme/mode-2 (visible in Dark mode)
+```
+
+**Example - Brand and theme-specific content**:
+```
+Header Component
+├─ Brand A Group          → Visibility: figma/switch/brand/mode-1
+│  ├─ logo-a-light (Image) → Visibility: figma/switch/theme/mode-1
+│  └─ logo-a-dark (Image)  → Visibility: figma/switch/theme/mode-2
+└─ Brand B Group          → Visibility: figma/switch/brand/mode-2
+   ├─ logo-b-light (Image) → Visibility: figma/switch/theme/mode-1
+   └─ logo-b-dark (Image)  → Visibility: figma/switch/theme/mode-2
+```
+
+Switch variables enable structural changes (not just styling) when switching themes.
+
+## Designing with Themes
+
+Designing for multiple themes requires a systematic approach to ensure all theme combinations work effectively. Start with both light and dark modes from the beginning rather than treating dark mode as an afterthought.
+
+### Multi-Mode Workflow
+
+The most effective approach is designing and validating all modes simultaneously rather than treating additional themes as an afterthought.
+
+**Recommended workflow**:
+
+1. Create initial design in default mode (Light/Web)
+2. Switch to Dark mode and adjust as needed
+3. If designing for multiple brands, test each brand mode
+4. If using App modes (Web/Mobile/Tablet), test platform-specific designs
+5. Iterate between modes to refine each experience
+
+Designing in multiple modes from the beginning reveals potential issues early and ensures all themes receive equal attention.
+
+### Theme Considerations
+
+Different themes require different design attention to ensure quality experiences.
+
+**Dark Mode**:
+- Increase surface elevation using shadows or glows for depth perception
+- Use off-white (not pure white) for text to reduce eye strain
+- Adjust image brightness—photos often appear too bright on dark backgrounds
+- Test color accessibility—some colors need adjustment for proper contrast
+- Ensure form inputs and focus states are clearly visible against dark surfaces
+
+**Platform Modes (Mobile/Tablet)**:
+- Maintain minimum 44×44px touch targets for interactive elements
+- Test with realistic content length—long labels may overflow in compact spacing
+- Verify scrolling behavior—denser layouts increase scroll length
+- Check responsive breakpoints—compact modes may need different breakpoints
+- Preserve visual hierarchy—don't sacrifice readability for density
+
+### Validation Workflow
+
+Systematically test each theme combination to catch issues before handoff.
+
+**For each design/page**:
+
+1. **Test Light mode**
+   - Verify contrast ratios meet WCAG 2.1 AA standards
+   - Check visual hierarchy and content organization
+   - Validate interactive states (hover, focus, active)
+
+2. **Test Dark mode**
+   - Verify contrast ratios in dark context
+   - Check readability of body text and labels
+   - Validate subtle elements (borders, shadows, dividers)
+
+3. **Test Brand modes** (if applicable)
+   - Verify brand colors work in both light and dark themes
+   - Check typography renders correctly with brand fonts
+   - Validate brand-specific components and assets
+
+4. **Test App modes** (if applicable)
+   - Verify platform-specific patterns are applied correctly
+   - Check touch target sizes meet platform minimums
+   - Validate platform-appropriate spacing and sizing
+
+Use Figma plugins like Contrast, Able, or Stark to validate accessibility across all theme combinations.
+
+## Presenting Designs
+
+When presenting designs to stakeholders or clients, showcase different theme combinations to demonstrate flexibility and ensure design quality across all themes.
+
+### Creating Theme Variants
+
+When presenting designs to stakeholders or clients, create separate frames showing key screens in different theme combinations.
+
+**Recommended approach**:
+
+1. **Duplicate your primary frames** for each theme combination you want to present
+2. **Rename frames clearly**: `Homepage - Light`, `Homepage - Dark`, `Homepage - Mobile`
+3. **Apply appropriate modes** to each frame
+4. **Organize in presentation order** on a dedicated page
+
+**Example page structure**:
+```
+📄 Design Review - March 2026
+├─ Homepage - Brand A - Light
+├─ Homepage - Brand A - Dark
+├─ Homepage - Brand B - Light
+├─ Dashboard - Light
+├─ Dashboard - Dark
+└─ Settings - Light
+```
+
+This approach allows stakeholders to see and compare different theme experiences side-by-side.
+
+### Prototyping Multiple Themes
+
+Figma prototypes support theme switching, allowing interactive demonstrations of multi-theme experiences.
+
+**Method 1: Separate Flows**
+- Create separate prototype flows for each theme
+- Provide multiple starting points (Light version, Dark version)
+- Best for linear walkthroughs where theme doesn't change
+
+**Method 2: Theme Toggle**
+- Include a theme toggle button in your prototype
+- Link toggle to frames with different theme modes
+- Best for demonstrating dynamic theme switching
+
+**Method 3: Platform-Specific Prototypes** (if using App modes)
+- Create separate prototypes for iOS and Android
+- Set appropriate device frames for each platform
+- Best for showing platform-specific design patterns
+
+### Stakeholder Documentation
+
+Include context about theme usage when presenting designs.
+
+**Key information to include**:
+- Which themes are supported (Light/Dark, Web/Mobile/Tablet)
+- Default theme for the product
+- How users will switch themes (if applicable)
+- Theme-specific design decisions and rationale
+- Accessibility considerations for each theme
+
+Add annotations or presenter notes explaining theme-specific features or constraints.
+
+## Design Hand-Off
+
+### Theme Documentation
+
+Clearly communicate theme requirements and specifications to developers during hand-off.
+
+**Essential information to document**:
+
+1. **Supported themes**: Which Brand, Theme, and App modes are used
+2. **Default theme**: Which mode combination should load by default
+3. **Theme persistence**: Should theme preference be saved between sessions
+4. **Theme detection**: Should respect system preferences (e.g., OS dark mode)
+5. **Theme toggle**: How users switch themes (if applicable)
+
+**Example documentation**:
+```
+Theme Support:
+- Brand: Brand A only
+- Theme: Light (default), Dark (user toggle)
+- App: Default app mode (no platform variants)
+
+Implementation:
+- Default: Light theme on initial load
+- Detect: Respect prefers-color-scheme media query
+- Persist: Save theme preference to localStorage
+- Toggle: Theme switcher in header navigation
+```
+
+### Exporting Variants
+
+Provide visual references for all theme combinations used in your design.
+
+**Export strategy**:
+
+1. **Create artboards for each theme** you need to hand off:
+   - `Page_BrandA_Light`
+   - `Page_BrandA_Dark`
+   - `Page_BrandB_Light`
+   - `Page_BrandB_Dark`
+
+2. **Export as images** (PNG or JPG) for developer reference
+
+3. **Use Dev Mode** to allow developers to inspect each theme variant
+
+4. **Annotate theme-specific behaviors** that aren't obvious from the design:
+   - Images that change between themes
+   - Content that shows/hides based on theme
+   - Animations or transitions when switching themes
+
+### Mode Mapping
+
+Help developers understand how Figma modes map to code implementation.
+
+**Figma Variable Collection** → **CSS Implementation**
+
+Brand Collection:
+- Brand A → `data-brand="brand-a"` or default (no attribute)
+- Brand B → `data-brand="brand-b"`
+
+Theme Collection:
+- Light → Default styles (no class needed)
+- Dark → `.theme-dark` or `data-theme="dark"`
+
+App Collection:
+- Web → Default styles (no class needed)
+- Mobile → Media query or `.platform-mobile`
+- Tablet → Media query or `.platform-tablet`
+
+Provide this mapping table to developers so they know how to implement each theme mode. Since Chassis Figma syncs with Chassis Tokens, developers access the same token values from the chassis-tokens repository—ensuring design-code parity.
+
+## Best Practices
+
+### Design Workflow
+
+**Do**:
+- Design in all theme modes from the beginning, not as an afterthought
+- Test each theme combination systematically before finalizing
+- Use semantic variables consistently across all components
+- Validate accessibility (WCAG 2.1 AA) for all theme modes
+- Document theme-specific decisions and rationale
+- Provide theme variants in design presentations and prototypes
+
+**Don't**:
+- Design only in light mode then try to "fix" dark mode later
+- Hardcode colors or values that should be variable-driven
+- Assume perfect symmetry between light and dark themes
+- Skip theme testing during design reviews
+- Forget to test loading states and error states in all themes
+
+### Theme Guidelines
+
+**Dark Mode**:
+- Use off-white instead of pure white for text to reduce eye strain
+- Increase surface elevation with shadows or glows for depth
+- Adjust photo brightness—images often appear too bright on dark backgrounds
+- Ensure form inputs and focus states remain clearly visible
+
+**Platform Modes (Mobile/Tablet)**:
+- Maintain minimum 44×44px touch targets for all interactive elements
+- Test with realistic content length to catch overflow issues
+- Preserve visual hierarchy even with tighter spacing
+- Verify scrolling behavior changes with denser layouts
+
+### Hand-Off Best Practices
+
+**For Developers**:
+- Provide visual exports for all theme combinations in use
+- Document default theme and theme persistence requirements
+- Map Figma modes to code implementation (classes, data attributes)
+- Annotate theme-specific behaviors not obvious from the design
+- Enable Dev Mode for developers to inspect theme variants
+
+### Common Issues
+
+**Theme not switching**: Ensure components use variables, not hardcoded values. Check that parent frame mode isn't overriding. Update library components to latest version.
+
+**Inconsistent appearance**: Check for detached instances that lost variable connections. Verify all nested components reference variables. Look for hardcoded overrides on instances.
+
+**Dark mode contrast problems**: Check WCAG contrast ratios using plugins like Contrast, Able, or Stark. Adjust semantic color values for dark mode. Verify surface colors provide sufficient elevation.
+
+**Layout breaks in certain mode**: Review mode-specific variable values. Check auto-layout behavior with new values. Test with realistic content length variations.
+
+## Creating Custom Themes
+
+Chassis supports adding custom brand modes, color themes, and platform variants. Custom themes are created by modifying token values in the chassis-tokens repository and syncing them to Figma via Tokens Studio plugin.
+
+For detailed instructions on:
+- Adding new brand modes to the Brand Collection
+- Creating custom color themes in the Theme Collection
+- Defining platform-specific values in the App Collection
+- Syncing token changes from Git to Figma Variables
+
+See the [Variables & Styles](../getting-started/variables-styles#sync-with-chassis-tokens) page for sync workflow, or visit [Chassis Tokens documentation](https://chassis-ui.com/tokens) for complete token management and customization guides.
+
+## Related Documentation
+
+- **[Variables & Styles](../getting-started/variables-styles)** - Variable architecture, collections, and sync workflow
+- **[Component Assets](../getting-started/component-assets)** - Theme-aware asset components
+- **[Exporting Assets](./exporting-assets)** - Export multi-theme visual assets
+- **[Chassis Tokens](https://chassis-ui.com/tokens)** - Token repository and customization

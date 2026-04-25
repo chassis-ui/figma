@@ -1,0 +1,329 @@
+---
+title: Card
+description: Container components that group related content and actions about a single subject, presenting information in scannable, visually distinct blocks.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of card components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Card
+
+Specifications for card container elements including measurements, colors, typography, and styling attributes. These values define the core appearance and content presentation properties for each card variant.
+
+<ExampleImage img="card-specs" />
+
+<CxSpec>
+
+### 1. Contained Card / Full-bleed Card
+
+fill:
+: color.context.default.bg-main
+
+borderColor:
+: color.context.default.border-subtle
+
+borderRadius:
+: borderRadius.card.main
+
+borderWidth:
+: borderWidth.card.main
+
+### 2. Image Frame
+
+Contained cards only.
+
+@orientation:
+: top
+
+paddingTop:
+: space.context.[size]
+
+paddingRight:
+: space.context.[size]
+
+paddingBottom:
+: space.context.zero
+
+paddingLeft:
+: space.context.[size]
+
+@orientation:
+: bottom
+
+paddingTop:
+: space.context.zero
+
+_paddingRight:_
+: space.context.[size]
+
+paddingBottom:
+: space.context.[size]
+
+_paddingLeft:_
+: space.context.[size]
+
+@orientation:
+: left
+
+_paddingTop:_
+: space.context.[size]
+
+paddingRight:
+: space.context.zero
+
+paddingBottom:
+: space.context.[size]
+
+_paddingLeft:_
+: space.context.[size]
+
+@orientation:
+: right
+
+_paddingTop:_
+: space.context.[size]
+
+_paddingRight:_
+: space.context.[size]
+
+paddingBottom:
+: space.context.[size]
+
+paddingLeft:
+: space.context.zero
+
+### 3. Content Frame
+
+@size:
+: medium
+
+verticalPadding:
+: space.context.[size]
+
+horizontalPadding:
+: space.context.[size]
+
+itemSpacing:
+: space.context.xsmall
+
+@size:
+: large
+
+_verticalPadding:_
+: space.context.[size]
+
+_horizontalPadding:_
+: space.context.[size]
+
+itemSpacing:
+: space.context.small
+
+@size:
+: small
+
+_verticalPadding:_
+: space.context.[size]
+
+_horizontalPadding:_
+: space.context.[size]
+
+itemSpacing:
+: space.context.2xsmall
+
+### 4. Title Frame
+
+itemSpacing:
+: space.context.zero
+
+### 5. Category Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.context.label.[size]
+
+### 6. Title Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.context.title.[size]
+
+### 7. Body Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.context.body.[size]
+
+</CxSpec>
+
+## Card Header
+
+Specifications for header elements displayed at the top of cards. These values ensure consistent presentation of titles, icons, and introductory content.
+
+<ExampleImage img="card-header-specs" />
+
+<CxSpec>
+
+### 1. _ Card Header
+
+Local component
+
+@size:
+: medium
+
+verticalPadding:
+: space.context.small
+
+horizontalPadding:
+: space.context.[size]
+
+itemSpacing:
+: space.context.[size]
+
+borderColor:
+: color.context.default.border-subtle
+
+borderWidthBottom:
+: borderWidth.card.main
+
+@size:
+: large
+
+verticalPadding:
+: space.context.medium
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.card.main
+
+@size:
+: small
+
+verticalPadding:
+: space.context.xsmall
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.card.main
+
+### 2. Header Icon
+
+height:
+: size.icon.glyph.[size]
+
+width:
+: size.icon.glyph.[size]
+
+fill:
+: color.context.default.icon-main
+
+### 2. Header Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.[size].strong
+
+</CxSpec>
+
+## Card Footer
+
+Specifications for footer elements displayed at the bottom of cards. These values ensure consistent presentation of actions, metadata, and supplementary information.
+
+<ExampleImage img="card-footer-specs" />
+
+<CxSpec>
+
+### 1. _ Card Footer
+
+Local component
+
+@size:
+: medium
+
+verticalPadding:
+: space.context.small
+
+horizontalPadding:
+: space.context.[size]
+
+itemSpacing:
+: space.context.[size]
+
+borderColor:
+: color.context.default.border-subtle
+
+borderWidthBottom:
+: borderWidth.card.main
+
+@size:
+: large
+
+verticalPadding:
+: space.context.medium
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.card.main
+
+@size:
+: small
+
+verticalPadding:
+: space.context.xsmall
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.card.main
+
+### 2. Action Text
+
+fill:
+: color.context.default.link-main
+
+typography:
+: font.text.[size].normal
+
+</CxSpec>

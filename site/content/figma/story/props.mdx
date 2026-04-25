@@ -1,0 +1,82 @@
+---
+title: Story
+description: Ephemeral content components inspired by social media stories, providing circular thumbnail indicators and carousel interfaces for sequential content browsing.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of story components for sequential content browsing interfaces.
+
+## Story Button
+
+Properties that define the visual type, state, and icon of individual story indicator buttons.
+
+<ExampleImage img="story-button-props" />
+
+<CxProp>
+
+### type: variant
+
+Controls the visual presentation format of the story button, determining whether an avatar or icon is displayed as the primary visual element.
+
+- **avatar**
+- icon
+
+### is-unread: variant
+
+Controls the read status and visual treatment of the story button based on content consumption state.
+
+- **true**
+- false
+
+### icon: instance-swap
+
+@type:
+: icon
+
+Specifies which icon component to display within the story button visual element.
+
+- **Icon Placeholder**
+
+</CxProp>
+
+## Story Card
+
+Properties that define the read state and visual icon of story card elements.
+
+<ExampleImage img="story-card-props" />
+
+<CxProp>
+
+### is-unread: variant
+
+Controls the read status and visual treatment of the story card based on content consumption state.
+
+- **true**
+- false
+
+### icon: instance-swap
+
+Specifies which icon component to display within the story card visual element.
+
+- **Icon Placeholder**
+
+</CxProp>
+
+## Story Carousel
+
+Properties that define the layout type of story carousel container elements.
+
+<ExampleImage img="story-carousel-props" />
+
+<CxProp>
+
+### type: variant
+
+Controls the display format and content presentation approach of the story carousel, determining whether button or card style story indicators are used.
+
+- **button**
+- card
+
+</CxProp>

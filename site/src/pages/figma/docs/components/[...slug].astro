@@ -1,0 +1,47 @@
+---
+import FigmaLayout from '@layouts/FigmaLayout.astro'
+import { getCollection, render } from 'astro:content'
+import { figmaPages } from '@libs/content'
+import type { CollectionEntry } from 'astro:content'
+
+export async function getStaticPaths() {
+  return figmaPages.map((figmaPage: CollectionEntry<'figma'>) => {
+    const [component, tab] = figmaPage.id.split('/')
+    return {
+      params: {
+        slug: `${component}/${tab}`
+      },
+      props: {
+        figmaPage,
+        component,
+        tab,
+        data: figmaPage.data
+      }
+    }
+  })
+}
+
+const { figmaPage, component, tab, data } = Astro.props
+const { Content, headings } = await render(figmaPage)
+
+const frontmatter = {
+  ...figmaPage.data,
+  title: figmaPage.data.title || `${component} - ${tab}`,
+  description: figmaPage.data.description || `${tab} for ${component} component`
+}
+
+// Get all tabs for this component
+const allFigma = await getCollection('figma')
+const componentEntries = allFigma.filter((e) => e.id.startsWith(component + '/'))
+const tabs = componentEntries.map((e) => e.id.split('/')[1]).sort()
+---
+
+<FigmaLayout
+  frontmatter={frontmatter}
+  headings={headings}
+  component={component}
+  tab={tab}
+  tabs={tabs}
+>
+  <Content />
+</FigmaLayout>

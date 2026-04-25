@@ -1,0 +1,187 @@
+---
+title: Badge
+description: Small status indicators and labels that display concise information such as counts, categories, or brief descriptive text adjacent to other UI elements.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of badge components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Badges
+
+Specifications for badge elements including measurements, colors, typography, and styling attributes. These values define the core appearance and informational display properties for each badge variant.
+
+<ExampleImage img="badge-specs" />
+
+<CxSpec>
+
+### 1. Badge
+
+@style:
+: solid
+
+minWidth:
+: size.badge.[size]-main
+
+minHeight:
+: size.badge.[size]-main
+
+verticalPadding:
+: space.badge.[size]-padding-y
+
+horizontalPadding:
+: space.badge.[size]-padding-x
+
+gap:
+: space.badge.[size]-gap
+
+fill:
+: color.context.[context].bg-solid
+
+borderColor:
+: color.context.[context].bg-transparent
+
+borderRadius:
+: borderRadius.badge.[size]
+
+borderWidth:
+: borderWidth.badge.main
+
+@style:
+: smooth
+
+_minWidth:_
+: size.badge.[size]-main
+
+_minHeight:_
+: size.badge.[size]-main
+
+_verticalPadding:_
+: space.badge.[size]-padding-y
+
+_horizontalPadding:_
+: space.badge.[size]-padding-x
+
+_gap:_
+: space.badge.[size]-gap
+
+fill:
+: color.context.[context].bg-even
+
+_borderColor:_
+: color.context.[context].bg-transparent
+
+_borderRadius:_
+: borderRadius.badge.[size]
+
+_borderWidth:_
+: borderWidth.badge.main
+
+@style:
+: outline
+
+_minWidth:_
+: size.badge.[size]-main
+
+_minHeight:_
+: size.badge.[size]-main
+
+_verticalPadding:_
+: space.badge.[size]-padding-y
+
+_horizontalPadding:_
+: space.badge.[size]-padding-x
+
+_gap:_
+: space.badge.[size]-gap
+
+fill:
+: color.context.[context].bg-transparent
+
+borderColor:
+: color.context.[context].base-color
+
+_borderRadius:_
+: borderRadius.badge.[size]
+
+borderWidth:
+: borderWidth.context.large
+
+### 2. Icon
+
+@style:
+: solid
+
+height:
+: size.badge.[size]-icon
+
+width:
+: size.badge.[size]-icon
+
+fill:
+: color.context.[context].fg-solid
+
+@style:
+: smooth
+
+_height:_
+: size.badge.[size]-icon
+
+_width:_
+: size.badge.[size]-icon
+
+fill:
+: color.context.[context].fg-main
+
+@style:
+: outline
+
+_height:_
+: size.badge.[size]-icon
+
+_width:_
+: size.badge.[size]-icon
+
+fill:
+: color.context.[context].base-color
+
+### 3. Label Frame
+
+Badge label required additional spacing to accommodate the presence of an icon and maintain visual balance.
+
+horizontalPadding:
+: space.badge.[size]-nudge
+
+### 4. Label Text
+
+@style:
+: solid
+
+fill:
+: color.context.[context].fg-solid
+
+typography:
+: font.badge.[size]
+
+@style:
+: smooth
+
+fill:
+: color.context.[context].fg-main
+
+_typography:_
+: font.badge.[size]
+
+@style:
+: outline
+
+fill:
+: color.context.[context].base-color
+
+_typography:_
+: font.badge.[size]
+
+</CxSpec>

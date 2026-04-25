@@ -1,0 +1,366 @@
+---
+title: Using Page Templates
+description: Build maintainable prototypes by creating page-level components that handle multiple states through properties. Reduce duplication and simplify updates across complex user flows.
+toc: true
+---
+
+## Overview
+
+When prototyping application interfaces, managing multiple pages for different states of the same screen creates maintenance challenges. Traditional approaches duplicate entire pages for each variation—empty forms, filled forms, error states, success screens—resulting in repetitive updates and inconsistencies.
+
+Page templates solve this by treating the page itself as a component. Instead of duplicating pages, create one page component with properties that control visibility and state. Change a label once, and all states update automatically. This approach reduces file bloat, guarantees consistency, and accelerates iteration.
+
+### The Traditional Problem
+
+Duplicating pages for each state creates several issues:
+
+**Registration flow without page templates**:
+- Page 1: Empty form
+- Page 2: Name field filled
+- Page 3: Email field filled
+- Page 4: All fields filled
+- Page 5: Email error
+- Page 6: Password error
+- Page 7: Submitting
+- Page 8: Network error
+- Page 9: Success
+
+**Maintenance impact**:
+- Removing a field: Edit 9 pages manually
+- Changing a label: Update across all pages
+- Adding validation: Apply to multiple error states
+- Updating button style: Modify every page
+
+### The Page Template Solution
+
+Create one component with properties controlling all states:
+
+**Registration Page Template**:
+- Boolean properties: Name filled, Email filled, Password filled, Show errors, Submitting
+- Instance swap: Error message type
+- Text properties: Error message content
+
+**Maintenance impact**:
+- Removing a field: Edit component once
+- Changing a label: Update propagates automatically
+- Adding validation: Configure in one place
+- Updating button style: Affects all instances
+
+**Benefits**:
+- ✅ Single source of truth for all states
+- ✅ Guaranteed consistency across prototype
+- ✅ Faster updates and iteration
+- ✅ Cleaner file organization  
+- ✅ Easier collaboration and handoff
+
+## When to Use Page Templates
+
+Page templates work best for state-heavy screens and repeated patterns. Understanding when to use them saves time and avoids over-engineering.
+
+### Good Use Cases
+
+✅ **Multi-step forms and wizards**: Registration, checkout, onboarding flows with 3+ steps  
+✅ **State-heavy interfaces**: Dashboards, search results, data tables with multiple loading/error states  
+✅ **Content with loading states**: Feeds, lists, galleries that show skeleton screens  
+✅ **Error and empty states**: Screens with 3+ different feedback messages  
+✅ **User-dependent content**: Logged in vs. out, different role views, personalized sections  
+✅ **Repeated page patterns**: Profile pages, product details, article layouts used across 5+ items
+
+### When Not to Use
+
+❌ **Simple static pages**: Marketing pages with minimal variation or one-off designs  
+❌ **Early exploration**: Initial concepting where you're still discovering requirements  
+❌ **Highly diverse content**: Pages that differ significantly between instances (over 50% different)  
+❌ **Quick mockups**: Fast ideation work without production requirements  
+❌ **Single-use screens**: Unique screens that won't be reused elsewhere
+
+### Decision Framework
+
+**Create a page template when**:
+- You've duplicated the same page 3+ times with minor variations
+- You anticipate needing 5+ different states of the same screen
+- Changes to one element need to propagate to multiple pages
+- You're building flows that will be maintained long-term
+
+**Stick with separate pages when**:
+- Each page is significantly different (less than 50% similar)
+- You're in early exploration and requirements are fluid
+- The screens are one-time use only
+- Setup time exceeds maintenance time saved
+
+:::tip[Time Investment]
+Creating your first page template takes 2-3× longer than duplicating pages. Break even happens around the 4th instance or 2nd round of updates. For complex flows with 10+ states, templates save 80%+ maintenance time.
+:::
+
+## Building Page Templates
+
+Creating page templates requires planning all states upfront, then building a flexible component structure that accommodates every variation through properties.
+
+### Planning States
+
+Before building, map out every state your page needs to display.
+
+1. **List all variations**: Empty, filled, loading, success, error states
+2. **Identify differences**: What changes between states—visibility, content, styling
+3. **Find commonalities**: What stays the same across all states
+4. **Choose control method**: Boolean properties, variants, instance swaps, or text overrides
+5. **Plan component hierarchy**: Which components need to be swappable
+
+**Example—Product page states**:
+- In stock vs. out of stock
+- User logged in vs. logged out  
+- Item in cart vs. not in cart
+- Reviews loaded vs. loading vs. empty
+- Related products shown vs. hidden
+
+**Quick audit**: List all variations (empty, filled, loading, error), identify what changes between states (visibility, content), and choose control methods (boolean, variants, instance swaps).
+
+### Creating the Component
+
+Build the page component at its most complex state, then add properties to control variations.
+
+1. Design the complete page layout with all possible elements visible
+2. Select the entire page frame and convert to component (Cmd/Ctrl + Option + K)
+3. Name it descriptively: "[Screen Name] Page Template"
+4. Apply auto-layout to flexible sections for responsive behavior
+
+:::note[Design at Maximum Complexity]
+Start with everything visible—you can hide elements with properties. It's harder to add missing elements later than to hide unnecessary ones.
+:::
+
+### Adding Component Properties
+
+Configure properties that control state variations.
+
+**Boolean properties** (show/hide elements):
+1. Select the component
+2. Click the "+" in the Component Properties section
+3. Choose "Boolean" type
+4. Name it clearly: "Show validation error", "Show loading state", "Is logged in"
+5. Link to layers: Select layers → Set visibility: "Show if [property name] is true"
+
+**Instance swap properties** (interchange components):
+1. Add an "Instance swap" property
+2. Name it: "Alert type", "Empty state illustration", "Button variant"
+3. Select the component instance to swap
+4. Link it to the property
+
+**Text properties** (dynamic content):
+1. Add a "Text" property
+2. Name it: "User name", "Error message", "Product title"
+3. Select text layers and bind to the property
+
+**Variants** (major state changes):
+- Use variants for fundamentally different layouts
+- Keep most state control in properties when possible
+- Variants are best for: mobile vs. desktop modes, completely different page types
+
+### Property Naming Conventions
+
+Use consistent prefixes: `Show [element]`, `Is [state]`, `Has [content]` for booleans. Name instance swaps as `[Element] variant`. Keep text properties descriptive: `[Element] text` or `[Data] value`.
+
+### Configuring Visibility
+
+Control which layers appear in different states.
+
+1. Select layers that should be conditional (error messages, success banners, loading spinners)
+2. In the Layer panel, click the eye icon dropdown
+3. Choose "Set conditional visibility"
+4. Link to a boolean property: "Show if [property] is true/false"
+
+**Common visibility patterns**:
+- Error states: Show if "Show error" is true
+- Empty states: Show if "Has content" is false
+- Loading states: Show if "Is loading" is true
+- Success messages: Show if "Show success" is true
+
+### Testing the Component
+
+Verify all property combinations work correctly.
+
+1. Create test frames with instances of your page template
+2. Configure each instance with different property values
+3. Check that all states display correctly
+4. Test edge cases: all properties true, all false, mixed states
+5. Verify nested components respond appropriately
+6. Ensure text doesn't overflow in different states
+
+## Performance & Limitations
+
+**Keep components manageable**:
+- 15-20 properties maximum per component
+- 4-5 nested component levels
+- 10-12 boolean properties (avoid exponential complexity: 10 booleans = 1,024 states)
+
+**Warning signs**: Sluggish editing, 2+ second property changes, rendering lag.
+
+**Solutions**: Split large components, flatten hierarchy, use variants instead of multiple booleans, optimize assets.
+
+:::caution[Performance Impact]
+If property changes take over 1 second, your template is too complex. Split it or reduce properties.
+:::
+
+## Creating Prototypes
+
+Use page template instances to build interactive prototypes with proper state transitions.
+
+### Setting Up Frames
+
+Create a frame for each step or state in your user flow.
+
+1. Create frames for major steps: "Step 1 - Empty", "Step 2 - Filling", "Step 3 - Error", "Step 4 - Success"
+2. Insert an instance of your page template in each frame
+3. Configure properties to show the appropriate state:
+   - Step 1: All booleans false (empty state)
+   - Step 2: "Name filled" true, rest false
+   - Step 3: All fields filled, "Show error" true
+   - Step 4: "Show success" true
+
+### Adding Interactions
+
+Connect frames with prototype interactions.
+
+1. Select interactive elements (buttons, form fields)
+2. Click the prototype handle (circle on the right)
+3. Drag to the target frame
+4. Configure interaction: On click → Navigate to → Target frame
+5. Add animations: Instant, dissolve, slide, etc.
+6. Set up back navigation if needed
+
+### Complex Interactions
+
+**Multi-path flows**: Create separate instances for different navigation paths (success vs. error). Match property configurations between linked frames to preserve state.
+
+**Animation tips**: Use Instant for minor changes, Dissolve for loading states, Smart Animate for moving elements, Slide for step progression.
+
+:::tip[Prototype Performance]
+Shared component structure means faster loading. Keep interactions simple for smooth playback.
+:::
+
+### Best Practices
+
+**Do these things**:
+- ✅ Plan all states before building the component
+- ✅ Use clear, descriptive property names
+- ✅ Group related properties logically
+- ✅ Add property descriptions for team members
+- ✅ Test all property combinations
+- ✅ Document configuration examples
+- ✅ Keep components modular with nested instances
+
+**Avoid these mistakes**:
+- ❌ Don't over-engineer simple pages
+- ❌ Don't create too many property combinations
+- ❌ Don't forget to test edge cases
+- ❌ Don't hardcode content that should be dynamic
+- ❌ Don't break auto-layout with absolute positioning
+- ❌ Don't skip documentation
+- ❌ Don't use too many nested levels (impacts performance)
+
+
+
+## Real-World Example
+
+### E-commerce Product Page
+
+**States to handle**: Product availability (in stock, out of stock, limited quantity), user status (logged in/out), cart status, wishlist status, reviews (loading, populated, empty), related products.
+
+**Component properties**:
+- `In stock`: Boolean
+- `Stock level`: Text ("Only 3 left!", "Back in 5 days")
+- `User logged in`: Boolean  
+- `In cart`: Boolean
+- `In wishlist`: Boolean
+- `Reviews state`: Variant (loading | populated | empty)
+- `Review count`: Text
+- `Price`, `Product title`: Text
+
+**Result**: 2 × 2 × 2 × 2 × 3 × 2 = 96 possible states from one component.
+
+**Common configurations**:
+- New visitor: `In stock: true`, `User logged in: false`, `Reviews: populated`
+- Returning user: `In stock: true`, `User logged in: true`, `In cart: true`
+- Out of stock: `In stock: false`, `Stock level: "Back in stock: March 15"`
+- First product: `Reviews state: empty`, shows "Be the first to review"
+
+**Development handoff**: Map boolean properties to API values, bind text properties to data sources, match instance swaps to component library variants
+
+## Advanced Techniques
+
+### Responsive Variants
+
+Add device variants when desktop and mobile layouts differ significantly (50%+ structural changes).
+
+**Setup**:
+1. Create base component for desktop
+2. Add `Device` variant: Desktop | Tablet | Mobile  
+3. Design mobile: Stack columns, larger touch targets, simplified navigation
+4. Maintain same properties across all device variants
+5. Configure auto-layout with min/max width constraints
+
+**Tips**: Boolean properties work identically across devices. Instance swaps should have mobile-optimized versions. Test at actual breakpoint values.
+
+### Theme Integration
+
+Bind all colors to semantic variables (`--cx-bg-main`, `--cx-text-primary`). Use switch variables for theme-specific content:
+
+```
+Logo Group
+├── Light Logo → Visibility: figma/switch/theme/light
+└── Dark Logo → Visibility: figma/switch/theme/dark
+```
+
+**Test both themes**: Verify colors, contrast, and theme-specific images. Document variable mappings for development handoff.
+
+## Team Collaboration
+
+### Sharing Templates
+
+Publish to team library with:
+- Dedicated "📄 Page Templates" page organized by category
+- Component descriptions listing all properties and effects
+- 3-4 example configurations with labels
+- Usage guide and related components
+
+### Naming Conventions
+
+- **Components**: `[Screen Type] Page Template` (e.g., "Registration Page Template")
+- **Properties**: Action-oriented (e.g., "Show validation error")
+- **Instances**: `[Screen] - [State]` (e.g., "Registration - Email Error")
+
+## Maintenance
+
+### Updating Templates
+
+Changes to the main component propagate automatically. Test with existing instances before publishing. For major changes, duplicate the component and version it ("v2"), then migrate gradually.
+
+### Common Issues
+
+**Property changes don't update**: Local overrides on instance. Fix: Right-click → Reset all changes.
+
+**Layout breaks**: Use conditional visibility instead of absolute positioning. Test all realistic property combinations.
+
+**Performance lag**: Too many nested components or properties. Flatten hierarchy or reduce property count.
+
+**Text overflow**: Set text layers to auto-height or clip content. Test with longest expected copy.
+
+**Theme switching fails**: Reapply color variables to all layers. Avoid detached styles.
+
+## Next Steps
+
+- **[Theme Switching](./working-with-themes)** - Apply Chassis themes to page templates
+- **[Component Documentation](/figma)** - Explore Chassis components for building templates
+- **[Variables & Styles](../getting-started/variables-styles)** - Understand design tokens and variables
+- **[Updating Libraries](./updating-libraries)** - Manage component updates and versions
+
+## Resources
+
+- **Figma Components**: [help.figma.com/components](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma)
+- **Component Properties**: [help.figma.com/component-properties](https://help.figma.com/hc/en-us/articles/5579474826519-Create-and-use-component-properties)
+- **Variants**: [help.figma.com/variants](https://help.figma.com/hc/en-us/articles/360056440594-Create-and-use-variants)
+- **Auto-layout**: [help.figma.com/auto-layout](https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties)
+
+:::note[Future Development]
+Chassis will provide pre-built page template components in future releases. This guide focuses on the design approach and techniques you can use today to create your own maintainable page templates.
+:::
+

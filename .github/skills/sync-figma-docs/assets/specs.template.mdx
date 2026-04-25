@@ -1,0 +1,102 @@
+---
+title: Component Name
+description: Brief description of the component's purpose and use cases.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of the component. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Component
+
+Specifications for component elements including measurements, colors, typography, and styling attributes.
+
+<ExampleImage img="component-name-specs" />
+
+<CxSpec>
+
+### 1. Main Component
+
+@style:
+: solid
+
+minWidth:
+: size.component.[size]-main
+
+minHeight:
+: size.component.[size]-main
+
+verticalPadding:
+: space.component.[size]-padding-y
+
+horizontalPadding:
+: space.component.[size]-padding-x
+
+gap:
+: space.component.[size]-gap
+
+fill:
+: color.context.[context].bg-solid
+
+borderColor:
+: color.context.[context].border-color
+
+borderRadius:
+: borderRadius.component.[size]
+
+borderWidth:
+: borderWidth.component.main
+
+@style:
+: smooth
+
+_minWidth:_
+: size.component.[size]-main
+
+_minHeight:_
+: size.component.[size]-main
+
+_verticalPadding:_
+: space.component.[size]-padding-y
+
+_horizontalPadding:_
+: space.component.[size]-padding-x
+
+_gap:_
+: space.component.[size]-gap
+
+fill:
+: color.context.[context].bg-even
+
+_borderColor:_
+: color.context.[context].border-color
+
+_borderRadius:_
+: borderRadius.component.[size]
+
+_borderWidth:_
+: borderWidth.component.main
+
+### 2. Icon
+
+height:
+: size.component.[size]-icon
+
+width:
+: size.component.[size]-icon
+
+fill:
+: color.context.[context].fg-solid
+
+### 3. Label Text
+
+fill:
+: color.context.[context].fg-solid
+
+typography:
+: font.component.[size]
+
+</CxSpec>

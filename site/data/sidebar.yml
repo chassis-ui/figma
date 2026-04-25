@@ -1,0 +1,16 @@
+# This file holds all sidebar menu's entries for Chassis Icons.
+
+- title: Getting Started
+  pages:
+    - title: Introduction
+    - title: Library Setup
+    - title: Tokens Library
+    - title: Asset Libraries
+    - title: Component Libraries
+    - title: Guide Libraries
+
+- title: Design with Chassis
+  pages:
+    - title: Working With Themes
+    - title: Updating Libraries
+    - title: Exporting Assets

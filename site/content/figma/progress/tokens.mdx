@@ -1,0 +1,81 @@
+---
+title: Progress
+description: Visual indicators that show the completion status of tasks, loading states, or multi-step processes.
+toc: true
+---
+
+# Tokens
+
+Design tokens that control the visual appearance, spacing, and behavioral characteristics of progress components, ensuring consistent progress indication across different interface contexts and maintaining design system coherence.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.progress.fg-past | :semantic: \{color.context.neutral.contrast-color\} |
+| :granular: color.progress.bg-past | :semantic: \{color.context.neutral.base-color\} |
+| :granular: color.progress.border-past | :semantic: \{color.context.neutral.base-color\} |
+| :granular: color.progress.fg-current | :semantic: \{color.context.primary.contrast-color\} |
+| :granular: color.progress.bg-current | :semantic: \{color.context.primary.base-color\} |
+| :granular: color.progress.border-current | :semantic: \{color.context.primary.base-color\} |
+| :granular: color.progress.fg-next | :semantic: \{color.context.default.contrast-color\} |
+| :granular: color.progress.bg-next | :semantic: \{color.context.default.base-color\} |
+| :granular: color.progress.border-next | :semantic: \{color.context.default.base-color\} |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.primary.fg-main | :base: \{color.base.context.light.primary.fg-main\} |
+| :semantic: color.context.primary.base-color | :base: \{color.base.context.light.primary.base-color\} |
+| :semantic: color.context.primary.contrast-color | :base: \{color.base.context.light.primary.contrast-color\} |
+| :semantic: color.context.default.dim-slight | :base: \{color.base.context.light.default.dim-slight\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.small.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.large.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.large\}, fontSize: \{typography.fontSize.text.large\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.icon.glyph.small | :base: \{size.unit.20\} |
+| :shared: size.asset.separator | :base: \{size.unit.1\} |
+| :base: size.unit.24 | :base: \{dimension.base.24\} |
+| :base: size.unit.4 | :base: \{dimension.base.4\} |
+| :base: size.unit.32 | :base: \{dimension.base.32\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.2xsmall | :base: \{size.base.4\} |
+| :semantic: space.context.xsmall | :base: \{size.base.8\} |
+| :semantic: space.context.medium | :base: \{size.base.16\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderRadius.context.xsmall | :base: \{borderRadius.base.xsmall\} |
+| :semantic: borderRadius.context.round-32 | :base: \{size.base.16\} |
+</CxTable>
+
+</CxToken>

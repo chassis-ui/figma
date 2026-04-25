@@ -1,0 +1,106 @@
+---
+title: Carousel
+description: Slideshow components that cycle through multiple pieces of content such as images or cards in a rotating display format.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of carousel components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Hero Carousel
+
+Specifications for prominent display carousel elements including measurements, colors, typography, and sequential presentation styling attributes. These values define the visual impact and navigation properties for featured content showcase implementations.
+
+<ExampleImage img="hero-carousel-specs" />
+
+<CxSpec>
+
+### 1. Hero Carousel
+
+Basic container
+
+### 2. Pager Frame
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: auto
+
+</CxSpec>
+
+## Card Carousel
+
+Specifications for content collection carousel elements including measurements, colors, typography, and horizontal scrolling styling attributes. These values define the browsing experience and card organization properties for sequential content navigation implementations.
+
+<ExampleImage img="card-carousel-specs" />
+
+<CxSpec>
+
+### 1. Card Carousel
+
+verticalPadding:
+: space.page.[size]-padding-y
+
+horizontalPadding:
+: space.page.[size]-padding-x
+
+### 2. Cards Frame
+
+itemSpacing:
+: space.page.[size]-gap
+
+### 2. Pager Frame
+
+@size:
+: large
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: auto
+
+@size:
+: small
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+itemSpacing:
+: none
+
+</CxSpec>
+
+## Small Carousel
+
+Specifications for mobile-optimized carousel elements including measurements, colors, typography, and touch interaction styling attributes. These values define the simplified navigation and content presentation properties for mobile-specific carousel implementations.
+
+<ExampleImage img="small-carousel-specs" />
+
+<CxSpec>
+
+### 1. Small Carousel
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.small
+
+</CxSpec>

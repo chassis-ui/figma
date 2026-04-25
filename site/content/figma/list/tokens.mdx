@@ -1,0 +1,68 @@
+---
+title: List
+description: Components that display collections of related items in a structured, scannable format with consistent styling and spacing.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across list components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.list.icon | :base: \{color.context.default.icon-main\} |
+| :granular: color.list.disclosure | :base: \{color.context.default.fg-subtle\} |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.primary.base-color | :base: \{color.base.context.light.primary.base-color\} |
+| :semantic: color.context.danger.base-color | :base: \{color.base.context.light.danger.base-color\} |
+| :semantic: color.context.success.base-color | :base: \{color.base.context.light.success.base-color\} |
+| :semantic: color.context.neutral.base-color | :base: \{color.base.context.light.neutral.base-color\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Token Value |
+| --- | --- |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.small.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.small.mass | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.mass\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.list.icon | :base: \{size.unit.24\} |
+| :granular: size.list.image | :base: \{size.unit.40\} |
+| :granular: size.list.disclosure | :base: \{size.unit.8\} |
+| :semantic: size.asset.separator | :base: \{size.unit.1\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.list.padding-y | :base: \{space.unit.12\} |
+| :granular: space.list.padding-x | :base: \{space.unit.16\} |
+| :granular: space.list.gap | :base: \{space.unit.16\} |
+| :granular: space.list.nudge | :base: \{space.unit.8\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.large | :base: \{size.unit.20\} |
+</CxTable>
+
+</CxToken>

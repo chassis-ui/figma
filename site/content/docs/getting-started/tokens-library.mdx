@@ -1,0 +1,498 @@
+---
+title: Variables and Styles
+description: An introduction to the variables and styles used in the Chassis Figma library, including how they are organized, how to use them effectively in your designs, and best practices for maintaining consistency across your projects.
+toc: true
+---
+
+## Overview
+
+Chassis Figma library leverages Figma's variables and styles system to create a fully tokenized design system that stays in perfect sync with production code. Every color, spacing value, typography setting, and effect in Chassis is defined as a token, enabling instant theme switching, brand adaptation, and guaranteed design-to-code consistency.
+
+### Variable Organization 
+
+Variables in Chassis are organized hierarchically:
+
+- **Brand variables** define brand identity (colors, typography, border radius)
+- **Theme variables** reference Brand variables to create color modes (light/dark)
+- **App variables** reference both Brand and Theme for component styling
+
+This reference chain allows you to change a brand color or font once and see it instantly update across all components and themes.
+
+## Sync with Chassis Tokens
+
+Chassis Figma variables are synchronized with the [Chassis Tokens](https://github.com/chassis-ui/tokens) repository using **Tokens Studio plugin**, ensuring perfect design-code parity.
+
+**Tokens Studio** bridges your Git repository and Figma Variables, allowing you to:
+- Pull latest token definitions from chassis-tokens repository
+- Sync tokens as native Figma Variables with proper collections and modes
+
+### Updating Variables
+
+When token values change in the Chassis Tokens repository:
+
+1. **Pull Changes**: In Tokens Studio plugin, click "Pull from [Storage]"
+2. **Review Diff**: Plugin shows which tokens changed and their new values
+3. **Open Styles & Variables Menu**: Click "Styles & Variables" dropdown at the bottom of the plugin
+4. **Export Styles & Variables To Figma**: Click "Export Styles & Variables To Figma" in the dropdown
+5. **Select Export to Figma Options**: Choose the appropriate options for exporting styles and variables to Figma then click "Confirm"
+6. **Select Theme Options**: Choose which themes should be created or updated. This determines which token values are synced for each Variable Mode:
+7. **Wait for Completion**: The plugin will show progress as it creates Variable Collections and Modes
+8. **Verify in Variables Panel**: Open Figma's Variables panel (⌥⌘K or Alt+Ctrl+K) to see your synced variables
+9. **Publish Library**: If these variables are in a shared library, publish the library to share updates with your team
+
+For complete syncing instructions, configuration, and troubleshooting, see:
+- **[Figma Variables](https://chassis-ui.com/tokens/getting-started/figma-variables)** - Detailed sync process and variable management
+- **[Tokens Studio Setup](https://chassis-ui.com/tokens/getting-started/tokens-studio)** - Plugin configuration and Git connection
+
+### Variables vs Styles
+
+When syncing from Chassis Tokens to Figma, Tokens Studio creates both Figma Variables and Figma Styles based on token type:
+
+**Variables** are created for individual properties:
+- Colors are synced as **color variables**
+- Sizing, spacing, border radius, etc. are synced as **number variables**
+- Opacity values are synced as **number variables**
+- Typography properties (font names, weights, sizes, etc.) are synced as **text or number variables**
+
+**Styles** are created for composite values:
+- Typography combinations (starting with `font.*`) are synced as **text styles** that reference typography variables
+- Shadow definitions (starting with `effect.*`) are synced as **effect styles** that reference color and number variables
+
+Since Figma styles use variables for their properties, any updates or mode changes to variables automatically propagate to all styles that reference them.
+
+### Version Matching
+
+Chassis Figma versions match token versions:
+
+```
+Chassis Tokens v0.1.0 <-> Chassis Figma v0.1.0
+```
+
+Always use matching versions to ensure consistency.
+
+## Variable Collections
+
+Figma Variables are organized into **Variable Collections**, and each collection can have multiple **Modes**. This structure maps directly to Chassis Tokens' Theme Group and Theme Option architecture.
+
+When you sync tokens from Chassis Tokens to Figma, **Theme Groups** become **Variable Collections** and **Theme Options** become **Variable Modes** within those collections. This mapping allows you to switch between brands, color themes, and platform variations directly in Figma.
+
+```
+Theme Groups (Chassis Tokens) -> Variable Collections (Figma)
+Theme Options (Chassis Tokens) -> Variable Modes (Figma)
+```
+Chassis uses three core collections for its functionality: **Brand**, **Theme**, and **App**.
+
+```
+Brand                 -> Variable Collection in Figma
+ ├─ Brand A           -> Variable Mode
+ ├─ Brand B           -> Variable Mode
+ └─ ...               -> Additional brand modes
+
+Theme                 -> Variable Collection in Figma
+ ├─ Light             -> Variable Mode
+ ├─ Dark              -> Variable Mode
+ └─ ...               -> Additional theme modes
+
+App                   -> Variable Collection in Figma
+ ├─ Web               -> Variable Mode
+ ├─ Mobile            -> Variable Mode
+ └─ ...               -> Additional app modes
+```
+
+This three-layer architecture is a deliberate design decision that provides specific benefits:
+
+- **Three collections cover primary variation axes**: Brand identity, color mode, and platform context
+- **Maximum flexibility with minimal duplication**: Collections reference each other rather than repeating values
+- **Independent control**: Switch any collection's mode without affecting the others
+- **Easy to extend**: Add new brands, themes, or apps within existing collections without restructuring
+- **Clear separation of concerns**: Each collection has a distinct purpose and responsibility
+
+### Brand Collection
+
+The Brand collection contains the foundational variables and styles that define a brand's visual identity including colors, typography, and border radius. These are the base values that inform all other variables in the system.
+
+- **Purpose**: Define brand-specific visual identity
+- **Changes when**: Switching between different brands or sub-brands
+- **Independent from**: Theme and app mode selections
+- **Modes**: Brand A, Brand B, Brand C, etc.
+
+<Callout type="warning" title="Important">
+Variables in the Brand collection are typically *not used directly* in your designs. Instead, they serve as the source values referenced by variables in other collections. This separation ensures you can change brand identity in one place, and all dependent variables in Theme and App collections automatically update.
+</Callout>
+
+#### Color Variables
+
+Each brand mode represents a different brand identity (Brand A, Brand B, etc.) and contains the complete color palette for that brand across all color mode variations.
+
+Brand color variables include both light and dark theme variations:
+- `color/base/palette/light/primary/base` - Primary color for light theme
+- `color/base/palette/dark/primary/base` - Primary color for dark theme
+- `color/base/palette/light/neutral/50` - Gray-50 for light theme
+- `color/base/palette/dark/neutral/50` - Gray-50 for dark theme
+
+These variables are then referenced by color variables in the Theme collection to create context-specific colors (foreground, background, border, etc.) for each theme mode.
+
+This structure allows switching brands independently from theme selection. You can view Brand A in light mode, then switch to Brand B while staying in light mode—all without changing the theme mode itself.
+
+#### Typography Variables
+
+Each brand mode also defines typography variables that represent the typography identity for that brand.
+
+- `typography/fontFamily/text` - Text font family for the brand
+- `typography/fontFamily/display` - Display font family for the brand
+- `typography/fontWeight/text/normal` - Default font weight for text
+- `typography/fontWeight/display/elegant` - Light font weight for display
+
+These variables are referenced by text styles in the library to use the correct typography. When you switch brand modes in Figma, all text styles that reference these typography variables will automatically update to reflect the new brand's typography.
+
+#### Border Radius Variables
+
+Each brand mode defines border radius variables that represent the corner rounding style for that brand.
+
+- `borderRadius/base/small` - Small border radius
+- `borderRadius/base/medium` - Medium border radius
+- `borderRadius/base/large` - Large border radius
+
+These variables are referenced by border radius variables in the App collection to ensure consistent corner rounding across all UI elements.
+
+### Theme Collection
+
+The Theme collection contains color variables organized by color mode (light, dark, high contrast, etc.). These are the color variables **you actually use** while designing your UI and building components.
+
+- **Purpose**: Define color mode variations
+- **Changes when**: Switching between color modes (light/dark)
+- **Independent from**: Brand and app mode selections
+- **Modes**: Light, Dark, High Contrast (optional)
+
+<Callout type="info" title="Why separate Brand and Theme?">
+Since Figma does not allow applying transparency to color variable aliases, Chassis Tokens defines all color variables (including those with transparency) in the Brand collection and directly references them in the Theme collection. This ensures consistent color handling across all theme variations.
+</Callout>
+
+#### Color Variables
+
+The Theme collection organizes colors by their use case.
+
+**Palette colors** (`color/palette/*`):
+- Semantic color scales for common UI purposes
+- Blue, green, red, yellow, neutral scales
+- Referenced by context colors
+
+**Context colors** (`color/context/*`):
+- Purpose-driven colors for specific UI elements
+- Primary, success, danger, warning, info
+- Foreground, background, border variations
+- Most commonly used in designs
+
+**Shadow colors** (`color/shadow/*`):
+- Colors for elevation and depth
+- Shadow and overlay effects
+
+#### Variable Reference Chain
+
+Each color variable in the Theme collection directly references corresponding color variables from the Brand collection. When you switch brand modes in Figma, the Theme collection variables automatically update to reference the appropriate brand colors for that mode, ensuring your designs maintain proper colors across all variations.
+
+```
+color/context/primary/fg-subtle (Theme)
+↓
+color/base/context/light/primary/fg-subtle (Brand)
+↓
+rgba({color/base/palette/light/primary/60}, {opacity/context/fg-subtle}) (Brand)
+```
+
+This architecture allows you to switch both brand and color modes **independently** in Figma. Changing from Brand A to Brand B keeps the same light/dark theme, and switching from light to dark mode keeps the same brand.
+
+### App Collection
+
+The App collection contains variables and styles specifically designed for use in components and application interfaces. These are the variables you'll reference when building UI components and layouts.
+
+- **Purpose**: Define application and component-specific variables
+- **Changes when**: Designing for different applications (web, mobile, tablet) or specific use cases
+- **Independent from**: Brand and theme mode selections
+- **Modes**: Web, Mobile, Tablet
+
+Variables in the App collection reference variables and styles from both the Brand and Theme collections to create a complete set of design variables tailored for application use.
+
+#### Variable Categories
+
+**Color variables** in the App collection typically reference corresponding variables from the Theme collection to ensure consistency across different themes and brands.
+
+**Typography styles** in the App collection reference typography styles from the Brand collection to create complete text styles used in components. These composite styles combine font family, weight, size, and line height.
+
+**Border radius variables** in the App collection reference border radius variables from the Brand collection to ensure consistent corner rounding across all UI elements.
+
+**Sizing, spacing, and utility variables** are also defined in the App collection for use in layouts and components:
+- `size/*` - Width and height values
+- `space/*` - Spacing and gap values for layouts
+- `borderWidth/*` - Border stroke widths
+- Component-specific variables for buttons, cards, inputs, etc.
+
+#### Variable Reference Chain
+
+When you use a variable from the App collection in your design, it may reference variables from both the Theme and Brand collections. This allows you to switch themes and brands independently while maintaining consistent styling.
+
+Here's how a button component uses variables from all three collections:
+
+Color chain for a button state:
+
+```
+color/button/primary/bg-hover - (App)
+↓
+color/context/primary/bg-hover - (Theme)
+↓
+color/palette/primary.40 - (Theme)
+↓
+color/base/palette/light/primary.40 - (Brand)
+```
+
+Typography chain for a button label:
+
+```
+font/button/medium - (Text Style)
+↓
+font/text/medium/strong - (Text Style)
+↓
+Properties (Variables):
+- fontFamily: typography/fontFamily/text - (Brand)
+- fontWeight: typography/fontWeight/text/strong - (Brand)
+- lineHeight: typography/lineHeight/text/medium - (App)
+- fontSize: typography/fontSize/text/medium - (App)
+- letterSpacing: typography/letterSpacing/base/zero - (App)
+- paragraphSpacing: typography/paragraphSpacing/base/zero - (App)
+- textCase: typography/textCase/base/none - (App)
+- textDecoration: typography/textDecoration/base/none - (App)
+```
+
+When you switch any mode in Figma:
+- **Switch to Brand B**: Button updates to Brand B's colors and typography while keeping light theme and web styling (spacing, border radius, etc.)
+- **Switch to Dark mode**: Button updates to dark theme colors while keeping Brand A and web styling
+- **Switch to Mobile mode**: Button updates to mobile styling while keeping Brand A and light theme colors
+
+### Mode-Based Visibility
+
+Chassis includes special **switch variables** for controlling element visibility based on active mode, enabling structural changes (not just styling) when switching themes.
+
+<CxTable>
+| Variable Name | Brand A | Brand B |
+|---------------|---------|--------|
+| `figma/switch/brand/mode-1` | True | False |
+| `figma/switch/brand/mode-2` | False | True |
+</CxTable>
+
+**Simple brand switching**:
+```
+Header Logo Group
+├─ Brand A Logo → Visibility: figma/switch/brand/mode-1
+└─ Brand B Logo → Visibility: figma/switch/brand/mode-2
+```
+
+**Combining brand + theme switches**:
+```
+Header Component
+├─ Brand A Logo (Group)     → Visibility: figma/switch/brand/mode-1
+│  ├─ logo-a-light (Image)  → Visibility: figma/switch/theme/mode-1
+│  └─ logo-a-dark (Image)   → Visibility: figma/switch/theme/mode-2
+└─ Brand B Logo (Group)     → Visibility: figma/switch/brand/mode-2
+   ├─ logo-b-light (Image)  → Visibility: figma/switch/theme/mode-1
+   └─ logo-b-dark (Image)   → Visibility: figma/switch/theme/mode-2
+```
+
+**Results**:
+- Brand A + Light Theme → only `logo-a-light` visible
+- Brand A + Dark Theme → only `logo-a-dark` visible
+- Brand B + Light Theme → only `logo-b-light` visible
+- Brand B + Dark Theme → only `logo-b-dark` visible
+
+## Publish & Scope Settings
+
+Figma's Variable publish settings control how Variables are shared across your design system and which variables are accessible to library consumers. See [Figma docs](https://help.figma.com/hc/en-us/articles/360025508373-Publish-a-library) for more details on publishing a library.
+
+<Callout type="info" title="Sync Before Publish">
+Always sync your latest tokens from Tokens Studio *before* publishing Variables to ensure your team library has the most up-to-date values.
+</Callout>
+
+### Hide from Publishing
+
+Since some variables in Brand collection have no use in design (e.g., base colors, border radii), you can choose to hide them from publishing to prevent them getting listed while setting design properties. See [Figma docs](https://help.figma.com/hc/en-us/articles/360025508373-Publish-a-library#hiding-variables) for details on hiding variables from publishing.
+
+To hide variables from publishing, select the variables in the Variables panel, click "Edit variable", and check the "Hide from publishing" option.
+
+**Suggested variables to hide from publishing:**
+
+```
+color/base/*           -> Hide from publishing
+borderRadius/base/*    -> Hide from publishing
+```
+
+These variables are still available for reference in other variables but won't appear in the dropdown when applying styles to design elements, reducing clutter and confusion for designers.
+
+### Variable Scopes
+
+It is important to set appropriate Variable Scopes to ensure that variables only appear in relevant property dropdowns. This improves the designer experience by showing only applicable variables when styling elements. See [Figma docs](https://help.figma.com/hc/en-us/articles/15145852043927-Create-and-manage-variables-and-collections) for more details on scopes.
+
+To set scopes, select the variables in the Variables panel, click "Edit variable", click "Scope" tab and check the appropriate scope options in the right panel. 
+
+**Suggested scopes for variables:**
+
+```
+size/*                  → Width & Height
+space/*                 → Gap (Auto layout)
+borderRadius/*          → Corner radius
+borderWidth/*           → Stroke
+opacity/*               → Layer opacity
+fontWeight/*            → Font weight
+fontSize/*              → Font size, Width & Height (used for skeleton placeholders)
+lineHeight/*            → Line height, Width & Height (used for skeleton placeholders)
+paragraphSpacing/*      → Paragraph spacing, Width & Height (used for skeleton placeholders)
+letterSpacing/*         → Letter spacing
+```
+
+<Callout type="info" title="Scope Best Practices">
+Skeleton placeholder components of Chassis use fontSize and lineHeight variables for their dimensions to adapt active brands typography.
+</Callout>
+
+### Publishing Workflow
+
+1. Sync latest tokens from Tokens Studio
+2. Configure publishing (hide base tokens, set scopes)
+3. Publish library to share with team
+4. Team files receive variable updates
+
+**For detailed publish settings and strategies**, see [Figma Variables - Publish Settings](https://chassis-ui.com/tokens/getting-started/figma-variables#publish-settings) in Chassis Tokens documentation.
+
+Variables should be in the same library files as components:
+
+```
+Component Library Files
+├── Contains: Components + Variables
+└── Published as: Single library
+
+Design Project Files
+└── Consume: Components with variables embedded
+```
+
+This ensures all components have access to the variables they need.
+
+## Variables & Styles Preview
+
+The library includes preview pages with swatches and samples for all variables and styles. These pages serve as a visual reference to understand what's available and how variables and styles appear across different modes.
+
+### Color Variables
+
+The color variables page includes swatches for all color variables organized by collection and mode. Each swatch shows the variable name, value, and the theme/brand it belongs to.
+
+- **Palette Colors**: Swatches for all palette colors across brands and themes
+- **Context Colors**: Swatches for all context colors (primary, success, danger, etc.) across brands and themes
+- **Shadow Colors**: Swatches for all shadow colors across brands and themes
+- **Utility Colors**: Swatches for any additional utility colors defined in the system
+
+### Font Styles
+
+The typography styles page includes samples for all text styles, showing the variable names and the typography properties they represent (font family, weight, size, line height, etc.).
+
+- **Text Fonts**: Samples for all text styles used in components (e.g., button labels, card titles, body text)
+- **Display Fonts**: Samples for any display styles used for headings or large text
+- **HTML Tags**: Samples showing how text styles map to HTML tags (e.g., h1, h2, p) for better design-code parity
+- **Context Styles**: Samples showing how typography styles adapt across different content formats (e.g., headings, body, captions) and themes
+
+### Number Variables
+
+The metrics page includes visual representations of spacing, sizing, border radius, and other number variables to help designers understand the scale and application of these tokens.
+
+- **Spacing Variables**: Visual scale showing all spacing variables (e.g., gap sizes, padding values)
+- **Sizing Variables**: Visual scale showing all sizing variables (e.g., width and height values)
+- **Border Radius Variables**: Visual scale showing all border radius variables with examples of how they affect component shapes
+- **Border Width Variables**: Visual scale showing all border width variables with examples of how they affect component borders
+- **Opacity Variables**: Visual scale showing all opacity variables with examples of how they affect layer transparency
+
+
+## Best Practices
+
+When working with Figma Variables and Styles in Chassis, following best practices ensures you maintain consistency, scalability, and ease of use across your design system.
+
+**Do**
+
+- ✅ **Use context variables** in designs, not base variables
+- ✅ **Test across all modes** before finalizing
+- ✅ **Document custom variables** with clear descriptions
+- ✅ **Follow naming conventions** for consistency
+- ✅ **Keep variables in sync** with Chassis Tokens repository
+- ✅ **Use variable collections** to organize related variables
+
+**Don't**
+
+- ❌ **Hardcode values** that should use variables
+- ❌ **Create duplicate variables** for the same value
+- ❌ **Skip variable testing** across modes and themes
+- ❌ **Override variables** without team discussion
+- ❌ **Publish untested variables** to production library
+- ❌ **Break variable hierarchy** with direct value references
+
+## Troubleshooting
+
+Common issues when working with Figma Variables and how to resolve them.
+
+**Problem**: Can't find Chassis variables in property dropdowns
+
+**Solutions**:
+- Enable Chassis Variables library in Assets panel
+- Check variable scopes match the property you're trying to apply (e.g., color variables need Fill/Stroke scope)
+- Use search in variable dropdown instead of scrolling
+- Refresh Figma (Cmd/Ctrl + R)
+- Verify library subscription is active
+
+---
+
+**Problem**: Design doesn't update when changing modes
+
+**Solutions**:
+- Verify layers use variables (not fixed values)
+- Check variable has values defined for that mode
+- Ensure parent frame has correct mode set
+- Try setting mode at frame level, not page level
+- Re-apply variables to affected layers
+
+---
+
+**Problem**: Variable shows wrong value
+
+**Solutions**:
+- Verify correct theme options selected in Tokens Studio
+- Check token set order—later sets override earlier ones
+- Pull latest tokens from repository (local changes may override)
+- Ensure Frame has the correct mode applied for testing
+- Try re-syncing from Tokens Studio
+
+---
+
+**Problem**: Updated variables not appearing in consuming files
+
+**Solutions**:
+- Verify you published the library after syncing tokens
+- Check that consuming files have updates available (Libraries panel notification)
+- Click "Review update" and accept changes in consuming files
+- Ensure consuming files use the correct library version
+- Try unlinking and relinking library if updates don't appear
+
+**For complete troubleshooting guide**, see [Figma Variables Troubleshooting](https://chassis-ui.com/tokens/getting-started/figma-variables#troubleshooting) in Chassis Tokens documentation.
+
+## Next Steps
+
+**Figma Workflows:**
+- **[Component Assets](./component-assets)** - How components use variables
+- **[Theme Switching](../design-guidelines/theme-switching)** - Multi-brand workflows
+
+**Chassis Tokens Documentation:**
+- **[Figma Variables](https://chassis-ui.com/tokens/getting-started/figma-variables)** - Complete syncing and configuration guide
+- **[Tokens Studio Setup](https://chassis-ui.com/tokens/getting-started/tokens-studio)** - Plugin configuration
+- **[Token Architecture](https://chassis-ui.com/tokens/design-tokens)** - Understanding the token system
+
+## Resources
+
+**Documentation:**
+- **[Chassis Tokens Repository](https://github.com/chassis-ui/tokens)** - Token definitions and sync source
+- **[Style Dictionary](https://amzn.github.io/style-dictionary)** - Token transformation engine
+- **[Figma Variables Guide](https://help.figma.com/hc/en-us/articles/15339657135383)** - Official Figma documentation
+
+**Figma Files:**
+- **Chassis Variables Library** - Contains all synced variables and collections
+- **Chassis Components Library** - Components using variables

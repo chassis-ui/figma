@@ -1,0 +1,211 @@
+---
+title: Floating Button
+description: Elevated action buttons with shadow styling that remain persistently visible, typically positioned fixed on the page to provide immediate access to primary actions.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of floating button components. These specifications ensure consistent implementation across design tools and development environments for elevated and persistent action interfaces.
+
+<SpecsLegend />
+
+## Floating Buttons
+
+Specifications for elevated button elements including measurements, colors, typography, shadow properties, and elevation styling attributes. These values define the core appearance, elevation behavior, and Material Design FAB-equivalent properties for each floating button variant.
+
+<ExampleImage img="floating-button-specs" />
+
+<CxSpec>
+
+### 1. Floating Button
+
+@size:
+: medium
+
+padding-y:
+: space.context.small
+
+padding-x:
+: space.context.small
+
+gap:
+: space.context.xsmall
+
+color.background:
+: color.button.[context].bg-[state]
+
+borderRadius:
+: borderRadius.context.round
+
+boxShadow:
+: shadow.elevation.default.30
+
+@size:
+: large
+
+padding-y:
+: space.context.medium
+
+padding-x:
+: space.context.medium
+
+_gap:_
+: space.context.xsmall
+
+_color.background:_
+: color.button.[context].bg-[state]
+
+_borderRadius:_
+: borderRadius.context.round
+
+_boxShadow:_
+: shadow.elevation.default.30
+
+@size:
+: small
+
+padding-y:
+: space.context.xsmall
+
+padding-x:
+: space.context.xsmall
+
+_gap:_
+: space.context.xsmall
+
+_color.background:_
+: color.button.[context].bg-[state]
+
+_borderRadius:_
+: borderRadius.context.round
+
+_boxShadow:_
+: shadow.elevation.default.30
+
+### 2. Icon Start
+
+height:
+: size.icon.glyph.medium
+
+width:
+: size.icon.glyph.medium
+
+fill:
+: color.button.[context].fg-[state]
+
+### 3. Label Frame
+
+padding-x:
+: space.context.2xsmall
+
+### 4. Label Text
+
+fill:
+: color.button.[context].fg-[state]
+
+typography:
+: font.text.small.strong
+
+### 5. Badge Frame
+
+@state:
+: idle, hover, press
+
+opacity:
+: opacity.level.solid
+
+@state:
+: disabled
+
+opacity:
+: opacity.context.fg-slight
+
+### 6. Caret Icon
+
+height:
+: size.icon.glyph.small
+
+width:
+: size.icon.glyph.small
+
+fill:
+: color.button.[context].fg-[state]
+
+### 7. Icon End
+
+height:
+: size.icon.glyph.medium
+
+width:
+: size.icon.glyph.medium
+
+fill:
+: color.button.[context].fg-[state]
+
+### 8. Floating Icon-Button
+
+@size:
+: medium
+
+padding-y:
+: space.context.small
+
+padding-x:
+: space.context.small
+
+gap:
+: space.context.xsmall
+
+color.background:
+: color.button.[context].bg-[state]
+
+borderRadius:
+: borderRadius.context.round
+
+boxShadow:
+: shadow.elevation.default.30
+
+@size:
+: large
+
+padding-y:
+: space.context.medium
+
+padding-x:
+: space.context.medium
+
+_gap:_
+: space.context.xsmall
+
+_color.background:_
+: color.button.[context].bg-[state]
+
+_borderRadius:_
+: borderRadius.context.round
+
+_boxShadow:_
+: shadow.elevation.default.30
+
+@size:
+: small
+
+padding-y:
+: space.context.xsmall
+
+padding-x:
+: space.context.xsmall
+
+_gap:_
+: space.context.xsmall
+
+_color.background:_
+: color.button.[context].bg-[state]
+
+_borderRadius:_
+: borderRadius.context.round
+
+_boxShadow:_
+: shadow.elevation.default.30
+
+</CxSpec>

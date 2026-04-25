@@ -1,0 +1,106 @@
+---
+title: Progress
+description: Visual indicators that show the completion status of tasks, loading states, or multi-step processes.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of progress components for task completion tracking and user feedback management.
+
+## Progress Bar
+
+Properties that define the visual state and completion tracking behavior of linear progress indication elements within progress interfaces.
+
+<ExampleImage img="progress-bar-props" />
+
+<CxProp>
+
+### state: variant
+
+Controls the progress completion state and visual feedback of the progress bar element based on task advancement and completion status.
+
+- **current-state**
+
+</CxProp>
+
+## Progress Step
+
+Properties that define the visual state and completion tracking behavior of individual step milestone elements within progress sequences.
+
+<ExampleImage img="progress-step-props" />
+
+<CxProp>
+
+### state: variant
+
+Controls the completion state and visual feedback of the progress step element based on task advancement and milestone status.
+
+- **next**
+- current
+- past
+
+### has-label: boolean
+
+@type:
+: thumb
+
+Controls the visibility of text label content that provides step identification and contextual information within progress step elements.
+
+- **true**
+- false
+
+### has-prev: boolean
+
+@type:
+: thumb
+
+Controls the visibility of preceding connection elements that link the current step to previous milestones within the progress sequence.
+
+- **true**
+- false
+
+### has-next: boolean
+
+@type:
+: thumb
+
+Controls the visibility of following connection elements that link the current step to subsequent milestones within the progress sequence.
+
+- **true**
+- false
+
+</CxProp>
+
+## Progress Flow
+
+Properties that define the visual state and layout configuration of complete progress tracking systems that combine multiple step elements within workflow interfaces.
+
+<ExampleImage img="progress-flow-props" />
+
+<CxProp>
+
+### step: variant
+
+Controls the step configuration and visual treatment of the progress status system based on step complexity and display requirements.
+
+- **current-step**
+
+</CxProp>
+
+## Loading Indicator
+
+Properties that define the visual state and label positioning behavior of indeterminate loading feedback elements within progress interfaces.
+
+<ExampleImage img="loading-indicator-props" />
+
+<CxProp>
+
+### label: variant
+
+Controls the label positioning and text placement approach of the loading indicator element based on layout requirements and information hierarchy.
+
+- **external**
+- internal
+
+</CxProp>

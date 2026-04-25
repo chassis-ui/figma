@@ -1,0 +1,92 @@
+---
+title: Navbar
+description: Navigation bar components that provide primary site navigation with links, branding, and interactive elements for consistent horizontal navigation interfaces.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of navbar components for primary navigation interfaces.
+
+## Nav Link
+
+Properties that define the visual state and interactive behavior of individual navigation link elements within the navbar.
+
+<ExampleImage img="nav-link-props" />
+
+<CxProp>
+
+### state: variant
+
+Controls the interactive state and visual feedback of the nav link based on user interaction and current navigation context.
+
+- **idle**
+- hover
+- active
+- disabled
+
+### has-icon: boolean
+
+Controls the visibility of an icon element positioned before the navigation link label.
+
+- true
+- **false**
+
+### icon-instance: instance-swap
+
+@has-icon:
+: true
+
+Specifies which icon component to display when has-icon property is enabled.
+
+- **Icon Placeholder**
+
+### has-text: boolean
+
+Controls the visibility of the text label within the navigation link element.
+
+- **true**
+- false
+
+### has-badge: boolean
+
+Controls the visibility of a badge element for displaying counts or notifications on the nav link.
+
+- **true**
+- false
+
+### is-dropdown: boolean
+
+Controls the visibility of a dropdown indicator that signals available submenu navigation options.
+
+- **true**
+- false
+
+</CxProp>
+
+## Navbar
+
+Properties that define the scale, expansion state, and feature configuration of the navbar container.
+
+<ExampleImage img="navbar-props" />
+
+<CxProp>
+
+### size: variant
+
+Controls the dimensional scale and content presentation of the navbar to optimize usability across different layout requirements.
+
+- **large**
+- small
+
+### is-expanded: boolean
+
+@size:
+: small
+
+Controls the expansion state of the navbar, determining whether the navigation menu is shown in its expanded or collapsed presentation.
+
+- **true**
+- false
+
+</CxProp>

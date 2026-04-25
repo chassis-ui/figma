@@ -1,0 +1,79 @@
+---
+title: Close Button
+description: Interactive icon elements that dismiss or close content when activated, featuring contextual visual styling and state-based interaction feedback.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of close button components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Close Button
+
+Specifications for close button elements including measurements, colors, and styling attributes. These values define the core appearance and behavior properties for each close button variant.
+
+<ExampleImage img="close-button-specs" />
+
+<CxSpec>
+
+### 1. Close Button
+
+@state:
+: idle, disabled
+
+fill:
+: color.context.[context].transparent-color
+
+borderRadius:
+: borderRadius.button.[size]
+
+@state:
+: hover, press
+
+fill:
+: color.context.[context].dim-slight
+
+_borderRadius:_
+: borderRadius.button.[size]
+
+### 2. Close Icon
+
+@state:
+: idle
+
+height:
+: size.button.[size]-icon
+
+width:
+: size.button.[size]-icon
+
+fill:
+: color.context.[context].fg-main
+
+@state:
+: hover, press
+
+_height:_
+: size.button.[size]-icon
+
+_width:_
+: size.button.[size]-icon
+
+fill:
+: color.context.[context].icon-main
+
+@state:
+: disabled
+
+_height:_
+: size.button.[size]-icon
+
+_width:_
+: size.button.[size]-icon
+
+fill:
+: color.context.[context].fg-slight
+
+</CxSpec>

@@ -1,0 +1,66 @@
+---
+title: Badge
+description: Small status indicators and labels that display concise information such as counts, categories, or brief descriptive text adjacent to other UI elements.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of badge components for labeling and informational displays.
+
+## Badges
+
+Properties that define the visual state and informational behavior of badge elements.
+
+<ExampleImage img="badge-props" />
+
+<CxProp>
+
+### type: variant
+
+Controls the content structure and information display format of the badge component.
+
+- **basic**
+- count
+
+### context: variant
+
+Controls the visual style and semantic meaning of the badge based on its informational purpose and importance.
+
+- **default**
+- alternate
+- primary
+- secondary
+- neutral
+- danger
+- success
+- warning
+- info
+- black
+- white
+
+### size: variant
+
+Controls the dimensional scale and proportional relationships of the badge component.
+
+- large
+- **medium**
+- small
+
+### has-icon: boolean
+
+Controls the visibility of an icon element positioned within the badge content area.
+
+- **true**
+- false
+
+### icon-instance: instance-swap
+
+@has-icon:
+: true
+
+Specifies which icon component to display when has-icon property is enabled.
+
+- **Icon Placeholder**
+
+</CxProp>

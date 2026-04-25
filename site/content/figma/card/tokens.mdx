@@ -1,0 +1,91 @@
+---
+title: Card
+description: Container components that group related content and actions about a single subject, presenting information in scannable, visually distinct blocks.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across card components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.bg-main | :base: \{color.base.context.light.default.bg-main\} |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.border-subtle | :base: \{color.base.context.light.default.border-subtle\} |
+| :semantic: color.context.default.icon-main | :base: \{color.base.context.light.default.icon-main\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Value |
+| --- | --- |
+| :semantic: font.context.title.medium | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.large\}, fontSize: \{typography.fontSize.text.large\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.medium\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.title.large | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.xlarge\}, fontSize: \{typography.fontSize.text.xlarge\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.large\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.title.small | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.small\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.body.medium | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.medium\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.body.large | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.large\}, fontSize: \{typography.fontSize.text.large\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.large\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.body.small | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.small\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.label.medium | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.label.large | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :semantic: font.context.label.small | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.xsmall\}, fontSize: \{typography.fontSize.text.xsmall\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.large.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.large\}, fontSize: \{typography.fontSize.text.large\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.large.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.large\}, fontSize: \{typography.fontSize.text.large\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.small.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.small.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: size.icon.glyph.large | :base: \{size.unit.28\} |
+| :semantic: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :semantic: size.icon.glyph.small | :base: \{size.unit.20\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.large | :base: \{size.unit.20\} |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.small | :base: \{size.unit.12\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.2xsmall | :base: \{size.unit.4\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.card.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.card.main | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+</CxToken>

@@ -1,0 +1,62 @@
+---
+title: Tooltip
+description: Small informational popups that appear on hover or focus, providing additional context, help text, or descriptions for UI elements.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of tooltip components. These specifications ensure consistent implementation across design tools and development environments for contextual information and guidance interfaces.
+
+<SpecsLegend />
+
+## Tooltips
+
+Specifications for contextual overlay elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each tooltip variant with informational and guidance capabilities.
+
+<ExampleImage img="tooltip-specs" />
+
+<CxSpec>
+
+### 1. Tooltip
+
+padding-y:
+: space.context.xsmall
+
+padding-x:
+: space.context.xsmall
+
+gap:
+: space.context.xsmall
+
+color.background:
+: color.context.[context].bg-inverse
+
+borderRadius:
+: borderRadius.tooltip.main
+
+boxShadow:
+: shadow.common.popover
+
+### 2. Tooltip Text
+
+color.foreground:
+: color.context.[context].fg-inverse
+
+typography:
+: font.text.small.normal
+
+### 3. Text Frame
+
+gap:
+: space.context.2xsmall
+
+### 4. Tooltip Title
+
+color.foreground:
+: color.context.[context].fg-inverse
+
+typography:
+: font.text.small.strong
+
+</CxSpec>

@@ -1,0 +1,93 @@
+---
+title: Table
+description: Structured data displays that organize information into rows and columns, enabling users to scan, sort, and analyze tabular data.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across table components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation for tabular data presentation and interactive functionality.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options for comprehensive table styling and behavior control.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.table.fg-head | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.table.fg-data | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.table.icon-sort | :semantic: \{color.context.default.fg-subtle\} |
+| :granular: color.table.border-main | :semantic: \{color.context.default.border-subtle\} |
+| :granular: color.table.cue-active | :semantic: \{color.context.default.cue-main\} |
+| :granular: color.table.bg-head | :semantic: \{color.context.default.bg-evident\} |
+| :granular: color.table.bg-data | :semantic: \{color.context.default.bg-main\} |
+| :granular: color.table.bg-alt | :semantic: \{color.context.default.bg-even\} |
+| :granular: color.table.bg-hover | :semantic: \{color.context.default.bg-evident\} |
+| :granular: color.table.bg-active | :semantic: \{color.context.default.bg-highlight\} |
+| :granular: color.table.bg-edit | :semantic: \{color.palette.warning.10\} |
+| :granular: color.section.default.fg-medium | :semantic: \{color.context.default.fg-main\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.table.data-text | :base: \{font.text.small.normal\} |
+| :granular: font.table.head-text | :base: \{font.text.small.strong\} |
+| :semantic: font.section.header-medium | :base: \{font.text.medium.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: size.icon.glyph.xsmall | :base: \{size.unit.16\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.table.cell-padding-y | :base: \{space.unit.8\} |
+| :granular: space.table.cell-padding-x | :base: \{space.unit.8\} |
+| :granular: space.table.cell-gap | :base: \{space.unit.8\} |
+| :granular: space.context.medium | :base: \{size.unit.16\} |
+| :granular: space.context.2xsmall | :base: \{size.unit.4\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.table.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.table.main | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.table.main | :base: \{shadow.context.none\} |
+| :shared: shadow.nav-left.main | :base: color: \{color.palette.black.t-20\}<br />type: dropShadow<br />x: \{dimension.base.5\}<br />y: \{dimension.base.0\}<br />blur: \{dimension.base.20\}<br />spread: \{dimension.base.n5\}<br /><br />color: \{color.palette.black.t-10\}<br />type: dropShadow<br />x: \{dimension.base.d25\}<br />y: \{dimension.base.0\}<br />blur: \{dimension.base.10\}<br />spread: \{dimension.base.nd25\} |
+</CxTable>
+
+</CxToken>

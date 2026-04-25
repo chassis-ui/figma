@@ -1,0 +1,101 @@
+---
+title: Button Group
+description: Container components that organize multiple related buttons together as a unified control group with shared visual treatment and logical connection.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across button group components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+@context:
+: default
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.button.default.fg-idle | :semantic: \{color.context.default.fg-idle\} |
+| :granular: color.button.default.bg-idle | :semantic: \{color.context.default.bg-idle\} |
+| :granular: color.button.default.border-idle | :semantic: \{color.context.default.border-main\} |
+| :granular: color.button.default.fg-hover | :semantic: \{color.context.default.fg-hover\} |
+| :granular: color.button.default.bg-hover | :semantic: \{color.context.default.bg-hover\} |
+| :granular: color.button.default.border-hover | :semantic: \{color.context.default.border-main\} |
+| :granular: color.button.default.fg-press | :semantic: \{color.context.default.fg-press\} |
+| :granular: color.button.default.bg-press | :semantic: \{color.context.default.bg-press\} |
+| :granular: color.button.default.border-press | :semantic: \{color.context.default.fg-idle\} |
+| :granular: color.button.default.fg-disabled | :semantic: \{color.context.default.fg-disabled\} |
+| :granular: color.button.default.bg-disabled | :semantic: \{color.context.default.bg-disabled\} |
+| :granular: color.button.default.border-disabled | :semantic: \{color.context.default.transparent-color\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: font.button.medium | :base: \{font.text.medium.strong\} |
+| :shared: font.button.large | :base: \{font.text.large.strong\} |
+| :shared: font.button.small | :base: \{font.text.small.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.button.medium-icon | :base: \{size.unit.24\} |
+| :shared: size.button.medium-caret | :base: \{size.unit.20\} |
+| :shared: size.button.large-icon | :base: \{size.unit.28\} |
+| :shared: size.button.large-caret | :base: \{size.unit.24\} |
+| :shared: size.button.small-icon | :base: \{size.unit.20\} |
+| :shared: size.button.small-caret | :base: \{size.unit.16\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: space.button.medium-padding-y | :base: \{space.unit.8\} |
+| :shared: space.button.medium-padding-x | :base: \{space.unit.12\} |
+| :shared: space.button.medium-gap | :base: \{space.unit.8\} |
+| :shared: space.button.medium-nudge | :base: \{space.unit.4\} |
+| :shared: space.button.large-padding-y | :base: \{space.unit.10\} |
+| :shared: space.button.large-padding-x | :base: \{space.unit.16\} |
+| :shared: space.button.large-gap | :base: \{space.unit.12\} |
+| :shared: space.button.large-nudge | :base: \{space.unit.4\} |
+| :shared: space.button.small-padding-y | :base: \{space.unit.6\} |
+| :shared: space.button.small-padding-x | :base: \{space.unit.8\} |
+| :shared: space.button.small-gap | :base: \{space.unit.4\} |
+| :shared: space.button.small-nudge | :base: \{space.unit.4\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: borderWidth.button.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: borderRadius.button.medium | :semantic: \{borderRadius.base.button.medium\} |
+| :shared: borderRadius.button.large | :semantic: \{borderRadius.base.button.large\} |
+| :shared: borderRadius.button.small | :semantic: \{borderRadius.base.button.small\} |
+</CxTable>
+
+</CxToken>

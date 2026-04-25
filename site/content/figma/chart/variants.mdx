@@ -1,0 +1,129 @@
+---
+title: Chart
+description: Data visualization components that represent information graphically through various chart types like bar, line, pie, and donut charts.
+toc: true
+---
+
+# Variants
+
+Different configurations and states available for chart components to accommodate various data visualization requirements, presentation formats, and analytical needs. These variants provide flexibility in appearance, data structure, and visual emphasis while maintaining design consistency across different charting scenarios and data interpretation contexts.
+
+## Bar Chart
+
+Visual elements that represent quantitative data through rectangular bars with proportional heights or lengths. These components serve as the primary comparative data visualization interface, adapting their appearance and data organization based on value relationships, categorical groupings, and analytical presentation to provide clear data comparison and maintain consistent user experience across all bar chart scenarios.
+
+### Bar Variants
+
+Data presentation configurations that determine the structural organization and comparison approach of bar chart elements. These variants control the data grouping and visual hierarchy to match different analytical requirements and comparative contexts.
+
+<Callout>
+Bar variants are not direct variants of the Bar Chart component. To achieve these configurations, you need to dive into the component and change the type variant of the nested "_ Bar - Vertical" components.
+</Callout>
+
+<CxVariant img="bar-chart-bar-basic">
+
+#### Basic
+
+Standard bar chart presentation with individual bars representing single data values for straightforward comparative analysis. Use for simple data comparisons, basic metric visualization, or when displaying single-dimension data sets without complex relationships.
+
+</CxVariant>
+
+<CxVariant img="bar-chart-bar-grouped">
+
+#### Grouped
+
+Enhanced bar chart presentation with clustered bars for side-by-side data comparison and relationship analysis. Use for comparative data sets, before/after analysis, or when displaying multiple related metrics requiring direct visual comparison.
+
+</CxVariant>
+
+<CxVariant img="bar-chart-bar-stacked">
+
+#### Stacked
+
+Comprehensive bar chart presentation with segmented bars showing part-to-whole relationships and categorical breakdowns. Use for compositional data analysis, category distribution visualization, or when displaying multiple data components within single comparative units.
+
+</CxVariant>
+
+## Area Chart
+
+Visual elements that represent quantitative data through filled areas beneath trend lines for continuous data visualization. These components serve as the primary temporal and progressive data interface, adapting their appearance and trend visualization based on data patterns, temporal relationships, and analytical presentation to provide clear progression analysis and maintain consistent user experience across all area chart scenarios.
+
+### Graph Variants
+
+Visual presentation configurations that determine the line styling and area treatment of area chart elements. These variants control the aesthetic approach and data emphasis to match different analytical contexts and visual clarity requirements.
+
+<Callout>
+Graph variants are not direct variants of the Area Chart component. To achieve these configurations, you need to dive into the component and change the type variant of the nested "_ Area Graph" component.
+</Callout>
+
+<CxVariant img="area-chart-graph-linear">
+
+#### Linear
+
+Standard area chart presentation with straight-line connections and clean area fills for precise trend visualization. Use for continuous data trends, temporal analysis, or when displaying straightforward data progression with clear visual boundaries and sharp transitions.
+
+</CxVariant>
+
+<CxVariant img="area-chart-graph-curved">
+
+#### Curved
+
+Enhanced area chart presentation with smooth curved connections and flowing area treatment for organic trend visualization. Use for natural data patterns, smooth transitions, or when emphasizing fluid data relationships with softer visual aesthetics and seamless progressions.
+
+</CxVariant>
+
+## Gauge Chart
+
+Visual elements that represent single metric values through circular or arc-based indicators for performance and status visualization. These components serve as the primary single-value monitoring interface, adapting their appearance and indicator presentation based on value ranges, performance thresholds, and analytical presentation to provide clear metric status and maintain consistent user experience across all gauge chart scenarios.
+
+### Graph Variants
+
+Structural configurations that determine the shape and coverage of gauge chart elements. These variants control the visual format and space utilization to match different interface contexts and monitoring requirements.
+
+<CxVariant img="gauge-chart-graph-circle">
+
+#### Circle
+
+Complete circular gauge presentation with full 360-degree range for comprehensive metric visualization. Use for complete performance ranges, full-scale measurements, or when displaying metrics without directional emphasis or space constraints.
+
+</CxVariant>
+
+<CxVariant img="gauge-chart-graph-horseshoe">
+
+#### Horseshoe
+
+Partial circular gauge presentation with open bottom section for compact metric visualization with clear orientation. Use for dashboard implementations, space-efficient displays, or when maintaining directional reading patterns with reduced visual footprint.
+
+</CxVariant>
+
+<CxVariant img="gauge-chart-graph-semicircle">
+
+#### Semicircle
+
+Half-circle gauge presentation with 180-degree range for minimal space utilization and focused metric display. Use for compact interfaces, mobile dashboards, or when space constraints require efficient gauge presentation while maintaining clear metric communication.
+
+</CxVariant>
+
+## Donut Chart
+
+Visual elements that represent proportional data through segmented circular rings for part-to-whole relationship visualization. These components serve as the primary compositional data interface, adapting their appearance and segment organization based on data proportions, categorical relationships, and analytical presentation to provide clear distribution analysis and maintain consistent user experience across all donut chart scenarios.
+
+### Layout Variants
+
+Spatial organization configurations that determine the arrangement and positioning of legend elements relative to donut chart structures. These variants control the information hierarchy and space utilization to match different interface contexts and data presentation requirements.
+
+<CxVariant img="donut-chart-layout-bottom-legend">
+
+#### Bottom Legend
+
+Standard donut chart layout with legend positioned at the bottom for traditional information hierarchy and vertical space utilization. Use for most donut chart implementations, desktop interfaces, or when maintaining conventional data presentation patterns with clear categorical identification.
+
+</CxVariant>
+
+<CxVariant img="donut-chart-layout-right-legend">
+
+#### Right Legend
+
+Alternative donut chart layout with legend positioned at the right side for horizontal space optimization and side-by-side information arrangement. Use for wide interface layouts, dashboard implementations, or when horizontal space utilization is preferred while maintaining clear categorical reference.
+
+</CxVariant>

@@ -1,0 +1,90 @@
+---
+title: Mobile Alert
+description: Mobile-optimized notification components designed specifically for smaller screens, displaying important messages and alerts on mobile devices.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of mobile alert components for mobile-specific messaging and user confirmation interfaces.
+
+## Mobile Alert Dialog
+
+Properties that define the visual state and interactive behavior of mobile-optimized modal dialog elements requiring immediate user attention and response within mobile applications.
+
+<ExampleImage img="mobile-alert-window-props" />
+
+<CxProp>
+
+### layout: variant
+
+Controls the action layout and content organization of the mobile alert window based on interaction complexity and mobile usability requirements.
+
+- **stacked-actions**
+- inline-actions
+
+### has-icon: boolean
+
+Controls the visibility of an icon element positioned within the mobile alert window content area.
+
+### icon-instance: instance-swap
+
+@has-icon:
+: true
+
+Specifies which icon component to display when has-icon property is enabled.
+
+- **Icon Placeholder**
+
+### has-error-code: boolean
+
+Controls the visibility of error code display for technical alert scenarios requiring specific error identification.
+
+- **true**
+- false
+
+### has-slot: boolean
+
+Controls the visibility of a custom content slot for additional elements or media within the mobile alert window.
+
+### slot: slot
+
+@has-slot:
+: true
+
+Allows you to freely add and arrange content directly inside an alert window without detaching it.
+
+### has-2nd-action: boolean
+
+Controls the visibility of a secondary action element when multiple response options are needed within the mobile alert.
+
+- **true**
+- false
+
+### has-3rd-action: boolean
+
+@layout:
+: stacked-actions
+
+Controls the visibility of a tertiary action element for complex mobile alert scenarios requiring multiple user options.
+
+- **true**
+- false
+
+</CxProp>
+
+## Mobile Alert Screen
+
+Properties that control the layout and content structure of full-screen mobile overlay elements with comprehensive alert capabilities optimized for mobile environments.
+
+<ExampleImage img="mobile-alert-screen-props" />
+
+<CxProp>
+
+### display: variant
+
+Controls the presentation format and content organization of the mobile alert screen based on mobile-specific display requirements and user interaction patterns.
+
+- **standard**
+
+</CxProp>

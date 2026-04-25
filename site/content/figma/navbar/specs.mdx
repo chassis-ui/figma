@@ -1,0 +1,293 @@
+---
+title: Navbar
+description: Primary navigation components positioned at the top of pages, containing site branding and main navigation links.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of navbar components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Nav Link
+
+Specifications for individual navigation item elements including measurements, colors, typography, and interactive styling attributes. These values define the core appearance and state-dependent properties for navigation menu implementations.
+
+<ExampleImage img="nav-link-specs" />
+
+<CxSpec>
+
+### 1. Nav Link
+
+verticalPadding:
+: space.context.xsmall
+
+horizontalPadding:
+: space.context.xsmall
+
+itemSpacing:
+: space.context.xsmall
+
+### 2. Icon
+
+@state:
+: idle, hover
+
+height:
+: size.icon.glyph.medium
+
+width:
+: size.icon.glyph.medium
+
+fill:
+: color.context.default.fg-main
+
+@state:
+: active
+
+_height:_
+: size.icon.glyph.medium
+
+_width:_
+: size.icon.glyph.medium
+
+fill:
+: color.context.default.fg-subtle
+
+@state:
+: disabled
+
+_height:_
+: size.icon.glyph.medium
+
+_width:_
+: size.icon.glyph.medium
+
+fill:
+: color.context.default.fg-slight
+
+### 3. Label
+
+@state:
+: idle, hover
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.medium.normal
+
+@state:
+: active
+
+fill:
+: color.context.default.fg-subtle
+
+_typography:_
+: font.text.medium.normal
+
+@state:
+: disabled
+
+fill:
+: color.context.default.fg-slight
+
+_typography:_
+: font.text.medium.normal
+
+### 4. Badge Frame
+
+@state:
+: idle, hover, active
+
+opacity:
+: opacity.level.solid
+
+@state:
+: disabled
+
+opacity:
+: opacity.context.fg-slight
+
+### 5. Caret
+
+@state:
+: idle, hover
+
+height:
+: size.icon.glyph.medium
+
+width:
+: size.icon.glyph.medium
+
+fill:
+: color.context.default.fg-main
+
+@state:
+: active
+
+_height:_
+: size.icon.glyph.medium
+
+_width:_
+: size.icon.glyph.medium
+
+fill:
+: color.context.default.fg-subtle
+
+@state:
+: disabled
+
+_height:_
+: size.icon.glyph.medium
+
+_width:_
+: size.icon.glyph.medium
+
+fill:
+: color.context.default.fg-slight
+
+</CxSpec>
+
+## Navbar
+
+Specifications for the top-level navigation bar layout including container dimensions, responsive sizing, logo placement, and internal frame structure properties across large and small breakpoints.
+
+<ExampleImage img="navbar-specs" />
+
+<CxSpec>
+
+### 1. Navbar
+
+@size:
+: large
+
+verticalPadding:
+: space.unit.0
+
+horizontalPadding:
+: space.unit.0
+
+itemSpacing:
+: space.unit.0
+
+@size:
+: small
+
+verticalPadding:
+: space.unit.8
+
+_horizontalPadding:_
+: space.unit.0
+
+itemSpacing:
+: space.unit.8
+
+### 2. Container Frame
+
+@size:
+: large
+
+minWidth:
+: size.grid.breakpoint.medium
+
+maxWidth:
+: size.grid.breakpoint.xlarge
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.medium
+
+@size:
+: small
+
+minWidth:
+: none
+
+maxWidth:
+: none
+
+_verticalPadding:_
+: none
+
+horizontalPadding:
+: space.context.xsmall
+
+itemSpacing:
+: space.context.xsmall
+
+### 3. Logo
+
+height:
+: size.base.32
+
+### 4. Collapse Frame
+
+@size:
+: large
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+itemSpacing:
+: space.context.medium
+
+@size:
+: small
+
+_verticalPadding:_
+: none
+
+horizontalPadding:
+: space.context.xsmall
+
+itemSpacing:
+: space.context.xsmall
+
+### 5. Menu Frame
+
+@size:
+: large
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+itemSpacing:
+: none
+
+@size:
+: small
+
+_verticalPadding:_
+: none
+
+_horizontalPadding:_
+: none
+
+_itemSpacing:_
+: none
+
+### 6. Tools Frame
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+itemSpacing:
+: none
+
+</CxSpec>

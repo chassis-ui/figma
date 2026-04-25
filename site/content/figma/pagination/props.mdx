@@ -1,0 +1,131 @@
+---
+title: Pagination
+description: Navigation controls that divide content across multiple pages, allowing users to browse through large datasets or content collections sequentially.
+toc: true
+---
+
+# Props
+
+Configurable properties that control the appearance, behavior, and functionality of pagination components for content navigation and user interaction management.
+
+## Page Number
+
+Properties that define the visual state and interactive behavior of individual numeric page selection elements within pagination interfaces.
+
+<ExampleImage img="page-number-props" />
+
+<CxProp>
+
+### state: variant
+
+Controls the interactive state and visual feedback of the page number element based on user interaction and current page status.
+
+- **idle**
+- hover
+- active
+- disabled
+
+</CxProp>
+
+## Page Arrow
+
+Properties that define the visual state and directional functionality of navigation arrow elements for sequential page movement within pagination interfaces.
+
+<ExampleImage img="page-arrow-props" />
+
+<CxProp>
+
+### state: variant
+
+Controls the interactive state and visual feedback of the navigation arrow based on user interaction and directional availability.
+
+- **idle**
+- hover
+- press
+- disabled
+
+### icon: instance-swap
+
+Specifies which icon component to display for the directional navigation arrow when providing previous or next page functionality.
+
+</CxProp>
+
+## Simple Pagination
+
+Properties that define the visual state and navigation behavior of numbered page button elements for standard content pagination.
+
+<ExampleImage img="simple-pagination-props" />
+
+<CxProp>
+
+### state: variant
+
+Controls the position state and navigation capabilities of the pagination component based on current page location within the content sequence.
+
+- **first**
+- middle
+- last
+
+### has-separator: boolean
+
+Controls the visibility of a separator line between the paginated content and pagination controls.
+
+- **true**
+- false
+
+</CxProp>
+
+## Advanced Pagination
+
+Properties that define the visual state and enhanced functionality of comprehensive pagination elements including size configuration and optional control visibility.
+
+<ExampleImage img="advanced-pagination-props" />
+
+<CxProp>
+
+### size: variant
+
+Controls the dimensional scale and content presentation of the advanced pagination component to optimize usability across different screen sizes and interface contexts.
+
+- **large**
+- small
+
+### has-per-page: boolean
+
+Controls the visibility of item count selection input that allows users to configure how many items are displayed per page.
+
+- **true**
+- false
+
+### has-summary: boolean
+
+Controls the visibility of status information text that displays current item range and total count for user reference.
+
+- **true**
+- false
+
+### has-separator: boolean
+
+Controls the visibility of a separator line between the paginated content and pagination interface.
+
+- **true**
+- false
+
+</CxProp>
+
+## Dot Pagination
+
+Properties that define the visual state and position indication behavior of minimal dot-based navigation elements for sequential content browsing.
+
+<ExampleImage img="dot-pagination-props" />
+
+<CxProp>
+
+### position: variant
+
+Controls the active position state and visual feedback of the dot pagination component, determining which dot is highlighted within the sequence of available positions.
+
+- **active-position**
+
+</CxProp>
+

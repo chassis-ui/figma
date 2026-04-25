@@ -1,0 +1,126 @@
+---
+interface Props {
+  /**
+   * The Figma file URL or key (e.g., "OiVphIikHzUeicbtSChwpj")
+   */
+  url: string
+  /**
+   * Embed host identifier (required) - unique string to identify your site/product
+   */
+  embedHost?: string
+  /**
+   * Mode - set to 'dev' to open in Dev Mode
+   */
+  mode?: 'dev'
+  /**
+   * The node ID to display (e.g., a page or frame)
+   */
+  nodeId?: string
+  /**
+   * Whether the Figma footer is displayed
+   * @default true
+   */
+  footer?: boolean
+  /**
+   * Whether user can pan and zoom in the embed
+   * @default true
+   */
+  viewportControls?: boolean
+  /**
+   * Whether page selector is shown
+   * @default true
+   */
+  pageSelector?: boolean
+  /**
+   * Theme mode for the embed interface
+   * @default "light"
+   */
+  theme?: 'light' | 'dark' | 'system'
+  /**
+   * Custom width
+   * @default "800"
+   */
+  width?: string | number
+  /**
+   * Custom height
+   * @default "450"
+   */
+  height?: string | number
+  /**
+   * Custom title for accessibility
+   * @default "Figma Embed"
+   */
+  title?: string
+}
+
+const {
+  url,
+  embedHost,
+  mode,
+  nodeId,
+  footer = false,
+  viewportControls = false,
+  pageSelector = false,
+  theme,
+  width = '100%',
+  height = '100%',
+  title = 'Figma Embed'
+} = Astro.props
+
+// Build the embed URL
+let embedUrl = url
+
+// If url is just a file key, construct the full URL
+if (!url.startsWith('http')) {
+  embedUrl = `https://embed.figma.com/design/${url}`
+}
+
+// Ensure we're using the embed domain
+if (!embedUrl.includes('embed.figma.com')) {
+  embedUrl = embedUrl.replace('figma.com/design/', 'embed.figma.com/design/')
+  embedUrl = embedUrl.replace('figma.com/file/', 'embed.figma.com/design/')
+}
+
+// Parse existing URL to preserve any existing params
+const urlObj = new URL(embedUrl)
+
+// embed-host is required for Figma embeds to work properly
+if (!urlObj.searchParams.has('embed-host')) {
+  urlObj.searchParams.set('embed-host', embedHost || 'share')
+}
+
+// Only add/override query parameters if explicitly provided as props
+if (mode !== undefined) {
+  urlObj.searchParams.set('mode', mode)
+}
+if (nodeId !== undefined) {
+  urlObj.searchParams.set('node-id', nodeId)
+}
+if (footer !== undefined) {
+  urlObj.searchParams.set('footer', String(footer))
+}
+if (viewportControls !== undefined) {
+  urlObj.searchParams.set('viewport-controls', String(viewportControls))
+}
+if (pageSelector !== undefined) {
+  urlObj.searchParams.set('page-selector', String(pageSelector))
+}
+if (theme !== undefined) {
+  urlObj.searchParams.set('theme', theme)
+}
+
+const finalUrl = urlObj.toString()
+---
+
+<div class="cxd-example">
+  <iframe
+    title={title}
+    width={width}
+    height={height}
+    src={finalUrl}
+    allowfullscreen
+    allow="clipboard-read; clipboard-write"
+    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+  >
+  </iframe>
+</div>

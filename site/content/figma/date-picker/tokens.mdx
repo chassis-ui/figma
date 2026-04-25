@@ -1,0 +1,107 @@
+---
+title: Date Picker
+description: Input components that provide a calendar interface for users to select dates, date ranges, or specific time periods.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across date picker components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.date-picker.fg-idle | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.date-picker.bg-idle | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.date-picker.fg-hover | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.date-picker.bg-hover | :semantic: \{color.context.default.bg-even\} |
+| :granular: color.date-picker.fg-press | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.date-picker.bg-press | :semantic: \{color.context.default.bg-evident\} |
+| :granular: color.date-picker.fg-active | :semantic: \{color.context.white.base-color\} |
+| :granular: color.date-picker.bg-active | :semantic: \{color.context.default.cue-main\} |
+| :granular: color.date-picker.fg-range | :semantic: \{color.context.default.fg-idle\} |
+| :granular: color.date-picker.bg-range | :semantic: \{color.context.default.bg-highlight\} |
+| :granular: color.date-picker.fg-today | :semantic: \{color.context.default.cue-main\} |
+| :granular: color.date-picker.bg-today | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.date-picker.fg-weekend | :semantic: \{color.context.default.fg-subtle\} |
+| :granular: color.date-picker.bg-weekend | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.date-picker.fg-outside | :semantic: \{color.context.default.fg-slight\} |
+| :granular: color.date-picker.bg-outside | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.date-picker.fg-main | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.date-picker.bg-main | :semantic: \{color.context.default.bg-main\} |
+| :granular: color.date-picker.border-main | :semantic: \{color.context.default.transparent-color\} |
+| :granular: color.date-picker.border-subtle | :semantic: \{color.context.default.border-subtle\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.date-picker.day | :base: \{font.text.small.normal\} |
+| :granular: font.date-picker.today | :base: \{font.text.small.strong\} |
+| :granular: font.date-picker.label | :base: \{font.text.small.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.date-picker.day-width | :base: \{size.unit.40\} |
+| :granular: size.date-picker.day-height | :base: \{size.unit.40\} |
+| :granular: size.date-picker.week-width | :value: \{size.date-picker.day-width\}*7 |
+| :granular: size.date-picker.menu-width | :base: \{size.unit.120\} |
+| :shared: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :shared: size.icon.glyph.small | :base: \{size.unit.20\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.date-picker.padding-y | :base: \{space.unit.8\} |
+| :granular: space.date-picker.padding-x | :base: \{space.unit.8\} |
+| :granular: space.date-picker.gap | :base: \{space.unit.4\} |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.2xsmall | :base: \{size.unit.4\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.date-picker.main | :semantic: \{borderWidth.context.medium\} |
+| :semantic: borderWidth.context.medium | :base: \{size.unit.1\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.date-picker.main | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.date-picker.main | :base: \{shadow.elevation.default.40\} |
+</CxTable>
+
+</CxToken>

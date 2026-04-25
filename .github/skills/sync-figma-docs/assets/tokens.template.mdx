@@ -1,0 +1,70 @@
+---
+title: Component Name
+description: Brief description of the component's purpose and use cases.
+toc: true
+---
+
+# Tokens
+
+Design tokens that define reusable values for the component. Tokens are organized by category and use color-coded flags to indicate their level in the token hierarchy.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+@context:
+: default
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.bg-solid | :base: \{color.base.context.light.default.bg-evident\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.component.large | :base: \{font.text.large.strong\} |
+| :granular: font.component.medium | :base: \{font.text.medium.strong\} |
+| :granular: font.component.small | :base: \{font.text.small.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.component.large-main | :base: \{size.unit.32\} |
+| :granular: size.component.medium-main | :base: \{size.unit.28\} |
+| :granular: size.component.small-main | :base: \{size.unit.24\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.component.large-padding-x | :base: \{space.unit.8\} |
+| :granular: space.component.large-padding-y | :base: \{space.unit.4\} |
+| :granular: space.component.medium-padding-x | :base: \{space.unit.6\} |
+| :granular: space.component.medium-padding-y | :base: \{space.unit.2\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.component.main | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+</CxToken>

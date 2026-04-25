@@ -1,0 +1,313 @@
+---
+title: Section
+description: Structural components that divide page content into thematically related areas, providing clear visual separation and content organization.
+toc: true
+---
+
+# Specs
+
+Technical specifications and measurements for section components that ensure consistent implementation and precise visual rendering across different content organization contexts and layout interface scenarios.
+
+<SpecsLegend />
+
+## Section Header
+
+Header elements that provide section identification with precise dimensional and spacing specifications for consistent content organization and optimal section recognition.
+
+<ExampleImage img="section-header-specs" />
+
+<CxSpec>
+
+### 1. Section Header
+
+@size:
+: medium
+
+@flush:
+: false
+
+verticalPadding:
+: space.context.small
+
+horizontalPadding:
+: space.context.[size]
+
+itemSpacing:
+: space.context.[size]
+
+borderColor:
+: color.context.default.border-subtle
+
+borderWidthBottom:
+: borderWidth.asset.separator
+
+@_size:_
+: medium
+
+@flush:
+: true
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.asset.separator
+
+@size:
+: large
+
+@_flush:_
+: false
+
+verticalPadding:
+: space.context.medium
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.asset.separator
+
+@size:
+: small
+
+@_flush:_
+: false
+
+verticalPadding:
+: space.context.xsmall
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthBottom:_
+: borderWidth.asset.separator
+
+### 2. Icon
+
+height:
+: size.icon.glyph.[size]
+
+width:
+: size.icon.glyph.[size]
+
+fill:
+: color.section.icon-[size]
+
+### 3. Title Text
+
+fill:
+: color.section.fg-[size]
+
+typography:
+: font.section.header-[size]
+
+</CxSpec>
+
+## Section Footer
+
+Footer elements that provide section functionality with precise dimensional and interaction specifications for consistent action organization and optimal user accessibility.
+
+<ExampleImage img="section-footer-specs" />
+
+<CxSpec>
+
+### 1. Section Footer
+
+@size:
+: medium
+
+@flush:
+: false
+
+verticalPadding:
+: space.context.small
+
+horizontalPadding:
+: space.context.[size]
+
+itemSpacing:
+: space.context.[size]
+
+borderColor:
+: color.context.default.border-subtle
+
+borderWidthTop:
+: borderWidth.asset.separator
+
+@_size:_
+: medium
+
+@flush:
+: true
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthTop:_
+: borderWidth.asset.separator
+
+@size:
+: large
+
+@_flush:_
+: false
+
+verticalPadding:
+: space.context.medium
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthTop:_
+: borderWidth.asset.separator
+
+@size:
+: small
+
+@_flush:_
+: false
+
+verticalPadding:
+: space.context.xsmall
+
+_horizontalPadding:_
+: space.context.[size]
+
+_itemSpacing:_
+: space.context.[size]
+
+_borderColor:_
+: color.context.default.border-subtle
+
+_borderWidthTop:_
+: borderWidth.asset.separator
+
+### 2. Action Text
+
+fill:
+: color.context.default.link-main
+
+typography:
+: font.text.[size].normal
+
+</CxSpec>
+
+## Section Block
+
+Block elements that provide section structure with precise dimensional and layout specifications for consistent content containers and optimal layout organization.
+
+<ExampleImage img="section-block-specs" />
+
+<CxSpec>
+
+### 1. Section Block
+
+@flush:
+: false
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.medium
+
+@flush:
+: true
+
+verticalPadding:
+: none
+
+horizontalPadding:
+: none
+
+_itemSpacing:_
+: space.context.medium
+
+### 2. Content Frame
+
+@type:
+: basic
+
+borderColor:
+: none
+
+borderRadius:
+: none
+
+borderWidth:
+: none
+
+boxShadow:
+: none
+
+@type:
+: bordered
+
+borderColor:
+: color.context.default.border-subtle
+
+borderRadius:
+: borderRadius.context.medium
+
+borderWidth:
+: borderWidth.context.medium
+
+_boxShadow:_
+: none
+
+@type:
+: elevated
+
+_borderColor:_
+: none
+
+borderRadius:
+: borderRadius.context.medium
+
+_borderWidth:_
+: none
+
+boxShadow:
+: shadow.section.main
+
+</CxSpec>

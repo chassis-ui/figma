@@ -1,0 +1,250 @@
+---
+title: Mobile Nav Bottom
+description: Bottom navigation bars for mobile interfaces, providing primary navigation options in thumb-friendly locations at the bottom of the screen.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of mobile navigation bottom components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Mobile Bottom Navigation
+
+Specifications for mobile navigation tab elements including measurements, colors, typography, and tab interaction styling attributes. These values define the tab presentation and section navigation properties for mobile bottom navigation tab implementations.
+
+<ExampleImage img="mobile-bottom-navigation-specs" />
+
+<CxSpec>
+
+### 1. Tab item
+
+paddingTop:
+: space.unit.6
+
+paddingBottom:
+: space.unit.4
+
+itemSpacing:
+: space.unit.2
+
+### 2. Tab Text
+
+@active:
+: false
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.2xsmall.normal
+
+@active:
+: true
+
+fill:
+: color.context.primary.base-color
+
+_typography:_
+: font.text.2xsmall.normal
+
+### 3. Tab Icon
+
+@active:
+: false
+
+height:
+: size.icon.glyph.large
+
+width:
+: size.icon.glyph.large
+
+fill:
+: color.context.default.fg-subtle
+
+@active:
+: true
+
+_height:_
+: size.icon.glyph.large
+
+_width:_
+: size.icon.glyph.large
+
+fill:
+: color.context.primary.base-color
+
+### 4. Floating Frame
+
+Fixed height frame with overflowing content.
+
+height:
+: size.unit.28
+
+paddingBottom:
+: space.unit.8
+
+### 5. Floating Button Frame
+
+@active:
+: false
+
+height:
+: size.unit.52
+
+width:
+: size.unit.52
+
+fill:
+: color.context.primary.bg-idle
+
+borderRadius:
+: borderRadius.context.round-52
+
+boxShadow:
+: shadow.elevation.default.20
+
+@active:
+: true
+
+_height:_
+: size.unit.52
+
+_width:_
+: size.unit.52
+
+fill:
+: color.context.primary.bg-press
+
+_borderRadius:_
+: borderRadius.context.round-52
+
+boxShadow:
+: shadow.elevation.default.10
+
+### 6. Button Icon
+
+@active:
+: false
+
+height:
+: size.icon.glyph.large
+
+width:
+: size.icon.glyph.large
+
+fill:
+: color.context.primary.fg-idle
+
+@active:
+: true
+
+_height:_
+: size.icon.glyph.large
+
+_width:_
+: size.icon.glyph.large
+
+fill:
+: color.context.primary.fg-press
+
+</CxSpec>
+
+## Nav Actions
+
+Specifications for mobile navigation action elements including measurements, colors, and layout properties for action button containers.
+
+<ExampleImage img="nav-actions-specs" />
+
+<CxSpec>
+
+### 1. Actions - Basic
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.medium
+
+</CxSpec>
+
+## Nav Progress
+
+Specifications for mobile navigation progress elements including measurements, colors, typography, and progress status properties for purchase summary and step progress implementations.
+
+<ExampleImage img="nav-progress-specs" />
+
+<CxSpec>
+
+### 1. Progress - Basic
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.medium
+
+### 2. Label Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.small.strong
+
+### 3. Price Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.large.strong
+
+### 4. Currency Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.medium.strong
+
+### 5. Title Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.small.strong
+
+### 6. Description Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.small.normal
+
+### 7. Status Frame
+
+itemSpacing:
+: space.base.4
+
+### 8. Status Text
+
+Separate text boxes for current, division and total texts.
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.xsmall.normal
+
+</CxSpec>
+

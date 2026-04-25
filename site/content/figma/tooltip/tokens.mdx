@@ -1,0 +1,67 @@
+---
+title: Tooltip
+description: Small informational popups that appear on hover or focus, providing additional context, help text, or descriptions for UI elements.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across tooltip components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation for contextual information and guidance interfaces.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options for comprehensive tooltip styling and behavior control.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+Color tokens are listed for the default context variant only. Other context variants follow the same token pattern with variant-specific color values.
+
+@context:
+: default
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-inverse | :base: \{color.base.context.light.default.fg-inverse\} |
+| :semantic: color.context.default.bg-inverse | :base: \{color.base.context.light.default.bg-inverse\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Value |
+| --- | --- |
+| :base: font.text.small.normal | :value: fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight": \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing": \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\} |
+| :base: font.text.small.strong | :value: fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight": \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing": \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.2xsmall | :base: \{size.unit.4\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.tooltip.main | :semantic: \{borderRadius.context.small\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: shadow.tooltip.main | :base: \{shadow.elevation.default.40\} |
+</CxTable>
+
+</CxToken>

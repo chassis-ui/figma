@@ -1,0 +1,115 @@
+---
+title: Alert
+description: Prominent notification components that draw user attention to important messages, warnings, or time-sensitive information requiring immediate awareness or action.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of alert components. These specifications ensure consistent implementation across design tools and development environments for critical messaging and user confirmation interfaces.
+
+<SpecsLegend />
+
+## Alert Window
+
+Specifications for modal dialog elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each alert window variant requiring immediate user attention and response.
+
+<ExampleImage img="alert-window" />
+
+<CxSpec>
+
+### 1. Alert Window
+
+padding-y:
+: space.alert.[size]-padding-y
+
+padding-x:
+: space.alert.[size]-padding-x
+
+gap:
+: space.alert.[size]-gap
+
+color.background:
+: color.context.default.bg-main
+
+color.border:
+: color.context.default.transparent-color
+
+borderRadius:
+: borderRadius.alert.main
+
+borderWidth:
+: borderWidth.alert.main
+
+boxShadow:
+: shadow.common.modal
+
+### 2. Alert Icon
+
+size.height:
+: size.alert.[size]-icon
+
+size.width:
+: size.alert.[size]-icon
+
+color.foreground:
+: color.context.default.icon-main
+
+### 3. Text Frame
+
+gap:
+: space.context.xsmall
+
+### 4. Title Text
+
+color.foreground:
+: color.context.default.fg-main
+
+typography:
+: font.alert.[size]-title
+
+### 5. Body Text
+
+color.foreground:
+: color.context.default.fg-main
+
+typography:
+: font.alert.[size]-body
+
+### 6. Actions Frame
+
+gap:
+: space.context.medium
+
+</CxSpec>
+
+## Alert Screen
+
+Specifications for full-screen overlay elements including measurements, colors, typography, and styling attributes. These values define the comprehensive appearance and behavior properties for each alert screen variant with extensive messaging and interactive capabilities.
+
+<ExampleImage img="alert-screen" />
+
+<CxSpec>
+
+### 1. Alert Screen
+
+padding-y:
+: space.context.3xlarge
+
+padding-x:
+: space.context.3xlarge
+
+color.background:
+: color.context.default.dim-main
+
+### 2. Alert Window
+
+@size:large
+size.width:
+: 500px
+
+@size:small
+size.width:
+: fill
+
+</CxSpec>

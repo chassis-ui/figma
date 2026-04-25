@@ -1,0 +1,85 @@
+---
+title: Floating Button
+description: Persistent action buttons that remain visible and accessible, typically positioned in a fixed location as users scroll through content.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across floating button components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation for elevated button styling.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+Color tokens are listed for the default context variant only. Other context variants follow the same token pattern with variant-specific color values.
+
+@context:
+: default
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: color.button.default.fg-idle | :semantic: \{color.context.default.fg-idle\} |
+| :shared: color.button.default.bg-idle | :semantic: \{color.context.default.bg-idle\} |
+| :shared: color.button.default.fg-hover | :semantic: \{color.context.default.fg-hover\} |
+| :shared: color.button.default.bg-hover | :semantic: \{color.context.default.bg-hover\} |
+| :shared: color.button.default.fg-press | :semantic: \{color.context.default.fg-press\} |
+| :shared: color.button.default.bg-press | :semantic: \{color.context.default.bg-press\} |
+| :shared: color.button.default.fg-disabled | :semantic: \{color.context.default.fg-disabled\} |
+| :shared: color.button.default.bg-disabled | :semantic: \{color.context.default.bg-disabled\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Value |
+| --- | --- |
+| :base: font.text.small.strong | :value: fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :semantic: size.icon.glyph.small | :base: \{size.unit.20\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.small | :base: \{size.unit.12\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :semantic: space.context.2xsmall | :base: \{size.unit.4\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderRadius.context.round-56 | :base: \{size.unit.28\} |
+| :semantic: borderRadius.context.round-48 | :base: \{size.unit.24\} |
+| :semantic: borderRadius.context.round-40 | :base: \{size.unit.20\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Value |
+| --- | --- |
+| :base: shadow.elevation.default.30 | :value: color: \{color.shadow.default\}, type: dropShadow, x: \{dimension.base.0\}, y: \{dimension.base.5\}, blur: \{dimension.base.20\}, spread: \{dimension.base.n5\}\} \{color: \{color.shadow.default\}, type: dropShadow, x: \{dimension.base.0\}, y: \{dimension.base.d25\}, blur: \{dimension.base.10\}, spread: \{dimension.base.nd25\} |
+</CxTable>
+
+</CxToken>

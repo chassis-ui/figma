@@ -1,0 +1,44 @@
+---
+import { getEntry } from 'astro:content'
+import ResponsiveImage from '@chassis-ui/docs/components/ResponsiveImage.astro'
+
+const { img, alt, wide, large, neutral } = Astro.props
+
+// Get component and tab from URL
+const path = Astro.url.pathname
+const matches = path.match(/\/figma\/docs\/components\/([^\/]+)\/([^\/]+)/)
+
+let frontmatter = null
+let component = null
+if (matches) {
+  const [, comp, tab] = matches
+  component = comp
+  const entry = await getEntry('figma', `${comp}/${tab}`)
+  frontmatter = entry?.data
+}
+---
+
+<div
+  class={`cx-variant mb-xlarge pt-xlarge border-top border-subtle` +
+    (wide ? ` flex-column-reverse gap-medium` : ' gap-xlarge-xlarge')}
+>
+  <div
+    class={`cxd-example p-medium p-xlarge-3xlarge align-content-center m-0` +
+      (!wide ? (large ? ` col-xlarge-7` : ' col-xlarge-5') : '') +
+      (neutral ? ' neutral-bg-highlight' : '')}
+  >
+    <ResponsiveImage
+      imgPath={`/static/images/figma/components/${component}/light/${img}.png`}
+      alt={alt ? alt : `${frontmatter?.title} variant example image`}
+      classes="visible-light mw-100"
+    />
+    <ResponsiveImage
+      imgPath={`/static/images/figma/components/${component}/dark/${img}.png`}
+      alt={alt ? alt : `${frontmatter?.title} variant example image`}
+      classes="visible-dark mw-100"
+    />
+  </div>
+  <div class="cxd-variant-content">
+    <slot />
+  </div>
+</div>

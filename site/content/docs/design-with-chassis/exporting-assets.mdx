@@ -1,0 +1,350 @@
+---
+title: Exporting Assets
+description: Export design assets from Figma to the Chassis Assets repository for multi-brand, multi-platform distribution.
+toc: true
+---
+
+[1]: https://chassis-ui.com/assets
+
+## Overview
+
+Exporting assets from Chassis Figma involves preparing and exporting visual content—images, illustrations, graphics, and icons—to the [Chassis Assets][1] repository. Chassis Assets then manages multi-brand, multi-platform distribution of these assets to web, iOS, and Android applications.
+
+### What is Chassis Assets?
+
+Chassis Assets is a comprehensive design asset management and distribution system that bridges design workflows with production applications, enabling consistent delivery of visual content across multiple brands and platforms.
+
+- **Multi-Brand Support**: Different visual assets for different brands with shared defaults
+- **Multi-Platform Distribution**: Automatic conversion to web, iOS, and Android formats
+- **Override System**: Brand-specific assets override defaults only when needed
+- **Organized Structure**: Clear hierarchy by brand, application, and asset type
+
+### Repository Structure
+
+Chassis Assets organizes files in a hierarchical structure where default assets are shared across brands and brand-specific assets override defaults when needed.
+
+```
+source/
+├── default/          → Shared assets for all brands
+│   └── [app]/        → Application context (docs, mobile-app, etc.)
+│       ├── images/   → Photos, illustrations, graphics
+│       ├── icons/    → Icon files (usually from chassis-icons)
+│       └── fonts/    → Typography files
+└── [brand]/          → Brand-specific overrides
+    └── [app]/        → Same structure as default
+        ├── images/
+        ├── icons/
+        └── fonts/
+```
+
+**Key concepts**:
+- **Default assets**: Shared across all brands, used as fallback
+- **Brand overrides**: Brand-specific versions override defaults when present
+- **Apps**: Separate asset sets per application (docs, mobile-app, etc.)
+
+## Naming Conventions
+
+Layer names in Figma become filenames when exported. Follow these patterns to ensure consistency across the system and proper distribution to platforms.
+
+### Vector Images
+
+Use the following pattern: `image-name[-state][-theme].svg`
+
+- **Themes**: Use `light` for light theme assets and `dark` for dark theme assets
+- **States**: Use state name if asset has variants (e.g., `hover`, `active`, `disabled`)
+- Use kebab-case (all lowercase, words separated by hyphens)
+- Ensure the name is descriptive and unique
+
+**Examples**:
+- `logo-brand.svg`
+- `logo-brand-light.svg`, `logo-brand-dark.svg`
+- `illustration-onboarding-step-1.svg`
+- `icon-feature-hover-light.svg`, `icon-feature-hover-dark.svg`
+
+### Raster Images
+
+Layer names must include resolution indicators for high-DPI variants to ensure proper distribution across devices.
+
+Use the following pattern: `image-name[-state][-theme][@resolution].png|.jpg`
+
+- **Themes**: Use `light` or `dark` for theme-specific assets
+- **States**: Use state names for interactive variants
+- **Resolution**: Use `@2x`, `@3x` for high-DPI variants (omit for 1x)
+- Use kebab-case
+- Ensure the name is descriptive and unique
+
+**Examples**:
+- `hero-background.jpg`, `hero-background@2x.jpg`, `hero-background@3x.jpg`
+- `hero-background-light.jpg` / `hero-background-dark.jpg`
+- `thumbnail-product.png`, `thumbnail-product@2x.png`
+
+### Icons
+
+Icon filenames must specify their style (solid or outline) to distinguish between filled and line variations. Icons typically flow through [Chassis Icons](https://github.com/chassis-ui/icons) for font and sprite generation, though individual icon files can be exported directly to Chassis Assets when needed.
+
+Use the following pattern: `icon-name-style.svg`
+
+- **Styles**: Use `solid` for filled icons and `outline` for line icons
+- Use kebab-case
+- Ensure the name is descriptive and unique
+
+**Examples**:
+- `info-circle-solid.svg`
+- `info-circle-outline.svg`
+- `arrow-right-solid.svg`
+
+## Export Settings
+
+Configure Figma's export settings for each asset type to ensure proper format, resolution, and quality for distribution.
+
+### Vector Images
+
+Ensure all vector images are exported with these specifications for proper scaling and distribution.
+
+- **Format**: SVG
+- **Size**: 1x with defined viewBox for scaling
+- **Location**: `source/[brand]/[app]/images/` (see [Repository Structure](#repository-structure))
+- **Optimization**: Outline strokes, flatten unnecessary layers, remove hidden elements
+
+### Raster Images
+
+Ensure all raster images are exported with appropriate format, resolution, and quality settings.
+
+- **Format**: PNG or JPG
+- **Resolution**: Export @1x, @2x, @3x variants
+- **Quality**: 80-90 for JPG
+- **Location**: `source/[brand]/[app]/images/` (see [Repository Structure](#repository-structure))
+- **Optimization**: Compress before committing
+
+### Icons
+
+All glyph icons should be exported at a consistent size with proper viewBox for scaling.
+
+- **Format**: SVG
+- **Size**: 24x24px
+- **Location**: `source/[brand]/[app]/icons/` (see [Repository Structure](#repository-structure))
+- **Note**: See [Chassis Icons documentation](https://chassis-ui.com/icons) for icon font workflow
+
+## Prepare to Export
+
+Preparing and exporting assets from Figma requires careful attention to naming conventions, export settings, and file organization.
+
+### Choosing Format
+
+Use this decision guide to determine which format to use for your assets.
+
+<CxTable>
+| If your asset... | Use | Why |
+|------------------|-----|-----|
+| Is a simple vector (logo, icon, diagram) | SVG | Infinitely scalable, small file size |
+| Is a complex vector (detailed illustration) | PNG | Prevents large SVG file sizes from complexity |
+| Contains any raster elements or effects | PNG | Maintains quality of raster content |
+| Is a photograph | JPG | Best compression for photographic content |
+| Needs transparency | PNG or SVG | Both formats support transparency |
+</CxTable>
+
+### Organizing Assets
+
+Organize the assets in a dedicated section or frame with a name that reflects Chassis Assets repository structure. This makes it easier to manage exports and maintain consistency.
+
+```
+assets/                                         -> Page, section or frame in Figma for all exportable assets
+├── default/docs/                               -> Section or frame for Shared assets for all brands
+│   ├── images/shared-raster-image-file-name
+│   └── images/shared-vector-image-file-name   
+├── chassis/docs/                               -> Brand-specific files or overrides
+│   ├── images/brand-logo-light                 
+│   └── images/brand-logo-dark                  
+└── example/docs/                               -> Brand-specific overrides
+    ├── images/brand-logo-light                 
+    ├── images/brand-logo-dark                  
+    └── images/shared-raster-image-file-name           -> Override default with brand-specific version (if needed)
+```
+
+Before exporting, ensure your Figma file is properly organized and layers are correctly named.
+
+1. Organize assets in a dedicated Figma page or section
+2. Rename layers using correct naming conventions (layer name = filename)
+3. Add export settings to layers (format, resolution, suffix)
+4. Have local copy of chassis-assets repository cloned
+
+### Bulk Export to Repository
+
+Select `assets` section or frame in Figma, then use File → Export to export all assets at once to `chassis-assets/source/` directory with correct structure.
+
+Files will be exported to the correct brand and app folders based on their naming and organization in Figma. Verify the export settings and destination path before confirming the export.
+
+```
+source/
+├── default/
+│   └── docs/
+│       └── images/
+│           ├── shared-raster-image-file-name.png
+│           ├── shared-raster-image-file-name@2x.png
+│           ├── shared-raster-image-file-name@3x.png
+│           └── shared-vector-image-file-name.svg
+├── chassis/
+│   └── docs/
+│       └── images/
+│           ├── brand-logo-light.svg
+│           └── brand-logo-dark.svg
+└── example/
+    └── docs/
+        └── images/
+            ├── brand-logo-light.svg
+            ├── brand-logo-dark.svg
+            ├── shared-raster-image-file-name.png
+            ├── shared-raster-image-file-name@2x.png
+            └── shared-raster-image-file-name@3x.png
+```
+
+### Platform Transformations
+
+The [Chassis Assets][1] build system automatically transforms your Figma exports into platform-specific formats and naming conventions. 
+
+**Source**: 
+- `images/hero-background.png`
+- `images/hero-background@2x.png`
+- `icons/info-circle-solid.svg`
+
+**Distributed as**:
+- **Web**: kebab-case with resolution indicators
+    - `images/hero-background.png`
+    - `images/hero-background@2x.png`
+    - `icons/info-circle-solid.svg`
+- **iOS**: snake_case with resolution indicators
+    - `images/hero_background.png`
+    - `images/hero_background@2x.png`
+    - `icons/info_circle_solid.svg`
+- **Android**: snake_case with density folders and `ic` prefix for icons
+    - `images/drawable-mdpi/hero_background.png`
+    - `images/drawable-xhdpi/hero_background.png`
+    - `icons/ic_info_circle_solid.svg`
+
+You only need to follow one naming pattern in Figma—the build system handles the rest.
+
+## Best Practices
+
+Follow these guidelines to ensure optimal asset quality and performance across all platforms.
+
+### Resolution Variants
+
+Not all raster images require multiple resolution variants (@2x, @3x). Focus on assets where resolution differences impact visual quality.
+
+**Always provide variants for**:
+- UI graphics and small images
+- Thumbnails and icons (if using PNG)
+- Interface elements with fine details
+
+**Not necessary for**:
+- Large photos and hero backgrounds (single high-res acceptable)
+- Full-width images that scale responsively
+
+### Quality Assurance
+
+Use this checklist before and after exporting to ensure assets are properly configured.
+
+**Pre-Export**:
+- [ ] Layers renamed with correct naming convention (kebab-case)
+- [ ] Theme/state suffixes added where needed (-light, -dark, -hover, etc.)
+- [ ] Export settings configured (format, size, suffix for resolutions)
+- [ ] Export destination path verified (default vs brand-specific)
+- [ ] Resolution variants configured (@1x, @2x, @3x for rasters)
+
+**Post-Export**:
+- [ ] Filenames match expected pattern
+- [ ] Files in correct directory structure
+- [ ] All resolution variants present
+- [ ] File sizes reasonable (compress if needed)
+- [ ] SVG files optimized (no unnecessary code)
+- [ ] Visual check: files display correctly
+
+### Asset Optimization
+
+Optimize assets in Figma and after exporting to reduce file sizes while maintaining quality.
+
+**In Figma**:
+- Flatten unnecessary layers
+- Remove hidden/invisible elements
+- Outline strokes for SVG exports
+- Use appropriate artboard sizes
+
+**After Export**:
+
+Use specialized tools after exporting to further compress assets without sacrificing visual quality.
+
+- **SVG**: Use [SVGOMG](https://jakearchibald.github.io/svgomg/) to remove metadata and simplify paths
+- **PNG/JPG**: Use [ImageOptim](https://imageoptim.com/) or [Squoosh](https://squoosh.app/) to compress (aim for 70-80% reduction)
+- **WebP**: Convert PNG/JPG to WebP using [Squoosh](https://squoosh.app/) for 25-35% smaller file sizes with better quality
+
+**WebP conversion**:
+- Superior compression compared to PNG/JPG while maintaining quality
+- Supports transparency like PNG
+- Supported in all modern browsers
+- Quality setting: 75-85 provides excellent balance
+- Ideal for web-first applications where file size matters
+
+**Target file sizes**:
+- SVG icons: < 5 KB
+- Small graphics: < 50 KB
+- Photos/complex images: < 500 KB
+- Hero backgrounds: < 1 MB
+
+### Adaptive Cropping
+
+Images often need to fit containers with dynamic widths while maintaining a fixed height (e.g., content cards). Adaptive cropping ensures that images remain visually appealing across multiple device sizes and orientations by focusing on key elements.
+
+**Design Considerations**:
+- **Define safe zones** to ensure critical elements are always visible
+- **Place key elements** (faces, logos, text) in the visual center or focal points
+- **Avoid edge placement** of important elements that risk being cut off
+- **Account for UI overlays** (buttons, titles) that might cover parts of the image
+
+**Implementation**:
+- Start with smaller screens where cropping challenges are more apparent
+- Ensure key elements are the first thing users notice, even in cropped views
+- Regularly test designs with real-world devices and scenarios
+
+## Troubleshooting
+
+Common issues you might encounter when exporting assets from Figma and their solutions.
+
+**Unexpected filenames**:
+- Layer name becomes filename—rename the layer, not the export
+- Remove spaces and special characters, use kebab-case
+- Check export suffix settings
+
+**SVG exports include unnecessary code**:
+- Use "Outline stroke" in Figma before exporting
+- Flatten complex layer structures and remove invisible layers
+- Optimize with SVGOMG after export
+
+**Image file sizes too large**:
+- Reduce artboard dimensions in Figma
+- Lower JPG quality setting (70-80)
+- Optimize with ImageOptim or Squoosh after export
+
+**Assets not appearing in correct directory**:
+- Verify export destination path matches repository structure
+- Check brand and app folder names
+- Ensure target directory exists and has proper permissions
+
+## Next Steps
+
+Once you've exported assets from Figma:
+
+- **[Chassis Assets Documentation](https://chassis-ui.com/assets)** - Learn about committing, building, and distributing assets
+- **[Theme Switching](./theme-switching)** - Working with color modes in Figma
+- **[Component Assets](../getting-started/component-assets)** - Using asset-based content components
+
+## Resources
+
+**Figma Export Tools**:
+- **[SVGOMG](https://jakearchibald.github.io/svgomg/)** - SVG optimization tool
+- **[Squoosh](https://squoosh.app/)** - Image compression and WebP conversion
+- **[ImageOptim](https://imageoptim.com/)** - Mac app for image optimization
+
+**Chassis Assets**:
+- **[Chassis Assets Repository](https://github.com/chassis-ui/assets)** - Git workflow, building, and distribution
+- **[Asset Type Guidelines](https://chassis-ui.com/assets/asset-types)** - Detailed guidelines for images, icons, and other asset types
+

@@ -1,0 +1,82 @@
+---
+title: Chart
+description: Data visualization components that represent information graphically through various chart types like bar, line, pie, and donut charts.
+toc: true
+---
+
+# Specs
+
+Technical specifications and design system values that define the visual and structural properties of chart components. These specifications ensure consistent implementation across design tools and development environments.
+
+<SpecsLegend />
+
+## Bar Value
+
+Specifications for comparative data visualization elements with vertical bar orientation including measurements, colors, typography, and categorical styling attributes. These values define the visual presentation and comparison properties for vertical bar chart implementations.
+
+<ExampleImage img="bar-chart-specs" />
+
+<CxSpec>
+
+### 1. _ Bar Value - Vertical
+
+This container adjusts the heights of "_ Bar Item" components from 10% to 100% for flexible display.
+
+### 2. _ Bar Item - Vertical
+
+The nested component's height varies from 10% to 100% of the "_ Bar Value" component.
+
+fill:
+: color.context.primary.base-color
+
+borderRadiusTopRight:
+: borderRadius.context.small
+
+borderRadiusTopLeft:
+: borderRadius.context.small
+
+### 3. Gradient
+
+Rectangle shape within the Bar Item component.
+
+@blend:
+: soft light
+
+fill:
+: gradient.palette.white.l-180
+
+</CxSpec>
+
+## _ Gauge Graph
+
+Specifications for single metric visualization elements including measurements, colors, typography, and indicator styling attributes. These values define the visual presentation and performance monitoring properties for gauge chart implementations.
+
+<ExampleImage img="gauge-graph-specs" />
+
+<CxSpec>
+
+### 1. Background
+
+Intersect selection boolean operation to visualize the graph base.
+
+fill:
+: color.context.default.dim-slight
+
+### 2. Value
+
+Intersect selection boolean operation to visualize the graph value.
+
+fill:
+: color.context.primary.base-color
+
+### 3. Overlay
+
+Intersect selection boolean operation to add gradient overlay to the value.
+
+@blend:
+: soft light
+
+fill:
+: gradient.palette.white.l-270
+
+</CxSpec>

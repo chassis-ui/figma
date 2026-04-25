@@ -1,0 +1,139 @@
+---
+title: Welcome to Chassis Figma
+description: A comprehensive set of variables, styles, components, and guidelines to help designers create cohesive and user-friendly interfaces that adapt to multiple brands and platforms.
+toc: true
+aliases:
+ - "/getting-started"
+ - "[[docsref:/getting-started]]"
+
+---
+
+## Overview
+
+Chassis Figma library is a comprehensive design system library for Figma that provides everything a product, design, and development team needs to create enterprise-scale, multi-brand, multi-platform applications.
+
+Built on top of the Chassis Design System, it offers a complete set of design tokens, components, templates, and guidelines for creating consistent, accessible, and brand-adaptable user interfaces.
+
+### Key Features
+
+- **Multi-Brand Support**: One library for all brands with instant theme switching
+- **Fully Tokenized**: Design tokens map directly to production tokens for design-code parity
+- **Single-File Components**: Each component in its own file with built-in documentation
+- **Complete Design Library**: UI components, IA diagramming tools, design documentation, and templates
+- **Component Assets**: Swappable content layers for flexible customization without detaching
+
+## What Makes It Unique
+
+Chassis Figma library combines powerful design tokens, reusable components, and intelligent theming to streamline design workflows.
+
+Whether you're designing for a single brand or managing multiple brands across different platforms, Chassis Figma library provides the flexibility and consistency modern design teams need.
+
+### Multi-Brand Support
+
+Chassis Figma library is designed from the ground up to support multiple brands and themes within a single library. With a fully tokenized system and universal theme switching, you can easily create designs for different brands without needing separate libraries or complex overrides.
+
+- **Single Source of Truth**: One library for all brands
+- **Instant Theme Switching**: Change themes across entire designs with variables
+- **Brand-Specific Tokens**: Customize colors, typography, and more for each brand
+- **Consistent Components**: Same components adapt to different brand styles
+
+### Fully Tokenized
+
+Everything in Chassis Figma library is fully tokenized and synchronized with [Chassis Tokens](https://github.com/chassis-ui/tokens) using **Tokens Studio plugin**, enabling:
+
+- **Universal Theme Switching**: Change brands/themes across entire designs instantly
+- **Design-to-Code Consistency**: Direct mapping between Figma variables and production tokens
+- **Bidirectional Sync**: Tokens flow from Git repository to Figma Variables via Tokens Studio
+- **Future-Proof Designs**: Non-breaking updates when token values change
+- **Documentation Theming**: Even IA diagrams and documentation can switch themes
+
+### Single-File Components
+
+Each component exists as a separate Figma file, providing:
+
+- **Framework Alignment**: Similar structure to UI framework component organization
+- **Built-in Documentation**: Every component includes its own guideline pages
+- **Test Pages**: Special pages prevent accidental override losses during design iterations
+- **Version Control**: Easier team collaboration and change tracking
+
+### Complete Design Library
+
+Chassis Figma library goes beyond standard UI component libraries by including:
+
+- **UI Components**: All standard interface elements (buttons, forms, cards, etc.)
+- **IA Diagraming Tools**: Information architecture and flowchart components
+- **Design Documentation**: Style guide and specification components
+- **Templates**: Pre-built page and section templates for rapid prototyping
+
+### Component Assets
+
+Components use special "asset" components for their content layers (text, icon, image, etc.), allowing you to:
+
+- **Modify Without Detaching**: Change content and style while staying in sync with source
+- **State Variations**: Swap text assets with skeleton assets for loading states
+- **Flexible Customization**: adapt components without losing library connection
+
+## Chassis UI Ecosystem
+
+Chassis Figma library is part of a comprehensive multi-repository design system with unified documentation:
+
+### Core Repositories
+
+- **[chassis-tokens](https://github.com/chassis-ui/tokens)**: Design token generation and management
+- **[chassis-assets](https://github.com/chassis-ui/assets)**: Asset management and distribution
+- **[chassis-icons](https://github.com/chassis-ui/icons)**: Icon generation and sprite creation
+- **[chassis-css](https://github.com/chassis-ui/css)**: Production CSS framework
+- **chassis-figma**: Figma library and design tools (this project)
+
+### Documentation Architecture
+
+All Chassis project documentation sites use **@chassis-ui/docs** shared package for consistency:
+
+- **Unified Experience**: Single cohesive website at [chassis-ui.com](https://chassis-ui.com)
+- **Shared Components**: Common layouts, navigation, and UI components
+- **Independent Deployment**: Each project deploys separately to Vercel
+- **Proxy Routing**: Main site routes /docs/* paths to project-specific sites
+
+## Key Benefits
+
+Chassis Figma library empowers design and development teams to build scalable, multi-brand applications with unprecedented speed and consistency. By combining tokenized design systems with intelligent component architecture, it bridges the gap between design intent and production implementation.
+
+### For Designers
+
+- **Rapid Prototyping**: Pre-built components and templates accelerate design work
+- **Brand Flexibility**: Switch between brand themes instantly with variables
+- **Design Documentation**: Create spec sheets and guidelines within your design files
+- **Consistent Quality**: Tokenized system ensures visual consistency across all work
+
+### For Product Teams
+
+- **Multi-Brand Management**: Manage multiple brands from a single design system
+- **Scalability**: Enterprise-ready structure supports large organizations
+- **Cross-Platform**: Design once, deploy to web, iOS, and Android
+- **Living Documentation**: IA diagrams and specs stay up-to-date with design changes
+
+### For Developers
+
+- **Design-Code Parity**: Figma variables map directly to production tokens
+- **Component Library Sync**: Figma structure mirrors code component organization
+- **Automated Handoff**: Token synchronization reduces manual specification work
+- **Predictable Implementation**: Consistent component props and behaviors
+
+## Getting Started
+
+Ready to use Chassis Figma library in your projects? Continue to the next sections:
+
+1. **[Library Setup](./library-setup)** - Install and configure the Figma library
+2. **[Component Assets](./component-assets)** - Understand the asset component system
+3. **[Variables & Styles](./variables-styles)** - Learn about design tokens and theming
+4. **[Design Guidelines](../design-guidelines/working-with-templates)** - Best practices and workflows
+
+## Support and Community
+
+- **Documentation**: [https://chassis-ui.com/figma](https://chassis-ui.com/figma)
+- **GitHub**: [https://github.com/chassis-ui/figma](https://github.com/chassis-ui/figma)
+- **Issues**: [Report bugs and request features](https://github.com/chassis-ui/figma/issues)
+
+## License
+
+Chassis Figma library is open source and available under the [MIT License](https://github.com/chassis-ui/figma/blob/main/LICENSE).

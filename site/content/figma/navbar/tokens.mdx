@@ -1,0 +1,83 @@
+---
+title: Navbar
+description: Primary navigation components positioned at the top of pages, containing site branding and main navigation links.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across navbar components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.fg-slight | :base: \{color.base.context.light.default.fg-slight\} |
+| :semantic: color.context.default.border-subtle | :base: \{color.base.context.light.default.border-subtle\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :shared: size.icon.glyph.xsmall | :base: \{size.unit.16\} |
+| :shared: grid.breakpoint.xlarge | :value: 1200 |
+| :shared: grid.breakpoint.medium | :value: 768 |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: borderWidth.asset.separator | :base: \{size.asset.separator\} |
+</CxTable>
+
+### Opacity
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: opacity.base.solid | :value: 1 |
+| :semantic: opacity.context.fg-slight | :value: 0.25 |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.nav-top.main | :base: \{shadow.elevation.default.40\} |
+</CxTable>
+
+</CxToken>
