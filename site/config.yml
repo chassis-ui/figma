@@ -4,8 +4,8 @@ baseURL:                "https://chassis-ui.com/figma"
 docsDir:                "site"
 docsPath:                "/figma/docs"
 
-subtitle:               "A comprehensive tokenized Figma component library for building scalable design systems."
-description:            "Chassis Figma provides a complete set of tokenized components with customizable themes, responsive layouts, and design tokens for consistent UI development."
+subtitle:               "Tokenized Figma Components for Scalable Design Systems"
+description:            "Documentation for the Chassis UI Figma component library, mapping tokenized variants and properties to their CSS and design token implementations."
 authors:                "Ozgur Gunes"
 
 current_version:        "0.1.0"
