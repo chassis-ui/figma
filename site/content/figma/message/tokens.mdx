@@ -1,19 +1,84 @@
 ---
 title: Message
-description: Contextual feedback components that communicate information, success confirmations, warnings, or errors to users in response to their actions.
+description: Real-time communication components that display conversational messages, embedded content, and form elements for messaging and chat interface contexts.
+toc: true
 ---
 
 # Tokens
 
-Design tokens that control the visual appearance, spacing, and behavioral characteristics of message components, ensuring consistent conversational communication across different messaging contexts and maintaining design system coherence.
+Standardized design system values that define consistent visual properties across message components. These tokens ensure visual coherence while enabling flexible theme customization for messaging and conversational interfaces.
 
 ## Theming Tokens
 
-Visual styling and appearance tokens that define the color, typography, and visual treatment of message components to maintain consistent messaging interfaces across different theme contexts and conversational requirements.
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect other components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.message.bg-chat | :semantic: \{color.context.default.bg-evident\} |
+| :granular: color.message.fg-form | :semantic: \{color.context.primary.base-color\} |
+| :granular: color.message.bg-form | :semantic: \{color.context.default.bg-even\} |
+| :granular: color.message.fg-received | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.message.bg-received | :semantic: \{color.context.default.bg-main\} |
+| :granular: color.message.fg-sent | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.message.bg-sent | :semantic: \{color.context.primary.bg-even\} |
+| :granular: color.message.fg-embed | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.message.bg-embed | :semantic: \{color.context.default.dim-slight\} |
+| :granular: color.message.fg-status | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.message.bg-status | :semantic: \{color.context.default.dim-slight\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.border-subtle | :base: \{color.base.context.light.default.border-subtle\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing: \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing: \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.small.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing: \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.xsmall.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.xsmall\}, fontSize: \{typography.fontSize.text.xsmall\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing: \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: borderWidth.asset.separator | :shared: \{size.asset.separator\} |
+| :shared: borderWidth.asset.indicator | :shared: \{size.asset.indicator\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderRadius.context.medium | :base: \{borderRadius.base.medium\} |
+| :semantic: borderRadius.context.small | :base: \{borderRadius.base.small\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.message.main | :base: \{shadow.elevation.default.10\} |
+</CxTable>
+
+### Opacity
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: opacity.context.fg-subtle | :value: 0.5 |
+</CxTable>
+
+</CxToken>

@@ -1,6 +1,7 @@
 ---
 title: Pagination
 description: Navigation controls that divide content across multiple pages, allowing users to browse through large datasets or content collections sequentially.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,69 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all pagination components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-idle | :base: \{color.base.context.light.default.fg-idle\} |
+| :semantic: color.context.default.bg-idle | :base: \{color.base.context.light.default.bg-idle\} |
+| :semantic: color.context.default.fg-hover | :base: \{color.base.context.light.default.fg-hover\} |
+| :semantic: color.context.default.bg-hover | :base: \{color.base.context.light.default.bg-hover\} |
+| :semantic: color.context.default.fg-press | :base: \{color.base.context.light.default.fg-press\} |
+| :semantic: color.context.default.bg-press | :base: \{color.base.context.light.default.bg-press\} |
+| :semantic: color.context.default.fg-disabled | :base: \{color.base.context.light.default.fg-disabled\} |
+| :semantic: color.context.default.bg-disabled | :base: \{color.base.context.light.default.bg-disabled\} |
+| :semantic: color.context.primary.fg-solid | :base: \{color.base.context.light.primary.fg-solid\} |
+| :semantic: color.context.primary.bg-solid | :base: \{color.base.context.light.primary.bg-solid\} |
+| :semantic: color.context.primary.base-color | :base: \{color.base.context.light.primary.base-color\} |
+| :semantic: color.context.neutral.base-color | :base: \{color.base.context.light.neutral.base-color\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing: \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.strong | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.strong\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.text.base\}, paragraphSpacing: \{typography.paragraphSpacing.text.base\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.pagination.dot-idle-h | :base: \{size.unit.8\} |
+| :granular: size.pagination.dot-idle-w | :base: \{size.unit.8\} |
+| :granular: size.pagination.dot-active-h | :base: \{size.unit.8\} |
+| :granular: size.pagination.dot-active-w | :base: \{size.unit.8\} |
+| :value: size.asset.separator | :base: \{size.unit.1\} |
+| :value: size.icon.glyph.small | :base: \{size.unit.20\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.pagination.dot-gap | :base: \{space.unit.8\} |
+| :base: space.unit.4 | :base: \{dimension.base.4\} |
+| :base: space.unit.6 | :base: \{dimension.base.6\} |
+| :base: space.unit.8 | :base: \{dimension.base.8\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.pagination.button | :semantic: \{borderRadius.context.medium\} |
+| :granular: borderRadius.pagination.dot | :semantic: \{borderRadius.context.round-8\} |
+</CxTable>
+
+</CxToken>

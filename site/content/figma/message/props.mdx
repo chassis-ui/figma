@@ -1,96 +1,136 @@
 ---
 title: Message
 description: Contextual feedback components that communicate information, success confirmations, warnings, or errors to users in response to their actions.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of message components for conversational communication and messaging interface management.
 
-## Chat Message Props
+## Chat Message
 
 Properties that define the visual state and interactive behavior of individual message elements within messaging systems and conversational interfaces.
 
-### Figma Component Props
+<ExampleImage img="chat-message-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the message presentation format and spatial organization based on message origin and conversation context within messaging interfaces.
 
-#### is-final: variant
+- **sent**
+- received
+- group
+
+### is-final: variant
 
 Controls the appearance configuration and contextual indicators of the message element based on message sequence and conversation flow requirements.
 
-#### has-sender: boolean
+- **true**
+- false
+
+### has-sender: boolean
+
+@type:
+: received, group
 
 Controls the visibility of sender identification elements that provide user context and message origin information within conversational displays.
 
-#### is-forwarded: boolean
+- **true**
+- false
+
+### is-shared: boolean
 
 Controls the visibility of forwarding indicators that identify messages shared from other conversations or external sources within the messaging context.
 
-#### has-embed: boolean
+- **true**
+- false
+
+### has-embed: boolean
 
 Controls the visibility of embedded content elements that provide rich media integration and contextual information within message displays.
 
-#### has-text: boolean
+- **true**
+- false
+
+### has-text: boolean
 
 Controls the visibility of text content elements that provide the primary message communication within conversational interfaces.
 
-## Message Status Props
+- **true**
+- false
 
-Properties that define the visual state and delivery feedback behavior of message status indication elements within messaging systems.
+### status -> type: variant
 
-### Figma Component Props
-
-Component properties specific to Figma design system implementation.
-
-#### type: variant
+@type:
+: sent
 
 Controls the status presentation format and delivery state communication of the message status element based on transmission and read confirmation requirements.
 
-#### has-text: variant
+- **pending**
+- delivered
+- seen
 
-Controls the visibility and presentation of textual status information that provides detailed delivery state context within message status displays.
+### embed -> type: variant
 
-## Embed Item Props
-
-Properties that define the visual state and content presentation behavior of embedded media elements within message interfaces.
-
-### Figma Component Props
-
-Component properties specific to Figma design system implementation.
-
-#### type: variant
+@has-embed:
+: true
 
 Controls the content presentation format and media integration approach of the embedded item based on content type and contextual requirements.
 
-#### has-text: variant
+- **image**
+- reply
+- image-reply
+
+### embed -> has-text: boolean
+
+@has-embed:
+: true
+
+@embed:type:
+: image
 
 Controls the visibility and presentation of textual content that provides supporting information and context within embedded media displays.
 
-## Message Form Props
+- **true**
+- false
+
+</CxProp>
+
+## Message Form
 
 Properties that define the visual state and input functionality behavior of message creation interfaces within messaging systems.
 
-### Figma Component Props
+<ExampleImage img="message-form-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the input interface configuration and feature set availability of the message form based on messaging requirements and user interaction patterns.
 
-## Chat Status Props
+- **basic**
+- attachment
+- disabled
+
+</CxProp>
+
+## Chat Status
 
 Properties that define the visual state and conversation status behavior of chat-level indicators within messaging interfaces.
 
-### Figma Component Props
+<ExampleImage img="chat-status-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the chat status presentation format and conversation state communication based on overall chat context and user activity indicators.
+
+- **compact**
+- detailed
+- emphasized
+
+</CxProp>

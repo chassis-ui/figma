@@ -1,6 +1,7 @@
 ---
 title: Breadcrumb
 description: Navigation components that display the current page location within the site hierarchy, enabling users to understand their position and navigate to parent pages.
+toc: true
 ---
 
 # Tokens
@@ -11,9 +12,44 @@ Standardized design system values that define consistent visual properties acros
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all breadcrumb components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.link-main | :base: \{color.base.context.light.default.link-main\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Value |
+| --- | --- |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :shared: size.icon.glyph.small | :base: \{size.unit.20\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+</CxTable>
+
+</CxToken>

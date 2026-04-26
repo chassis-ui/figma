@@ -1,6 +1,7 @@
 ---
 title: Alert
 description: Prominent notification components that draw user attention to important messages, warnings, or time-sensitive information requiring immediate awareness or action.
+toc: true
 ---
 
 # Tokens
@@ -9,11 +10,80 @@ Standardized design system values that define consistent visual properties acros
 
 ## Theming Tokens
 
-Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options for comprehensive alert styling and behavior control.
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend scope="modal" />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all alert components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-inverse | :base: \{color.base.context.light.default.fg-inverse\} |
+| :semantic: color.context.default.icon-main | :base: \{color.base.context.light.default.icon-main\} |
+| :semantic: color.context.danger.icon-main | :base: \{color.base.context.light.danger.icon-main\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.alert.large-title | :base: \{font.text.xlarge.strong\} |
+| :granular: font.alert.large-body | :base: \{font.text.large.normal\} |
+| :granular: font.alert.small-title | :base: \{font.text.large.strong\} |
+| :granular: font.alert.small-body | :base: \{font.text.medium.normal\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: size.alert.large-icon | :base: \{size.unit.40\} |
+| :granular: size.alert.small-icon | :base: \{size.unit.40\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: space.alert.large-padding-y | :base: \{space.unit.32\} |
+| :granular: space.alert.large-padding-x | :base: \{space.unit.32\} |
+| :granular: space.alert.large-gap | :base: \{space.unit.24\} |
+| :granular: space.alert.small-padding-y | :base: \{space.unit.16\} |
+| :granular: space.alert.small-padding-x | :base: \{space.unit.16\} |
+| :granular: space.alert.small-gap | :base: \{space.unit.16\} |
+| :granular: space.context.medium | :base: \{space.unit.16\} |
+| :granular: space.context.3xlarge | :base: \{space.unit.32\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.alert.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.alert.main | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: shadow.Common.modal | :base: \{shadow.elevation.default.40\} |
+</CxTable>
+
+</CxToken>

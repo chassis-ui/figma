@@ -1,0 +1,91 @@
+---
+title: Form Outline
+description: Outlined input field styling with border emphasis and integrated label positioning, providing strong visual definition and material design pattern support.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across outlined form components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+@state:
+: idle
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: color.form-input.idle.border | :semantic: \{color.context.default.border-main\} |
+| :shared: color.form-input.idle.fg-active | :semantic: \{color.context.default.fg-main\} |
+| :shared: color.form-input.idle.fg-inactive | :semantic: \{color.context.default.fg-subtle\} |
+| :shared: color.form-input.idle.caret | :semantic: \{color.context.default.fg-main\} |
+| :shared: color.form-input.idle.help | :semantic: \{color.context.default.fg-main\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.form-input.floating-label | :base: \{font.text.xsmall.normal\} |
+| :granular: font.form-input.floating-text | :base: \{font.text.medium.normal\} |
+| :semantic: font.assist.medium | :base: \{font.text.medium.normal\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.form-input.medium-icon | :base: \{size.unit.20\} |
+| :shared: size.form-input.medium-caret | :base: \{size.unit.20\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: space.form-input.medium-padding-y | :base: \{space.unit.8\} |
+| :shared: space.form-input.medium-padding-x | :base: \{space.unit.12\} |
+| :shared: space.form-input.medium-gap | :base: \{space.unit.12\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.form-input.floating | :semantic: \{borderWidth.context.xlarge\} |
+| :granular: borderWidth.form-input.active | :semantic: \{borderWidth.context.xlarge\} |
+| :granular: borderWidth.form-input.inactive | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.form-input.floating-blunt | :semantic: \{borderRadius.context.medium\} |
+| :granular: borderRadius.form-input.floating-sharp | :semantic: \{borderRadius.context.zero\} |
+</CxTable>
+
+### Asset
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: icon.form-input.select-caret | SVG |
+| :shared: icon.form-input.feedback-valid | SVG |
+</CxTable>
+
+</CxToken>

@@ -1,6 +1,7 @@
 ---
 title: Section
 description: Structural components that divide page content into thematically related areas, providing clear visual separation and content organization.
+toc: true
 ---
 
 # Tokens
@@ -9,11 +10,84 @@ Design tokens that control the visual appearance, spacing, and behavioral charac
 
 ## Theming Tokens
 
-Visual styling and appearance tokens that define the color, typography, and visual treatment of section components to maintain consistent layout interfaces across different theme contexts and content organization requirements.
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect other components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: color.section.fg-large | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.section.fg-medium | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.section.fg-small | :semantic: \{color.context.default.fg-main\} |
+| :granular: color.section.icon-large | :semantic: \{color.context.default.icon-main\} |
+| :granular: color.section.icon-medium | :semantic: \{color.context.default.icon-main\} |
+| :granular: color.section.icon-small | :semantic: \{color.context.default.icon-main\} |
+| :semantic: color.context.default.border-subtle | :base: \{color.base.context.light.default.border-subtle\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.section.header-large | :base: \{font.text.large.strong\} |
+| :granular: font.section.header-medium | :base: \{font.text.medium.strong\} |
+| :granular: font.section.header-small | :base: \{font.text.small.strong\} |
+| :base: font.text.large.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.large\}, fontSize: \{typography.fontSize.text.large\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.small.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.icon.glyph.large | :base: \{size.unit.28\} |
+| :shared: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :shared: size.icon.glyph.small | :base: \{size.unit.20\} |
+| :shared: size.asset.separator | :base: \{size.unit.1\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: size.context.large | :base: \{size.unit.48\} |
+| :semantic: size.context.medium | :base: \{size.unit.40\} |
+| :semantic: size.context.small | :base: \{size.unit.32\} |
+| :semantic: size.context.xsmall | :base: \{size.unit.24\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.section.main | :semantic: \{borderWidth.context.zero\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.section.main | :semantic: \{borderRadius.context.large\} |
+| :shared: borderWidth.asset.separator | :shared: \{size.asset.separator\} |
+</CxTable>
+
+### Box Shadow
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: shadow.section.main | :base: \{shadow.elevation.default.20\} |
+</CxTable>
+
+</CxToken>

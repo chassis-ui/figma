@@ -1,13 +1,14 @@
 ---
 title: Form Check
 description: Selection controls including checkboxes and radio buttons that allow users to make binary choices or select from predefined options.
+toc: true
 ---
 
 # Variants
 
 Different configurations and states available for form check components to accommodate various use cases, user interactions, and visual requirements. These variants provide flexibility in appearance, behavior, and selection methods while maintaining design consistency across the system.
 
-## Check Input Component
+## Check Input
 
 Individual selection input controls without labels that handle user choices through visual state changes. These minimal interactive elements focus purely on selection mechanics and visual feedback, designed for embedding within larger form structures.
 
@@ -15,71 +16,123 @@ Individual selection input controls without labels that handle user choices thro
 
 Core selection input mechanisms, each optimized for specific selection patterns and interaction behaviors. These variants define the fundamental selection logic and visual representation.
 
+<CxVariant img="check-input-type-checkbox">
+
 #### Checkbox
 
 Toggle input control allowing independent true/false selection. Visual state changes between unchecked, checked, and indeterminate to indicate selection status.
+
+</CxVariant>
+
+<CxVariant img="check-input-type-radio">
 
 #### Radio
 
 Single-choice input control for mutually exclusive selection within groups. Visual state indicates selected option while automatically deselecting others in the same group.
 
+</CxVariant>
+
+<CxVariant img="check-input-type-indeterminate">
+
 #### Indeterminate
 
 Mixed-state checkbox input showing partial selection in hierarchical structures. Visual styling communicates that some but not all child items are selected.
+
+</CxVariant>
 
 ### Selection Variants
 
 Binary selection states that control the visual appearance and value of the input element.
 
+<CxVariant img="check-input-selection-true">
+
 #### True
 
 Input displays selected visual state and returns true value when form data is collected.
+
+</CxVariant>
+
+<CxVariant img="check-input-selection-false">
 
 #### False
 
 Input displays unselected visual state and returns false value when form data is collected.
 
+</CxVariant>
+
 ### Size Variants
 
 Physical dimensions of the input control optimized for different interface densities and touch targets.
+
+<CxVariant img="check-input-size-small">
 
 #### Small
 
 Compact input suitable for dense interfaces and desktop-focused layouts with limited space requirements.
 
+</CxVariant>
+
+<CxVariant img="check-input-size-medium">
+
 #### Medium
 
 Standard input providing balanced visibility and touch accessibility for most use cases and general interface contexts.
+
+</CxVariant>
+
+<CxVariant img="check-input-size-large">
 
 #### Large
 
 Prominent input optimized for mobile interfaces and enhanced accessibility requirements with larger touch targets.
 
+</CxVariant>
+
 ### State Variants
 
 Visual feedback states that communicate input availability and user interaction context.
+
+<CxVariant img="check-input-state-idle">
 
 #### Idle
 
 Standard appearance when input is not being actively interacted with.
 
+</CxVariant>
+
+<CxVariant img="check-input-state-disabled">
+
 #### Disabled
 
 Reduced visual prominence and non-interactive state preventing user selection.
+
+</CxVariant>
+
+<CxVariant img="check-input-state-error">
 
 #### Error
 
 Visual styling indicating validation failure or invalid selection state.
 
+</CxVariant>
+
+<CxVariant img="check-input-state-success">
+
 #### Success
 
 Visual styling confirming valid selection and successful validation.
+
+</CxVariant>
+
+<CxVariant img="check-input-state-primary">
 
 #### Primary
 
 Enhanced visual prominence using primary brand colors for emphasized selection options.
 
-## Form Check Component
+</CxVariant>
+
+## Form Check
 
 Complete form check elements that combine check input components with text labels and validation feedback for comprehensive user experience. These composite components provide proper accessibility, visual hierarchy, and contextual information necessary for effective selection interfaces.
 
@@ -87,67 +140,119 @@ Complete form check elements that combine check input components with text label
 
 Different form check configurations based on the type of check input component used, each maintaining consistent labeling, spacing, and helper text positioning while adapting to the specific requirements of the embedded selection type.
 
+<CxVariant img="form-check-type-checkbox">
+
 #### Checkbox
 
 Complete form element including text label, checkbox input, and optional helper text. Provides full context for multiple selection scenarios with proper accessibility markup and clear visual hierarchy.
+
+</CxVariant>
+
+<CxVariant img="form-check-type-radio">
 
 #### Radio
 
 Complete form element with text label, radio button input, and optional helper text. Combines single selection interface with descriptive labeling and guidance for mutually exclusive choice scenarios.
 
+</CxVariant>
+
+<CxVariant img="form-check-type-indeterminate">
+
 #### Indeterminate
 
 Complete form element featuring checkbox input in partial selection state with appropriate text labeling. Optimized for hierarchical selection interfaces with clear indication of mixed selection status.
+
+</CxVariant>
 
 ### Selection Variants
 
 Selection states that indicate whether the complete form check element is selected or unselected. These variants affect both the input control and any associated label styling to maintain visual consistency.
 
+<CxVariant img="form-check-selection-true">
+
 #### True
 
 Complete form element displays selected state with both input and label reflecting active selection. Provides clear visual confirmation of user choice within the form context.
+
+</CxVariant>
+
+<CxVariant img="form-check-selection-false">
 
 #### False
 
 Complete form element displays unselected state with input and label styling indicating available option. Maintains consistent visual treatment across all form check elements.
 
+</CxVariant>
+
 ### Size Variants
 
 Different dimensional scales for complete form check components that affect input size, label typography, and overall spacing relationships. These variants ensure consistent proportions across all form check elements.
+
+<CxVariant img="form-check-size-small">
 
 #### Small
 
 Compact form check sizing with smaller input, reduced label typography, and tighter spacing. Suitable for dense form layouts and secondary selection options.
 
+</CxVariant>
+
+<CxVariant img="form-check-size-medium">
+
 #### Medium
 
 Standard form check sizing providing balanced input dimensions, readable label typography, and comfortable spacing. Default choice for most form implementations.
+
+</CxVariant>
+
+<CxVariant img="form-check-size-large">
 
 #### Large
 
 Expanded form check sizing with larger input targets, prominent label typography, and generous spacing. Optimized for mobile interfaces and accessibility requirements.
 
+</CxVariant>
+
 ### State Variants
 
 Complete form states that affect the entire form check element including input control, label appearance, and any validation messaging or visual indicators.
+
+<CxVariant img="form-check-state-idle">
 
 #### Idle
 
 Standard form check appearance with normal label typography and interactive input control ready for user selection.
 
+</CxVariant>
+
+<CxVariant img="form-check-state-disabled">
+
 #### Disabled
 
 Complete form check element is non-interactive with reduced visual prominence affecting both input control and label text to indicate unavailability.
+
+</CxVariant>
+
+<CxVariant img="form-check-state-error">
 
 #### Error
 
 Form check element displays validation error state with error styling applied to input control and error messaging or styling added to the label area.
 
+</CxVariant>
+
+<CxVariant img="form-check-state-success">
+
 #### Success
 
 Form check element displays successful validation state with success indicators applied to both input control and label area to confirm valid selection.
 
+</CxVariant>
+
+<CxVariant img="form-check-state-primary">
+
 #### Primary
 
 Form check element uses primary brand styling for enhanced visual prominence, affecting both input control appearance and label typography for emphasized options.
+
+</CxVariant>
 

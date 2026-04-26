@@ -1,0 +1,343 @@
+---
+title: Button
+description: Interactive elements that trigger actions, submit forms, or navigate users to different pages when clicked or tapped.
+toc: true
+---
+
+# Variants
+
+Different configurations and states available for button components to accommodate various use cases, user interactions, and visual requirements. These variants provide flexibility in appearance, behavior, and hierarchy while maintaining design consistency across the system.
+
+## Solid Buttons
+
+Interactive elements that trigger actions or operations when activated by users. These components serve as the primary action triggers within interfaces, adapting their appearance and behavior based on context, importance, and current state to provide clear visual feedback and maintain consistent user experience across all interface contexts.
+
+### Type Variants
+
+Content structure configurations that determine the layout and visual presentation format of button components. These variants control the content display and interaction approach to match different functional requirements.
+
+<Callout>
+Type variants are implemented as separate Figma components within this file to optimize performance. Each component has the same style and context variants.
+</Callout>
+
+<CxVariant img="button-type-basic">
+
+#### Basic
+
+Standard button structure with text label and optional supporting elements. Use for most button implementations requiring clear labeling, standard interactions, or when providing comprehensive action context with descriptive text.
+
+</CxVariant>
+
+<CxVariant img="button-type-icon-button">
+
+#### Icon-Only
+
+Minimal button structure optimized for displaying only icon elements without text labels. Use for compact interfaces, toolbar actions, secondary controls, or when space constraints require simplified visual presentation while maintaining clear action recognition.
+
+</CxVariant>
+
+### Style Variants
+
+Visual presentation modes that affect the button's background treatment and overall appearance within the interface. These variants determine the visual weight and interaction emphasis approach for different design contexts and hierarchy requirements.
+
+<Callout type="warning">
+Style variants are implemented as separate Figma components across multiple files to optimize performance. Each component has the same context and size variants.
+</Callout>
+
+<CxVariant img="button-style-solid">
+
+#### Solid
+
+Bold button styling with full background fill and high contrast appearance. Use for primary actions requiring strong visual presence or when buttons need maximum visibility and emphasis within the interface.
+
+**Badge**
+
+@style:
+: solid
+
+</CxVariant>
+
+<CxVariant img="button-style-smooth">
+
+#### Smooth
+
+Subtle button styling with soft background treatment and integrated appearance. Use for secondary actions that should blend naturally with interface content while maintaining clear visibility and interaction affordance.
+
+**Badge**
+
+@style:
+: solid
+
+</CxVariant>
+
+<CxVariant img="button-style-outline">
+
+#### Outline
+
+Bordered button styling with transparent background and defined edge treatment. Use for minimal actions requiring subtle emphasis or when maintaining visual hierarchy without adding visual weight to the interface.
+
+**Badge**
+
+@style:
+: solid
+
+</CxVariant>
+
+<CxVariant img="button-style-link">
+
+#### Link
+
+Text-based button styling with minimal visual treatment and link-like appearance. Use for tertiary actions, inline navigation, or when providing functional access without visual prominence or interface disruption.
+
+**Badge**
+
+@style:
+: solid
+</CxVariant>
+
+### Context Variants
+
+Visual styles and semantic meanings that communicate button purpose and importance within the interface hierarchy. These variants determine the button's prominence, color treatment, and contextual messaging to guide user attention and convey action significance.
+
+<CxVariant img="button-context-default">
+
+#### Default
+
+Standard button styling for general-purpose actions that don't require special emphasis. Use for non-critical interactions like opening dialogs, toggling options, or secondary navigation elements.
+
+**Solid Badge**
+
+@context:
+: primary
+
+</CxVariant>
+
+<CxVariant img="button-context-alternate">
+
+#### Alternate
+
+Alternative styling variant optimized for different backgrounds or emphasized contexts. Use as a visual alternative to default styling in sections with alternate background.
+
+**Solid Badge**
+
+@context:
+: primary
+
+</CxVariant>
+
+<CxVariant img="button-context-primary">
+
+#### Primary
+
+Represents the main action a user should take on a page. Use for high-priority actions like submitting forms, initiating critical processes, or primary call-to-action elements that drive core user tasks.
+
+**Solid Badge**
+
+@context:
+: white
+
+</CxVariant>
+
+<CxVariant img="button-context-secondary">
+
+#### Secondary
+
+Secondary action styling for important but less critical actions than primary buttons. Use for alternative pathways, supplementary actions, or when offering multiple options alongside a primary action.
+
+**Solid Badge**
+
+@context:
+: white
+
+</CxVariant>
+
+<CxVariant img="button-context-neutral">
+
+#### Neutral
+
+Neutral styling variant for tertiary actions or low-saturation alternatives to high-priority actions. Use when maintaining visual hierarchy while providing functional access to less prominent features.
+
+**Solid Badge**
+
+@context:
+: white
+
+</CxVariant>
+
+<CxVariant img="button-context-danger">
+
+#### Danger
+
+Destructive action styling that signals potentially harmful or irreversible operations. Use for actions like deleting items, canceling critical processes, or any operation that requires careful consideration.
+
+**Solid Badge**
+
+@context:
+: white
+
+</CxVariant>
+
+<CxVariant img="button-context-success">
+
+#### Success
+
+Positive confirmation styling for completion and success states. Use for finalizing forms, completing transactions, or confirming successful operations that provide positive user feedback.
+
+**Solid Badge**
+
+@context:
+: white
+
+</CxVariant>
+
+<CxVariant img="button-context-warning">
+
+#### Warning
+
+Cautionary styling variant that signals attention-required actions. Use for operations that involve warnings, require user confirmation, or proceed with potentially risky operations.
+
+**Solid Badge**
+
+@context:
+: black
+
+</CxVariant>
+
+<CxVariant img="button-context-info">
+
+#### Info
+
+Informational styling variant for knowledge-based actions and feature access. Use for accessing detailed information, opening help dialogs, or navigating to informational content.
+
+**Solid Badge**
+
+@context:
+: white
+
+</CxVariant>
+
+<CxVariant img="button-context-black">
+
+#### Black
+
+High-contrast styling variant that maintains black appearance regardless of theme. Use for maximum visual impact in special contexts like landing page conversions or when consistent dark styling is required across theme variations.
+
+**Solid Badge**
+
+@context:
+: primary
+
+</CxVariant>
+
+<CxVariant img="button-context-white">
+
+#### White
+
+Clean contrast styling variant that maintains white appearance regardless of theme. Use for prominent actions requiring neutral treatment in special contexts or when consistent light styling is needed across theme variations.
+
+**Solid Badge**
+
+@context:
+: primary
+
+</CxVariant>
+
+### Size Variants
+
+Different dimensional scales for button components to accommodate various layout requirements and visual hierarchies. These variants maintain proportional relationships while adapting to different design contexts and space constraints.
+
+<CxVariant img="button-size-large">
+
+#### Large
+
+Expanded button size designed for high-visibility actions requiring more emphasis, such as major calls to action or important decisions. Use for primary actions in hero sections, mobile interfaces, or when enhanced prominence is required.
+
+**Solid Badge**
+
+@size:
+: large
+
+
+</CxVariant>
+
+<CxVariant img="button-size-medium">
+
+#### Medium
+
+Standard button size providing balanced proportions for most button implementations. Use as the default size for primary and secondary actions across general interface contexts where optimal visibility and usability are required.
+
+**Solid Badge**
+
+@size:
+: medium
+
+</CxVariant>
+
+<CxVariant img="button-size-small">
+
+#### Small
+
+Compact button size optimized for dense layouts and secondary actions. Use in constrained spaces, inline forms, or when multiple buttons need to fit within limited screen real estate.
+
+**Solid Badge**
+
+@size:
+: small
+
+</CxVariant>
+
+### State Variants
+
+Interactive states that affect user interaction capabilities and visual feedback based on current user activity and system conditions. These variants communicate the button's availability and guide users through successful task completion.
+
+<CxVariant img="button-state-idle">
+
+#### Idle
+
+Represents the standard appearance of a button when it is not being interacted with. Neutral appearance indicates button is available for interaction.
+
+**Badge Frame**
+
+@opacity:
+: opacity.level.solid
+
+</CxVariant>
+
+<CxVariant img="button-state-hover">
+
+#### Hover
+
+Provides visual feedback when a user hovers over a button, indicating that it is interactive. Enhanced visual styling signals available interaction and guides user attention.
+
+**Badge Frame**
+
+@opacity:
+: opacity.level.solid
+
+</CxVariant>
+
+<CxVariant img="button-state-press">
+
+#### Press
+
+Indicates that a button is currently being pressed or activated. Active press state provides immediate tactile feedback during user interaction.
+
+**Badge Frame**
+
+@opacity:
+: opacity.level.solid
+
+</CxVariant>
+
+<CxVariant img="button-state-disabled">
+
+#### Disabled
+
+Shows that a button is not currently interactive due to its disabled status. Reduced visual prominence indicates unavailability while maintaining interface structure.
+
+**Badge Frame**
+
+@opacity:
+: opacity.context.fg-slight
+
+</CxVariant>

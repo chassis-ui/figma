@@ -1,5 +1,464 @@
 ---
-title: Updating the Library
-description: Learn how to maintain, update, and version the Chassis Figma library, including best practices for managing changes, publishing updates, and communicating with your design team.
+title: Guide Libraries
+description: Style guide and information architecture components to document design tokens, specifications, and best practices for using and maintaining the Chassis Figma library. 
 toc: true
 ---
+
+<Callout type="info">
+Guide library files (`cx.guide.*`) can be found on Figma Community page of Chassis UI. These files contain documentation components—covers, grids, specifications, and tokens—that help you create comprehensive design documentation and style guides.
+</Callout>
+
+## Overview
+
+Guide libraries provide pre-built documentation components for creating comprehensive design system documentation within Figma. Instead of building style guides from scratch, these components offer structured templates for documenting tokens, components, patterns, and guidelines.
+
+This approach ensures consistent documentation across teams while maintaining flexibility for project-specific needs.
+
+### The Documentation Challenge
+
+Creating effective design system documentation in Figma typically requires:
+
+1. **Building from scratch**: Time-consuming and inconsistent
+2. **Copy-paste templates**: Breaks when source updates
+3. **Manual maintenance**: Prone to errors and outdated information
+
+### The Guide Solution
+
+Guide components provide reusable documentation templates:
+
+```
+Style Guide Page
+├─ Document Cover     -> Title, version, status, authors
+├─ Grid System        -> Visual grid documentation
+├─ Component Spec     -> Anatomy, properties, states
+└─ Token Table        -> Design token references
+```
+
+**Benefits**:
+- ✅ Consistent documentation structure
+- ✅ Reusable across multiple files
+- ✅ Updates propagate from library
+- ✅ Professional presentation
+- ✅ Faster documentation creation
+
+### Documentation Workflow
+
+Chassis guide components follow a structured documentation approach:
+
+1. **Cover Pages**: Establish document context and version information
+2. **Grid Systems**: Visualize layout structure and spacing
+3. **Specs**: Document component anatomy and behavior
+4. **Token References**: Display design tokens with live values
+5. **Device Mockups**: Showcase responsive designs
+6. **Export Guides**: Provide asset delivery instructions
+
+This workflow supports both internal team documentation and external design system handoffs.
+
+## Document Cover
+
+Document cover components provide professional title pages for style guides, documentation, and presentation files. These covers establish context, version information, and authorship for your documentation.
+
+### Basic Cover
+
+Standard document title page for style guides, component libraries, and pattern documentation. Includes title, subtitle, version number, and author information with theme-appropriate styling.
+
+- Title and subtitle fields
+- Version and date information
+- Author and team attribution
+- Theme-aware styling
+
+### Project Cover
+
+Project-specific title page for client presentations, design proposals, and project documentation. Features project name, client information, deliverable type, and status indicators with customizable branding areas.
+
+- Project and client name fields
+- Deliverable type and status
+- Customizable branding area
+- Professional layout structure
+
+### Status Banner
+
+Version and status indicator component for document headers showing version number, last updated date, review status, and change indicators. Updates automatically when used with version variables.
+
+- Version number display
+- Last updated timestamp
+- Review status indicator (Draft/Review/Approved)
+- Change log indicator
+
+## Grid
+
+Grid documentation components visualize layout systems, spacing rules, and responsive breakpoints. These components help teams understand and implement consistent layout structure.
+
+### Column Grid
+
+Visual representation of column-based grid systems for desktop, tablet, and mobile layouts. Shows column count, gutter width, and margin spacing with overlay visualization and measurement annotations.
+
+- Multiple breakpoint variants
+- Column and gutter visualization
+- Margin and padding indicators
+- Measurement annotations
+
+### Baseline Grid
+
+Vertical rhythm documentation showing baseline grid systems for typography alignment. Displays grid height, line spacing, and text alignment with overlay demonstration and visual examples.
+
+- Baseline height variants (4px, 8px)
+- Typography alignment examples
+- Visual rhythm demonstration
+- Text-to-grid alignment guides
+
+### Spacing Scale
+
+Visual documentation of spacing system showing all spacing tokens from smallest to largest. Includes token names, pixel values, and usage examples with visual size comparison and use case recommendations.
+
+- Complete spacing scale visualization
+- Token name and value display
+- Visual size comparison
+- Usage context examples
+
+## Information Architecture
+
+Information architecture components document navigation structure, content hierarchy, and user flow patterns. These components help teams understand the product structure.
+
+### Sitemap
+
+Visual sitemap component for documenting page hierarchy and navigation structure. Shows parent-child relationships, page levels, and navigation paths with expandable/collapsible sections.
+
+- Hierarchical page structure
+- Level indicators (L1, L2, L3)
+- Navigation path visualization
+- Link relationship indicators
+
+### User Flow
+
+User journey and flow diagram component for documenting interaction paths and decision points. Displays screens, actions, and flow connections with decision diamonds and flow direction arrows.
+
+- Screen thumbnail placeholders
+- Action and decision nodes
+- Flow direction indicators
+- Annotation areas
+
+### Navigation Map
+
+Navigation structure documentation showing primary, secondary, and utility navigation. Maps navigation items to pages with hierarchy levels and navigation type indicators.
+
+- Navigation hierarchy levels
+- Navigation type classification
+- Page relationship mapping
+- Interactive state indicators
+
+## Design Spec
+
+Design specification components document component anatomy, properties, behaviors, and usage guidelines. These components standardize how design decisions are communicated to developers.
+
+### Component Anatomy
+
+Visual breakdown component documenting component structure and element labeling. Shows component parts with numbered callouts, element names, and layer structure with measurement annotations.
+
+- Component visual with overlays
+- Numbered callout system
+- Element name labels
+- Measurement and spacing indicators
+
+### Property Table
+
+Structured table documenting component properties and values. Lists property names, types, default values, and descriptions with variant options and usage notes.
+
+- Property name and type columns
+- Default value display
+- Description and usage notes
+- Variant option lists
+
+### State Matrix
+
+Visual grid showing all component states and variants. Displays interactive states (default, hover, active, disabled) across visual variants with example representations and state transition notes.
+
+- State × Variant grid layout
+- Interactive state representation
+- Visual variant examples
+- Transition behavior notes
+
+### Usage Guidelines
+
+Do's and don'ts documentation component for component usage best practices. Shows correct and incorrect usage examples with explanatory text and accessibility considerations.
+
+- Do/Don't example pairs
+- Explanatory descriptions
+- Accessibility callouts
+- Best practice recommendations
+
+## Design Tokens
+
+Design token documentation components display token values, relationships, and usage. These components create living references that automatically update when token values change.
+
+### Token Table
+
+Structured table displaying design tokens with live values. Shows token name, value, visual example, and usage description organized by category (color, typography, spacing, etc.).
+
+- Category organization
+- Token name and path
+- Live value display with variables
+- Visual example representation
+- Usage description
+
+**Token Categories**:
+- Colors (semantic, primitive)
+- Typography (size, weight, line-height)
+- Spacing (margin, padding, gap)
+- Border radius (corner radius values)
+- Shadow (elevation levels)
+- Motion (duration, easing)
+
+### Color Palette
+
+Comprehensive color documentation showing color scales and token relationships. Displays color swatches with hex, RGB, and token name references organized by color families and semantic roles.
+
+- Color family organization
+- Multiple format display (Hex, RGB)
+- Token name reference
+- Semantic role indication
+- Contrast ratio information
+
+### Typography Scale
+
+Typography system documentation showing type styles, sizes, and hierarchy. Displays font family, size, weight, line-height, and letter-spacing with visual examples and usage context.
+
+- Complete type scale visualization
+- Font property details
+- Visual hierarchy demonstration
+- Usage context examples
+- Responsive size variants
+
+### Elevation System
+
+Shadow and elevation documentation showing all elevation levels. Displays shadow values, blur radius, offset, and color with visual stacking examples and usage recommendations.
+
+- Elevation level visualization
+- Shadow value breakdown
+- Stacking order examples
+- Usage context recommendations
+- Z-index reference
+
+## Device Mockups
+
+Device mockup components showcase responsive designs across different screen sizes and platforms. These components provide realistic device frames for presentation and documentation.
+
+### Mobile Frames
+
+Mobile device frames for iOS and Android in multiple sizes. Includes iPhone and Android phone variants with status bar, navigation bar, and content area clearly defined.
+
+- iOS device frames (iPhone models)
+- Android device frames (Pixel models)
+- Portrait and landscape orientations
+- Status and navigation bar areas
+- Realistic device proportions
+
+### Tablet Frames
+
+Tablet device frames for iPad and Android tablets. Features multiple size variants with device-specific UI elements and content area guidelines for horizontal and vertical orientations.
+
+- iPad frames (multiple sizes)
+- Android tablet frames
+- Portrait and landscape modes
+- System UI elements
+- Split-view variants
+
+### Desktop Frames
+
+Desktop and laptop frames for macOS and Windows. Shows browser chrome, application windows, and desktop environments with multiple window size variants and OS-specific UI elements.
+
+- macOS window frames
+- Windows window frames
+- Browser chrome variants
+- Application window types
+- Multiple size options
+
+### Responsive Preview
+
+Multi-device preview layout showing designs across mobile, tablet, and desktop simultaneously. Displays same design at different breakpoints with alignment guides and comparison layout.
+
+- Side-by-side device comparison
+- Breakpoint alignment guides
+- Synchronized scroll indication
+- Scale reference markers
+
+## Export Guides
+
+Export guide components document asset delivery specifications and requirements for developers. These components standardize how design assets are prepared and delivered.
+
+### Asset Export Spec
+
+Asset export specification template documenting file formats, naming conventions, and export settings. Lists asset types, required formats (PNG, SVG, PDF), resolution multipliers (1×, 2×, 3×), and color profiles.
+
+- Asset type classification
+- Format requirements table
+- Resolution multiplier specs
+- Color profile specifications
+- Naming convention rules
+
+### Icon Export Grid
+
+Icon export guide showing icon sizes, export formats, and padding requirements. Displays grid templates for icon design with safe area indicators and export size variants (16px, 24px, 32px, 48px).
+
+- Icon size grid templates
+- Safe area visualization
+- Export size variants
+- Padding requirements
+- Optical alignment guides
+
+### Color Export Values
+
+Color value export reference showing all colors in multiple formats. Lists colors with Hex, RGB, HSL, and CSS variable formats ready for developer handoff with semantic grouping.
+
+- Color swatch display
+- Hex, RGB, HSL values
+- CSS variable format
+- Token name reference
+- Semantic role grouping
+
+### Spacing Reference
+
+Spacing value export reference documenting all spacing tokens. Shows pixel values, rem equivalents, and token names organized by use case (component spacing, layout spacing, content spacing).
+
+- Spacing value visualization
+- Pixel and rem values
+- Token name reference
+- Use case categorization
+- Responsive scaling notes
+
+## Library Maintenance
+
+Library maintenance components help teams track version changes, manage updates, and document component status. These components support design system governance.
+
+### Component Status
+
+Component status tracking grid showing all components with current status indicators. Displays component name, version, status (Stable/Beta/Deprecated/Planned), last updated date, and assigned owner.
+
+- Component inventory list
+- Status classification system
+- Version tracking
+- Last updated timestamps
+- Owner assignments
+
+**Status Types**:
+- 🟢 **Stable**: Production-ready, fully tested
+- 🟡 **Beta**: Available but may change
+- 🔴 **Deprecated**: Do not use for new work
+- 🔵 **Planned**: In development roadmap
+
+### Change Log
+
+Version change documentation showing updates, additions, and deprecations. Lists version number, release date, change type, affected components, and detailed descriptions with migration notes when needed.
+
+- Version and release date
+- Change type classification (Added/Changed/Fixed/Deprecated)
+- Affected component list
+- Detailed change descriptions
+- Migration guidance
+
+### Version Comparison
+
+Side-by-side component comparison showing before and after changes. Displays old version alongside new version with highlighted differences and change annotations for visual comparison.
+
+- Before/after layout
+- Difference highlighting
+- Change annotation callouts
+- Property change lists
+- Migration impact notes
+
+### Update Notification
+
+Update alert component for notifying teams of library changes. Shows update type (Critical/Recommended/Optional), affected components, required actions, and deadline information with dismissal options.
+
+- Update priority indicator
+- Affected component list
+- Required action items
+- Deadline information
+- Link to detailed change log
+
+## Working with Guide Components
+
+### Using Documentation Templates
+
+1. Enable guide library in your Figma file
+2. Insert relevant documentation components
+3. Replace placeholder content with your information
+4. Customize colors and branding as needed
+5. Share with team or export as presentation
+
+### Best Practices
+
+**Do**:
+- ✅ Keep documentation updated with design changes
+- ✅ Use consistent terminology across documents
+- ✅ Link to live components when possible
+- ✅ Version documentation alongside library
+- ✅ Include visual examples and use cases
+
+**Don't**:
+- ❌ Detach documentation components from library
+- ❌ Mix documentation styles inconsistently
+- ❌ Create duplicate documentation sections
+- ❌ Let documentation become outdated
+- ❌ Skip version and status information
+
+## Custom Documentation
+
+When creating custom documentation components:
+
+1. **Follow structure**: Match existing documentation patterns
+2. **Use variables**: Link to design tokens for live values
+3. **Template reusability**: Design for multiple contexts
+4. **Clear hierarchy**: Use consistent heading and text styles
+5. **Visual examples**: Include practical usage demonstrations
+
+### Documentation Library Structure
+
+```
+Guides/
+├── Cover/
+│   ├── Basic-Cover/
+│   ├── Project-Cover/
+│   └── Status-Banner/
+├── Grid/
+│   ├── Column-Grid/
+│   ├── Baseline-Grid/
+│   └── Spacing-Scale/
+├── Information-Architecture/
+│   ├── Sitemap/
+│   ├── User-Flow/
+│   └── Navigation-Map/
+├── Design-Spec/
+│   ├── Component-Anatomy/
+│   ├── Property-Table/
+│   ├── State-Matrix/
+│   └── Usage-Guidelines/
+├── Design-Tokens/
+│   ├── Token-Table/
+│   ├── Color-Palette/
+│   ├── Typography-Scale/
+│   └── Elevation-System/
+├── Device-Mockups/
+│   ├── Mobile-Frames/
+│   ├── Tablet-Frames/
+│   ├── Desktop-Frames/
+│   └── Responsive-Preview/
+├── Export-Guides/
+│   ├── Asset-Export-Spec/
+│   ├── Icon-Export-Grid/
+│   ├── Color-Export-Values/
+│   └── Spacing-Reference/
+└── Library-Maintenance/
+    ├── Component-Status/
+    ├── Change-Log/
+    ├── Version-Comparison/
+    └── Update-Notification/
+```
+
+## Next Steps
+
+- **[Variables & Styles](./variables-styles)** - Learn how to use variables in documentation
+- **[Component Documentation](/figma)** - See documented components in action
+- **[Asset Libraries](./asset-libraries)** - Understand content layer components
+
+

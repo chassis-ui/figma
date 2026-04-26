@@ -1,78 +1,342 @@
 ---
 title: Date Picker
 description: Input components that provide a calendar interface for users to select dates, date ranges, or specific time periods.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of date picker components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
-
-## Day Item Component
+## Day Item
 
 Specifications for individual date elements including measurements, colors, typography, and interactive styling attributes. These values define the core appearance and state-dependent properties for calendar date implementations.
 
-### Design Tokens
+<ExampleImage img="day-item-specs" />
 
-Standardized design values used in day item components. Includes specifications for sizing, typography, state styling, and temporal feedback across all date element variants.
+<CxSpec>
 
-## Nav Item Component
+### 1. Day Item
 
-Specifications for temporal navigation elements including measurements, colors, iconography, and interactive styling attributes. These values define the core appearance and functionality properties for calendar navigation implementations.
+@state:
+: idle, hover, active, today, weekend, outside
 
-### Design Tokens
+height:
+: size.date-picker.day-height
 
-Standardized design values used in navigation item components. Includes specifications for sizing, icon styling, state feedback, and temporal navigation behavior across all navigation variants.
+width:
+: size.date-picker.day-width
 
-## Label Item Component
+fill:
+: color.date-picker.bg-[state]
+
+borderRadius:
+: borderRadius.date-picker.day
+
+@state:
+: range-start
+
+_height:_
+: size.date-picker.day-height
+
+_width:_
+: size.date-picker.day-width
+
+fill:
+: color.date-picker.bg-active
+
+borderRadiusTopLeft:
+: borderRadius.date-picker.day
+
+borderRadiusTopRight:
+: borderRadius.context.zero
+
+borderRadiusBottomLeft:
+: borderRadius.date-picker.day
+
+borderRadiusBottomRight:
+: borderRadius.context.zero
+
+@state:
+: range-end
+
+_height:_
+: size.date-picker.day-height
+
+_width:_
+: size.date-picker.day-width
+
+fill:
+: color.date-picker.bg-active
+
+borderRadiusTopLeft:
+: borderRadius.context.zero
+
+borderRadiusTopRight:
+: borderRadius.date-picker.day
+
+borderRadiusBottomLeft:
+: borderRadius.context.zero
+
+borderRadiusBottomRight:
+: borderRadius.date-picker.day
+
+@state:
+: range-middle, range-today
+
+_height:_
+: size.date-picker.day-height
+
+_width:_
+: size.date-picker.day-width
+
+fill:
+: color.date-picker.bg-range
+
+borderRadius:
+: borderRadius.context.zero
+
+### 2. Element
+
+@state:
+: idle, hover, active, weekend, outside
+
+fill:
+: color.date-picker.fg-[state]
+
+typography:
+: font.date-picker.day
+
+@state:
+: today, hover-today
+
+fill:
+: color.date-picker.fg-today
+
+typography:
+: font.date-picker.today
+
+@state:
+: selected, range-start, range-end
+
+fill:
+: color.date-picker.fg-active
+
+_typography:_
+: font.date-picker.day
+
+@state:
+: range-middle
+
+fill:
+: color.date-picker.fg-idle
+
+_typography:_
+: font.date-picker.day
+
+@state:
+: range-today
+
+fill:
+: color.date-picker.fg-today
+
+typography:
+: font.date-picker.today
+
+</CxSpec>
+
+## Nav Item
+
+Specifications for calendar navigation elements including measurements, colors, typography, and interactive styling attributes. These values define the core appearance and selection properties for temporal navigation implementations.
+
+<ExampleImage img="nav-item-specs" />
+
+<CxSpec>
+
+### 1. Nav Item
+
+minHeight:
+: size.date-picker.day-height
+
+minWidth:
+: size.date-picker.day-width
+
+verticalPadding:
+: space.context.2xsmall
+
+horizontalPadding:
+: space.context.2xsmall
+
+itemSpacing:
+: space.context.2xsmall
+
+fill:
+: color.date-picker.bg-[state]
+
+borderRadius:
+: borderRadius.date-picker.day
+
+### 2. Text
+
+fill:
+: color.date-picker.fg-[state]
+
+typography:
+: font.date-picker.label
+
+### 3. Caret
+
+width:
+: size.icon.glyph.small
+
+height:
+: size.icon.glyph.small
+
+fill:
+: color.date-picker.fg-[state]
+
+### 4. Nav Icon
+
+width:
+: size.icon.glyph.medium
+
+height:
+: size.icon.glyph.medium
+
+fill:
+: color.date-picker.fg-[state]
+
+</CxSpec>
+
+## Label Item
 
 Specifications for interactive text and month selection elements including measurements, colors, typography, and interactive styling attributes. These values define the core appearance and selection properties for temporal navigation implementations.
 
-### Design Tokens
+<ExampleImage img="label-item-specs" />
 
-Standardized design values used in month item components. Includes specifications for sizing, typography, state styling, and selection feedback across all month element variants.
+<CxSpec>
 
-## Title Component
+### 1. Label Item
 
-Specifications for calendar header elements including measurements, colors, typography, and navigation styling attributes. These values define the structural appearance and control properties for date picker title implementations.
+height:
+: size.date-picker.day-height
 
-### Design Tokens
+verticalPadding:
+: space.context.2xsmall
 
-Standardized design values used in title components. Includes specifications for header sizing, typography, navigation controls, and temporal display formatting across all title variants.
+horizontalPadding:
+: space.context.xsmall
 
-## Weekdays Component
+fill:
+: color.date-picker.bg-[state]
 
-Specifications for day-of-week header elements including measurements, colors, typography, and organizational styling attributes. These values define the structural appearance and label properties for calendar weekday implementations.
+borderRadius:
+: borderRadius.date-picker.menu
 
-### Design Tokens
+### 2. Label Text
 
-Standardized design values used in weekdays components. Includes specifications for label sizing, typography, spacing, and header formatting across all weekday display variants.
+fill:
+: color.date-picker.fg-[state]
 
-## Time Component
+typography:
+: font.date-picker.label
 
-Specifications for time input elements including measurements, colors, typography, and input styling attributes. These values define the core appearance and interaction properties for time selection implementations.
+</CxSpec>
 
-### Design Tokens
-
-Standardized design values used in time components. Includes specifications for input sizing, typography, field styling, and temporal input behavior across all time selection variants.
-
-## Dates Component
-
-Specifications for calendar template elements including measurements, colors, layout properties, and organizational styling attributes. These values define the structural appearance and optimization properties for date display implementations.
-
-### Design Tokens
-
-Standardized design values used in dates components. Includes specifications for template sizing, layout optimization, spacing, and calendar organization across all date template variants.
-
-## Date Picker Component
+## Date Picker
 
 Specifications for complete date selection interfaces including measurements, colors, layout properties, and comprehensive styling attributes. These values define the overall appearance and functionality properties for date picker implementations.
 
-### Design Tokens
+<ExampleImage img="date-picker-specs" />
 
-Standardized design values used in date picker components. Includes specifications for interface sizing, layout organization, component integration, and comprehensive date selection behavior across all picker variants.
+<CxSpec>
+
+### 1. Date Picker
+
+@type:
+: basic, dual-vertical
+
+verticalPadding:
+: space.date-picker.padding-y
+
+horizontalPadding:
+: space.date-picker.padding-x
+
+itemSpacing:
+: space.context.zero
+
+fill:
+: color.date-picker.bg-main
+
+borderColor:
+: color.date-picker.border-main
+
+borderRadius:
+: borderRadius.date-picker.main
+
+borderWidth:
+: color.date-picker.main
+
+boxShadow:
+: shadow.date-picker.main
+
+@type:
+: dual-horizontal
+
+_verticalPadding:_
+: space.date-picker.padding-y
+
+_horizontalPadding:_
+: space.date-picker.padding-x
+
+itemSpacing:
+: space.context.medium
+
+_fill:_
+: color.date-picker.bg-main
+
+_borderColor:_
+: color.date-picker.border-main
+
+_borderRadius:_
+: borderRadius.date-picker.main
+
+_borderWidth:_
+: color.date-picker.main
+
+_boxShadow:_
+: shadow.date-picker.main
+
+### 2. Dates Block
+
+itemSpacing:
+: space.date-picker.gap
+
+### 3. Time Row
+
+verticalPadding:
+: space.context.xsmall
+
+horizontalPadding:
+: space.context.xsmall
+
+itemSpacing:
+: space.context.xsmall
+
+### 4. Menu Frame
+
+paddingRight:
+: space.context.xsmall
+
+borderColor:
+: color.date-picker.border-subtle
+
+borderWidthRight:
+: borderWidth.context.medium
+
+### 5. Calendar Frame
+Simple container.
+
+</CxSpec>

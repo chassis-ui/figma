@@ -1,0 +1,83 @@
+---
+import FeatureCard from '@chassis-ui/docs/components/FeatureCard.astro'
+---
+
+<section class="home-section py-3xlarge py-medium-6xlarge">
+  <div class="container-2xlarge section-content py-3xlarge py-medium-6xlarge">
+    <div class="row mb-3xlarge mb-medium-6xlarge">
+      <div class="section-header col col-large-10 col-xlarge-8 text-center mx-auto">
+        <h2
+          class="section-title font-3xlarge font-medium-4xlarge font-large-5xlarge mb-xsmall mb-medium-small mb-large-medium"
+        >
+          <span class="font-normal d-block">Beyond the</span> Component Library
+        </h2>
+        <p class="section-body font-medium-large font-large-xlarge m-0">
+          Components for building interfaces. Assets for flexible content. Documentation tools for
+          specs and handoff. All token-driven, all in sync.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-features row row-cols-1 row-cols-medium-2 g-medium g-medium-xlarge">
+      <div class="col">
+        <FeatureCard icon="cx-rectangles-mixed">
+          <Fragment slot="title">30+ UI Components</Fragment>
+          <Fragment slot="body">
+            Each component ships as a single Figma file (cx.comp.*) with variants, interactive
+            states, and auto-layout. Props, specs, tokens, and variant tabs are documented inline.
+          </Fragment>
+        </FeatureCard>
+      </div>
+      <div class="col">
+        <FeatureCard icon="cx-layer-group">
+          <Fragment slot="title">3-Layer Variable Architecture</Fragment>
+          <Fragment slot="body">
+            Brand variables define identity (colors, type, radii). Theme variables control modes
+            (light/dark). App variables style components. Change any layer without touching the
+            others.
+          </Fragment>
+        </FeatureCard>
+      </div>
+      <div class="col">
+        <FeatureCard icon="cx-shapes">
+          <Fragment slot="title">Swappable Asset Layers</Fragment>
+          <Fragment slot="body">
+            Text blocks, icons, backgrounds, and skeleton loaders are separate asset instances
+            inside components. Swap content by replacing the asset—the component stays connected to
+            the library.
+          </Fragment>
+        </FeatureCard>
+      </div>
+      <div class="col">
+        <FeatureCard icon="cx-book-open-alt">
+          <Fragment slot="title">Guide Library for Documentation</Fragment>
+          <Fragment slot="body">
+            Document covers, grid overlays, spacing scales, sitemap builders, user flow diagrams,
+            and spec annotation tools. Build design documentation inside Figma using structured
+            guide components.
+          </Fragment>
+        </FeatureCard>
+      </div>
+      <div class="col">
+        <FeatureCard icon="cx-palette">
+          <Fragment slot="title">Multi-Mode Color Tokens</Fragment>
+          <Fragment slot="body">
+            Theme variables define light and dark palettes as separate modes in the same variable
+            collection. Switch modes per frame or per page—components update without manual
+            recoloring.
+          </Fragment>
+        </FeatureCard>
+      </div>
+      <div class="col">
+        <FeatureCard icon="cx-laptop-mobile">
+          <Fragment slot="title">Auto-Layout with Breakpoint Variants</Fragment>
+          <Fragment slot="body">
+            Components use auto-layout for fluid sizing. Mobile navigation (bottom nav, top nav),
+            responsive tables, and layout sections include device-specific variants you can toggle
+            via properties.
+          </Fragment>
+        </FeatureCard>
+      </div>
+    </div>
+  </div>
+</section>

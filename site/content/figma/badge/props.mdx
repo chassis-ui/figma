@@ -1,40 +1,66 @@
 ---
 title: Badge
 description: Small status indicators and labels that display concise information such as counts, categories, or brief descriptive text adjacent to other UI elements.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of badge components for labeling and informational displays.
 
-## Badge Component Props
+## Badges
 
 Properties that define the visual state and informational behavior of badge elements.
 
-### Figma Component Props
+<ExampleImage img="badge-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### type: variant
+### type: variant
 
 Controls the content structure and information display format of the badge component.
 
-#### style: variant
+- **basic**
+- count
 
-Controls the visual presentation mode and background treatment of the badge component.
-
-#### context: variant
+### context: variant
 
 Controls the visual style and semantic meaning of the badge based on its informational purpose and importance.
 
-#### size: variant
+- **default**
+- alternate
+- primary
+- secondary
+- neutral
+- danger
+- success
+- warning
+- info
+- black
+- white
+
+### size: variant
 
 Controls the dimensional scale and proportional relationships of the badge component.
 
-#### has-icon: boolean
+- large
+- **medium**
+- small
+
+### has-icon: boolean
 
 Controls the visibility of an icon element positioned within the badge content area.
 
-#### icon-instance: instance-swap
+- **true**
+- false
+
+### icon-instance: instance-swap
+
+@has-icon:
+: true
 
 Specifies which icon component to display when has-icon property is enabled.
+
+- **Icon Placeholder**
+
+</CxProp>

@@ -1,60 +1,19 @@
 ---
 import BaseLayout from '@chassis-ui/docs/layouts/BaseLayout.astro'
-
-import { formatComponentName, getFigmaComponentsData } from '@libs/figma'
-import { getCollection } from 'astro:content'
-
-export const allFigma = await getCollection('figma')
+import HeroSection from '@components/homepage/HeroSection.astro'
+import IntroSection from '@components/homepage/IntroSection.astro'
+import FeaturesSection from '@components/homepage/FeaturesSection.astro'
+import HowSection from '@components/homepage/HowSection.astro'
+import HomeIcons from '/static/icons/cx-sprite.svg?raw'
 ---
 
-<BaseLayout title="Figma Components">
-  <div class="figma-overview">
-    <div class="container">
-      <div class="header">
-        <h1>Figma Components</h1>
-        <p>Documentation for all Figma components in the design system.</p>
-      </div>
-
-      <div class="components-grid">
-        {
-          (await getFigmaComponentsData()).map(({ name: component, tabs }) => {
-            const firstEntry = allFigma.find((e) => e.id === `${component}/${tabs[0]}`)
-            const description =
-              firstEntry?.data?.description ||
-              `View ${tabs.join(', ')} for the ${formatComponentName(component).toLowerCase()} component.`
-
-            return (
-              <div class="card component-card">
-                <div class="card-content">
-                  <h3 class="card-title">
-                    <a href={`/figma/docs/components/${component}/${tabs[0]}`}>
-                      {formatComponentName(component)}
-                    </a>
-                  </h3>
-                  <p class="card-body">{description}</p>
-                  <ul class="nav">
-                    {tabs.map((tab) => (
-                      <li class="nav-item">
-                        <a href={`/figma/docs/components/${component}/${tab}`} class="nav-link">
-                          {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          })
-        }
-      </div>
-    </div>
+<BaseLayout title="Chassis Figma - Tokenized Figma Component System">
+  <HeroSection />
+  <hr class="hr container" />
+  <IntroSection />
+  <FeaturesSection />
+  <HowSection />
+  <div class="d-none">
+    <Fragment set:html={HomeIcons} />
   </div>
 </BaseLayout>
-
-<style>
-  .components-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-</style>

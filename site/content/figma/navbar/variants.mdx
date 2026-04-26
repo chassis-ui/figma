@@ -1,6 +1,7 @@
 ---
 title: Navbar
 description: Primary navigation components positioned at the top of pages, containing site branding and main navigation links.
+toc: true
 ---
 
 # Variants
@@ -15,21 +16,37 @@ Individual interactive elements that represent navigation options within navbar 
 
 Interactive states that affect user interaction capabilities and visual feedback based on current user activity and navigation status. These variants communicate the nav item's availability and current selection state while guiding users through successful navigation.
 
+<CxVariant img="nav-link-state-idle">
+
 #### Idle
 
 Standard appearance of a navigation item when not being interacted with and not representing the current page. Neutral styling indicates the navigation option is available for selection and provides clear clickable target.
+
+</CxVariant>
+
+<CxVariant img="nav-link-state-hover">
 
 #### Hover
 
 Enhanced visual feedback when a user hovers over a navigation item, indicating interactive availability. Elevated styling signals potential navigation action and guides user attention to available navigation options.
 
+</CxVariant>
+
+<CxVariant img="nav-link-state-active">
+
 #### Active
 
 Highlighted state indicating the currently selected or active page within the navigation sequence. Distinct styling provides clear feedback about current location and maintains positional awareness within site navigation.
 
+</CxVariant>
+
+<CxVariant img="nav-link-state-disabled">
+
 #### Disabled
 
 Non-interactive state for navigation items that are not currently accessible due to permissions, restrictions, or system conditions. Reduced visual prominence indicates unavailability while maintaining interface structure and layout consistency.
+
+</CxVariant>
 
 ## Navbar
 
@@ -39,10 +56,18 @@ Primary navigation containers that provide horizontal site navigation and main m
 
 Dimensional configurations that control the navbar scale and navigation presentation to optimize usability across different screen sizes and interface contexts. These variants determine the spatial organization and navigation accessibility for various display environments.
 
+<CxVariant img="navbar-size-large" wide>
+
 #### Large
 
 Expanded navbar dimensions optimized for desktop environments and comprehensive navigation interfaces. Use for desktop layouts, full-width navigation, detailed menu structures, or when providing extensive navigation controls with enhanced visibility and interaction areas.
 
+</CxVariant>
+
+<CxVariant img="navbar-size-small" wide>
+
 #### Small
 
 Compact navbar dimensions optimized for mobile devices and space-constrained interfaces. Use for mobile layouts, responsive navigation, condensed menu structures, or when screen space requires efficient use while maintaining clear navigation functionality.
+
+</CxVariant>

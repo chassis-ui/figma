@@ -1,19 +1,66 @@
 ---
 title: Mobile Alert
 description: Mobile-optimized notification components designed specifically for smaller screens, displaying important messages and alerts on mobile devices.
+toc: true
 ---
 
 # Tokens
 
-Standardized design system values that define consistent visual properties across mobile alert components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation for mobile-specific messaging and user confirmation interfaces.
+Design tokens that control the visual appearance, spacing, and behavioral characteristics of mobile alert components, ensuring consistent notification presentation across different mobile interface contexts and maintaining design system coherence.
 
 ## Theming Tokens
 
-Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options for comprehensive mobile alert styling and behavior control.
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all mobile alert components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.icon-main | :base: \{color.base.context.light.default.icon-main\} |
+| :semantic: color.context.default.bg-main | :base: \{color.base.context.light.default.bg-main\} |
+| :semantic: color.context.default.dim-main | :base: \{color.base.context.light.default.dim-main\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.medium.mass | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.mass\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.medium.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.medium\}, fontSize: \{typography.fontSize.text.medium\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+| :base: font.text.xsmall.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.xsmall\}, fontSize: \{typography.fontSize.text.xsmall\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.icon.glyph.4xlarge | :base: \{size.unit.48\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.3xlarge | :base: \{size.unit.32\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderRadius.context.large | :base: \{borderRadius.base.large\} |
+</CxTable>
+
+</CxToken>

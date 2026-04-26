@@ -1,48 +1,71 @@
 ---
 title: Comment
 description: User-generated content components that display feedback, discussions, or conversational threads with author information and timestamps.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of comment components for discussion and collaborative communication interfaces.
 
-## Comment Item Props
+## Comment Item
 
 Properties that define the visual state and interactive behavior of individual comment elements within discussion systems and collaborative content interfaces.
 
-### Figma Component Props
+<ExampleImage img="comment-item-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### size: variant
+### size: variant
 
 Controls the dimensional scale and content presentation of the comment item to accommodate different interface contexts and discussion hierarchies.
 
-#### flush: variant
+- **large**
+- small
+
+### flush: variant
 
 Controls the spacing configuration of the comment item, determining whether standard or minimal padding is applied for different layout densities.
 
-#### has-avatar: boolean
+- true
+- **false**
+
+### has-avatar: boolean
 
 Controls the visibility of a user avatar element that provides visual identification and personalization within the comment display.
 
-#### has-voting: boolean
+- **true**
+- false
+
+### has-voting: boolean
 
 Controls the visibility of voting functionality that allows users to rate, report, or interact with comment content through feedback mechanisms.
 
-#### has-separator: boolean
+- **true**
+- false
+
+### has-separator: boolean
 
 Controls the visibility of visual separator elements that provide clear boundaries and organization between comment items in discussion threads.
 
-## Comment Form Props
+- **true**
+- false
+
+</CxProp>
+
+## Comment Form
 
 Properties that control the layout and functionality of comment input interfaces that enable content creation and submission within discussion systems.
 
-### Figma Component Props
+<ExampleImage img="comment-form-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### flush: variant
+### flush: variant
 
 Controls the spacing configuration of the comment form, determining whether standard or minimal padding is applied for different input interface layouts.
+
+- true
+- **false**
+
+</CxProp>

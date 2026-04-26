@@ -1,30 +1,174 @@
 ---
 title: Form Check
 description: Selection controls including checkboxes and radio buttons that allow users to make binary choices or select from predefined options.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of form check components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
+## Check Input
 
-## Check Input Component
+Specifications for individual checkbox and radio button elements including measurements, colors, and state styling. These values define the input control appearance.
 
-Specifications for individual selection input elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each check input variant.
+<ExampleImage img="check-input-specs" />
 
-### Design Tokens
+<CxSpec>
 
-Standardized design values used in check input components. Includes specifications for each variant and state-dependent styling rules.
+### 1. Check Input
 
-## Form Check Component
+@size:
+: medium
 
-Specifications for complete form check layouts including spacing relationships and component composition guidelines. These specifications ensure proper alignment and hierarchy across different form check configurations.
+@state:
+: idle, disabled, error, success
 
-### Design Tokens
+height:
+: size.icon.glyph.small
 
-Standardized design values used in form check components for layout structure and visual organization.
+width:
+: size.icon.glyph.small
+
+fill:
+: color.form-input.[state].bg-regular
+
+borderColor:
+: color.form-input.[state].border
+
+borderWidth:
+: borderWidth.form-input.regular
+
+borderRadius:
+: borderRadius.context.xsmall
+
+@size:
+: large
+
+@_state:_
+: idle, disabled, error, success
+
+height:
+: size.icon.glyph.medium
+
+width:
+: size.icon.glyph.medium
+
+_fill:_
+: color.form-input.[state].bg-regular
+
+_borderColor:_
+: color.form-input.[state].border
+
+_borderWidth:_
+: borderWidth.form-input.regular
+
+_borderRadius:_
+: borderRadius.context.xsmall
+
+@size:
+: small
+
+@_state:_
+: idle, disabled, error, success
+
+height:
+: size.icon.glyph.xsmall
+
+width:
+: size.icon.glyph.xsmall
+
+_fill:_
+: color.form-input.[state].bg-regular
+
+_borderColor:_
+: color.form-input.[state].border
+
+_borderWidth:_
+: borderWidth.form-input.regular
+
+_borderRadius:_
+: borderRadius.context.xsmall
+
+@state:
+: primary
+
+_height:_
+: size.icon.glyph.small
+
+_width:_
+: size.icon.glyph.small
+
+fill:
+: color.context.primary.base-color
+
+borderColor:
+: color.context.primary.base-color
+
+_borderWidth:_
+: borderWidth.form-input.regular
+
+_borderRadius:_
+: borderRadius.context.xsmall
+
+### 2. Check Icon
+
+@state:
+: idle, disabled, error, success
+
+fill:
+: color.form-input.[state].fg-active
+
+@state:
+: primary
+
+fill:
+: color.context.primary.contrast-color
+
+</CxSpec>
+
+## Form Check
+
+Specifications for complete form check layouts including label and input elements. These values define the structural appearance and spacing properties.
+
+<ExampleImage img="form-check-specs" />
+
+<CxSpec>
+
+### 1. Form Check
+
+gap:
+: space.form-input.[size]-gap
+
+### 2. Input Frame
+
+verticalPadding:
+: space.unit.2
+
+### 3. Check Text
+
+fill:
+: color.form-input.[state].fg-[active|inactive]
+
+typography:
+: font.text.[size].normal
+
+### 4. Input Help
+
+itemSpacing:
+: space.unit.8
+
+### 5. Help Icon
+
+height:
+: size.form-input.[size]-icon
+
+width:
+: size.form-input.[size]-icon
+
+fill:
+: color.form-input.[state].help
+
+</CxSpec>

@@ -1,6 +1,7 @@
 ---
 title: Tab
 description: Navigation components that organize content into multiple panels, with only one panel visible at a time, allowing users to switch between related content sections.
+toc: true
 ---
 
 # Tokens
@@ -9,11 +10,77 @@ Standardized design system values that define consistent visual properties acros
 
 ## Theming Tokens
 
-Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options for comprehensive tab styling and behavior control.
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all tab components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.bg-main | :base: \{color.base.context.light.default.bg-main\} |
+| :semantic: color.context.default.fg-idle | :base: \{color.base.context.light.default.fg-idle\} |
+| :semantic: color.context.default.fg-hover | :base: \{color.base.context.light.default.fg-hover\} |
+| :semantic: color.context.default.fg-press | :base: \{color.base.context.light.default.fg-press\} |
+| :semantic: color.context.default.fg-disabled | :base: \{color.base.context.light.default.fg-disabled\} |
+| :semantic: color.context.default.cue-main | :base: \{color.base.context.light.default.cue-main\} |
+| :semantic: color.context.default.cue-slight | :base: \{color.base.context.light.default.cue-slight\} |
+| :semantic: color.context.default.border-subtle | :base: \{color.base.context.light.default.border-subtle\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: font.tab.medium | :base: \{font.text.medium.strong\} |
+| :granular: font.tab.large | :base: \{font.text.large.strong\} |
+| :granular: font.tab.small | :base: \{font.text.small.strong\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: size.icon.glyph.medium | :base: \{size.unit.24\} |
+| :semantic: size.icon.glyph.small | :base: \{size.unit.20\} |
+| :semantic: size.icon.glyph.xsmall | :base: \{size.unit.16\} |
+| :semantic: size.icon.glyph.large | :base: \{size.unit.28\} |
+| :semantic: size.asset.indicator | :base: \{size.unit.4\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :semantic: space.context.small | :base: \{size.unit.12\} |
+| :semantic: space.context.xsmall | :base: \{size.unit.8\} |
+| :base: space.unit.10 | :base: \{dimension.base.10\} |
+| :base: space.unit.6 | :base: \{dimension.base.6\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderWidth.tab.main | :semantic: \{borderWidth.context.medium\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :granular: borderRadius.tab.medium | :semantic: \{borderRadius.context.medium\} |
+| :granular: borderRadius.tab.large | :semantic: \{borderRadius.context.large\} |
+| :granular: borderRadius.tab.small | :semantic: \{borderRadius.context.medium\} |
+</CxTable>
+
+</CxToken>

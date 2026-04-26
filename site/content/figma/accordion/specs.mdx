@@ -4,27 +4,17 @@ description: Collapsible content sections that organize and display information 
 toc: true
 ---
 
-import ResponsiveImage from "@chassis-ui/docs/components/ResponsiveImage.astro";
-
 # Specs
 
 Design specifications and implementation details for accordion components, defining precise measurements, spacing relationships, and visual properties across different variants and states. These specifications ensure consistent implementation and proper integration within design systems.
 
 <SpecsLegend />
 
-**Legend:**
-
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
-
-## Accordion Item Component
+## Accordion Item
 
 Individual collapsible content section specifications that define the precise measurements, spacing relationships, and visual properties for single accordion elements across different size variants and interaction states.
 
-### Design Tokens
-
-Specific measurements and visual properties for accordion item headers, content areas, borders, and spacing that ensure consistent appearance and proper interaction affordances across all size variants and spacing configurations.
+<ExampleImage img="accordion-item-specs" />
 
 <CxSpec>
 
@@ -36,11 +26,7 @@ borderColor:
 borderWidthBottom:
 : borderWidth.accordion.main
 
----
-
 ### 2. Title Frame
-
-Description
 
 @ flush:
 : false
@@ -49,13 +35,13 @@ Description
 : false
 
 verticalPadding:
-: space.accordion.medium-title-padding-y
+: space.accordion.[size]-title-padding-y
 
 horizontalPadding:
-: space.accordion.medium-title-padding-x
+: space.accordion.[size]-title-padding-x
 
 itemSpacing:
-: space.accordion.medium-gap
+: space.accordion.[size]-gap
 
 fill:
 : color.accordion.title-bg-idle
@@ -64,13 +50,13 @@ fill:
 : true
 
 _verticalPadding:_
-: space.accordion.medium-title-padding-y
+: space.accordion.[size]-title-padding-y
 
 horizontalPadding:
 : none
 
 _itemSpacing:_
-: space.accordion.medium-gap
+: space.accordion.[size]-gap
 
 _fill:_
 : color.accordion.title-bg-idle
@@ -79,18 +65,16 @@ _fill:_
 : true
 
 _verticalPadding:_
-: space.accordion.medium-title-padding-y
+: space.accordion.[size]-title-padding-y
 
 _horizontalPadding:_
-: space.accordion.medium-title-padding-x
+: space.accordion.[size]-title-padding-x
 
 _itemSpacing:_
-: space.accordion.medium-gap
+: space.accordion.[size]-gap
 
 fill:
 : color.accordion.title-bg-active
-
----
 
 ### 3. Body Frame
 
@@ -98,19 +82,19 @@ fill:
 : false
 
 paddingTop:
-: space.accordion.medium-body-padding-t
+: space.accordion.[size]-body-padding-t
 
 paddingRight:
-: space.accordion.medium-body-padding-e
+: space.accordion.[size]-body-padding-e
 
 paddingBottom:
-: space.accordion.medium-body-padding-b
+: space.accordion.[size]-body-padding-b
 
 paddingLeft:
-: space.accordion.medium-body-padding-s
+: space.accordion.[size]-body-padding-s
 
 itemSpacing:
-: space.context.medium
+: space.context.[size]
 
 fill:
 : color.accordion.item-bg-color
@@ -119,19 +103,19 @@ fill:
 : true
 
 _paddingTop:_
-: space.accordion.medium-body-padding-t
+: space.accordion.[size]-body-padding-t
 
 paddingRight:
 : none
 
 _paddingBottom:_
-: space.accordion.medium-body-padding-b
+: space.accordion.[size]-body-padding-b
 
 paddingLeft:
 : none
 
 _itemSpacing:_
-: space.context.medium
+: space.context.[size]
 
 _fill:_
 : color.accordion.item-bg-color
@@ -142,10 +126,10 @@ _fill:_
 : false
 
 height:
-: size.accordion.medium-indicator
+: size.accordion.[size]-indicator
 
 width:
-: size.accordion.medium-indicator
+: size.accordion.[size]-indicator
 
 fill:
 : color.accordion.indicator-idle
@@ -154,10 +138,10 @@ fill:
 : true
 
 _height:_
-: size.accordion.medium-indicator
+: size.accordion.[size]-indicator
 
 _width:_
-: size.accordion.medium-indicator
+: size.accordion.[size]-indicator
 
 fill:
 : color.accordion.indicator-active
@@ -171,7 +155,7 @@ fill:
 : color.accordion.title-fg-idle
 
 typography:
-: font.accordion.medium-title
+: font.accordion.[size]-title
 
 @ open:
 : true
@@ -180,7 +164,7 @@ fill:
 : color.accordion.title-fg-active
 
 _typography:_
-: font.accordion.medium-title
+: font.accordion.[size]-title
 
 ### 6. Body Text
 
@@ -188,15 +172,49 @@ fill:
 : color.accordion.item-fg-color
 
 typography:
-: font.accordion.medium-body
+: font.accordion.[size]-body
 
 </CxSpec>
 
-## Accordion Component
+## Accordion
 
 Complete accordion system specifications that define the overall measurements, spacing relationships, and visual coordination for multiple collapsible sections working together as unified content organization elements.
 
-### Design Tokens
+<ExampleImage img="accordion-specs" />
 
-Group-level measurements and spacing specifications that control the visual relationship between multiple accordion items and ensure proper content hierarchy and interaction flow within accordion implementations.
+<CxSpec>
+### 1. Accordion
 
+@ flush:
+: false
+
+borderColor:
+: color.accordion.border-main
+
+borderRadius:
+: borderRadius.accordion.main
+
+borderWidth:
+: borderWidth.accordion.main
+
+@ flush:
+: true
+
+borderColor:
+: none
+
+borderRadius:
+: none
+
+borderWidth:
+: none
+
+### 2. Accordion Item
+The first item should not have any top borders.
+
+borderColor:
+: none
+
+borderWidthTop:
+: none
+</CxSpec>

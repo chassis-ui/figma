@@ -1,0 +1,55 @@
+---
+title: Close Button
+description: Interactive icon elements that dismiss or close content when activated, featuring contextual visual styling and state-based interaction feedback.
+toc: true
+---
+
+# Tokens
+
+Standardized design system values that define consistent visual properties across button components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+
+## Theming Tokens
+
+Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
+
+<TokensLegend />
+
+<CxToken>
+
+### Color
+
+Color tokens are listed for the default context variant only. Other context variants follow the same token pattern with variant-specific color values.
+
+@context:
+: default
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.transparent-color | :base: rgba(\{color.base.palette.light.black.base\}, \{opacity.level.zero\}) |
+| :semantic: color.context.default.fg-main | :base: \{color.base.palette.light.neutral.90\} |
+| :semantic: color.context.default.icon-main | :base: \{color.base.palette.light.primary.50\} |
+| :semantic: color.context.default.fg-slight | :base: rgba(\{color.base.context.light.default.fg-main\}, \{opacity.context.fg-slight\}) |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: size.button.medium-icon | :base: \{size.unit.24\} |
+| :shared: size.button.large-icon | :base: \{size.unit.28\} |
+| :shared: size.button.small-icon | :base: \{size.unit.20\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :shared: borderRadius.button.medium | :semantic: \{borderRadius.base.button.medium\} |
+| :shared: borderRadius.button.large | :semantic: \{borderRadius.base.button.large\} |
+| :shared: borderRadius.button.small | :semantic: \{borderRadius.base.button.small\} |
+</CxTable>
+
+</CxToken>

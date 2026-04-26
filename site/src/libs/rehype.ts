@@ -2,6 +2,31 @@ import type { Root } from 'hast'
 import type { Plugin } from 'unified'
 import { visit } from 'unist-util-visit'
 
+// Helper function to process dl and dt elements
+function processDlDt(childNode: any) {
+  // Process <dl> elements - add "row" class
+  if (childNode.tagName === 'dl') {
+    if (!childNode.properties) {
+      childNode.properties = {}
+    }
+    // childNode.properties.class = existingClass ? `${existingClass} row` : 'row'
+  }
+
+  // Process <dt> elements - add "variant" class if text starts with "@"
+  if (childNode.tagName === 'dt' && childNode.children) {
+    const firstChild = childNode.children[0]
+    if (firstChild?.type === 'text' && firstChild.value.startsWith('@')) {
+      if (!childNode.properties) {
+        childNode.properties = {}
+      }
+      const existingClass = childNode.properties.class
+      childNode.properties.class = existingClass ? `${existingClass} variant` : 'variant'
+      // Remove the "@" character
+      firstChild.value = firstChild.value.substring(1)
+    }
+  }
+}
+
 // A rehype plugin to apply custom formatting to content within `<cxSpec>` or `<CxSpec>` tags
 export const rehypeCxSpec: Plugin<[], Root> = function () {
   return function rehypeCxSpecPlugin(ast) {
@@ -16,68 +41,30 @@ export const rehypeCxSpec: Plugin<[], Root> = function () {
         if (isCxSpec) {
           // Process all children of cxSpec
           visit(node, 'element', (childNode) => {
-            // Process <dl> elements - add "row" class
-            if (childNode.tagName === 'dl') {
-              if (!childNode.properties) {
-                childNode.properties = {}
-              }
-              // childNode.properties.class = existingClass ? `${existingClass} row` : 'row'
-            }
+            processDlDt(childNode)
+          })
+        }
+      },
+      true
+    )
+  }
+}
 
-            // Process <dt> elements - add "variant" class if text starts with "@"
-            if (childNode.tagName === 'dt' && childNode.children) {
-              const firstChild = childNode.children[0]
-              if (firstChild?.type === 'text' && firstChild.value.startsWith('@')) {
-                if (!childNode.properties) {
-                  childNode.properties = {}
-                }
-                const existingClass = childNode.properties.class
-                childNode.properties.class = existingClass ? `${existingClass} variant` : 'variant'
-                // Remove the "@" character
-                firstChild.value = firstChild.value.substring(1)
-              }
-            }
+// A rehype plugin to apply custom formatting to content within `<CxVariant>` tags
+export const rehypeCxVariant: Plugin<[], Root> = function () {
+  return function rehypeCxVariantPlugin(ast) {
+    visit(
+      ast,
+      (node) => {
+        // Check if we're entering a CxVariant component (any case variation)
+        const isCxVariant =
+          node.type === 'mdxJsxFlowElement' &&
+          (node.name === 'CxVariant' || node.name === 'cxVariant' || node.name === 'cxvariant')
 
-            // Process paragraph elements - check for lines starting with "%" followed by a number
-            if (childNode.tagName === 'p' && childNode.children) {
-              const firstChild = childNode.children[0]
-              if (firstChild?.type === 'text') {
-                const match = firstChild.value.match(/^%(\d+)(.*)/)
-                if (match) {
-                  // Add a class to the paragraph instead of wrapping
-                  if (!childNode.properties) {
-                    childNode.properties = {}
-                  }
-                  const existingClass = childNode.properties.class
-                  childNode.properties.class = existingClass ? `${existingClass} number` : 'number'
-                  // Remove the "%" character
-                  firstChild.value = firstChild.value.substring(1)
-                }
-              }
-            }
-
-            // Process h3 elements - wrap number in span if starts with number followed by dot
-            if (childNode.tagName === 'h3' && childNode.children) {
-              const firstChild = childNode.children[0]
-              if (firstChild?.type === 'text') {
-                const match = firstChild.value.match(/^(\d+)\.\s*(.*)/)
-                if (match) {
-                  const number = match[1]
-                  const remainingText = match[2]
-                  // Replace the first child with a span containing the number and the remaining text
-                  childNode.children[0] = {
-                    type: 'element',
-                    tagName: 'span',
-                    properties: { class: 'number' },
-                    children: [{ type: 'text', value: number }]
-                  }
-                  // Add the remaining text if it exists
-                  if (remainingText) {
-                    childNode.children.splice(1, 0, { type: 'text', value: remainingText })
-                  }
-                }
-              }
-            }
+        if (isCxVariant) {
+          // Process all children of CxVariant
+          visit(node, 'element', (childNode) => {
+            processDlDt(childNode)
           })
         }
       },
@@ -100,6 +87,8 @@ export const rehypeCxToken: Plugin<[], Root> = function () {
         if (isCxToken) {
           // Process all children of CxToken
           visit(node, 'element', (childNode) => {
+            processDlDt(childNode)
+
             if (!childNode.children) return
 
             // Process text nodes that contain :pattern:
@@ -172,7 +161,9 @@ export const rehypeCxProp: Plugin<[], Root> = function () {
         if (isCxProp) {
           // Process all h4 children of CxProp
           visit(node, 'element', (childNode) => {
-            if (childNode.tagName === 'h4' && childNode.children) {
+            processDlDt(childNode)
+
+            if (childNode.tagName === 'h3' && childNode.children) {
               const firstChild = childNode.children[0]
               if (firstChild?.type === 'text' && firstChild.value.includes(':')) {
                 const colonIndex = firstChild.value.indexOf(':')

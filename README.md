@@ -1,372 +1,125 @@
-# Chassis Assets
+# Chassis Figma
 
-Design asset manager for the Chassis Design System, a robust foundation for enterprise-grade, multi-brand, multi-app, and multi-platform design systems.
+> Tokenized Figma component library documentation for the Chassis Design System.
 
-This project is part of the Chassis ecosystem and specifically handles asset management and distribution. It provides tools to copy, rename, and distribute design assets (fonts, images, icons, illustrations) across different brands, applications, and platforms.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue.svg)](https://github.com/chassis-ui/figma)
+
+## Overview
+
+Chassis Figma provides documentation and reference material for the Chassis Design System's Figma component library. It documents how Figma components map to design tokens and code implementations, bridging the gap between design and development.
 
 > [!NOTE]
-> This project is part of the multi-repository Chassis Design System. It focuses exclusively on asset management, while design tokens and icon generation are handled by separate repositories (`chassis-tokens` and `chassis-icons`).
+> This project is part of the multi-repository Chassis Design System. It focuses on Figma component documentation, while design tokens, CSS framework, icons, and assets are handled by their respective repositories.
 
 > [!WARNING]
-> This project uses `pnpm` for package management. Ensure you have `pnpm` installed globally before running the commands below.
+> This project uses `pnpm` for package management. Install it globally with `npm install -g pnpm` before running the commands below.
 
-## 🚀 Quick Start
+## Features
 
-### NPM Package (Recommended)
+- **Figma Component Documentation** — Detailed reference for each Figma component with usage guidelines
+- **Token Mapping** — Shows how Figma variables connect to design tokens and CSS output
+- **Tabbed Interface** — Browse components by design specs, token usage, and code examples
+- **Search Integration** — Algolia-powered search across all documentation
+- **Live Examples** — StackBlitz integration for interactive code previews
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 18.0.0 or higher
+- pnpm 10.0.0 or higher
+- Git with SSH access to GitHub (for submodules)
+
+### Installation
 
 ```bash
-npm install @chassis-ui/assets
-```
-
-### Git Submodule
-
-```bash
-git submodule add https://github.com/chassis-ui/assets.git assets/chassis
-```
-
-### GitHub Releases
-
-Download pre-built assets from [GitHub Releases](https://github.com/chassis-ui/assets/releases).
-
-**👉 For detailed usage instructions, see [USAGE.md](./USAGE.md)**
-
-## Install
-
-```shell
-git clone git@github.com:chassis-ui/assets.git
-cd chassis-assets
+git clone --recursive https://github.com/chassis-ui/figma.git chassis-figma
+cd chassis-figma
 pnpm install
 ```
 
-## Generate Distribution
+### Development
 
-```shell
-pnpm dist
+```bash
+# Start development server (port 4326)
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm astro:preview
 ```
 
-Copies and processes design assets from the `source` directory to create platform-specific distributions in the `dist` folder. The build process handles:
+## Available Scripts
 
-- **Multi-brand support**: Assets for different brands (chassis, test, etc.)
-- **Multi-platform distribution**: Web, iOS, and Android formats
-- **File naming conventions**: Automatic renaming for platform requirements (e.g., Android underscore naming)
-- **Asset overrides**: Brand-specific assets override default assets when available
-- **Error handling**: Comprehensive validation and error reporting
-- **Build statistics**: Detailed reporting of processed files and operations
-- **Selective building**: Filter by brand, app, or platform for targeted builds
+| Script | Description |
+|--------|-------------|
+| `pnpm dev` | Start development server at localhost:4326 |
+| `pnpm build` | Build documentation site |
+| `pnpm site:build` | Build site with submodule sync |
+| `pnpm site:lint` | Run all linters (ESLint, Stylelint, Prettier, VNU) |
+| `pnpm site:format` | Format code with Prettier |
+| `pnpm astro:dev` | Start Astro dev server |
+| `pnpm astro:build` | Build Astro site |
+| `pnpm astro:preview` | Preview production build |
+| `pnpm check` | Run Astro check, lockfile lint, and security audit |
 
-### Selective Build Examples
-
-```shell
-# Build only web platform assets
-pnpm dist -- --platform web
-
-# Build only chassis brand assets
-pnpm dist -- --brand chassis
-
-# Build only docs app assets
-pnpm dist -- --app docs
-
-# Build specific combination
-pnpm dist -- --brand chassis --app docs --platform web
-```
-
-### Additional Commands
-
-```shell
-# Development workflow
-pnpm dev                    # Clean and build
-pnpm clean                  # Remove dist directory
-pnpm test                   # Run build tests
-pnpm validate               # Lint build scripts
-pnpm stats                  # Analyze asset distribution with advanced filtering
-
-# Release workflow
-pnpm release                # Full release process (clean, build, test)
-```
-
-#### Advanced Build Options
-
-The build system supports selective asset generation using command-line filters:
-
-```shell
-# Build specific brand only
-pnpm dist -- --brand chassis
-
-# Build specific apps only
-pnpm dist -- --app docs test
-
-# Build specific platforms only
-pnpm dist -- --platform web ios
-
-# Combine filters for targeted builds
-pnpm dist -- --brand chassis --platform web --app docs
-```
-
-**Benefits of selective building:**
-- ✅ **Faster builds** - Only process required assets
-- ✅ **Reduced output size** - Generate only needed distributions
-- ✅ **Development efficiency** - Focus on specific brand/platform combinations
-- ✅ **CI/CD optimization** - Build only what's needed for deployment
-
-## Asset Distribution Process
-
-The build system processes assets in the following structure:
+## Project Structure
 
 ```
-source/
-├── default/           # Default brand assets (fallback)
-│   ├── docs/         # Documentation app assets
-│   │   ├── fonts/    # Font files
-│   │   ├── images/   # Images and illustrations
-│   │   └── icons/    # Icon assets
-│   └── test/         # Test app assets
-└── [brand]/          # Brand-specific overrides
-    └── [app]/        # App-specific assets
+chassis-figma/
+├── site/
+│   ├── astro.config.ts       # Astro configuration
+│   ├── config.yml            # Site metadata and settings
+│   ├── tsconfig.json         # TypeScript configuration
+│   ├── content/
+│   │   ├── docs/             # Documentation content (MDX)
+│   │   ├── figma/            # Figma component content (MDX)
+│   │   └── callouts/         # Reusable callout content
+│   └── src/
+│       ├── components/       # Astro components
+│       ├── layouts/          # Page layouts
+│       ├── libs/             # Utility libraries
+│       ├── pages/            # File-based routing
+│       ├── plugins/          # Vite plugins (Algolia, StackBlitz)
+│       └── scss/             # Stylesheets
+├── build/                    # Build and version scripts
+├── refs/                     # Reference documentation
+├── vendor/                   # Git submodules (assets)
+└── _site/                    # Build output (generated)
 ```
 
-Output distribution:
+## Documentation
 
-```
-dist/
-├── web/              # Web platform assets
-│   ├── chassis-docs/ # Chassis brand, docs app
-│   └── test-docs/    # Test brand, docs app
-├── ios/              # iOS platform assets
-│   └── test-test/    # Test brand, test app
-└── android/          # Android platform assets
-    └── test-test/    # Test brand, test app (with naming conventions)
-```
+Visit [chassis-ui.com/figma](https://chassis-ui.com/figma/) for the full documentation site.
 
-### Platform-Specific Processing
-
-- **Web**: Direct copy of assets
-- **iOS**: Direct copy of assets
-- **Android**: Files renamed to lowercase with underscores, icons prefixed with `ic_`
-
-## Configuration
-
-The `chassis` key in `package.json` defines the build configuration for asset distribution:
-
-```json
-"chassis": {
-  "defaults": {
-    "brandFolder": "default",
-    "tokensTheme": "light"
-  },
-  "build": {
-    "brands": ["chassis", "test"],
-    "themes": ["light", "dark"],
-    "apps": {
-      "docs": ["web"],
-      "test": ["ios", "android"]
-    }
-  }
-}
-```
-
-### Configuration Details
-
-#### `defaults`
-- **`brandFolder`**: Default source folder for assets (fallback when brand-specific assets don't exist)
-- **`tokensTheme`**: Legacy configuration (used in the original multi-purpose repository)
-
-#### `build.apps`
-Maps applications to their target platforms:
-- **`docs`**: Documentation website assets → `web` platform
-- **`test`**: Test application assets → `ios` and `android` platforms
-
-### Platform Support
-- **`web`**: Web applications and documentation sites
-- **`ios`**: iOS mobile applications
-- **`android`**: Android mobile applications
-
-### Brand and App Processing
-For each combination of brand and app:
-1. Copy assets from `source/default/[app]/` as base
-2. Override with brand-specific assets from `source/[brand]/[app]/` if they exist
-3. Apply platform-specific processing (naming conventions, file transformations)
-4. Output to `dist/[platform]/[brand]-[app]/`
-
-## Designer Workflow
-
-### Adding Assets to the Project
-
-As a designer, you'll export assets to the appropriate locations in the `source` directory:
-
-#### Asset Types and Locations
-
-- **Fonts**: `source/[brand]/[app]/fonts/`
-  - Use font names that match your design tokens (e.g., `text-normal.ttf`)
-  - Place in brand-specific folders or `default` for shared fonts
-
-- **Images & Illustrations**: `source/[brand]/[app]/images/`
-  - Bitmap images (PNG, JPG)
-  - SVG illustrations
-  - Colored icons and graphics
-
-- **Icons**: `source/[brand]/[app]/icons/`
-  - SVG icon files
-  - Use consistent naming conventions
-
-#### File Organization Strategy
-
-```
-source/
-├── default/              # Assets used by all brands (fallback)
-│   ├── docs/            # Documentation site assets
-│   └── test/            # Test app assets
-├── chassis/             # Chassis brand-specific assets
-│   └── docs/           # Override default docs assets
-└── test/               # Test brand-specific assets
-    └── test/           # Override default test assets
-```
-
-### Verification Process
-
-After adding assets, verify the distribution:
-
-```shell
-pnpm dist
-pnpm stats
-```
-
-Check the `dist` folder to ensure assets are correctly distributed across platforms and brands. The `stats` command will validate your build configuration against actual assets and provide optimization recommendations.
-
-## Chassis Design System Ecosystem
+## Chassis Ecosystem
 
 This project is part of the Chassis Design System's multi-repository architecture:
 
-- **`chassis-tokens`**: Design token generation and management
-- **`chassis-assets`**: Asset management and distribution (this repository)
-- **`chassis-icons`**: Icon generation and sprite creation
-- **`chassis-css`**: Production CSS framework
-- **`chassis-figma`**: Figma plugins and design tools
+| Project | Description |
+|---------|-------------|
+| [chassis-website](https://github.com/chassis-ui/website) | Main website and shared documentation package |
+| [chassis-css](https://github.com/chassis-ui/css) | CSS framework and component library |
+| [chassis-tokens](https://github.com/chassis-ui/tokens) | Design token generation and management |
+| [chassis-icons](https://github.com/chassis-ui/icons) | Icon library and build toolkit |
+| [chassis-assets](https://github.com/chassis-ui/assets) | Multi-platform asset management |
+| **chassis-figma** | **Figma component documentation (this repository)** |
 
-### Integration with Other Repositories
-
-The asset manager works alongside other Chassis repositories:
-
-1. **Design tokens** define font names and asset references
-2. **Assets** provide the actual font files, images, and illustrations
-3. **Icons** are managed separately for scalability and performance
-4. **CSS framework** references the distributed assets
-
-### Version Management
-
-```shell
-npm run release-version old_version new_version
-npm run release
-```
+All documentation sites share the `@chassis-ui/docs` package for consistent layouts, components, and styling.
 
 ## Contributing
 
-This project follows the Chassis Design System contribution guidelines. For asset-related contributions:
-
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/asset-update`)
-3. Add or update assets in the appropriate `source` directories
-4. Test distribution with `pnpm dist`
-5. Commit changes and create a pull request
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Make your changes
+4. Test the build: `pnpm build && pnpm site:lint`
+5. Commit your changes: `git commit -m "feat: add my feature"`
+6. Push to the branch: `git push origin feature/my-feature`
+7. Open a Pull Request
 
 ## License
 
-MIT License - see LICENSE file for details.
-
-## Development
-
-### Testing
-The project includes a comprehensive testing framework:
-
-```shell
-# Run all tests
-pnpm test
-
-# Run with verbose output
-DEBUG=chassis:assets pnpm test
-```
-
-### Asset Analysis
-Analyze your asset distribution for optimization opportunities:
-
-```shell
-pnpm stats
-```
-
-The asset analyzer provides comprehensive insights including:
-- **File size distribution** and statistics
-- **Platform and brand coverage** analysis
-- **Content-based duplicate detection** using MD5 hashing
-- **Optimization recommendations** tailored to your asset types
-- **Build configuration validation** against actual assets
-- **Performance metrics** with progress tracking
-
-#### Advanced Analysis Options
-
-Filter analysis by specific criteria:
-
-```shell
-# Analyze specific brand
-pnpm stats -- --brand chassis
-
-# Analyze specific apps
-pnpm stats -- --app docs test
-
-# Analyze specific platforms
-pnpm stats -- --platform web ios
-
-# Combine filters
-pnpm stats -- --brand chassis --platform web --app docs
-```
-
-The analyzer provides:
-- **File Type Breakdown**: Distribution of file extensions with percentages
-- **Platform Distribution**: Assets across web, iOS, and Android platforms
-- **Brand & App Coverage**: Assets organized by brand and application
-- **Largest Files**: Top 10 largest files with formatted sizes
-- **Duplicate Detection**: Content-based duplicate identification
-- **Smart Recommendations**: Platform-specific optimization suggestions
-- **Configuration Insights**: Validation against build configuration
-
-### Programmatic API
-Use the Chassis Assets API for custom integrations:
-
-```javascript
-import ChassisAssets from '@chassis-ui/assets/build/api.js'
-import AssetAnalyzer from '@chassis-ui/assets/build/analyze-assets.js'
-
-// Build assets programmatically
-const assets = new ChassisAssets()
-
-// Get asset inventory
-const inventory = assets.getAssetInventory('chassis', 'docs')
-
-// Build specific combinations
-await assets.build({
-  brands: ['chassis'],
-  apps: ['docs'],
-  platforms: ['web']
-})
-
-// Get build statistics
-const stats = assets.getStats()
-
-// Analyze assets programmatically
-const analyzer = new AssetAnalyzer()
-
-// Analyze with filters
-analyzer.options = { brand: 'chassis', apps: ['docs'], platforms: ['web'] }
-await analyzer.analyze()
-
-// Access analysis results
-console.log('Total files:', analyzer.stats.totalFiles)
-console.log('Duplicates found:', analyzer.stats.duplicates.length)
-```
-
-## Related Documentation
-
-- [Asset Guidelines](docs/ASSET_GUIDELINES.md)
-- [Chassis Design System Knowledge Base](_knowledge/)
-- [Multi-Repository Architecture](_knowledge/planning/multi-repo.md)
-- [Development Process](_knowledge/development/DEVELOPMENT_LOG.md)
-- [Changelog](CHANGELOG.md)
-
+MIT License — see [LICENSE](LICENSE) file for details.

@@ -1,19 +1,78 @@
 ---
 title: Story
 description: Full-screen, immersive components that present sequential narrative content, typically featuring images or videos with interactive navigation.
+toc: true
 ---
 
 # Tokens
 
-Standardized design system values that define consistent visual properties across story components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation.
+Standardized design system values that define consistent visual properties across story components. These tokens ensure visual coherence while enabling flexible theme customization and brand adaptation for full-screen narrative and content browsing interfaces.
 
 ## Theming Tokens
 
 Design tokens organized by category with color-coded labels indicating their scope and impact level. Each token includes detailed specifications with values, usage guidelines, and customization options.
 
-### Legend
+<TokensLegend />
 
-- Granular tokens that affect only this component.
-- Granular tokens that affect all story components.
-- Semantic tokens that affect the whole application.
-- Base tokens that affect the whole application.
+<CxToken>
+
+### Color
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: color.context.default.fg-main | :base: \{color.base.context.light.default.fg-main\} |
+| :semantic: color.context.default.fg-subtle | :base: \{color.base.context.light.default.fg-subtle\} |
+| :semantic: color.context.default.fg-inverse | :base: \{color.base.context.light.default.fg-inverse\} |
+| :semantic: color.context.default.border-main | :base: \{color.base.context.light.default.border-main\} |
+| :semantic: color.context.primary.base-color | :base: \{color.base.context.light.primary.base-color\} |
+</CxTable>
+
+### Typography
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: font.text.small.normal | :value: \{fontFamily: \{typography.fontFamily.text\}, fontWeight: \{typography.fontWeight.text.normal\}, lineHeight: \{typography.lineHeight.text.small\}, fontSize: \{typography.fontSize.text.small\}, letterSpacing: \{typography.letterSpacing.base.zero\}, paragraphSpacing: \{typography.paragraphSpacing.base.zero\}, textCase: \{typography.textCase.base.none\}, textDecoration: \{typography.textDecoration.base.none\}\} |
+</CxTable>
+
+### Sizing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :base: size.unit.96 | :value: \{dimension.base.96\} |
+| :base: size.unit.80 | :value: \{dimension.base.80\} |
+| :base: size.unit.72 | :value: \{dimension.base.72\} |
+| :base: size.unit.64 | :value: \{dimension.base.64\} |
+| :base: size.unit.40 | :value: \{dimension.base.40\} |
+| :base: size.unit.32 | :value: \{dimension.base.32\} |
+</CxTable>
+
+### Spacing
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: space.context.medium | :base: \{size.unit.16\} |
+| :base: space.unit.8 | :value: \{dimension.base.8\} |
+| :base: space.unit.4 | :value: \{dimension.base.4\} |
+</CxTable>
+
+### Border Width
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderWidth.context.xlarge | :base: \{size.unit.2\} |
+</CxTable>
+
+### Border Radius
+
+<CxTable>
+| Component Token | Base Token |
+| --- | --- |
+| :semantic: borderRadius.context.round-72 | :base: \{size.unit.36\} |
+</CxTable>
+
+</CxToken>

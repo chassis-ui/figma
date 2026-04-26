@@ -1,27 +1,41 @@
 ---
 import { getEntry } from 'astro:content'
-import { getSlug } from '@chassis-ui/docs'
+import ResponsiveImage from '@chassis-ui/docs/components/ResponsiveImage.astro'
 
-const { img, alt, wide } = Astro.props
+const { img, alt, wide, large, neutral } = Astro.props
 
 // Get component and tab from URL
 const path = Astro.url.pathname
-const matches = path.match(/\/figma\/([^\/]+)\/([^\/]+)/)
+const matches = path.match(/\/figma\/docs\/components\/([^\/]+)\/([^\/]+)/)
 
 let frontmatter = null
+let component = null
 if (matches) {
-  const [, component, tab] = matches
-  const entry = await getEntry('figma', `${component}/${tab}`)
+  const [, comp, tab] = matches
+  component = comp
+  const entry = await getEntry('figma', `${comp}/${tab}`)
   frontmatter = entry?.data
 }
 ---
 
-<div class={`cx-variant` + (wide ? ` wide` : '')}>
-  <div class="cxd-example">
-    <img
-      src={`https://placehold.co/256x96` +
-        (frontmatter?.title ? `?${getSlug(frontmatter?.title)}-${img}.svg` : '')}
-      alt={alt ? alt : `Variant example image ${frontmatter?.title}`}
+<div
+  class={`cx-variant mb-xlarge pt-xlarge border-top border-subtle` +
+    (wide ? ` flex-column-reverse gap-medium` : ' gap-xlarge-xlarge')}
+>
+  <div
+    class={`cxd-example p-medium p-xlarge-3xlarge align-content-center m-0` +
+      (!wide ? (large ? ` col-xlarge-7` : ' col-xlarge-5') : '') +
+      (neutral ? ' neutral-bg-highlight' : '')}
+  >
+    <ResponsiveImage
+      imgPath={`/static/images/figma/components/${component}/light/${img}.png`}
+      alt={alt ? alt : `${frontmatter?.title} variant example image`}
+      classes="visible-light mw-100"
+    />
+    <ResponsiveImage
+      imgPath={`/static/images/figma/components/${component}/dark/${img}.png`}
+      alt={alt ? alt : `${frontmatter?.title} variant example image`}
+      classes="visible-dark mw-100"
     />
   </div>
   <div class="cxd-variant-content">

@@ -1,20 +1,20 @@
 ---
 interface Props {
-  component?: String
+  scope?: String
 }
 
-const component = Astro.props.component
+const scope = Astro.props.scope
 ---
 
 <div class="legend cx-token">
   <h6>Legend:</h6>
-  <ul>
+  <ul class="m-0 p-0">
     <li>
       <span class="icon icon-circle-solid granular"></span> Granular tokens that affect only this component.
     </li>
     <li>
-      <span class="icon icon-circle-solid shared"></span> Granular tokens that affect all {
-        component ? `${component}` : 'similar'
+      <span class="icon icon-circle-solid shared"></span> Granular tokens that affect {
+        scope ? `${scope}` : 'other'
       } components.
     </li>
     <li>

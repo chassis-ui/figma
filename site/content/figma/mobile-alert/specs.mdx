@@ -1,30 +1,104 @@
 ---
 title: Mobile Alert
 description: Mobile-optimized notification components designed specifically for smaller screens, displaying important messages and alerts on mobile devices.
+toc: true
 ---
 
 # Specs
 
-Technical specifications and design system values that define the visual and structural properties of mobile alert components. These specifications ensure consistent implementation across design tools and development environments for mobile-specific messaging and user confirmation interfaces.
+Technical specifications and design system values that define the visual and structural properties of mobile alert components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
+## Mobile Alert Dialog
 
-## Mobile Alert Window Component
+Specifications for the mobile alert window container and its internal elements including layout structure, colors, typography, and sizing attributes that define the appearance and content arrangement of alert notifications on mobile devices.
 
-Specifications for mobile-optimized modal dialog elements including measurements, colors, typography, and styling attributes. These values define the core appearance and behavior properties for each mobile alert window variant requiring immediate user attention and response within mobile applications.
+<ExampleImage img="mobile-alert-window-specs" />
 
-### Design Tokens
+<CxSpec>
 
-Standardized design values used in mobile alert window components. Includes specifications for each variant and state-dependent styling rules for consistent appearance and behavior across all mobile alert window implementations.
+### 1. Mobile Alert Window
 
-## Mobile Alert Screen Component
+verticalPadding:
+: space.context.medium
 
-Specifications for mobile-optimized full-screen overlay elements including measurements, colors, typography, and styling attributes. These values define the comprehensive appearance and behavior properties for each mobile alert screen variant with extensive messaging capabilities designed for mobile environments.
+horizontalPadding:
+: space.context.medium
 
-### Design Tokens
+itemSpacing:
+: space.context.medium
 
-Standardized design values used in mobile alert screen components. Includes specifications for each variant and state-dependent styling rules for consistent appearance and behavior across all mobile alert screen implementations.
+fill:
+: color.context.default.bg-main
+
+borderRadius:
+: borderRadius.context.xlarge
+
+### 2. Alert Icon
+
+height:
+: size.icon.glyph.4xlarge
+
+width:
+: size.icon.glyph.4xlarge
+
+fill:
+: color.context.default.icon-main
+
+### 3. Title Frame
+
+itemSpacing:
+: none
+
+### 4. Alert Title
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.xsmall.normal
+
+### 5. Error Code
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.xsmall.normal
+
+### 6. Alert Body
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.medium.normal
+
+### 7. Actions Frame
+
+itemSpacing:
+: space.context.small
+
+</CxSpec>
+
+## Mobile Alert Screen
+
+Specifications for the full-screen mobile alert backdrop that overlays the current screen content when displaying an alert notification to users.
+
+<ExampleImage img="mobile-alert-screen-specs" />
+
+<CxSpec>
+
+### 1. Mobile Alert Screen
+
+verticalPadding:
+: space.context.3xlarge
+
+horizontalPadding:
+: space.context.3xlarge
+
+fill:
+: color.context.default.dim-main
+
+</CxSpec>

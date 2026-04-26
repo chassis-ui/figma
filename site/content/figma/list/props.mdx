@@ -1,201 +1,245 @@
 ---
 title: List
 description: Components that display collections of related items in a structured, scannable format with consistent styling and spacing.
+toc: true
 ---
 
 # Props
 
 Configurable properties that control the appearance, behavior, and functionality of list components for content organization and interactive displays.
 
-## List Item Props
+## List Item
 
 Properties that define the visual state and interactive behavior of individual list item elements.
 
-### Figma Component Props
+<ExampleImage img="list-item-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### flush: boolean
+### flush: boolean
 
 Controls the spacing variant of the list item, determining whether standard or minimal padding is applied.
 
-#### type: variant
+- true
+- **false**
+
+### type: variant
 
 Controls the content presentation method and visual structure of the list item.
 
-#### has-disclosure: boolean
+- **basic**
+- icon
+- image
+
+### has-disclosure: boolean
 
 Controls the visibility of directional indicators for expandable content and navigation hierarchy.
 
-#### has-assist: boolean
+- **true**
+- false
+
+### has-assist: boolean
 
 Controls the visibility of supplementary elements that provide additional functionality and contextual information.
 
-#### has-edit: boolean
+- **true**
+- false
+
+### has-edit: boolean
 
 Controls the visibility of interactive states for modification capabilities and selection status.
 
-#### text-type: variant
+- **true**
+- false
+
+### text-type: variant
 
 Controls the text layout and information hierarchy within the list item content structure.
 
-#### title: text
+- **basic**
+- details
+- subtitle
+- input-placeholder
+- input-text
+
+### title: text
 
 Specifies the primary text content displayed as the main heading or label within the list item.
 
-#### details: text
+### details: text
 
 Specifies the secondary descriptive text content that provides additional context and information.
 
-#### subtitle: text
+### subtitle: text
 
 Specifies the hierarchical secondary text content that creates categorized information structure.
 
-#### value: text
+### value: text
 
 Specifies the text content displayed in editable list items, covering both placeholder and active user-entered data states.
 
-#### icon-instance: instance-swap
+### icon-instance: instance-swap
 
 Specifies which icon component to display when the list item includes icon elements.
 
-#### edit-state: variant
+### edit-state: variant
 
 Specifies which edit state component to display when has-edit property is enabled.
 
-#### disclosure-direction: variant
+### disclosure-direction: variant
 
 Controls the directional orientation of disclosure indicators for expandable content.
 
-#### assist-type: variant
+- **right**
+- down
+- up
+
+### assist-type: variant
 
 Controls the type of supplementary element displayed when has-assist property is enabled.
 
-#### assist-text: text
+- **basic**
+- icon
+- info
+- check
+
+### assist-text: text
 
 Specifies the text content displayed within assistance elements for contextual information.
 
-#### assist-icon: instance-swap
+### assist-icon: instance-swap
 
 Specifies which icon component to display within assistance elements when assist-type requires icon presentation.
 
-## List Header Props
+</CxProp>
+
+## List Header
 
 Properties that control the layout and content structure of list header elements for organizational context.
 
-### Figma Component Props
+<ExampleImage img="list-header-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### flush: boolean
+### flush: boolean
 
 Controls the spacing variant of the list header, determining whether standard or minimal padding is applied.
 
-#### has-disclosure: boolean
+- **true**
+- false
+
+### has-disclosure: boolean
 
 Controls the visibility of directional indicators for expandable sections and content organization.
 
-#### has-assist: boolean
+- true
+- **false**
+
+### has-assist: boolean
 
 Controls the visibility of supplementary elements that provide additional functionality within header context.
 
-## List Footer Props
+- true
+- **false**
+
+</CxProp>
+
+## List Footer
 
 Properties that control the layout and content structure of list footer elements for section closure and supplementary actions.
 
-### Figma Component Props
+<ExampleImage img="list-footer-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### flush: boolean
+### flush: boolean
 
 Controls the spacing variant of the list footer, determining whether standard or minimal padding is applied.
 
-#### has-disclosure: boolean
+- **true**
+- false
+
+### has-disclosure: boolean
 
 Controls the visibility of directional indicators for expandable content within footer context.
 
-## List Event Props
+- true
+- **false**
+
+</CxProp>
+
+## List Event
 
 Properties that define the visual state and interactive behavior of specialized list elements for event and temporal content presentation.
 
-### Figma Component Props
+<ExampleImage img="list-event-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### colored: variant
+### colored: variant
 
 Controls the visual styling and colored indicator elements for event categorization and identification.
 
-#### has-disclosure: boolean
+- true
+- **false**
+
+### has-disclosure: boolean
 
 Controls the visibility of directional indicators for expandable event content and detailed information.
 
-#### has-assist: boolean
+- true
+- **false**
 
-Controls the visibility of supplementary elements that provide additional functionality within event context.
+### has-assist: boolean
 
-#### text-type: variant
+Controls the visibility of supplementary elements that provide additional functionality and contextual information.
 
-Controls the text layout and information hierarchy within the event list item content structure.
+- true
+- **false**
 
-#### title: text
+### has-edit: boolean
 
-Specifies the primary text content displayed as the main event heading or label.
+Controls the visibility of interactive states for modification capabilities and selection status.
 
-#### details: text
+- true
+- **false**
 
-Specifies the secondary descriptive text content that provides additional event context and information.
+</CxProp>
 
-#### subtitle: text
-
-Specifies the hierarchical secondary text content that creates categorized event information structure.
-
-#### value: text
-
-Specifies the text content displayed in editable event items, covering both placeholder and active user-entered data states.
-
-#### icon-instance: instance-swap
-
-Specifies which icon component to display when the event item includes icon elements.
-
-#### disclosure-direction: variant
-
-Controls the directional orientation of disclosure indicators for expandable event content.
-
-#### assist-type: variant
-
-Controls the type of supplementary element displayed when has-assist property is enabled in event context.
-
-#### assist-text: text
-
-Specifies the text content displayed within assistance elements for event contextual information.
-
-#### assist-icon: instance-swap
-
-Specifies which icon component to display within assistance elements when assist-type requires icon presentation in event context.
-
-## List Swipe Props
+## List Swipe
 
 Properties that define the interactive behavior and action configuration of swipe-enabled list elements for gesture-based functionality.
 
-### Figma Component Props
+<ExampleImage img="list-swipe-props" />
 
-Component properties specific to Figma design system implementation.
+<CxProp>
 
-#### swipe: variant
+### swipe: variant
 
 Controls the directional orientation of swipe gestures for revealing hidden actions and functionality.
 
-#### type: variant
+- **left**
+- right
+
+### type: variant
 
 Controls the presentation format of actions revealed through swipe interactions, determining whether text or icon-based display is used.
 
-#### has-2nd-action: boolean
+- **text**
+- icon
+
+### has-2nd-action: boolean
 
 Controls the visibility of a secondary action element within the swipe-revealed action set.
 
-#### has-3rd-action: boolean
+- **true**
+- false
+
+### has-3rd-action: boolean
 
 Controls the visibility of a tertiary action element within the swipe-revealed action set.
 
+- **true**
+- false
+
+</CxProp>

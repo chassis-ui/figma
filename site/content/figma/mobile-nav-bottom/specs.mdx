@@ -1,46 +1,250 @@
 ---
 title: Mobile Nav Bottom
 description: Bottom navigation bars for mobile interfaces, providing primary navigation options in thumb-friendly locations at the bottom of the screen.
+toc: true
 ---
 
 # Specs
 
 Technical specifications and design system values that define the visual and structural properties of mobile navigation bottom components. These specifications ensure consistent implementation across design tools and development environments.
 
-**Legend:**
+<SpecsLegend />
 
-- Brackets ([ ]) denote a component variant placeholder.
-- Full emphasis indicates a value specific to that variant.
-- Dimmed indicates a value unchanged from the default variant.
-
-## Bottom Navigation Component
-
-Specifications for mobile navigation bottom container elements including measurements, colors, typography, and platform-specific styling attributes. These values define the visual presentation and structural properties for mobile bottom navigation implementations.
-
-### Design Tokens
-
-Standardized design values used in mobile navigation bottom components. Includes specifications for each type variant, platform-specific styling, and context-dependent presentation rules for consistent appearance and behavior across all mobile bottom navigation implementations.
-
-## Nav Tab Bar Component
+## Mobile Bottom Navigation
 
 Specifications for mobile navigation tab elements including measurements, colors, typography, and tab interaction styling attributes. These values define the tab presentation and section navigation properties for mobile bottom navigation tab implementations.
 
-### Design Tokens
+<ExampleImage img="mobile-bottom-navigation-specs" />
 
-Standardized design values used in mobile navigation tab components. Includes specifications for each type variant, tab positioning configurations, interaction states, and visual hierarchy rules for consistent appearance and behavior across all mobile bottom navigation tab implementations.
+<CxSpec>
 
-## Nav Action Bar Component
+### 1. Tab item
 
-Specifications for mobile navigation action elements including measurements, colors, typography, and action button styling attributes. These values define the action presentation and task completion properties for mobile bottom navigation action implementations.
+paddingTop:
+: space.unit.6
 
-### Design Tokens
+paddingBottom:
+: space.unit.4
 
-Standardized design values used in mobile navigation action components. Includes specifications for each type variant, button arrangement configurations, interaction states, and functional hierarchy rules for consistent appearance and behavior across all mobile bottom navigation action implementations.
+itemSpacing:
+: space.unit.2
 
-## Nav Progress Bar Component
+### 2. Tab Text
 
-Specifications for mobile navigation progress elements including measurements, colors, typography, and progress indication styling attributes. These values define the progress presentation and process communication properties for mobile bottom navigation progress implementations.
+@active:
+: false
 
-### Design Tokens
+fill:
+: color.context.default.fg-subtle
 
-Standardized design values used in mobile navigation progress components. Includes specifications for each type variant, progress display configurations, information hierarchy rules, and process state styling for consistent appearance and behavior across all mobile bottom navigation progress implementations.
+typography:
+: font.text.2xsmall.normal
+
+@active:
+: true
+
+fill:
+: color.context.primary.base-color
+
+_typography:_
+: font.text.2xsmall.normal
+
+### 3. Tab Icon
+
+@active:
+: false
+
+height:
+: size.icon.glyph.large
+
+width:
+: size.icon.glyph.large
+
+fill:
+: color.context.default.fg-subtle
+
+@active:
+: true
+
+_height:_
+: size.icon.glyph.large
+
+_width:_
+: size.icon.glyph.large
+
+fill:
+: color.context.primary.base-color
+
+### 4. Floating Frame
+
+Fixed height frame with overflowing content.
+
+height:
+: size.unit.28
+
+paddingBottom:
+: space.unit.8
+
+### 5. Floating Button Frame
+
+@active:
+: false
+
+height:
+: size.unit.52
+
+width:
+: size.unit.52
+
+fill:
+: color.context.primary.bg-idle
+
+borderRadius:
+: borderRadius.context.round-52
+
+boxShadow:
+: shadow.elevation.default.20
+
+@active:
+: true
+
+_height:_
+: size.unit.52
+
+_width:_
+: size.unit.52
+
+fill:
+: color.context.primary.bg-press
+
+_borderRadius:_
+: borderRadius.context.round-52
+
+boxShadow:
+: shadow.elevation.default.10
+
+### 6. Button Icon
+
+@active:
+: false
+
+height:
+: size.icon.glyph.large
+
+width:
+: size.icon.glyph.large
+
+fill:
+: color.context.primary.fg-idle
+
+@active:
+: true
+
+_height:_
+: size.icon.glyph.large
+
+_width:_
+: size.icon.glyph.large
+
+fill:
+: color.context.primary.fg-press
+
+</CxSpec>
+
+## Nav Actions
+
+Specifications for mobile navigation action elements including measurements, colors, and layout properties for action button containers.
+
+<ExampleImage img="nav-actions-specs" />
+
+<CxSpec>
+
+### 1. Actions - Basic
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.medium
+
+</CxSpec>
+
+## Nav Progress
+
+Specifications for mobile navigation progress elements including measurements, colors, typography, and progress status properties for purchase summary and step progress implementations.
+
+<ExampleImage img="nav-progress-specs" />
+
+<CxSpec>
+
+### 1. Progress - Basic
+
+verticalPadding:
+: space.context.medium
+
+horizontalPadding:
+: space.context.medium
+
+itemSpacing:
+: space.context.medium
+
+### 2. Label Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.small.strong
+
+### 3. Price Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.large.strong
+
+### 4. Currency Text
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.medium.strong
+
+### 5. Title Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.small.strong
+
+### 6. Description Text
+
+fill:
+: color.context.default.fg-main
+
+typography:
+: font.text.small.normal
+
+### 7. Status Frame
+
+itemSpacing:
+: space.base.4
+
+### 8. Status Text
+
+Separate text boxes for current, division and total texts.
+
+fill:
+: color.context.default.fg-subtle
+
+typography:
+: font.text.xsmall.normal
+
+</CxSpec>
+
