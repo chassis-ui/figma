@@ -4,6 +4,7 @@ import HeroSection from '@components/homepage/HeroSection.astro'
 import IntroSection from '@components/homepage/IntroSection.astro'
 import FeaturesSection from '@components/homepage/FeaturesSection.astro'
 import HowSection from '@components/homepage/HowSection.astro'
+import HomeIcons from '/static/icons/cx-sprite.svg?raw'
 ---
 
 <BaseLayout title="Chassis Figma - Tokenized Figma Component System">
@@ -12,4 +13,7 @@ import HowSection from '@components/homepage/HowSection.astro'
   <IntroSection />
   <FeaturesSection />
   <HowSection />
+  <div class="d-none">
+    <Fragment set:html={HomeIcons} />
+  </div>
 </BaseLayout>
