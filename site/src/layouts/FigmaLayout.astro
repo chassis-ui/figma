@@ -78,9 +78,9 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
     <main class="cxd-main">
       <div class="cxd-intro">
         <div
-          class="d-medium-flex flex-medium-row-reverse justify-content-between align-items-start"
+          class="medium:d-flex medium:flex-row-reverse justify-content-between align-items-start"
         >
-          <div class="mb-medium mb-medium-0 d-flex text-nowrap">
+          <div class="mb-medium medium:mb-0 d-flex text-nowrap">
             {
               // This is needed because we want to show the badge if show_badge isn't present or is set to false
               frontmatter.added &&
@@ -117,7 +117,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
         headings && (
           <div class="cxd-toc">
             <button
-              class="button default mb-large text-decoration-none cxd-toc-toggle d-medium-none"
+              class="button default mb-large text-decoration-none cxd-toc-toggle medium:d-none"
               type="button"
               data-cx-toggle="collapse"
               data-cx-target="#tocContents"
@@ -129,8 +129,8 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
                 <use xlink:href="#chevron-sort-solid" />
               </svg>
             </button>
-            <strong class="d-none d-medium-block h6 my-xsmall">On this page</strong>
-            <hr class="d-none d-medium-block my-xsmall" />
+            <strong class="d-none medium:d-block h6 my-xsmall">On this page</strong>
+            <hr class="d-none medium:d-block my-xsmall" />
             <div class="collapse cxd-toc-collapse" id="tocContents">
               <nav id="TableOfContents">
                 <TableOfContents headings={headings} config={getConfig()} />

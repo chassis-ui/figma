@@ -20,19 +20,19 @@ Specifications for modal dialog elements including measurements, colors, typogra
 
 ### 1. Alert Window
 
-padding-y:
+verticalPadding:
 : space.alert.[size]-padding-y
 
-padding-x:
+horizontalPadding:
 : space.alert.[size]-padding-x
 
-gap:
+itemSpacing:
 : space.alert.[size]-gap
 
-color.background:
+fill:
 : color.context.default.bg-main
 
-color.border:
+borderColor:
 : color.context.default.transparent-color
 
 borderRadius:
@@ -46,23 +46,23 @@ boxShadow:
 
 ### 2. Alert Icon
 
-size.height:
+height:
 : size.alert.[size]-icon
 
-size.width:
+width:
 : size.alert.[size]-icon
 
-color.foreground:
+fill:
 : color.context.default.icon-main
 
 ### 3. Text Frame
 
-gap:
+itemSpacing:
 : space.context.xsmall
 
 ### 4. Title Text
 
-color.foreground:
+fill:
 : color.context.default.fg-main
 
 typography:
@@ -70,7 +70,7 @@ typography:
 
 ### 5. Body Text
 
-color.foreground:
+fill:
 : color.context.default.fg-main
 
 typography:
@@ -78,7 +78,7 @@ typography:
 
 ### 6. Actions Frame
 
-gap:
+itemSpacing:
 : space.context.medium
 
 </CxSpec>
@@ -93,23 +93,23 @@ Specifications for full-screen overlay elements including measurements, colors, 
 
 ### 1. Alert Screen
 
-padding-y:
+verticalPadding:
 : space.context.3xlarge
 
-padding-x:
+horizontalPadding:
 : space.context.3xlarge
 
-color.background:
+fill:
 : color.context.default.dim-main
 
 ### 2. Alert Window
 
 @size:large
-size.width:
+width:
 : 500px
 
 @size:small
-size.width:
+width:
 : fill
 
 </CxSpec>
