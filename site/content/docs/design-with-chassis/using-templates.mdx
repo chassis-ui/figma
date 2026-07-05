@@ -15,6 +15,7 @@ Page templates solve this by treating the page itself as a component. Instead of
 Duplicating pages for each state creates several issues:
 
 **Registration flow without page templates**:
+
 - Page 1: Empty form
 - Page 2: Name field filled
 - Page 3: Email field filled
@@ -26,6 +27,7 @@ Duplicating pages for each state creates several issues:
 - Page 9: Success
 
 **Maintenance impact**:
+
 - Removing a field: Edit 9 pages manually
 - Changing a label: Update across all pages
 - Adding validation: Apply to multiple error states
@@ -36,21 +38,24 @@ Duplicating pages for each state creates several issues:
 Create one component with properties controlling all states:
 
 **Registration Page Template**:
+
 - Boolean properties: Name filled, Email filled, Password filled, Show errors, Submitting
 - Instance swap: Error message type
 - Text properties: Error message content
 
 **Maintenance impact**:
+
 - Removing a field: Edit component once
 - Changing a label: Update propagates automatically
 - Adding validation: Configure in one place
 - Updating button style: Affects all instances
 
 **Benefits**:
+
 - ✅ Single source of truth for all states
 - ✅ Guaranteed consistency across prototype
 - ✅ Faster updates and iteration
-- ✅ Cleaner file organization  
+- ✅ Cleaner file organization
 - ✅ Easier collaboration and handoff
 
 ## When to Use Page Templates
@@ -77,12 +82,14 @@ Page templates work best for state-heavy screens and repeated patterns. Understa
 ### Decision Framework
 
 **Create a page template when**:
+
 - You've duplicated the same page 3+ times with minor variations
 - You anticipate needing 5+ different states of the same screen
 - Changes to one element need to propagate to multiple pages
 - You're building flows that will be maintained long-term
 
 **Stick with separate pages when**:
+
 - Each page is significantly different (less than 50% similar)
 - You're in early exploration and requirements are fluid
 - The screens are one-time use only
@@ -107,8 +114,9 @@ Before building, map out every state your page needs to display.
 5. **Plan component hierarchy**: Which components need to be swappable
 
 **Example—Product page states**:
+
 - In stock vs. out of stock
-- User logged in vs. logged out  
+- User logged in vs. logged out
 - Item in cart vs. not in cart
 - Reviews loaded vs. loading vs. empty
 - Related products shown vs. hidden
@@ -133,6 +141,7 @@ Start with everything visible—you can hide elements with properties. It's hard
 Configure properties that control state variations.
 
 **Boolean properties** (show/hide elements):
+
 1. Select the component
 2. Click the "+" in the Component Properties section
 3. Choose "Boolean" type
@@ -140,17 +149,20 @@ Configure properties that control state variations.
 5. Link to layers: Select layers → Set visibility: "Show if [property name] is true"
 
 **Instance swap properties** (interchange components):
+
 1. Add an "Instance swap" property
 2. Name it: "Alert type", "Empty state illustration", "Button variant"
 3. Select the component instance to swap
 4. Link it to the property
 
 **Text properties** (dynamic content):
+
 1. Add a "Text" property
 2. Name it: "User name", "Error message", "Product title"
 3. Select text layers and bind to the property
 
 **Variants** (major state changes):
+
 - Use variants for fundamentally different layouts
 - Keep most state control in properties when possible
 - Variants are best for: mobile vs. desktop modes, completely different page types
@@ -169,6 +181,7 @@ Control which layers appear in different states.
 4. Link to a boolean property: "Show if [property] is true/false"
 
 **Common visibility patterns**:
+
 - Error states: Show if "Show error" is true
 - Empty states: Show if "Has content" is false
 - Loading states: Show if "Is loading" is true
@@ -188,6 +201,7 @@ Verify all property combinations work correctly.
 ## Performance & Limitations
 
 **Keep components manageable**:
+
 - 15-20 properties maximum per component
 - 4-5 nested component levels
 - 10-12 boolean properties (avoid exponential complexity: 10 booleans = 1,024 states)
@@ -240,6 +254,7 @@ Shared component structure means faster loading. Keep interactions simple for sm
 ### Best Practices
 
 **Do these things**:
+
 - ✅ Plan all states before building the component
 - ✅ Use clear, descriptive property names
 - ✅ Group related properties logically
@@ -249,6 +264,7 @@ Shared component structure means faster loading. Keep interactions simple for sm
 - ✅ Keep components modular with nested instances
 
 **Avoid these mistakes**:
+
 - ❌ Don't over-engineer simple pages
 - ❌ Don't create too many property combinations
 - ❌ Don't forget to test edge cases
@@ -257,8 +273,6 @@ Shared component structure means faster loading. Keep interactions simple for sm
 - ❌ Don't skip documentation
 - ❌ Don't use too many nested levels (impacts performance)
 
-
-
 ## Real-World Example
 
 ### E-commerce Product Page
@@ -266,9 +280,10 @@ Shared component structure means faster loading. Keep interactions simple for sm
 **States to handle**: Product availability (in stock, out of stock, limited quantity), user status (logged in/out), cart status, wishlist status, reviews (loading, populated, empty), related products.
 
 **Component properties**:
+
 - `In stock`: Boolean
 - `Stock level`: Text ("Only 3 left!", "Back in 5 days")
-- `User logged in`: Boolean  
+- `User logged in`: Boolean
 - `In cart`: Boolean
 - `In wishlist`: Boolean
 - `Reviews state`: Variant (loading | populated | empty)
@@ -278,6 +293,7 @@ Shared component structure means faster loading. Keep interactions simple for sm
 **Result**: 2 × 2 × 2 × 2 × 3 × 2 = 96 possible states from one component.
 
 **Common configurations**:
+
 - New visitor: `In stock: true`, `User logged in: false`, `Reviews: populated`
 - Returning user: `In stock: true`, `User logged in: true`, `In cart: true`
 - Out of stock: `In stock: false`, `Stock level: "Back in stock: March 15"`
@@ -292,8 +308,9 @@ Shared component structure means faster loading. Keep interactions simple for sm
 Add device variants when desktop and mobile layouts differ significantly (50%+ structural changes).
 
 **Setup**:
+
 1. Create base component for desktop
-2. Add `Device` variant: Desktop | Tablet | Mobile  
+2. Add `Device` variant: Desktop | Tablet | Mobile
 3. Design mobile: Stack columns, larger touch targets, simplified navigation
 4. Maintain same properties across all device variants
 5. Configure auto-layout with min/max width constraints
@@ -317,6 +334,7 @@ Logo Group
 ### Sharing Templates
 
 Publish to team library with:
+
 - Dedicated "📄 Page Templates" page organized by category
 - Component descriptions listing all properties and effects
 - 3-4 example configurations with labels
@@ -363,4 +381,3 @@ Changes to the main component propagate automatically. Test with existing instan
 :::note[Future Development]
 Chassis will provide pre-built page template components in future releases. This guide focuses on the design approach and techniques you can use today to create your own maintainable page templates.
 :::
-

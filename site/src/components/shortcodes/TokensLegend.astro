@@ -1,4 +1,6 @@
 ---
+import Icon from '@chassis-ui/docs/shortcodes/Icon.astro'
+
 interface Props {
   scope?: String
 }
@@ -7,21 +9,21 @@ const scope = Astro.props.scope
 ---
 
 <div class="legend cx-token">
-  <h6>Legend:</h6>
+  <p><strong>Legend:</strong></p>
   <ul class="m-0 p-0">
     <li>
-      <span class="icon icon-circle-solid granular"></span> Granular tokens that affect only this component.
+      <Icon name="circle-solid" class="granular" font /> Granular tokens that affect only this component.
     </li>
     <li>
-      <span class="icon icon-circle-solid shared"></span> Granular tokens that affect {
+      <Icon name="circle-solid" class="shared" font /> Granular tokens that affect {
         scope ? `${scope}` : 'other'
       } components.
     </li>
     <li>
-      <span class="icon icon-circle-solid semantic"></span> Semantic tokens that affect the whole application.
+      <Icon name="circle-solid" class="semantic" font /> Semantic tokens that affect the whole application.
     </li>
     <li>
-      <span class="icon icon-circle-solid base"></span> Base tokens that affect the whole application.
+      <Icon name="circle-solid" class="base" font /> Base tokens that affect the whole application.
     </li>
   </ul>
 </div>

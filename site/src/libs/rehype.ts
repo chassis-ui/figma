@@ -115,7 +115,7 @@ export const rehypeCxToken: Plugin<[], Root> = function () {
                     type: 'element' as const,
                     tagName: 'span',
                     properties: {
-                      class: `icon icon-small icon-circle-solid ${match[1]}`
+                      class: `icon icon-small cx-circle-solid ${match[1]}`
                     },
                     children: []
                   })

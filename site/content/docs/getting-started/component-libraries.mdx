@@ -3,46 +3,41 @@ title: Updating the Library
 description: Learn how to maintain, update, and version the Chassis Figma library, including best practices for managing changes, publishing updates, and communicating with your design team.
 toc: true
 ---
+
 import { formatComponentName, getFigmaComponentsData } from '@libs/figma'
 import { getCollection } from 'astro:content'
 
 export const allFigma = await getCollection('figma')
 
-<div class="components-grid">
+<div class="row row-cols-1 small:row-cols-2 g-xlarge">
   {
     (await getFigmaComponentsData()).map(({ name: component, tabs }) => {
       const firstEntry = allFigma.find((e) => e.id === `${component}/${tabs[0]}`)
       const description = firstEntry?.data?.description || `View ${tabs.join(', ')} for the ${formatComponentName(component).toLowerCase()} component.`
       
       return (
+        <div class="col">
         <div class="card component-card">
-          <div class="card-content">
-            <h3 class="card-title">
-              <a href={`/figma/docs/components/${component}/${tabs[0]}`}>{formatComponentName(component)}</a>
-            </h3>
-            <p class="card-body">
+          <div class="card-body">
+            <h2 class="card-title">
+              <a href={`/figma/docs/components/${component}/${tabs[0]}`} class="text-decoration-none">{formatComponentName(component)}</a>
+            </h2>
+            <p>
               {description}
             </p>
+          </div>
+          <div class="card-footer p-xsmall">
             <ul class="nav">
-              {tabs.map((tab) => (
-                <li class="nav-item"><a href={`/figma/docs/components/${component}/${tab}`} class="nav-link">
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </a></li>
-              ))}
+            {tabs.map((tab) => (
+              <li class="nav-item"><a href={`/figma/docs/components/${component}/${tab}`} class="nav-link">
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </a></li>
+            ))}
             </ul>
           </div>
+        </div>
         </div>
       )
     })
   }
 </div>
-
-<style is:inline> {`
-
-  .components-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-`}
-</style>

@@ -7,10 +7,10 @@ import { getChassisDocsPath } from './path'
 
 // [[config:foo]]
 // [[config:foo.bar]]
-const configRegExp = /\[\[config:(?<name>[\w\.]+)]]/g
+const configRegExp = /\[\[config:(?<name>[\w.]+)]]/g
 // [[docsref:/foo]]
 // [[docsref:/foo/bar#baz]]
-const docsrefRegExp = /\[\[docsref:(?<path>[\w\.\/#-]+)]]/g
+const docsrefRegExp = /\[\[docsref:(?<path>[\w./#-]+)]]/g
 
 // A remark plugin to strip numbers from h3 headings within CxSpec components
 // This must run before IDs are generated to prevent invalid CSS selectors like #1-heading
@@ -217,7 +217,7 @@ function getConfigValueAtPath(path: string) {
 
 function replaceInFrontmatter(
   record: Record<string, unknown>,
-  replacer: (value: string) => string
+  replacer: (_value: string) => string
 ) {
   for (const [key, value] of Object.entries(record)) {
     if (typeof value === 'string') {

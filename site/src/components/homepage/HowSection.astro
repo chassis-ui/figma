@@ -1,6 +1,6 @@
 ---
 import FeatureCard from '@chassis-ui/docs/components/FeatureCard.astro'
-import Code from '@shortcodes/Code.astro'
+import Code from '@chassis-ui/docs/shortcodes/Code.astro'
 ---
 
 <section class="home-section py-3xlarge medium:py-6xlarge">
@@ -23,12 +23,13 @@ import Code from '@shortcodes/Code.astro'
       <!-- Step 1 -->
       <div class="col">
         <FeatureCard icon="cx-rocket">
-          <Fragment slot="title">Duplicate & Publish Libraries</Fragment>
+          <Fragment slot="title">Duplicate &amp; Publish Libraries</Fragment>
           <Fragment slot="body">
             Duplicate the Chassis library files from Figma Community. Publish them to your team
             workspace so all members can enable the component, asset, and guide libraries.
           </Fragment>
           <Code
+            noToolbar
             lang="text"
             containerClass="border-top border-subtle pt-medium"
             code={`Chassis Library Files
@@ -51,6 +52,7 @@ import Code from '@shortcodes/Code.astro'
             codebase.
           </Fragment>
           <Code
+            noToolbar
             lang="text"
             containerClass="border-top border-subtle pt-medium"
             code={`cx.tokens.* Variables
@@ -67,13 +69,14 @@ import Code from '@shortcodes/Code.astro'
       <!-- Step 3 -->
       <div class="col">
         <FeatureCard icon="cx-thumbs-up">
-          <Fragment slot="title">Insert & Customize</Fragment>
+          <Fragment slot="title">Insert &amp; Customize</Fragment>
           <Fragment slot="body">
             Drag components from the assets panel. Override text, toggle boolean properties, select
             variants, and swap asset instances. Library updates propagate to all instances across
             files.
           </Fragment>
           <Code
+            noToolbar
             lang="text"
             containerClass="border-top border-subtle pt-medium"
             code={`Component Instance

@@ -1,6 +1,6 @@
 ---
-import { getConfig } from '@libs/config'
 import { getChassisDocsPath } from '@libs/path'
+import Icon from '@chassis-ui/docs/shortcodes/Icon.astro'
 ---
 
 <div class="home-section py-3xlarge medium:py-6xlarge">
@@ -29,7 +29,7 @@ import { getChassisDocsPath } from '@libs/path'
       <!-- Buttons -->
       <div class="d-grid medium:d-flex gap-medium medium:justify-content-center flex-wrap">
         <a href={getChassisDocsPath('')} class="button primary large">
-          <svg class="icon" aria-hidden="true"><use href="#book-open-outline"></use></svg>
+          <Icon name="book-open-outline" />
           <span>Get Started</span>
         </a>
         <a
@@ -38,7 +38,7 @@ import { getChassisDocsPath } from '@libs/path'
           target="_blank"
           rel="noopener"
         >
-          <svg class="icon" aria-hidden="true"><use href="#cx-figma"></use></svg>
+          <Icon name="cx-figma" sprite="" />
           <span>View on Figma</span>
         </a>
       </div>

@@ -1,6 +1,6 @@
 ---
 import FigmaLayout from '@layouts/FigmaLayout.astro'
-import { getCollection, render } from 'astro:content'
+import { getCollection, getEntry, render } from 'astro:content'
 import { figmaPages } from '@libs/content'
 import type { CollectionEntry } from 'astro:content'
 
@@ -21,13 +21,18 @@ export async function getStaticPaths() {
   })
 }
 
-const { figmaPage, component, tab, data } = Astro.props
+const { figmaPage, component, tab } = Astro.props
 const { Content, headings } = await render(figmaPage)
 
+// Load shared component metadata from index.json
+const componentEntry = await getEntry('figmaComponents', component)
+const sharedData = componentEntry?.data ?? {}
+
 const frontmatter = {
+  ...sharedData,
+  // Allow per-tab overrides (e.g. toc: false on a specific tab)
   ...figmaPage.data,
-  title: figmaPage.data.title || `${component} - ${tab}`,
-  description: figmaPage.data.description || `${tab} for ${component} component`
+  title: component
 }
 
 // Get all tabs for this component
