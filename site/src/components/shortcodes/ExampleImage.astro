@@ -6,7 +6,7 @@ const { img, alt, neutral } = Astro.props
 
 // Get component and tab from URL
 const path = Astro.url.pathname
-const matches = path.match(/\/figma\/docs\/components\/([^\/]+)\/([^\/]+)/)
+const matches = path.match(/\/figma\/docs\/components\/([^/]+)\/([^/]+)/)
 
 let frontmatter = null
 let component = null
@@ -25,11 +25,11 @@ if (matches) {
   <ResponsiveImage
     imgPath={`/static/images/figma/components/${component}/light/${img}.png`}
     alt={alt ? alt : `${frontmatter?.title} example image`}
-    classes="visible-light mw-100"
+    classes="visible-light fluid mw-100"
   />
   <ResponsiveImage
     imgPath={`/static/images/figma/components/${component}/dark/${img}.png`}
     alt={alt ? alt : `${frontmatter?.title} example image`}
-    classes="visible-dark mw-100"
+    classes="visible-dark fluid mw-100"
   />
 </div>

@@ -10,7 +10,7 @@ Asset library files (`cx.asset.*`) can be found on Figma Community page of Chass
 
 ## Overview
 
-Asset libraries are collections of special Figma components that serve as the content layers for Chassis UI components. Instead of using plain text, icons, or images directly, Chassis components use swappable asset instances. 
+Asset libraries are collections of special Figma components that serve as the content layers for Chassis UI components. Instead of using plain text, icons, or images directly, Chassis components use swappable asset instances.
 
 This approach allows you to modify component content and styling without detaching from the main component library, maintaining design system consistency while enabling flexibility.
 
@@ -34,6 +34,7 @@ Button Component
 ```
 
 **Benefits**:
+
 - ✅ Swap content without detaching
 - ✅ Maintain component updates from library
 - ✅ Support complex state changes (e.g., loading skeletons)
@@ -263,12 +264,14 @@ Icon stack rating component with heart icons for favorites and preference rating
 ### Best Practices
 
 **Do**:
+
 - ✅ Use assets for all content layers
 - ✅ Maintain asset library organization
 - ✅ Test asset swaps across themes
 - ✅ Document custom asset usage
 
 **Don't**:
+
 - ❌ Detach assets to make changes
 - ❌ Mix asset types incorrectly
 - ❌ Create duplicate custom assets

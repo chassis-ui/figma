@@ -29,15 +29,14 @@ The easiest way to get started is through Figma Community.
 3. Files will be added to your **Drafts**
 4. Move files to appropriate team/project folder
 
-
 ### Figma Files
 
-- **cx.tokens.***: Contain all design tokens and variable collections
-- **cx.asset.***: Components that serve as content layers for UI components (e.g., text, icons, backgrounds)
-- **cx.comp.***: Individual files for each component category (e.g., Buttons, Forms, Cards)
-- **cx.guide.***: Guidelines and best practices for using the library
-- **cx.template.***: Pre-built templates for common design patterns
-- **cx.file.***: Example files demonstrating component usage and design patterns
+- **cx.tokens.\***: Contain all design tokens and variable collections
+- **cx.asset.\***: Components that serve as content layers for UI components (e.g., text, icons, backgrounds)
+- **cx.comp.\***: Individual files for each component category (e.g., Buttons, Forms, Cards)
+- **cx.guide.\***: Guidelines and best practices for using the library
+- **cx.template.\***: Pre-built templates for common design patterns
+- **cx.file.\***: Example files demonstrating component usage and design patterns
 
 ### Library Dependencies
 
@@ -56,7 +55,6 @@ Due to library interdependencies, publishing Chassis Figma requires **three publ
 - **Step 1: Initial Publish** creates the libraries in your organization, but they reference each other circularly (components need tokens/assets, which need to exist as libraries first).
 - **Step 2: Replace Missing Libraries** establishes the connections between missing libraries now that they all exist.
 - **Step 3: Final Update & Publish** ensures all libraries are using the latest published versions of their dependencies, preventing version mismatches.
-
 
 ### Initial Publish
 
@@ -79,7 +77,7 @@ Replace missing library references with the published libraries from Step 1.
 3. **Scroll down and click View missing libraries** at the bottom of the modal.
 4. **Select a missing library** to view the affected styles and components.
 5. **Use the Choose library dropdown** to find and select a replacement library.
-6. **Use the checkboxes** on the left to choose which assets to swap. 
+6. **Use the checkboxes** on the left to choose which assets to swap.
 7. **Uncheck the "Swap default styles in instances" setting** if prompted.
 8. **Click Swap library** to replace affected instances with instances from your selected library.
 9. **Verify all references** are connected (no missing library)
@@ -93,7 +91,7 @@ Ensure all files have the latest versions of dependencies and are ready for team
 
 1. **Open each library file** one final time
 2. **Click Library icon** to open the Libraries modal (book icon in panel header).
-3. **Select the Updates tab**. By default, the Updates tab displays assets on the current page. 
+3. **Select the Updates tab**. By default, the Updates tab displays assets on the current page.
 4. **Use the Show updates for all pages** toggle to see all available updates.
 5. **Click Update all** to apply all updates.
 6. **Publish again** with description: "Ready for use"
@@ -110,9 +108,9 @@ When setting up Chassis libraries, the order in which you publish files matters 
 
 1. **Tokens**: Publish all token files first to establish the design foundation
 2. **Assets**: Publish asset files next since components depend on them
-    - text, icon and background first
+   - text, icon and background first
 3. **Components**: Publish component files after tokens and assets are available
-    - badges, then buttons, then forms, etc.
+   - badges, then buttons, then forms, etc.
 4. **Guides**: Publish guidelines and templates last since they reference components
 
 ### Enable Libraries for Teams
@@ -124,7 +122,6 @@ Administrators can pre-enable libraries:
 3. Under Libraries or Shared, click the **View team's libraries** option.
 4. Choose which files to make the library available in by using the dropdown menu next to each library file.
 
-
 ### Version Strategy
 
 **Semantic Versioning**: Chassis follows semver (X.Y.Z)
@@ -134,6 +131,7 @@ Administrators can pre-enable libraries:
 - **Patch (Z)**: Bug fixes, small improvements
 
 **Update Frequency Recommendations**:
+
 - **Patches**: Update immediately for bug fixes
 - **Minor**: Update monthly or per sprint
 - **Major**: Plan migration, test thoroughly, update quarterly
@@ -147,6 +145,7 @@ Even with careful setup, you may encounter issues during the library publishing 
 **Issue**: Can't find published library when trying to replace missing references
 
 **Solutions**:
+
 1. Verify all library files were published in Step 1
 2. Check that libraries are enabled in Assets panel
 3. Look for exact library name matches (including version suffixes)
@@ -160,6 +159,7 @@ Even with careful setup, you may encounter issues during the library publishing 
 **Issue**: Can't find Chassis library in Assets panel
 
 **Solutions**:
+
 1. Verify library is published
 2. Check team membership
 3. Refresh Figma (Cmd/Ctl + R)
@@ -172,6 +172,7 @@ Even with careful setup, you may encounter issues during the library publishing 
 **Issue**: Components show as missing or broken
 
 **Solutions**:
+
 1. Check internet connection
 2. Verify library is enabled
 3. Update to latest version
@@ -183,6 +184,7 @@ Even with careful setup, you may encounter issues during the library publishing 
 **Issue**: Variables not applying correctly
 
 **Solutions**:
+
 1. Verify Variables file is published
 2. Check variable collection names
 3. Ensure modes are properly configured
@@ -194,6 +196,7 @@ Even with careful setup, you may encounter issues during the library publishing 
 **Issue**: Library making file slow
 
 **Solutions**:
+
 1. Limit enabled libraries to needed ones
 2. Use components over instances where possible
 3. Avoid excessive nesting

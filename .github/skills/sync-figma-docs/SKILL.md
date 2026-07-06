@@ -84,13 +84,16 @@ Store the nodeId for each page to retrieve separately.
 
 ### 3. Analyze MDX File Structure
 
+**MDX file format:** Tab MDX files do NOT have frontmatter or a top-level `# Tab Name` heading. Shared component metadata (`title`, `description`, `toc`) lives in `site/content/figma/{component}/index.json`. Content in each MDX file starts directly with the first section heading (`##`) or paragraph.
+
 Read existing component MDX files in `site/content/figma/{component}/`:
 - `variants.mdx` - Component variations
 - `props.mdx` - Properties configuration
 - `specs.mdx` - Technical specifications
 - `tokens.mdx` - Design token mappings
+- `index.json` - Shared frontmatter (title, description, toc) — **do not edit this during a content sync**
 
-**For new components**, start with templates from [./assets/](./assets/):
+**For new components**, create `index.json` first with the component title and description, then start MDX files with templates from [./assets/](./assets/):
 - [variants.template.mdx](./assets/variants.template.mdx)
 - [props.template.mdx](./assets/props.template.mdx)
 - [specs.template.mdx](./assets/specs.template.mdx)
@@ -246,7 +249,8 @@ For each MDX file, compare Figma content with current content:
 ## File Paths
 
 - Component mapping: [figma-file-mapping.json](./figma-file-mapping.json)
-- Component MDX files: `site/content/figma/{component}/`
+- Component MDX files: `site/content/figma/{component}/` (no frontmatter, no `# h1`)
+- Shared component metadata: `site/content/figma/{component}/index.json`
 - Reference components: `site/content/figma/button-solid/`, `site/content/figma/accordion/`, `site/content/figma/alert/`
 
 ## Figma File Structure

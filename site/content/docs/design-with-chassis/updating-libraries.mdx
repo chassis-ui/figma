@@ -47,6 +47,7 @@ Creating a branch enables you to work on updates without impacting the main proj
 Navigate to the Assets panel on the left side of the interface. Click the Library icon at the top, then select the Updates tab. This displays all updated libraries linked to the current document.
 
 Figma notifies you of updates in several ways:
+
 - Blue dot on the library icon in the Assets panel
 - Notification badge showing the number of available updates
 - "Update available" banner in files using outdated components
@@ -95,6 +96,7 @@ Verify that existing overrides (color, text, size) are preserved and no override
 ### Update Best Practices
 
 **Do these things**:
+
 - ✅ Always update in a branch or duplicate file first
 - ✅ Read release notes carefully before applying updates
 - ✅ Review changes component by component
@@ -104,6 +106,7 @@ Verify that existing overrides (color, text, size) are preserved and no override
 - ✅ Ask questions in the design system channel before bulk updating
 
 **Avoid these mistakes**:
+
 - ❌ Never auto-update without reviewing changes first
 - ❌ Don't update right before important deadlines or presentations
 - ❌ Don't skip testing after applying updates
@@ -136,6 +139,7 @@ When duplicating a page, components without variants may not duplicate accuratel
 Double-click the duplicated page name (e.g., "✅ Component @ LATEST 2") and rename it to "💎 Component @ NEXT". Then rename all components on the page by adding the "@ NEXT" suffix.
 
 This naming convention helps distinguish:
+
 - **@ LATEST**: Currently published, stable version
 - **@ NEXT**: Draft version being developed
 - **@ #.#**: Archived previous versions (e.g., @ 0.1, @ 1.0)
@@ -202,6 +206,7 @@ Update the changelog on the notes page with comprehensive release notes:
 ```
 
 Organize changes by category (Added, Changed, Fixed, Deprecated) and clearly document:
+
 - Version number and date of the update
 - Brief overview of what has changed
 - Detailed descriptions focusing on how changes affect usage
@@ -216,6 +221,7 @@ Update the document thumbnail on the "🖼️ Cover" page:
 - Follow semantic versioning principles (e.g., "@ 2.5.0")
 
 **Versioning guidelines**:
+
 - **Major Version**: Increment for incompatible changes (1.0 → 2.0)
 - **Minor Version**: Increment for backward-compatible new features (2.0 → 2.1)
 - **Patch Version**: Not currently implemented in this workflow
@@ -236,6 +242,7 @@ Before publishing, verify:
 - ✅ Team notified of upcoming changes
 
 For major updates, additionally ensure:
+
 - ✅ Beta testing completed with key users
 - ✅ Migration guides provided for breaking changes
 - ✅ Tokens synced with Chassis Tokens repository
@@ -283,17 +290,20 @@ Figma automatically notifies users who have the library enabled in their files.
 After publishing, communication is crucial:
 
 **Team chat (Slack/Teams)**: Post immediately with:
+
 - Clear summary of what changed
 - Links to full release notes and documentation
 - Urgency level (can wait vs should update soon)
 - Where to ask questions
 
 **Email** (for significant updates): Send to all designers with:
+
 - Executive summary of key changes
 - What action is required (if any)
 - Resources and support options
 
 **Documentation site**: Update immediately with:
+
 - Detailed release notes with examples
 - Before/after comparison screenshots
 - Updated component guidelines
@@ -315,6 +325,7 @@ Once confident in changes for beta testing:
 ### Check for Issues
 
 After merging, review pages to ensure:
+
 - @ LATEST version remains stable and unchanged
 - @ NEXT version is complete and ready for testing
 - No conflicts between the two versions
@@ -362,11 +373,12 @@ Use this workflow when publishing a **major version** with breaking changes. Thi
 
 Rename the published component page from "✅ Component @ LATEST" to "📦 Component @ #.#" following semantic versioning principles (e.g., "📦 Button @ 1.0", "📦 Card @ 2.5"):
 
-**Rename layers**: 
-- Add an underscore prefix followed by a space ("_ ") to deprecated component names
+**Rename layers**:
+
+- Add an underscore prefix followed by a space ("\_ ") to deprecated component names
 - This prevents them from being published in the library picker
 - Append version number suffix for easier identification
-- Example: "_ Button/Primary @ 1.0"
+- Example: "\_ Button/Primary @ 1.0"
 
 This archives the old version while keeping it accessible in existing files that use it.
 
@@ -401,7 +413,7 @@ After merging, conduct a thorough review:
 ### Publish the Major Version
 
 1. Navigate to the Library panel
-2. Select "Publish library" 
+2. Select "Publish library"
 3. Choose "Major release" to signal breaking changes
 4. Add comprehensive version notes explaining:
    - What changed and why
@@ -487,16 +499,19 @@ git merge library-update-v2.5.0
 
 Leverage Figma's version history as your safety net:
 
-**Before major updates**: 
+**Before major updates**:
+
 - File menu → Save to version history
 - Name it clearly: "Before library v3.0.0 update"
 - Add description: "Pre-update checkpoint in case rollback needed"
 
-**After validating**: 
+**After validating**:
+
 - Save another named version: "After library v3.0.0 update - validated"
 - This marks a known-good state
 
 **To restore if needed**:
+
 - File → Show version history
 - Find your named checkpoint
 - Preview it, then restore or duplicate
@@ -507,7 +522,8 @@ Leverage Figma's version history as your safety net:
 
 **Problem**: Update button is grayed out or not appearing.
 
-**Solutions**: 
+**Solutions**:
+
 - Check file permissions (need edit access)
 - Verify library is enabled (Assets panel → Library)
 - Confirm library is published (not draft mode)
@@ -517,7 +533,8 @@ Leverage Figma's version history as your safety net:
 
 **Problem**: Updates cause layout issues or visual bugs.
 
-**Solutions**: 
+**Solutions**:
+
 - Revert immediately using Cmd/Ctrl + Z
 - Restore from version history if already saved
 - Update selectively one component at a time to identify the problem
@@ -528,7 +545,8 @@ Leverage Figma's version history as your safety net:
 
 **Problem**: Update was published but not visible in your file.
 
-**Solutions**: 
+**Solutions**:
+
 - Refresh the library (Assets panel → Library → Refresh)
 - Re-enable the library (uncheck and check again)
 - Check you're on the latest file version, not an old copy
@@ -538,7 +556,8 @@ Leverage Figma's version history as your safety net:
 
 **Problem**: Components become detached after updating.
 
-**Solutions**: 
+**Solutions**:
+
 - Check release notes for breaking changes
 - Manually reconnect if component was just renamed
 - Replace with the recommended alternative component
@@ -548,7 +567,8 @@ Leverage Figma's version history as your safety net:
 
 **Problem**: Update process appears frozen.
 
-**Solutions**: 
+**Solutions**:
+
 - Be patient with large files (hundreds of instances take time)
 - Wait at least 5 minutes before assuming it's stuck
 - Close unnecessary pages to free up resources
@@ -561,7 +581,8 @@ Design and development stay synchronized through coordinated releases. When a Fi
 
 ### Release Coordination
 
-**Before release**: 
+**Before release**:
+
 - Notify developers of upcoming changes
 - Share component specs and behavior changes
 - Align on version numbers across all packages
@@ -569,6 +590,7 @@ Design and development stay synchronized through coordinated releases. When a Fi
 - Schedule synchronized releases
 
 **During release**:
+
 1. Publish Figma library
 2. Export and commit tokens to repository
 3. Trigger automated build for code packages
@@ -576,7 +598,8 @@ Design and development stay synchronized through coordinated releases. When a Fi
 5. Update documentation site
 6. Announce to both design and dev teams
 
-**After release**: 
+**After release**:
+
 - Designers remain available for questions
 - Developers provide implementation feedback
 - Both teams track issues together
@@ -585,6 +608,7 @@ Design and development stay synchronized through coordinated releases. When a Fi
 ### Version Synchronization
 
 Keep all Chassis packages at the same version number:
+
 - chassis-figma v3.0.0
 - chassis-tokens v3.0.0
 - chassis-css v3.0.0

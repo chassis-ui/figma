@@ -1,13 +1,12 @@
 ---
 import type { MarkdownHeading } from 'astro'
-import type { CollectionEntry } from 'astro:content'
 import BaseLayout from '@chassis-ui/docs/layouts/BaseLayout.astro'
 import FigmaSidebar from '@components/FigmaSidebar.astro'
 import TableOfContents from '@chassis-ui/docs/components/TableOfContents.astro'
 import { sortTabs } from '@libs/figma'
 import { getConfig } from '@libs/config'
 import type { LayoutOverridesHTMLAttributes } from '@chassis-ui/docs'
-import { getSlug, processMarkdownToHtml } from '@chassis-ui/docs'
+import { processMarkdownToHtml } from '@chassis-ui/docs'
 import Callout from '@chassis-ui/docs/shortcodes/Callout.astro'
 
 interface Props {
@@ -19,7 +18,7 @@ interface Props {
   tabs: string[]
 }
 
-const { frontmatter, headings, id, component, tab, tabs } = Astro.props
+const { frontmatter, headings, component, tab, tabs } = Astro.props
 
 // Sort tabs according to preferred order
 const sortedTabs = sortTabs(tabs)
@@ -53,14 +52,13 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
 >
   <div slot="main" class="container-fluid cxd-gutter cxd-layout">
     <aside class="cxd-sidebar">
-      <div
-        class="offcanvas-large offcanvas-start"
-        tabindex="-1"
+      <dialog
+        class="max-large:drawer drawer-start"
         id="cxdSidebar"
         aria-labelledby="cxdSidebarOffcanvasLabel"
       >
-        <div class="offcanvas-header border-bottom">
-          <h5 class="offcanvas-title" id="cxdSidebarOffcanvasLabel">Browse docs</h5>
+        <div class="drawer-header">
+          <h2 class="drawer-title" id="cxdSidebarOffcanvasLabel">Browse docs</h2>
           <button
             type="button"
             class="close-button"
@@ -69,10 +67,10 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
             data-cx-target="#cxdSidebar"></button>
         </div>
 
-        <div class="offcanvas-body">
+        <div class="drawer-body">
           <FigmaSidebar currentComponent={component} />
         </div>
-      </div>
+      </dialog>
     </aside>
 
     <main class="cxd-main">
@@ -132,7 +130,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
             <strong class="d-none medium:d-block h6 my-xsmall">On this page</strong>
             <hr class="d-none medium:d-block my-xsmall" />
             <div class="collapse cxd-toc-collapse" id="tocContents">
-              <nav id="TableOfContents">
+              <nav id="TableOfContents" aria-label="Table of contents">
                 <TableOfContents headings={headings} config={getConfig()} />
               </nav>
             </div>
@@ -141,17 +139,16 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
       }
 
       <div class={`cxd-content cxd-figma cxd-${tab}`}>
-        <nav class="mb-4xlarge sticky-top bg-main pt-xsmall" style="top:65px;">
+        <nav
+          class="mb-4xlarge sticky-top bg-main pt-xsmall"
+          style="top:65px;"
+          aria-label="Component navigation"
+        >
           <ul class="nav nav-underline">
             {
               tabItems.map((item) => (
                 <li class="nav-item">
-                  <a
-                    class={`nav-link ${item.active ? 'active' : ''}`}
-                    href={item.href}
-                    role="tab"
-                    aria-selected={item.active}
-                  >
+                  <a class={`nav-link ${item.active ? 'active' : ''}`} href={item.href}>
                     {item.label}
                   </a>
                 </li>
