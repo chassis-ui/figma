@@ -10,10 +10,12 @@ authors:                "Ozgur Gunes"
 
 current_version:        "0.1.0"
 docs_version:           "0.1"
-github_org:             "https://github.com/chassis-ui"
 repo:                   "https://github.com/chassis-ui/figma"
 blog:                   "https://chassis-ui.com/blog/"
-x:                      "chassis_ui"
+
+github_org:             "chassis-ui"
+figma_handle:           "chassis_ui"
+x_username:             "chassis_ui"
 
 analytics:
   google_id:            "G-QGR8C28VYN"
