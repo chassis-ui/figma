@@ -53,7 +53,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
   <div slot="main" class="container-fluid cxd-gutter cxd-layout">
     <aside class="cxd-sidebar">
       <dialog
-        class="max-large:drawer drawer-start"
+        class="max-lg:drawer drawer-start"
         id="cxdSidebar"
         aria-labelledby="cxdSidebarOffcanvasLabel"
       >
@@ -76,22 +76,22 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
     <main class="cxd-main">
       <div class="cxd-intro">
         <div
-          class="medium:d-flex medium:flex-row-reverse justify-content-between align-items-start"
+          class="md:d-flex md:flex-row-reverse justify-content-between align-items-start"
         >
-          <div class="mb-medium medium:mb-0 d-flex text-nowrap">
+          <div class="mb-md md:mb-0 d-flex text-nowrap">
             {
               // This is needed because we want to show the badge if show_badge isn't present or is set to false
               frontmatter.added &&
                 ((frontmatter.added.show_badge !== undefined &&
                   frontmatter.added.show_badge === true) ||
                   frontmatter.added.show_badge === undefined) && (
-                  <span class="badge success smooth rounded-medium me-xsmall">
+                  <span class="badge success smooth rounded-md me-xs">
                     Added in v{frontmatter.added.version}
                   </span>
                 )
             }
             <a
-              class="button default small"
+              class="button default sm"
               href={`${getConfig().repo}/blob/site/content/figma/${component}/${tab}.mdx`}
               title="View and edit this file on GitHub"
               target="_blank"
@@ -100,7 +100,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
               View on GitHub
             </a>
           </div>
-          <h1 class="cxd-title mb-small" id="content">{frontmatter.title}</h1>
+          <h1 class="cxd-title mb-sm" id="content">{frontmatter.title}</h1>
         </div>
         <div class="cxd-subtitle">
           {
@@ -115,7 +115,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
         headings && (
           <div class="cxd-toc">
             <button
-              class="button default mb-large text-decoration-none cxd-toc-toggle medium:d-none"
+              class="button default mb-lg text-decoration-none cxd-toc-toggle md:d-none"
               type="button"
               data-cx-toggle="collapse"
               data-cx-target="#tocContents"
@@ -123,12 +123,12 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
               aria-controls="tocContents"
             >
               On this page
-              <svg class="icon icon-small" aria-hidden="true">
+              <svg class="icon icon-sm" aria-hidden="true">
                 <use xlink:href="#chevron-sort-solid" />
               </svg>
             </button>
-            <strong class="d-none medium:d-block h6 my-xsmall">On this page</strong>
-            <hr class="d-none medium:d-block my-xsmall" />
+            <strong class="d-none md:d-block h6 my-xs">On this page</strong>
+            <hr class="d-none md:d-block my-xs" />
             <div class="collapse cxd-toc-collapse" id="tocContents">
               <nav id="TableOfContents" aria-label="Table of contents">
                 <TableOfContents headings={headings} config={getConfig()} />
@@ -140,7 +140,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
 
       <div class={`cxd-content cxd-figma cxd-${tab}`}>
         <nav
-          class="mb-4xlarge sticky-top bg-main pt-xsmall"
+          class="mb-4xl sticky-top bg-main pt-xs"
           style="top:65px;"
           aria-label="Component navigation"
         >

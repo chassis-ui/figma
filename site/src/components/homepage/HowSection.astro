@@ -3,23 +3,23 @@ import FeatureCard from '@chassis-ui/docs/components/FeatureCard.astro'
 import Code from '@chassis-ui/docs/shortcodes/Code.astro'
 ---
 
-<section class="home-section py-3xlarge medium:py-6xlarge">
-  <div class="container 2xlarge section-content">
-    <div class="row mb-3xlarge medium:mb-6xlarge">
-      <header class="section-header col large:col-10 xlarge:col-8 text-center mx-auto">
+<section class="home-section py-3xl md:py-6xl">
+  <div class="container 2xl section-content">
+    <div class="row mb-3xl md:mb-6xl">
+      <header class="section-header col lg:col-10 xl:col-8 text-center mx-auto">
         <h2
-          class="section-title font-3xlarge medium:font-4xlarge large:font-5xlarge mb-xsmall medium:mb-small large:mb-medium"
+          class="section-title font-3xl md:font-4xl lg:font-5xl mb-xs md:mb-sm lg:mb-md"
         >
           <span class="font-normal d-block">From Figma Community</span> to First Component
         </h2>
-        <p class="section-body medium:font-large large:font-xlarge m-0">
+        <p class="section-body md:font-lg lg:font-xl m-0">
           Duplicate from Figma Community, publish libraries to your team, and start inserting
           components.
         </p>
       </header>
     </div>
 
-    <div class="section-features row row-cols-1 medium:row-cols-3 g-medium medium:g-xlarge">
+    <div class="section-features row row-cols-1 md:row-cols-3 g-md md:g-xl">
       <!-- Step 1 -->
       <div class="col">
         <FeatureCard icon="cx-rocket">
@@ -31,7 +31,7 @@ import Code from '@chassis-ui/docs/shortcodes/Code.astro'
           <Code
             noToolbar
             lang="text"
-            containerClass="border-top border-subtle pt-medium"
+            containerClass="border-top border-subtle pt-md"
             code={`Chassis Library Files
 ├── cx.tokens.*    → Variable collections
 ├── cx.comp.*      → UI components
@@ -54,7 +54,7 @@ import Code from '@chassis-ui/docs/shortcodes/Code.astro'
           <Code
             noToolbar
             lang="text"
-            containerClass="border-top border-subtle pt-medium"
+            containerClass="border-top border-subtle pt-md"
             code={`cx.tokens.* Variables
 ├── Brand       → Colors, type, radii
 ├── Theme       → Light / Dark modes
@@ -78,7 +78,7 @@ import Code from '@chassis-ui/docs/shortcodes/Code.astro'
           <Code
             noToolbar
             lang="text"
-            containerClass="border-top border-subtle pt-medium"
+            containerClass="border-top border-subtle pt-md"
             code={`Component Instance
 ├── Variant       → Size, style, state
 ├── Properties    → Show/hide, labels

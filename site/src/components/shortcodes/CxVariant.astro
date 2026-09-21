@@ -2,7 +2,7 @@
 import { getEntry } from 'astro:content'
 import ResponsiveImage from '@chassis-ui/docs/components/ResponsiveImage.astro'
 
-const { img, alt, wide, large, neutral } = Astro.props
+const { img, alt, wide, lg, neutral } = Astro.props
 
 // Get component and tab from URL
 const path = Astro.url.pathname
@@ -19,12 +19,12 @@ if (matches) {
 ---
 
 <div
-  class={`cx-variant mb-xlarge pt-xlarge border-top border-subtle` +
-    (wide ? ` flex-column-reverse gap-medium` : ' xlarge:gap-xlarge')}
+  class={`cx-variant mb-xl pt-xl border-top border-subtle` +
+    (wide ? ` flex-column-reverse gap-md` : ' xl:gap-xl')}
 >
   <div
-    class={`cxd-example p-medium xlarge:p-3xlarge align-content-center m-0` +
-      (!wide ? (large ? ` xlarge:col-7` : ' xlarge:col-5') : '') +
+    class={`cxd-example p-md xl:p-3xl align-content-center m-0` +
+      (!wide ? (lg ? ` xl:col-7` : ' xl:col-5') : '') +
       (neutral ? ' neutral-bg-highlight' : '')}
   >
     <ResponsiveImage
