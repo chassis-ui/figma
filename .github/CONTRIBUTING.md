@@ -36,7 +36,7 @@ Run every command from the root. `pnpm dev` builds the submodule and starts the 
 ## Branch and commit conventions
 
 `develop` is the integration branch: branch from it, and open pull requests against it. `main`
-holds released versions only; pushing it deploys the site and releases the version (see
+is the site in production: pushing it deploys the site, and releases nothing (see
 [Releases](#releases)). `staging` is for previews of the site: a maintainer pushes `develop` to
 it when one is wanted, and no workflow runs on it.
 
@@ -113,8 +113,15 @@ A change that releases nothing, such as a corrected typing error, adds an empty 
 
 ## Releases
 
-A release is a version commit on `develop` that reaches `main`. The checks of a commit run
-once, on `develop`; pushing the same commit to `staging` or `main` doesn't run them again.
+Chassis Figma has no release yet: no tag and no GitHub release. A push to `main` deploys the
+site only. `.github/workflows/release.yml` has no `push` trigger, so nothing is released until
+a maintainer runs it by hand, and the first release is such a run, once it is decided. With the
+trigger, the first push to `main` would have created the tag `v0.1.0` and a public GitHub
+release, since the version has no tag and `CHANGELOG.md` has its entry.
+
+A release is a version commit on `develop` that reaches `main`, and a run of the workflow on
+it. The checks of a commit run once, on `develop`; pushing the same commit to `staging` or
+`main` doesn't run them again.
 
 1. On `develop`, a maintainer runs `pnpm changeset:version`. It removes the changesets, bumps
    the version in `package.json`, writes the CHANGELOG entry, and copies the version to the
@@ -124,10 +131,11 @@ once, on `develop`; pushing the same commit to `staging` or `main` doesn't run t
 3. When CI has passed, the maintainer pushes the same commit to `main`. The ruleset of `main`
    requires the checks `Lint`, `Type Check` and `Site` on the commit, and blocks a force push
    and a deletion.
-4. Vercel deploys the site from `main`, and the push runs `.github/workflows/release.yml`, in
-   three jobs:
+4. Vercel deploys the site from `main`. The push runs no workflow.
+5. The maintainer runs `.github/workflows/release.yml` on `main`, from the Actions tab or with
+   `gh workflow run release.yml --ref main`. It has three jobs:
    - **Detect Version** reads the version and asks GitHub whether the tag `v<version>` exists.
-     When it does, the workflow stops: a push to `main` without a new version releases nothing.
+     When it does, the workflow stops: a run without a new version releases nothing.
    - **Checks Passed** reads the check-runs of the commit by name. It stops unless `Lint`,
      `Type Check` and `Site` passed on it.
    - **Release** creates the tag and the GitHub release `v<version>`, with the CHANGELOG entry
@@ -138,9 +146,10 @@ once, on `develop`; pushing the same commit to `staging` or `main` doesn't run t
 A version without a CHANGELOG entry is not released. A version with a prerelease part, such as
 `0.2.0-next.0`, is marked as a prerelease on GitHub.
 
-The workflow can also be run by hand, on `main` only: a run on another branch stops in its
-first job. The job names `Lint`, `Type Check` and `Site` are the required checks of the ruleset
-of `main`, and they are in the `REQUIRED` list of `release.yml`: change them together.
+The workflow runs on `main` only: a run on another branch stops in its first job. To release
+each new version on its push again, put `push` with `branches: [main]` back under `on` in
+`release.yml`. The job names `Lint`, `Type Check` and `Site` are the required checks of the
+ruleset of `main`, and they are in the `REQUIRED` list of `release.yml`: change them together.
 
 ## Using the issue tracker
 

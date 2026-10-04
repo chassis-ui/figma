@@ -1,17 +1,20 @@
 name: Release
 
-# On a push to main, releases the version in package.json when it has no tag yet: creates the
-# tag v<version> and the GitHub release from the CHANGELOG entry of the version. The version
-# and the CHANGELOG are made on develop with Changesets. See "Releases" in
+# Run by hand on main, releases the version in package.json when it has no tag yet: creates
+# the tag v<version> and the GitHub release from the CHANGELOG entry of the version. The
+# version and the CHANGELOG are made on develop with Changesets. See "Releases" in
 # .github/CONTRIBUTING.md. Nothing is published to npm: the site is the product, and Vercel
 # deploys it from main.
 #
-# The checks of ci.yml ran on this commit when it was pushed to develop, and the ruleset of
+# The checks of ci.yml ran on the commit when it was pushed to develop, and the ruleset of
 # main requires them before the commit can reach main. This workflow does not run them
 # again. It reads their results and stops unless each one passed.
 on:
-  push:
-    branches: [main]
+  # No `push` trigger: chassis-figma releases nothing yet. The version is 0.1.0, it has no tag
+  # and CHANGELOG.md has its entry, so with `push: branches: [main]` here the first push to
+  # main would create the tag v0.1.0 and a public GitHub release. A push to main deploys the
+  # site and nothing else. The first release is a manual run of this workflow on main, or this
+  # trigger put back, when the maintainer decides on it.
   workflow_dispatch:
 
 permissions:
