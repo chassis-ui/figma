@@ -1,0 +1,34 @@
+name: Component request
+description: Ask for a component of the Figma libraries to be documented, or for a change to its pages
+labels: [component, needs-triage]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Request
+      options:
+        - Pages for a component that has none
+        - A tab that is missing (variants, props, specs, tokens or guidelines)
+        - A change to the pages of a component
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Component
+      description: The name of the component in the Figma library, or the folder it has in `site/content/figma/`.
+      placeholder: button-solid
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What the pages should show
+      description: The variants, properties, measurements or tokens that are missing or wrong. Link the Figma frame where you can.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: The screen or the project that needs it.

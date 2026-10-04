@@ -1,0 +1,3 @@
+# The tabs of a component list a property once per variant in one definition list
+Duplicate “dt” name.*
+The first occurrence of “dt” name.*

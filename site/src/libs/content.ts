@@ -1,13 +1,8 @@
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 
 export const docsPages = await getCollection('docs')
 export const figmaPages = await getCollection('figma')
-export const callouts = await getCollection('callouts')
 
 export const aliasedDocsPages = await getCollection('docs', ({ data }) => {
   return data.aliases !== undefined
 })
-
-export function getCalloutByName(name: string) {
-  return getEntry('callouts', name)
-}

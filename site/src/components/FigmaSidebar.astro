@@ -1,11 +1,10 @@
 ---
 import { getFigmaComponentsData } from '@libs/figma'
-import { getData } from '@libs/data'
-import { getConfig } from '@libs/config'
 import { docsPages } from '@libs/content'
 import { getSlug } from '@chassis-ui/docs'
+import { getDocsPath, getSidebar } from '@chassis-ui/docs/site'
 
-const sidebar = getData('sidebar')
+const sidebar = getSidebar()
 
 interface Props {
   currentComponent?: string
@@ -41,7 +40,7 @@ const formatComponentName = (component: string) => {
                 {group.icon && (
                   <svg
                     class="icon"
-                    style={group.icon_color && `color: var(--cx-${group.icon_color});`}
+                    style={group.iconColor && `color: var(--cx-${group.iconColor});`}
                     aria-hidden="true"
                   >
                     <use xlink:href={`#${group.icon}`} />
@@ -51,10 +50,15 @@ const formatComponentName = (component: string) => {
               </strong>
               <ul class="nav flex-column cxd-links-nav">
                 {group.pages?.map((page) => {
+                  // A page of the sidebar may be a group, which has no title. This site has none.
+                  if (!page.title) {
+                    return null
+                  }
+
                   const docSlug = getSlug(page.title)
                   const unversionedPageSlug = `${groupSlug}/${docSlug}`
 
-                  const url = `${getConfig().docsPath}/${unversionedPageSlug}`
+                  const url = getDocsPath(unversionedPageSlug)
                   const active = Astro.params.slug === unversionedPageSlug
 
                   const generatedPage = docsPages.find((page) => page.id === unversionedPageSlug)
@@ -89,7 +93,7 @@ const formatComponentName = (component: string) => {
               <li class="cxd-links-span-all mt-2xs mb-md mx-lg border-top" />
               <li class="cxd-links-span-all">
                 <a
-                  href={`${getConfig().docsPath}/${groupSlug}/`}
+                  href={getDocsPath(`${groupSlug}/`)}
                   class:list={['cxd-links-link', { active }]}
                   aria-current={active ? 'page' : undefined}
                 >

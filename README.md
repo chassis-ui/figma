@@ -20,16 +20,15 @@ Chassis Figma provides documentation and reference material for the Chassis Desi
 - **Figma Component Documentation** — Detailed reference for each Figma component with usage guidelines
 - **Token Mapping** — Shows how Figma variables connect to design tokens and CSS output
 - **Tabbed Interface** — Browse components by design specs, token usage, and code examples
-- **Search Integration** — Algolia-powered search across all documentation
-- **Live Examples** — StackBlitz integration for interactive code previews
+- **Search Integration** — A Pagefind index that the search of chassis-ui.com reads
 
 ## Quick Start
 
 ### Prerequisites
 
-- Node.js 18.0.0 or higher
+- Node.js 22.12.0 or higher (`.nvmrc` names the version that CI uses)
 - pnpm 10.0.0 or higher
-- Git with SSH access to GitHub (for submodules)
+- Git and [Git LFS](https://git-lfs.com) (for the `vendor/assets` submodule)
 
 ### Installation
 
@@ -58,13 +57,18 @@ pnpm astro:preview
 |--------|-------------|
 | `pnpm dev` | Start development server at localhost:4326 |
 | `pnpm build` | Build documentation site |
-| `pnpm site:build` | Build site with submodule sync |
-| `pnpm site:lint` | Run all linters (ESLint, Stylelint, Prettier, VNU) |
+| `pnpm site:build` | Build `vendor/assets` at the pinned commit, then the site and its search index |
+| `pnpm site:lint` | Run the linters (ESLint, unused Sass variables, Stylelint, Prettier) |
+| `pnpm site:lint:html` | Validate the built site with html-validate |
+| `pnpm site:lint:vnu` | Validate the built site with the Nu Html Checker (needs Java) |
 | `pnpm site:format` | Format code with Prettier |
 | `pnpm astro:dev` | Start Astro dev server |
 | `pnpm astro:build` | Build Astro site |
 | `pnpm astro:preview` | Preview production build |
-| `pnpm check` | Run Astro check, lockfile lint, and security audit |
+| `pnpm check` | Run Astro check and the security audit |
+| `pnpm vendor` | Check out and build the `vendor/assets` submodule at the pinned commit |
+| `pnpm sync-submodules` | Move `vendor/assets` to the latest `app/docs` and build it |
+| `pnpm changeset` | Write a changeset for a change to `site/content/` |
 
 ## Project Structure
 
@@ -83,9 +87,8 @@ chassis-figma/
 │       ├── layouts/          # Page layouts
 │       ├── libs/             # Utility libraries
 │       ├── pages/            # File-based routing
-│       ├── plugins/          # Vite plugins (Algolia, StackBlitz)
 │       └── scss/             # Stylesheets
-├── build/                    # Build and version scripts
+├── build/                    # Release scripts
 ├── refs/                     # Reference documentation
 ├── vendor/                   # Git submodules (assets)
 └── _site/                    # Build output (generated)
@@ -112,13 +115,8 @@ All documentation sites share the `@chassis-ui/docs` package for consistent layo
 
 ## Contributing
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Make your changes
-4. Test the build: `pnpm build && pnpm site:lint`
-5. Commit your changes: `git commit -m "feat: add my feature"`
-6. Push to the branch: `git push origin feature/my-feature`
-7. Open a Pull Request
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the dev setup, the conventions, what a pull
+request needs before merge, and how a version is released. Pull requests target `develop`.
 
 ## License
 

@@ -4,7 +4,7 @@ import BaseLayout from '@chassis-ui/docs/layouts/BaseLayout.astro'
 import FigmaSidebar from '@components/FigmaSidebar.astro'
 import TableOfContents from '@chassis-ui/docs/components/TableOfContents.astro'
 import { sortTabs } from '@libs/figma'
-import { getConfig } from '@libs/config'
+import { getConfig, getSiteFileUrl } from '@chassis-ui/docs/site'
 import type { LayoutOverridesHTMLAttributes } from '@chassis-ui/docs'
 import { processMarkdownToHtml } from '@chassis-ui/docs'
 import Callout from '@chassis-ui/docs/shortcodes/Callout.astro'
@@ -75,16 +75,14 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
 
     <main class="cxd-main">
       <div class="cxd-intro">
-        <div
-          class="md:d-flex md:flex-row-reverse justify-content-between align-items-start"
-        >
+        <div class="md:d-flex md:flex-row-reverse justify-content-between align-items-start">
           <div class="mb-md md:mb-0 d-flex text-nowrap">
             {
-              // This is needed because we want to show the badge if show_badge isn't present or is set to false
+              // This is needed because we want to show the badge if showBadge isn't present or is set to false
               frontmatter.added &&
-                ((frontmatter.added.show_badge !== undefined &&
-                  frontmatter.added.show_badge === true) ||
-                  frontmatter.added.show_badge === undefined) && (
+                ((frontmatter.added.showBadge !== undefined &&
+                  frontmatter.added.showBadge === true) ||
+                  frontmatter.added.showBadge === undefined) && (
                   <span class="badge success smooth rounded-md me-xs">
                     Added in v{frontmatter.added.version}
                   </span>
@@ -92,7 +90,7 @@ const pageTitle = `${component.charAt(0).toUpperCase() + component.slice(1).repl
             }
             <a
               class="button default sm"
-              href={`${getConfig().repo}/blob/site/content/figma/${component}/${tab}.mdx`}
+              href={getSiteFileUrl(`content/figma/${component}/${tab}.mdx`)}
               title="View and edit this file on GitHub"
               target="_blank"
               rel="noopener"

@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Chassis Figma documentation
+    url: https://chassis-ui.com/figma/
+    about: The setup of the libraries, the guides, and every component with its variants, properties, specifications and tokens.
+  - name: Chassis Assets, Tokens, CSS, Icons, React or the website
+    url: https://github.com/chassis-ui
+    about: A problem in one of those projects, or in its docs under chassis-ui.com, belongs in its own repository.
+  - name: Security vulnerability
+    url: https://github.com/chassis-ui/figma/security/advisories/new
+    about: Report it privately, not as a public issue.

@@ -1,71 +1,40 @@
 import { defineCollection } from 'astro:content'
-import { z } from 'zod'
 import { glob } from 'astro/loaders'
+import { calloutsSchema, docsSchema, z } from '@chassis-ui/docs/schema'
 
-const docsSchema = z.object({
-  added: z
-    .object({
-      show_badge: z.boolean().optional(),
-      version: z.string()
-    })
-    .optional(),
-  aliases: z.string().or(z.string().array()).optional(),
-  description: z.string(),
-  extra_js: z
-    .object({
-      async: z.boolean().optional(),
-      src: z.string()
-    })
-    .array()
-    .optional(),
-  sections: z
-    .object({
-      description: z.string(),
-      title: z.string(),
-      slug: z.string().optional()
-    })
-    .array()
-    .optional(),
-  thumbnail: z.string().optional(),
-  title: z.string(),
-  toc: z.boolean().optional()
-})
+// A tab of a component: `variants.mdx`, `props.mdx`, `specs.mdx`, `tokens.mdx` or `guidelines.mdx`.
+const figmaSchema = z
+  .object({
+    aliases: z.string().or(z.string().array()).optional(),
+    description: z.string(),
+    link: z.string(),
+    title: z.string(),
+    toc: z.boolean().optional()
+  })
+  .partial()
 
-const figmaSchema = z.object({
-  aliases: z.string().or(z.string().array()).optional(),
-  description: z.string(),
-  link: z.string(),
-  title: z.string(),
-  toc: z.boolean().optional()
-})
-
+// What the tabs of a component share, in its `index.json`.
 const figmaComponentSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
   toc: z.boolean().optional(),
-  added: z
-    .object({
-      show_badge: z.boolean().optional(),
-      version: z.string()
-    })
-    .optional()
+  added: docsSchema.shape.added
 })
 
 const docsCollection = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './content/docs' }),
-  schema: docsSchema.partial()
+  schema: docsSchema
 })
 
 const figmaCollection = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './content/figma' }),
-  schema: figmaSchema.partial()
+  schema: figmaSchema
 })
 
 const figmaComponentsCollection = defineCollection({
   loader: glob({ pattern: '*/index.json', base: './content/figma' }),
   schema: figmaComponentSchema
 })
-const calloutsSchema = z.object({})
 
 const calloutsCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './content/callouts' }),

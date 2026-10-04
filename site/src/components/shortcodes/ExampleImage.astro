@@ -18,10 +18,7 @@ if (matches) {
 }
 ---
 
-<div
-  class={`cxd-example p-md xl:p-3xl mb-xl` +
-    (neutral ? ' neutral-bg-highlight' : '')}
->
+<div class={`cxd-example p-md xl:p-3xl mb-xl` + (neutral ? ' neutral-bg-highlight' : '')}>
   <ResponsiveImage
     imgPath={`/static/images/figma/components/${component}/light/${img}.png`}
     alt={alt ? alt : `${frontmatter?.title} example image`}

@@ -1,0 +1,47 @@
+name: Bug report
+description: A page that is broken, an image that is missing, or a build or check that fails
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repository holds the documentation of the Chassis Figma libraries. A problem with a token, a style, an icon or an asset belongs in [that project's repository](https://github.com/chassis-ui).
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where
+      options:
+        - A page of a component, in site/content/figma/
+        - A page of the guides, in site/content/docs/
+        - The layout, the sidebar or a shortcode of the site
+        - The build, pnpm site:build
+        - A check, such as pnpm site:lint
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw. Include the exact error message or the output of the command if there was one, or a screenshot for a page.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How to reproduce it
+      description: The URL of the page, or the command you ran.
+      placeholder: https://chassis-ui.com/figma/docs/components/button-solid/variants/
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: The version of the site or the commit, and the browser or Node.js version.
+      placeholder: 0.1.0, Safari 26
