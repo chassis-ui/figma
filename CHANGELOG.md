@@ -14,6 +14,9 @@ date. The site has no version, and nothing of the repository is published.
   [Deploying the site](.github/CONTRIBUTING.md#deploying-the-site).
 - The images of the examples have alt text made from the name of the image, such as "Alert screen
   size large". It read "undefined example image".
+- The home page is titled "Chassis - Figma · Tokenized Components for Scalable Design Systems",
+  the title and the subtitle of `config.yml`, with `@chassis-ui/docs` 0.6.3. It was "Chassis
+  Figma - Tokenized Figma Component System · Chassis - Figma".
 
 ### Fixed
 
