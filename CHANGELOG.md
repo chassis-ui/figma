@@ -17,6 +17,11 @@ date. The site has no version, and nothing of the repository is published.
 
 ### Fixed
 
+- **Images**: `vendor/assets` moves to def4a90, which has `list-item-text-input-active` and
+  `table-row-type-odd`, the two images that the list and table variants pages named without a
+  file. Every image name of the content now has a file. The commit removes
+  `table-row-type-data`, which no page names, and changes `list-item-text-input-inactive`
+  (light) and `table-row-type-edit` (dark).
 - **Alert**: the specifications page shows the images of the alert window and the alert screen,
   `alert-window-specs` and `alert-screen-specs`. It named `alert-window`, a file that is not
   part of the library images, and `alert-screen`, which has no file.
