@@ -19,6 +19,12 @@ export function formatComponentName(component: string): string {
     .join(' ')
 }
 
+// The alt text of an image from its name: `alert-screen-size-large` is "Alert screen size large".
+export function formatImageAlt(img: string): string {
+  const alt = img.replace(/-/g, ' ')
+  return alt.charAt(0).toUpperCase() + alt.slice(1)
+}
+
 export async function getFigmaComponentsData() {
   const allFigma = await getCollection('figma')
   const componentMap = new Map<string, Set<TabType>>()
