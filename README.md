@@ -3,7 +3,6 @@
 > Tokenized Figma component library documentation for the Chassis Design System.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-blue.svg)](https://github.com/chassis-ui/figma)
 
 ## Overview
 
@@ -68,7 +67,6 @@ pnpm astro:preview
 | `pnpm check` | Run Astro check and the security audit |
 | `pnpm vendor` | Check out and build the `vendor/assets` submodule at the pinned commit |
 | `pnpm sync-submodules` | Move `vendor/assets` to the latest `app/docs` and build it |
-| `pnpm changeset` | Write a changeset for a change to `site/content/` |
 
 ## Project Structure
 
@@ -88,7 +86,6 @@ chassis-figma/
 │       ├── libs/             # Utility libraries
 │       ├── pages/            # File-based routing
 │       └── scss/             # Stylesheets
-├── build/                    # Release scripts
 ├── refs/                     # Reference documentation
 ├── vendor/                   # Git submodules (assets)
 └── _site/                    # Build output (generated)
@@ -116,7 +113,7 @@ All documentation sites share the `@chassis-ui/docs` package for consistent layo
 ## Contributing
 
 See [CONTRIBUTING.md](.github/CONTRIBUTING.md) for the dev setup, the conventions, what a pull
-request needs before merge, and how a version is released. Pull requests target `develop`.
+request needs before merge, and how the site is deployed. Pull requests target `develop`.
 
 ## License
 

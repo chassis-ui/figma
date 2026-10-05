@@ -25,7 +25,6 @@ published to npm:
 - [`site/content/docs/`](../site/content/docs/) holds the guides: the setup of the libraries
   and how to design with them. [`site/data/sidebar.yml`](../site/data/sidebar.yml) lists them.
 - [`site/src/`](../site/src/) holds the site's own pages, layout, shortcodes and styles.
-- [`build/`](../build/) holds the scripts of a release.
 - [`vendor/assets`](../vendor/) is the chassis-assets submodule, with the fonts and images of
   the site, the pictures of the components among them. `pnpm site:build` checks it out at the
   pinned commit and builds it, which needs Git LFS. `pnpm sync-submodules` moves the pin to the
@@ -36,8 +35,8 @@ Run every command from the root. `pnpm dev` builds the submodule and starts the 
 ## Branch and commit conventions
 
 `develop` is the integration branch: branch from it, and open pull requests against it. `main`
-is the site in production: pushing it deploys the site, and releases nothing (see
-[Releases](#releases)). `staging` is for previews of the site: a maintainer pushes `develop` to
+is the site in production: pushing it deploys the site (see
+[Deploying the site](#deploying-the-site)). `staging` is for previews of the site: a maintainer pushes `develop` to
 it when one is wanted, and no workflow runs on it.
 
 Commits follow a loose `<type>(<scope>): <description>` convention:
@@ -61,7 +60,8 @@ Branch names aren't templated; name yours descriptively (for example `docs/toolt
    fails when the page does not exist. A relative link such as `./library-setup` does not
    resolve, since every page is served with a trailing slash.
 4. Look at the result with `pnpm dev`.
-5. Commit the pages with a [changeset](#changesets).
+5. Add a line to [`CHANGELOG.md`](../CHANGELOG.md) under the date, if a reader of the site would
+   notice the change.
 
 ## Changing the site
 
@@ -86,70 +86,33 @@ patterns of `site/astro.config.ts` on the same folder.
 
 CI runs these jobs on every pull request, and on every push to `develop`:
 
-- **Lint**: `pnpm build:lint`, `pnpm site:lint:eslint`, `pnpm site:lint:fusv`,
+- **Lint**: `pnpm site:lint:eslint`, `pnpm site:lint:fusv`,
   `pnpm site:lint:stylelint` and `pnpm site:lint:prettier`.
 - **Type Check**: `pnpm check:astro`.
 - **Site**: `pnpm site:build`, then `pnpm site:lint:html` and `pnpm site:lint:vnu`.
-- **Changeset**: a change to `site/content/` has a changeset.
 - **Audit**: `pnpm check:pnpm`.
 - **Dependency Review**, on pull requests: no added dependency has a known vulnerability of
   moderate severity or higher.
 
-## Changesets
+## Deploying the site
 
-A pull request that changes `site/content/`, the documentation that the version stands for, adds
-a changeset:
+The repository has no package and nothing to release: it is the documentation site, and it has
+no version. A change is deployed, not released.
 
-```sh
-pnpm changeset
-```
-
-It asks for the bump (patch, minor or major) and the text of the CHANGELOG entry, and writes a
-Markdown file to `.changeset/`. Commit it with the change. Name the components or pages that
-are added, renamed or removed.
-
-A change that releases nothing, such as a corrected typing error, adds an empty changeset:
-`pnpm changeset --empty`. A change to the site's code or to the tooling needs none.
-
-## Releases
-
-Chassis Figma has no release yet: no tag and no GitHub release. A push to `main` deploys the
-site only. `.github/workflows/release.yml` has no `push` trigger, so nothing is released until
-a maintainer runs it by hand, and the first release is such a run, once it is decided. With the
-trigger, the first push to `main` would have created the tag `v0.1.0` and a public GitHub
-release, since the version has no tag and `CHANGELOG.md` has its entry.
-
-A release is a version commit on `develop` that reaches `main`, and a run of the workflow on
-it. The checks of a commit run once, on `develop`; pushing the same commit to `staging` or
-`main` doesn't run them again.
-
-1. On `develop`, a maintainer runs `pnpm changeset:version`. It removes the changesets, bumps
-   the version in `package.json`, writes the CHANGELOG entry, and copies the version to the
-   badge of `README.md` and to `currentVersion` in `site/config.yml`. The maintainer reviews
-   the result, commits it and pushes `develop`.
-2. CI runs on that commit. The Changeset job skips the push, since it changes the version.
-3. When CI has passed, the maintainer pushes the same commit to `main`. The ruleset of `main`
+1. A pull request is merged into `develop`, or a maintainer pushes to it. CI runs on that commit.
+2. When CI has passed, the maintainer pushes the same commit to `main`. The ruleset of `main`
    requires the checks `Lint`, `Type Check` and `Site` on the commit, and blocks a force push
-   and a deletion.
-4. Vercel deploys the site from `main`. The push runs no workflow.
-5. The maintainer runs `.github/workflows/release.yml` on `main`, from the Actions tab or with
-   `gh workflow run release.yml --ref main`. It has three jobs:
-   - **Detect Version** reads the version and asks GitHub whether the tag `v<version>` exists.
-     When it does, the workflow stops: a run without a new version releases nothing.
-   - **Checks Passed** reads the check-runs of the commit by name. It stops unless `Lint`,
-     `Type Check` and `Site` passed on it.
-   - **Release** creates the tag and the GitHub release `v<version>`, with the CHANGELOG entry
-     as its body.
+   and a deletion. The checks of a commit run once, on `develop`: pushing it to `main` or
+   `staging` doesn't run them again.
+3. Vercel deploys the site from `main`. The push runs no workflow, and creates no tag and no
+   GitHub release.
+4. For a preview, a maintainer pushes `develop` to `staging`.
 
-`develop` and `main` are at the same commit after a release, so nothing is merged back.
+The job names `Lint`, `Type Check` and `Site` are the required checks of the ruleset: rename them
+in `ci.yml` and in the ruleset together.
 
-A version without a CHANGELOG entry is not released. A version with a prerelease part, such as
-`0.2.0-next.0`, is marked as a prerelease on GitHub.
-
-The workflow runs on `main` only: a run on another branch stops in its first job. To release
-each new version on its push again, put `push` with `branches: [main]` back under `on` in
-`release.yml`. The job names `Lint`, `Type Check` and `Site` are the required checks of the
-ruleset of `main`, and they are in the `REQUIRED` list of `release.yml`: change them together.
+[`CHANGELOG.md`](../CHANGELOG.md) is a log by date, newest first, of the changes that a reader of
+the site or a contributor would notice. Add a line under the date of the change.
 
 ## Using the issue tracker
 
