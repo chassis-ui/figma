@@ -16,6 +16,12 @@ date. The site has no version, and nothing of the repository is published.
   between the cards. The page named classes that Chassis CSS no longer has, so the cards were in
   one column and touched each other.
 
+### Fixed
+
+- **Component pages**: the pages of a component have the page margin of 1rem below 1024 px, as the
+  guides have. Their text touched the edge of the screen, and the properties and specifications
+  pages scrolled sideways by 16 px on a phone.
+
 ## 2026-10-05
 
 ### Changed
