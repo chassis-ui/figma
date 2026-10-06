@@ -4,6 +4,18 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-10-07
+
+### Changed
+
+- The site is built with `@chassis-ui/css` 0.6 and `@chassis-ui/docs` 0.7, and its own pages use
+  the CSS grid, `.grid` with `col-span-*`, in place of the flexbox grid that css 0.7 removes. The
+  section headers of the home page are a few pixels narrower from 1024 px, and the footer columns
+  move by up to 20 px.
+- **Component Libraries**: the components are listed in two columns from 576 px, with a gap
+  between the cards. The page named classes that Chassis CSS no longer has, so the cards were in
+  one column and touched each other.
+
 ## 2026-10-05
 
 ### Changed

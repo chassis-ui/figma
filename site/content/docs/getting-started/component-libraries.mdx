@@ -9,15 +9,15 @@ import { getCollection } from 'astro:content'
 
 export const allFigma = await getCollection('figma')
 
-<div class="row row-cols-1 small:row-cols-2 g-xlarge">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-xl">
   {
     (await getFigmaComponentsData()).map(({ name: component, tabs }) => {
       const firstEntry = allFigma.find((e) => e.id === `${component}/${tabs[0]}`)
       const description = firstEntry?.data?.description || `View ${tabs.join(', ')} for the ${formatComponentName(component).toLowerCase()} component.`
       
       return (
-        <div class="col">
-        <div class="card component-card">
+        <div>
+        <div class="card component-card h-100">
           <div class="card-body">
             <h2 class="card-title">
               <a href={`/figma/docs/components/${component}/${tabs[0]}`} class="text-decoration-none">{formatComponentName(component)}</a>

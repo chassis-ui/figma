@@ -16,7 +16,7 @@ const imageAlt = alt ? alt : formatImageAlt(img)
 >
   <div
     class={`cxd-example p-md xl:p-3xl align-content-center m-0` +
-      (!wide ? (lg ? ` xl:col-7` : ' xl:col-5') : '') +
+      (!wide ? (lg ? ` flex-shrink-0 xl:w-7/12` : ' flex-shrink-0 xl:w-5/12') : '') +
       (neutral ? ' neutral-bg-highlight' : '')}
   >
     <ResponsiveImage
