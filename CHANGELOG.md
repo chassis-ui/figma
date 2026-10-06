@@ -21,6 +21,8 @@ date. The site has no version, and nothing of the repository is published.
 - **Component pages**: the pages of a component have the page margin of 1rem below 1024 px, as the
   guides have. Their text touched the edge of the screen, and the properties and specifications
   pages scrolled sideways by 16 px on a phone.
+- **Component pages**: the close button of the sidebar drawer closes it. It did nothing on the
+  pages of a component.
 
 ## 2026-10-05
 
