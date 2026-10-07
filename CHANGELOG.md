@@ -4,6 +4,18 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-10-08
+
+### Changed
+
+- The site is built with `@chassis-ui/css` 0.7 and `@chassis-ui/tokens` 0.7. The navigation bar,
+  the footer and the sections of the home page have a page margin of 1rem, and 1.5rem from
+  768 px, where it was 0.75rem. The gap of a grid is 1rem, and 1.5rem from 768 px, where it grew
+  with the screen from 0.5rem to 2.5rem: the footer columns and the section headers of the home
+  page move by up to 21 px, and the home page is 20 to 28 px taller. Subtle text is a little
+  stronger, and the dark theme has lighter inline code and lighter warning and info callouts. The
+  guides and the pages of a component are where they were.
+
 ## 2026-10-07
 
 ### Changed
