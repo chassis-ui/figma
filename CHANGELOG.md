@@ -4,6 +4,24 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-10-12
+
+### Changed
+
+- The site is built with `@chassis-ui/docs` 0.8, and its pages load their fonts from
+  `/static/fonts/`, the docs build of chassis-assets, no longer from Google Fonts: no page requests
+  `fonts.googleapis.com` or `fonts.gstatic.com`. `vendor/assets` moves to 784d885, chassis-assets
+  0.3.1, and `pnpm vendor` and `pnpm sync-submodules` build its fonts with
+  `--subset latin --subset latin-ext --subset symbols2 --split`. A page loads `text-latin.woff2`
+  and `code-latin.woff2`, with `code-symbols2.woff2` for the box drawing characters of the file
+  trees in code blocks, which a fallback font draws narrower than the code around them. Text in
+  Inter has the width it had. Italic text is drawn with the italic of Inter, where the upright
+  font was slanted.
+- **Code**: code is 2.6% wider. The Fira Code of chassis-assets, version 6.002, has an advance of
+  0.615 em, where that of Google Fonts has 0.6 em, and a lower line. A line with inline code is
+  half a pixel taller: the tokens pages are 4 to 23 px taller, and the guides with code blocks up
+  to 18 px, or 75 px on a phone, where more inline code wraps.
+
 ## 2026-10-08
 
 ### Changed
