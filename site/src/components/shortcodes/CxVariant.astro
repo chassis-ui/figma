@@ -11,13 +11,17 @@ const imageAlt = alt ? alt : formatImageAlt(img)
 ---
 
 <div
-  class={`cx-variant mb-xl pt-xl border-top border-subtle` +
-    (wide ? ` flex-column-reverse gap-md` : ' xl:gap-xl')}
+  class={
+    `cx-variant mb-xl pt-xl border-top border-subtle` +
+    (wide ? ` flex-column-reverse gap-md` : ' xl:gap-xl')
+  }
 >
   <div
-    class={`cxd-example p-md xl:p-3xl align-content-center m-0` +
+    class={
+      `cxd-example p-md xl:p-3xl align-content-center m-0` +
       (!wide ? (lg ? ` flex-shrink-0 xl:w-7/12` : ' flex-shrink-0 xl:w-5/12') : '') +
-      (neutral ? ' neutral-bg-highlight' : '')}
+      (neutral ? ' neutral-bg-highlight' : '')
+    }
   >
     <ResponsiveImage
       imgPath={`/static/images/figma/components/${component}/light/${img}.png`}
