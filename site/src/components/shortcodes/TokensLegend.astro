@@ -9,18 +9,21 @@ const scope = Astro.props.scope
 ---
 
 <div class="legend cx-token">
-  <p><strong>Legend:</strong></p>
+  <p>
+    <strong>Legend:</strong>
+  </p>
   <ul class="m-0 p-0">
     <li>
-      <Icon name="circle-solid" class="granular" font /> Granular tokens that affect only this component.
+      <Icon name="circle-solid" class="granular" font /> Granular tokens that affect only this
+      component.
     </li>
     <li>
-      <Icon name="circle-solid" class="shared" font /> Granular tokens that affect {
-        scope ? `${scope}` : 'other'
-      } components.
+      <Icon name="circle-solid" class="shared" font /> Granular tokens that affect{' '}
+      {scope ? `${scope}` : 'other'} components.
     </li>
     <li>
-      <Icon name="circle-solid" class="semantic" font /> Semantic tokens that affect the whole application.
+      <Icon name="circle-solid" class="semantic" font /> Semantic tokens that affect the whole
+      application.
     </li>
     <li>
       <Icon name="circle-solid" class="base" font /> Base tokens that affect the whole application.
