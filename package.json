@@ -85,7 +85,7 @@
     "postcss": "^8.5.29",
     "postcss-prefix-custom-properties": "^0.1.0",
     "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-astro": "^1.1.1",
     "rehype-autolink-headings": "^7.1.0",
     "remark": "^15.0.1",
     "remark-definition-list": "^2.0.1",
