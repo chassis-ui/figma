@@ -26,8 +26,8 @@
     .legend {
       padding: var(--cx-space-xl) var(--cx-space-3xl);
       margin-bottom: var(--cx-space-3xl);
-      // @include font-size(var(--cx-font-size-text-sm));
-      // @include line-height(var(--cx-line-height-text-sm));
+      // @include font-size(var(--cx-font-size-ui-sm));
+      // @include line-height(var(--cx-line-height-ui-sm));
       background-color: var(--cx-bg-even);
       @include border-radius(var(--cx-border-radius-md));
       h6 {
@@ -58,7 +58,7 @@
       // vertical-align: middle;
       // background-color: var(--cx-warning);
       background-color: #f60;
-      @include font-size(var(--cx-font-size-text-md));
+      @include font-size(var(--cx-font-size-ui-md));
       @include border-radius(50%);
       &:not(:has(+ h3:first-of-type)) {
         margin-top: var(--cx-space-xl);
@@ -74,8 +74,8 @@
       padding-left: 2.5rem;
       margin-bottom: .5rem;
       margin-left: -2.5rem;
-      @include font-size(var(--cx-font-size-text-lg));
-      @include line-height(var(--cx-line-height-text-lg));
+      @include font-size(var(--cx-font-size-ui-lg));
+      @include line-height(var(--cx-line-height-ui-lg));
       &::after {
         display: block;
         clear: both;
@@ -183,20 +183,20 @@
       color: var(--cx-fg-subtle);
       vertical-align: middle;
       background-color: var(--cx-bg-evident);
-      @include font-size(var(--cx-font-size-text-md));
-      @include line-height(var(--cx-line-height-text-md));
+      @include font-size(var(--cx-font-size-ui-md));
+      @include line-height(var(--cx-line-height-ui-md));
       @include border-radius(var(--cx-border-radius-md));
     }
 
     h3 {
-      @include font-size(var(--cx-font-size-text-xl));
-      @include line-height(var(--cx-line-height-text-xl));
+      @include font-size(var(--cx-font-size-ui-xl));
+      @include line-height(var(--cx-line-height-ui-xl));
     }
 
     ul {
       padding: 0;
-      @include font-size(var(--cx-font-size-text-sm));
-      @include line-height(var(--cx-line-height-text-sm));
+      @include font-size(var(--cx-font-size-ui-sm));
+      @include line-height(var(--cx-line-height-ui-sm));
     }
 
     ul::after {
@@ -220,7 +220,7 @@
         border-color: var(--cx-border-main);
       }
       > strong {
-        font-weight: var(--cx-font-weight-text-strong) !important; // stylelint-disable-line declaration-no-important
+        font-weight: var(--cx-font-weight-ui-strong) !important; // stylelint-disable-line declaration-no-important
       }
     }
 
@@ -231,8 +231,8 @@
   .cx-variant,
   .cx-token {
     dl {
-      @include font-size(var(--cx-font-size-text-sm));
-      @include line-height(var(--cx-line-height-text-sm));
+      @include font-size(var(--cx-font-size-ui-sm));
+      @include line-height(var(--cx-line-height-ui-sm));
       overflow-x: scroll;
     }
 

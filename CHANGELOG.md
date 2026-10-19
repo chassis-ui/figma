@@ -4,6 +4,20 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-10-19
+
+### Changed
+
+- The site is built with `@chassis-ui/docs` 0.10, `@chassis-ui/css` 0.10 and
+  `@chassis-ui/tokens` 0.10. `vendor/assets` moves to 4382de9 of `app/docs`: the pages link one
+  font stylesheet, `/static/fonts/fonts.css`, and load `ui-latin.woff2` where they loaded
+  `text-latin.woff2`. The navigation bar and the footer inline the new Chassis logo, in the colors
+  of the theme, and the search of the header is narrower between 1024 and 1280 px.
+- Headings and titles are in the display family, Montserrat, the default tokens have new base
+  colors, and buttons, badges and the other components lose their background gradient.
+- The styles of the site read the `--cx-*-ui-*` custom properties, which css 0.10 names in place
+  of `--cx-*-text-*`, and the "On this page" label of a component page uses `.font-h6`.
+
 ## 2026-10-12
 
 ### Changed
