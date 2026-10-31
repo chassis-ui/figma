@@ -4,6 +4,26 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-10-31
+
+### Changed
+
+- The site is built with `@chassis-ui/docs` 0.12, `@chassis-ui/css` 0.14 and
+  `@chassis-ui/website-tokens` 0.1, the package that holds the Chassis tokens from now on.
+  `@chassis-ui/tokens` is the token builder, and no longer a dependency of the site.
+  `vendor/assets` moves to 1e37c96, v0.5.0 of `app/docs`: the pages link the web app manifest of
+  the assets, `/static/other/manifest.json`, with a maskable icon, in place of the site's own
+  `images/manifest.json`, and they link the Chassis CSS, the font and icon stylesheets and the icon
+  sprite with `?v=` and a hash.
+- Blockquotes are Regular Italic where they were Light Italic, and the slight dim of a solid context
+  and of a badge is twice as strong, an alpha of 0.1 where it was 0.05. The sampled pages, the home
+  page, the guides and the pages of a component at 375 and 1280 px, have the height they had, but
+  for the text below.
+- **Guides**: the Figma variables sync with the
+  [website-tokens](https://github.com/chassis-ui/website-tokens) repository, which holds the Tokens
+  Studio source files of the Chassis tokens, and custom themes are made by changing the token values
+  there. The guides named chassis-tokens, which is now the builder.
+
 ## 2026-10-19
 
 ### Changed

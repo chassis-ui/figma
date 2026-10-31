@@ -20,16 +20,16 @@ This reference chain allows you to change a brand color or font once and see it 
 
 ## Sync with Chassis Tokens
 
-Chassis Figma variables are synchronized with the [Chassis Tokens](https://github.com/chassis-ui/tokens) repository using **Tokens Studio plugin**, ensuring perfect design-code parity.
+Chassis Figma variables are synchronized with the [website-tokens](https://github.com/chassis-ui/website-tokens) repository using **Tokens Studio plugin**, ensuring perfect design-code parity. The repository holds the Tokens Studio source files of the Chassis tokens, built by `@chassis-ui/tokens`.
 
 **Tokens Studio** bridges your Git repository and Figma Variables, allowing you to:
 
-- Pull latest token definitions from chassis-tokens repository
+- Pull latest token definitions from the website-tokens repository
 - Sync tokens as native Figma Variables with proper collections and modes
 
 ### Updating Variables
 
-When token values change in the Chassis Tokens repository:
+When token values change in the website-tokens repository:
 
 1. **Pull Changes**: In Tokens Studio plugin, click "Pull from [Storage]"
 2. **Review Diff**: Plugin shows which tokens changed and their new values
@@ -428,7 +428,7 @@ When working with Figma Variables and Styles in Chassis, following best practice
 - ✅ **Test across all modes** before finalizing
 - ✅ **Document custom variables** with clear descriptions
 - ✅ **Follow naming conventions** for consistency
-- ✅ **Keep variables in sync** with Chassis Tokens repository
+- ✅ **Keep variables in sync** with the website-tokens repository
 - ✅ **Use variable collections** to organize related variables
 
 **Don't**
@@ -509,7 +509,7 @@ Common issues when working with Figma Variables and how to resolve them.
 
 **Documentation:**
 
-- **[Chassis Tokens Repository](https://github.com/chassis-ui/tokens)** - Token definitions and sync source
+- **[website-tokens Repository](https://github.com/chassis-ui/website-tokens)** - Token definitions and sync source
 - **[Style Dictionary](https://amzn.github.io/style-dictionary)** - Token transformation engine
 - **[Figma Variables Guide](https://help.figma.com/hc/en-us/articles/15339657135383)** - Official Figma documentation
 

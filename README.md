@@ -103,10 +103,12 @@ This project is part of the Chassis Design System's multi-repository architectur
 |---------|-------------|
 | [chassis-website](https://github.com/chassis-ui/website) | Main website and shared documentation package |
 | [chassis-css](https://github.com/chassis-ui/css) | CSS framework and component library |
-| [chassis-tokens](https://github.com/chassis-ui/tokens) | Design token generation and management |
+| [chassis-tokens](https://github.com/chassis-ui/tokens) | The token builder, published as `@chassis-ui/tokens` |
 | [chassis-icons](https://github.com/chassis-ui/icons) | Icon library and build toolkit |
 | [chassis-assets](https://github.com/chassis-ui/assets) | Multi-platform asset management |
 | **chassis-figma** | **Figma component documentation (this repository)** |
+
+The tokens of the Chassis sites and the Figma libraries are `@chassis-ui/website-tokens`, from [chassis-ui/website-tokens](https://github.com/chassis-ui/website-tokens).
 
 All documentation sites share the `@chassis-ui/docs` package for consistent layouts, components, and styling.
 
