@@ -28,7 +28,7 @@ source/
 ├── default/          → Shared assets for all brands
 │   └── [app]/        → Application context (docs, mobile-app, etc.)
 │       ├── images/   → Photos, illustrations, graphics
-│       ├── icons/    → Icon files (usually from chassis-icons)
+│       ├── icons/    → Icon files (usually from chassis-ui/icons)
 │       └── fonts/    → Typography files
 └── [brand]/          → Brand-specific overrides
     └── [app]/        → Same structure as default
@@ -170,11 +170,11 @@ Before exporting, ensure your Figma file is properly organized and layers are co
 1. Organize assets in a dedicated Figma page or section
 2. Rename layers using correct naming conventions (layer name = filename)
 3. Add export settings to layers (format, resolution, suffix)
-4. Have local copy of chassis-assets repository cloned
+4. Have a local clone of the chassis-ui/assets repository
 
 ### Bulk Export to Repository
 
-Select `assets` section or frame in Figma, then use File → Export to export all assets at once to `chassis-assets/source/` directory with correct structure.
+Select `assets` section or frame in Figma, then use File → Export to export all assets at once to the `source/` directory of your chassis-ui/assets clone, with correct structure.
 
 Files will be exported to the correct brand and app folders based on their naming and organization in Figma. Verify the export settings and destination path before confirming the export.
 

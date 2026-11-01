@@ -11,8 +11,8 @@ in `packageManager` of `package.json`; `corepack enable` picks it up), Git and
 [Git LFS](https://git-lfs.com).
 
 ```sh
-git clone https://github.com/chassis-ui/figma.git chassis-figma
-cd chassis-figma
+git clone https://github.com/chassis-ui/figma.git
+cd figma
 pnpm install
 ```
 
@@ -25,7 +25,7 @@ published to npm:
 - [`site/content/docs/`](../site/content/docs/) holds the guides: the setup of the libraries
   and how to design with them. [`site/data/sidebar.yml`](../site/data/sidebar.yml) lists them.
 - [`site/src/`](../site/src/) holds the site's own pages, layout, shortcodes and styles.
-- [`vendor/assets`](../vendor/) is the chassis-assets submodule, with the fonts and images of
+- [`vendor/assets`](../vendor/) is the chassis-ui/assets submodule, with the fonts and images of
   the site, the pictures of the components among them. `pnpm site:build` checks it out at the
   pinned commit and builds it, which needs Git LFS. `pnpm sync-submodules` moves the pin to the
   latest `app/docs`.
@@ -52,7 +52,7 @@ Branch names aren't templated; name yours descriptively (for example `docs/toolt
 1. Add or change the page in `site/content/figma/<component>/` or `site/content/docs/`. A new
    guide also gets a line in `site/data/sidebar.yml`; a new component needs none, the sidebar
    lists every folder of `site/content/figma/`.
-2. A picture of a component is a file of chassis-assets, in
+2. A picture of a component is a file of chassis-ui/assets, in
    `source/default/docs/images/figma/components/<component>/`, in a `light` and a `dark`
    folder. Add it there, then move the submodule with `pnpm sync-submodules`. A page that names
    a picture the submodule does not have shows a broken image.
