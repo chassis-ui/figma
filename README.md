@@ -27,12 +27,12 @@ Chassis Figma provides documentation and reference material for the Chassis Desi
 
 - Node.js 22.12.0 or higher (`.nvmrc` names the version that CI uses)
 - pnpm 10.0.0 or higher
-- Git and [Git LFS](https://git-lfs.com) (for the `vendor/assets` submodule)
+- Git
 
 ### Installation
 
 ```bash
-git clone --recursive https://github.com/chassis-ui/figma.git
+git clone https://github.com/chassis-ui/figma.git
 cd figma
 pnpm install
 ```
@@ -56,7 +56,7 @@ pnpm astro:preview
 |--------|-------------|
 | `pnpm dev` | Start development server at localhost:4326 |
 | `pnpm build` | Build documentation site |
-| `pnpm site:build` | Build `vendor/assets` at the pinned commit, then the site and its search index |
+| `pnpm site:build` | Unpack the assets that `vendor/assets.json` pins, then build the site and its search index |
 | `pnpm site:lint` | Run the linters (ESLint, unused Sass variables, Stylelint, Prettier) |
 | `pnpm site:lint:html` | Validate the built site with html-validate |
 | `pnpm site:lint:vnu` | Validate the built site with the Nu Html Checker (needs Java) |
@@ -65,8 +65,8 @@ pnpm astro:preview
 | `pnpm astro:build` | Build Astro site |
 | `pnpm astro:preview` | Preview production build |
 | `pnpm check` | Run Astro check and the security audit |
-| `pnpm vendor` | Check out and build the `vendor/assets` submodule at the pinned commit |
-| `pnpm sync-submodules` | Move `vendor/assets` to the latest `app/docs` and build it |
+| `pnpm vendor` | Unpack the archive of chassis-ui/website-assets that `vendor/assets.json` pins into `vendor/assets` |
+| `pnpm sync-assets` | Move `vendor/assets.json` to the latest release of chassis-ui/website-assets and unpack it |
 
 ## Project Structure
 
@@ -87,7 +87,7 @@ figma/
 │       ├── pages/            # File-based routing
 │       └── scss/             # Stylesheets
 ├── refs/                     # Reference documentation
-├── vendor/                   # Git submodules (assets)
+├── vendor/                   # assets.json, the pin of the assets; assets/ is unpacked from it
 └── _site/                    # Build output (generated)
 ```
 
@@ -105,7 +105,8 @@ This project is part of the Chassis Design System's multi-repository architectur
 | [chassis-ui/css](https://github.com/chassis-ui/css) | CSS framework and component library |
 | [chassis-ui/tokens](https://github.com/chassis-ui/tokens) | The token builder, published as `@chassis-ui/tokens` |
 | [chassis-ui/icons](https://github.com/chassis-ui/icons) | Icon library and build toolkit |
-| [chassis-ui/assets](https://github.com/chassis-ui/assets) | Multi-platform asset management |
+| [chassis-ui/assets](https://github.com/chassis-ui/assets) | The multi-platform asset builder, published as `@chassis-ui/assets` |
+| [chassis-ui/website-assets](https://github.com/chassis-ui/website-assets) | The assets of the Chassis sites, the pictures of the components among them |
 | **chassis-ui/figma** | **Figma component documentation (this repository)** |
 
 The tokens of the Chassis sites and the Figma libraries are `@chassis-ui/website-tokens`, from [chassis-ui/website-tokens](https://github.com/chassis-ui/website-tokens).

@@ -4,6 +4,17 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-11-02
+
+### Changed
+
+- The site is built with `@chassis-ui/docs` 0.13 and `@chassis-ui/website-tokens` 0.3, and takes
+  its assets from release 0.5.0 of [chassis-ui/website-assets](https://github.com/chassis-ui/website-assets),
+  which `vendor/assets.json` pins, in place of the `vendor/assets` submodule of chassis-ui/assets.
+  A clone needs no submodule and no Git LFS, and `pnpm sync-submodules` is now `pnpm sync-assets`.
+- The pictures of the components have the pixels they had in smaller files, and the font stylesheet
+  adds the Cyrillic, Greek and arrow ranges of each family. The pages are otherwise the same.
+
 ## 2026-10-31
 
 ### Changed

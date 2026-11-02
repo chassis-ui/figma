@@ -7,8 +7,7 @@ request needs before it can be merged. For an overview of the project it links t
 ## Dev setup
 
 You need Node.js 22.12 or later (`.nvmrc` names the version that CI uses, 24), pnpm (the version
-in `packageManager` of `package.json`; `corepack enable` picks it up), Git and
-[Git LFS](https://git-lfs.com).
+in `packageManager` of `package.json`; `corepack enable` picks it up) and Git.
 
 ```sh
 git clone https://github.com/chassis-ui/figma.git
@@ -25,12 +24,12 @@ published to npm:
 - [`site/content/docs/`](../site/content/docs/) holds the guides: the setup of the libraries
   and how to design with them. [`site/data/sidebar.yml`](../site/data/sidebar.yml) lists them.
 - [`site/src/`](../site/src/) holds the site's own pages, layout, shortcodes and styles.
-- [`vendor/assets`](../vendor/) is the chassis-ui/assets submodule, with the fonts and images of
-  the site, the pictures of the components among them. `pnpm site:build` checks it out at the
-  pinned commit and builds it, which needs Git LFS. `pnpm sync-submodules` moves the pin to the
-  latest `app/docs`.
+- [`vendor/assets.json`](../vendor/assets.json) pins a release of chassis-ui/website-assets, with
+  the fonts and images of the site, the pictures of the components among them. `pnpm vendor`, which
+  `pnpm site:build` and `pnpm dev` run, unpacks its archive into `vendor/assets`, which is not
+  committed. `GH_TOKEN=$(gh auth token) pnpm sync-assets` moves the pin to the latest release.
 
-Run every command from the root. `pnpm dev` builds the submodule and starts the site on port 4326.
+Run every command from the root. `pnpm dev` unpacks the assets and starts the site on port 4326.
 
 ## Branch and commit conventions
 
@@ -52,10 +51,10 @@ Branch names aren't templated; name yours descriptively (for example `docs/toolt
 1. Add or change the page in `site/content/figma/<component>/` or `site/content/docs/`. A new
    guide also gets a line in `site/data/sidebar.yml`; a new component needs none, the sidebar
    lists every folder of `site/content/figma/`.
-2. A picture of a component is a file of chassis-ui/assets, in
-   `source/default/docs/images/figma/components/<component>/`, in a `light` and a `dark`
-   folder. Add it there, then move the submodule with `pnpm sync-submodules`. A page that names
-   a picture the submodule does not have shows a broken image.
+2. A picture of a component is a file of chassis-ui/website-assets, in
+   `source/_default/docs/images/figma/components/<component>/`, in a `light` and a `dark`
+   folder. Add it there, and once it is in a release, move the pin with `pnpm sync-assets`. A page
+   that names a picture the archive does not have shows a broken image.
 3. Link another page of this site with `[[docsref:/getting-started/library-setup/]]`: the build
    fails when the page does not exist. A relative link such as `./library-setup` does not
    resolve, since every page is served with a trailing slash.
@@ -72,7 +71,7 @@ pages, components and styles are in `site/src/`, and its settings in `site/confi
 ```sh
 pnpm site:lint             # ESLint, unused Sass variables, Stylelint and Prettier
 pnpm check:astro           # Types
-pnpm site:build            # The same build as Vercel: vendor/assets, Astro and Pagefind
+pnpm site:build            # The same build as Vercel: the assets, Astro and Pagefind
 pnpm site:lint:html        # html-validate, on the built site
 pnpm site:lint:vnu         # The Nu Html Checker, on the built site. Needs Java
 pnpm astro:preview         # The built site, as it is deployed

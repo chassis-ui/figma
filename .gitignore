@@ -3,6 +3,7 @@ _site
 .astro
 site/dist
 site/public
+vendor/assets
 
 dist/
 
