@@ -104,7 +104,8 @@ This project is part of the Chassis Design System's multi-repository architectur
 | [chassis-ui/website](https://github.com/chassis-ui/website) | Main website and shared documentation package |
 | [chassis-ui/css](https://github.com/chassis-ui/css) | CSS framework and component library |
 | [chassis-ui/tokens](https://github.com/chassis-ui/tokens) | The token builder, published as `@chassis-ui/tokens` |
-| [chassis-ui/icons](https://github.com/chassis-ui/icons) | Icon library and build toolkit |
+| [chassis-ui/icons](https://github.com/chassis-ui/icons) | The icon set builder, published as `@chassis-ui/icons` |
+| [chassis-ui/website-icons](https://github.com/chassis-ui/website-icons) | The icons of the Chassis sites, published as `@chassis-ui/website-icons` |
 | [chassis-ui/assets](https://github.com/chassis-ui/assets) | The multi-platform asset builder, published as `@chassis-ui/assets` |
 | [chassis-ui/website-assets](https://github.com/chassis-ui/website-assets) | The assets of the Chassis sites, the pictures of the components among them |
 | **chassis-ui/figma** | **Figma component documentation (this repository)** |

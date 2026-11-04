@@ -4,6 +4,19 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-11-04
+
+### Changed
+
+- The site is built with `@chassis-ui/docs` 0.14 and takes its icons from
+  `@chassis-ui/website-icons` 0.1, from [chassis-ui/website-icons](https://github.com/chassis-ui/website-icons),
+  in place of `@chassis-ui/icons`, which is now the icon set builder and holds no icons.
+  `/static/icons/` serves the same files, without the `road-outline-1` and `road-solid-1` icons,
+  which no page used.
+- **Guides**: the introduction names chassis-ui/website-icons, the icons of the Chassis sites, next
+  to chassis-ui/icons, the builder, and the guides on exporting assets and on updating the
+  libraries name chassis-ui/website-icons where they meant the icons.
+
 ## 2026-11-02
 
 ### Changed
