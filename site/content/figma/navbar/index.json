@@ -1,5 +1,6 @@
 {
   "title": "Navbar",
   "description": "Primary navigation components positioned at the top of pages, containing site branding and main navigation links.",
-  "toc": true
+  "toc": true,
+  "figmaPage": "Navbar"
 }

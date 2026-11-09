@@ -18,7 +18,9 @@ const figmaComponentSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
   toc: z.boolean().optional(),
-  added: docsSchema.shape.added
+  added: docsSchema.shape.added,
+  // The name of the component's page in the Figma file cx.components.UI.
+  figmaPage: z.string().optional()
 })
 
 const docsCollection = defineCollection({

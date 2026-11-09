@@ -1,5 +1,6 @@
 {
   "title": "Tooltip",
   "description": "Small informational popups that appear on hover or focus, providing additional context, help text, or descriptions for UI elements.",
-  "toc": true
+  "toc": true,
+  "figmaPage": "Tooltip"
 }

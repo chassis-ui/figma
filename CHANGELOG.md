@@ -4,6 +4,20 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-11-09
+
+### Changed
+
+- **Badge**: the tokens tab names the base tokens as the Figma library now does,
+  `color.base.primitive.light.*` in place of `color.base.palette.light.*` and `font.ui.*` in place
+  of `font.text.*`.
+- `<CxVariant large>` widens the picture of a variant, as the alert pages expected; the attribute
+  was `lg`, and the four variants of the alert window that set `large` showed a narrow picture.
+- The `sync-figma-docs` skill moved to `.agents/skills/`, where Codex, Copilot, Cursor and Gemini
+  look, with a link from `.claude/skills/` for Claude Code. It reads every component from its page
+  in the Figma file cx.components.UI, which each `index.json` names in `figmaPage`, and
+  `scripts/check.mjs` checks the tabs.
+
 ## 2026-11-04
 
 ### Changed

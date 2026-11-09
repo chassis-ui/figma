@@ -1,5 +1,6 @@
 {
   "title": "Dropdown",
   "description": "Menu components that reveal a list of options or actions when activated, allowing users to select from multiple choices in a compact space.",
-  "toc": true
+  "toc": true,
+  "figmaPage": "Dropdown"
 }

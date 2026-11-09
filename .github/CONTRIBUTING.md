@@ -20,7 +20,9 @@ published to npm:
 
 - [`site/content/figma/`](../site/content/figma/) holds one folder per component, with a page
   per tab (`variants.mdx`, `props.mdx`, `specs.mdx`, `tokens.mdx` and, for some,
-  `guidelines.mdx`) and an `index.json` with what the tabs share.
+  `guidelines.mdx`) and an `index.json` with what the tabs share, the name of the component's
+  page in the Figma file cx.components.UI among it. The [`sync-figma-docs`](../.agents/skills/sync-figma-docs/SKILL.md) skill
+  updates the tabs from Figma, and its `scripts/check.mjs` checks them.
 - [`site/content/docs/`](../site/content/docs/) holds the guides: the setup of the libraries
   and how to design with them. [`site/data/sidebar.yml`](../site/data/sidebar.yml) lists them.
 - [`site/src/`](../site/src/) holds the site's own pages, layout, shortcodes and styles.

@@ -18,7 +18,9 @@ Thumbs.db
 .project
 .settings
 .tmproj
-.claude
+# Claude Code: keep local settings out, share the project skills
+.claude/*
+!.claude/skills/
 
 # Test coverage
 coverage/

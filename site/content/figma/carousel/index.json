@@ -1,5 +1,6 @@
 {
   "title": "Carousel",
   "description": "Slideshow components that cycle through multiple pieces of content such as images or cards in a rotating display format.",
-  "toc": true
+  "toc": true,
+  "figmaPage": "Carousel"
 }
