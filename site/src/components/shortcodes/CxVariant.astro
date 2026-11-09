@@ -2,7 +2,7 @@
 import ResponsiveImage from '@chassis-ui/docs/components/ResponsiveImage.astro'
 import { formatImageAlt } from '@libs/figma'
 
-const { img, alt, wide, lg, neutral } = Astro.props
+const { img, alt, wide, large, neutral } = Astro.props
 
 // Get component from URL
 const path = Astro.url.pathname
@@ -19,7 +19,7 @@ const imageAlt = alt ? alt : formatImageAlt(img)
   <div
     class={
       `cxd-example p-md xl:p-3xl align-content-center m-0` +
-      (!wide ? (lg ? ` flex-shrink-0 xl:w-7/12` : ' flex-shrink-0 xl:w-5/12') : '') +
+      (!wide ? (large ? ` flex-shrink-0 xl:w-7/12` : ' flex-shrink-0 xl:w-5/12') : '') +
       (neutral ? ' neutral-bg-highlight' : '')
     }
   >
