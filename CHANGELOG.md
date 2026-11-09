@@ -6,6 +6,12 @@ date. The site has no version, and nothing of the repository is published.
 
 ## 2026-11-09
 
+### Added
+
+- **Guides**: _Using the Figma Agent_, under Design with Chassis, on adding the Chassis UI design
+  skill of [chassis-ui/mcp](https://github.com/chassis-ui/mcp) to the Figma agent and building
+  screens with it.
+
 ### Changed
 
 - **Badge**: the tokens tab names the base tokens as the Figma library now does,

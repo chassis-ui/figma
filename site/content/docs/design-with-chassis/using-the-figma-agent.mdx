@@ -1,0 +1,71 @@
+---
+title: Using the Figma Agent
+description: Teach the Figma agent to build screens with the Chassis UI libraries, by adding the Chassis UI design skill to your Figma account.
+toc: true
+---
+
+[1]: https://github.com/chassis-ui/mcp/blob/main/figma-agent/chassis-ui-design.md
+[2]: https://raw.githubusercontent.com/chassis-ui/mcp/main/figma-agent/chassis-ui-design.md
+[3]: https://help.figma.com/hc/en-us/articles/40283639496599-Custom-skills-for-the-Figma-agent-and-Figma-Make
+[4]: https://github.com/chassis-ui/mcp
+
+## Overview
+
+The Figma agent builds and edits designs from a prompt. Left to itself, it draws its own shapes and types its own values. The **Chassis UI design skill** tells it to build with the Chassis libraries instead:
+
+- Every element is an instance of `cx.components.UI`, set up through its properties, never a drawn copy.
+- Every color, space, size, radius, border and shadow is a variable of `cx.tokens.MAIN`, and every text uses one of its `font/*` styles.
+- Brand, theme and app modes stay as you set them.
+- An element the library has no component for is composed from library instances or reported, never drawn.
+
+Use it to build a view (a screen, page, modal, drawer, panel, form, table, dashboard or landing page) from a description, a screenshot or code, or to reconnect a detached or hand-drawn view to the library. It is not for editing a library component or its tokens.
+
+The skill is a single Markdown file, [`chassis-ui-design.md`][1], kept with the other Chassis skills in [chassis-ui/mcp][4].
+
+## Before You Start
+
+- **A plan with the Figma agent.** Custom skills work on the Starter, Professional, Education (not K-12), Organization and Enterprise plans; the Figma agent is not available on Government plans.
+- **Edit access** to the file you design in.
+- **The Chassis libraries** added to that file: `cx.components.UI` and `cx.tokens.MAIN`, as [Library Setup]([[docsref:/getting-started/library-setup/]]) describes. The skill uses their components, variables and styles, and the agent finds nothing to build with in a file without them.
+
+## Adding the Skill
+
+1. Download [`chassis-ui-design.md`][2].
+2. In a Figma Design file, open a chat with the Figma agent and click in the prompt box.
+3. Select **Skills**, then **Add skill**.
+4. Drag in `chassis-ui-design.md`, or click **Upload a file** and choose it.
+5. Review the name, description and content, and click **Add**.
+
+Upload the `.md` file as it is: the Figma agent takes a single Markdown file, not a zipped folder. A skill you add is yours in every file. To share it with your team or organization, select it in **Add context** › **Skills** › **Manage skills**, open **More actions** and choose **Publish**.
+
+<Callout type="info">
+The steps follow Figma's help article [Create and manage custom skills in Figma][3]. If Figma's menus have changed, follow the article.
+</Callout>
+
+## Designing with the Skill
+
+The skill's description tells the agent to use it when a request names Chassis or the file has the Chassis libraries, so the agent can pick it up on its own. To call it for sure, start the prompt with its name:
+
+```text
+/chassis-ui-design Build a sign-in page: email and password fields, a "Remember me" check,
+a primary "Sign in" button and a "Forgot password?" link.
+```
+
+```text
+/chassis-ui-design Reconnect this settings screen to the library.
+```
+
+The agent plans the sections, builds them inside an auto-layout frame from library instances, and ends with a report in groups:
+
+- **Built**, **Swapped**, **Replaced** and **Composed**: what it placed, swapped to the right component, replaced by an instance, or assembled from instances.
+- **Local components**: elements the library lacks that it made from library instances, because they repeat.
+- **Already connected**: layers that were already library instances.
+- **Blocked**: what it could not build, each with its reason, such as a component the library does not have.
+
+It also lists every layer it hid on an instance. Read the **Blocked** items: they are the places where the design needs a decision, or the library a new component.
+
+## Keeping the Skill Current
+
+The skill follows the Chassis libraries: a new component, slot or token step reaches it in [chassis-ui/mcp][4]. After you update the libraries in a file ([Updating Libraries]([[docsref:/design-with-chassis/updating-libraries/]])), download the skill again, open it in **Manage skills** and replace its content with the new file, or delete it and add the new one.
+
+The skill is a one-page version of `chassis-create-design`, the design skill that the Chassis MCP server gives coding agents such as Claude Code and Cursor, with its reference files. See [chassis-ui/mcp][4] to connect them.
