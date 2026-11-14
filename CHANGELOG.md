@@ -4,6 +4,18 @@ Changes to the documentation of the Chassis Figma libraries at
 [chassis-ui.com/figma](https://chassis-ui.com/figma/) and to the tooling of this repository, by
 date. The site has no version, and nothing of the repository is published.
 
+## 2026-11-15
+
+### Changed
+
+- **Home page**: a new home page from the design "Figma · Home", built from the shared sections of
+  `@chassis-ui/docs`: hero, what you get, how it works, works with, facts and the doors to the
+  guides. The old home page components of `site/src/components/homepage/` are gone.
+- **Component Libraries**: the page has a title and a description of its own.
+- `@chassis-ui/docs` 0.15.0-next.0, `@chassis-ui/css` 0.15.0 and `@chassis-ui/website-tokens`
+  0.4.0, and the assets pin moves to chassis-ui/website-assets 0.6.0, which has the hero
+  illustration.
+
 ## 2026-11-09
 
 ### Added

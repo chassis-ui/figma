@@ -1,19 +1,233 @@
 ---
+/**
+ * The home page of Chassis Figma, composed of the home page sections of `@chassis-ui/docs`.
+ * The copy is that of the Figma design "Figma · Home". A door is one page of the docs with its
+ * real title. The meta line of the hero has no version: the libraries are published on Figma
+ * Community, not released. The first two groups of doors split "Getting Started" of `data/sidebar.yml`: its
+ * first three pages, then the three pages on the libraries; the third is "Design with Chassis".
+ */
+
 import BaseLayout from '@chassis-ui/docs/layouts/BaseLayout.astro'
-import HeroSection from '@components/homepage/HeroSection.astro'
-import IntroSection from '@components/homepage/IntroSection.astro'
-import FeaturesSection from '@components/homepage/FeaturesSection.astro'
-import HowSection from '@components/homepage/HowSection.astro'
-import HomeIcons from '/static/icons/cx-sprite.svg?raw'
+import Cards from '@chassis-ui/docs/sections/Cards.astro'
+import Doors from '@chassis-ui/docs/sections/Doors.astro'
+import Facts from '@chassis-ui/docs/sections/Facts.astro'
+import Hero from '@chassis-ui/docs/sections/Hero.astro'
+import Rows from '@chassis-ui/docs/sections/Rows.astro'
+import Section from '@chassis-ui/docs/sections/Section.astro'
+import Steps from '@chassis-ui/docs/sections/Steps.astro'
+import Icon from '@chassis-ui/docs/shortcodes/Icon.astro'
+import { getConfig, getDocsPath } from '@chassis-ui/docs/site'
+
+const { description, figmaHandle } = getConfig()
+const figmaProfile = `https://www.figma.com/@${figmaHandle}`
+
+const benefits = [
+  {
+    label: 'Components',
+    title: 'Design with components that are already documented.',
+    points: [
+      'More than 30 components, with variants, states and auto layout.',
+      'Props, specs and tokens are documented beside each component.',
+      'Mobile navigation, tables and sections have device variants.'
+    ]
+  },
+  {
+    label: 'Themes',
+    title: 'Change a brand without touching a component.',
+    points: [
+      'Brand, theme and app variables are separate collections.',
+      'Light and dark are modes of the same collection.',
+      'A new brand is a new set of values, not a new library.'
+    ]
+  },
+  {
+    label: 'Handoff',
+    title: 'Hand over names, not measurements.',
+    points: [
+      'Component tokens map one to one to Chassis Tokens and Chassis CSS.',
+      'Text, icons and backgrounds are assets you swap inside a component.',
+      'Guide components cover grids, flows, sitemaps and spec annotations.'
+    ]
+  }
+]
+
+const steps = [
+  {
+    name: 'Set up',
+    stations: [
+      {
+        label: '01 · Duplicate',
+        title: 'Publish the libraries.',
+        body: 'Duplicate the files from Figma Community and publish them to your team.'
+      },
+      {
+        label: '02 · Configure',
+        title: 'Set the variables.',
+        body: 'Pick a mode, adjust the brand values, or connect Tokens Studio to your repository.'
+      },
+      {
+        label: '03 · Design',
+        title: 'Insert and customize.',
+        body: 'Insert components, set their properties and swap their assets.'
+      }
+    ]
+  }
+]
+
+const related = [
+  {
+    name: 'Chassis Tokens',
+    icon: 'cx-swatchbook',
+    href: 'https://chassis-ui.com/tokens/',
+    body: 'The repository the variables sync with, through Tokens Studio.'
+  },
+  {
+    name: 'Chassis CSS',
+    icon: 'cx-brackets-curly',
+    href: 'https://chassis-ui.com/css/',
+    body: 'The same components as classes, with the names the library uses.'
+  },
+  {
+    name: 'Chassis Assets',
+    icon: 'cx-folder-tree',
+    href: 'https://chassis-ui.com/assets/',
+    body: 'The images and fonts a designer exports, built for each platform.'
+  }
+]
+
+const facts = [
+  { name: '30+ Components', detail: 'Variants and states documented' },
+  { name: '3 Variable Layers', detail: 'Brand, theme and app' },
+  { name: 'Tokens Studio', detail: 'Sync with the repository' },
+  { name: 'Figma Community', detail: 'Duplicate and publish' }
+]
+
+const doors = [
+  {
+    label: 'Getting started',
+    doors: [
+      {
+        name: 'Welcome to Chassis Figma',
+        href: getDocsPath('/getting-started/introduction/'),
+        body: 'What the libraries are, and how they fit together.'
+      },
+      {
+        name: 'Library Setup',
+        href: getDocsPath('/getting-started/library-setup/'),
+        body: 'Duplicate, publish and enable the libraries.'
+      },
+      {
+        name: 'Variables and Styles',
+        href: getDocsPath('/getting-started/tokens-library/'),
+        body: 'The variable collections and their modes.'
+      }
+    ]
+  },
+  {
+    label: 'The libraries',
+    doors: [
+      {
+        name: 'Asset Libraries',
+        href: getDocsPath('/getting-started/asset-libraries/'),
+        body: 'Text, icons and other swappable content.'
+      },
+      {
+        name: 'Component Libraries',
+        href: getDocsPath('/getting-started/component-libraries/'),
+        body: 'The components and their documentation.'
+      },
+      {
+        name: 'Guide Libraries',
+        href: getDocsPath('/getting-started/guide-libraries/'),
+        body: 'Covers, grids, flows and spec tools.'
+      }
+    ]
+  },
+  {
+    label: 'Design with Chassis',
+    doors: [
+      {
+        name: 'Theme Switching',
+        href: getDocsPath('/design-with-chassis/working-with-themes/'),
+        body: 'Switch a brand or a mode on a frame.'
+      },
+      {
+        name: 'Updating the Library',
+        href: getDocsPath('/design-with-chassis/updating-libraries/'),
+        body: 'Take a new version of a library.'
+      },
+      {
+        name: 'Exporting Assets',
+        href: getDocsPath('/design-with-chassis/exporting-assets/'),
+        body: 'From a Figma layer to a source file.'
+      }
+    ]
+  }
+]
 ---
 
-<BaseLayout title="Chassis Figma - Tokenized Figma Component System">
-  <HeroSection />
-  <hr class="hr container" />
-  <IntroSection />
-  <FeaturesSection />
-  <HowSection />
-  <div class="d-none">
-    <Fragment set:html={HomeIcons} />
-  </div>
+<BaseLayout title="Chassis Figma" description={description} navbarContext="alternate">
+  <Hero
+    kicker="Chassis Figma"
+    lead="Chassis Figma is a set of libraries: components, swappable assets and documentation guides, all driven by variables that sync with your token repository."
+    illustration="images/illustrations/hero-figma.svg"
+    illustrationLabel="A Figma canvas: a layers panel, a frame of components selected on the canvas, and a properties panel"
+  >
+    <Fragment slot="title">
+      <span class="d-block">Figma, bound to your tokens.</span>{' '}
+      <mark class="d-block">
+        <span class="lg:d-block">Switch a mode, and</span>{' '}
+        <span class="lg:d-block">every screen follows.</span>
+      </mark>
+    </Fragment>
+    <Fragment slot="actions">
+      <a class="button primary lg" href={getDocsPath('/getting-started/introduction/')}>
+        <Icon name="book-open-outline" />
+        Getting Started
+      </a>
+      <a class="button alternate lg" href={figmaProfile}>
+        <Icon name="figma-brand" />
+        View on Figma
+      </a>
+    </Fragment>
+    <Fragment slot="meta">Free on Figma Community &nbsp;/&nbsp; MIT licensed</Fragment>
+  </Hero>
+
+  <Section
+    id="what"
+    eyebrow="What you get"
+    title={['Documented components.', 'Themes made of variables.']}
+    lead="Every component reads its values from variables in three layers. A brand or a mode changes the values, never the component."
+  >
+    <Rows rows={benefits} />
+  </Section>
+
+  <Section
+    id="how"
+    eyebrow="How it works"
+    title={['From Figma Community', 'to your first screen.']}
+    lead="Three steps set the libraries up for a team. After that, a library update reaches every file that uses it."
+  >
+    <Steps stages={steps} />
+  </Section>
+
+  <Section
+    id="works-with"
+    eyebrow="Works with"
+    title={['Figma is where decisions start.', 'The code packages follow them.']}
+    lead="The library reads the same tokens as the code. What a designer names in Figma is what a developer finds in the build."
+  >
+    <Cards cards={related} />
+  </Section>
+
+  <Facts label="Built on" facts={facts} />
+
+  <Section
+    id="docs"
+    eyebrow="Get started"
+    title={['Start with the guide', 'that matches your task.']}
+    lead="Set the libraries up for your team, read what each library holds, or learn how to design with them."
+  >
+    <Doors groups={doors} />
+  </Section>
 </BaseLayout>
