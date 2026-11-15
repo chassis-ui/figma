@@ -45,7 +45,7 @@ const benefits = [
     title: 'Hand over names, not measurements.',
     points: [
       'Component tokens map one to one to Chassis Tokens and Chassis CSS.',
-      'Text, icons and backgrounds are assets you swap inside a component.',
+      'Text, icons and backgrounds are assets you swap without detaching the component.',
       'Guide components cover grids, flows, sitemaps and spec annotations.'
     ]
   }
@@ -91,7 +91,7 @@ const related = [
     name: 'Chassis Assets',
     icon: 'cx-folder-tree',
     href: 'https://chassis-ui.com/assets/',
-    body: 'The images and fonts a designer exports, built for each platform.'
+    body: 'The images and icons you export from Figma, built for each platform.'
   }
 ]
 
@@ -152,14 +152,14 @@ const doors = [
         body: 'Switch a brand or a mode on a frame.'
       },
       {
-        name: 'Updating the Library',
-        href: getDocsPath('/design-with-chassis/updating-libraries/'),
-        body: 'Take a new version of a library.'
-      },
-      {
         name: 'Exporting Assets',
         href: getDocsPath('/design-with-chassis/exporting-assets/'),
         body: 'From a Figma layer to a source file.'
+      },
+      {
+        name: 'Using the Figma Agent',
+        href: getDocsPath('/design-with-chassis/using-the-figma-agent/'),
+        body: 'Let the agent build screens from the libraries.'
       }
     ]
   }
@@ -183,7 +183,7 @@ const doors = [
     <Fragment slot="actions">
       <a class="button primary lg" href={getDocsPath('/getting-started/introduction/')}>
         <Icon name="book-open-outline" />
-        Getting Started
+        Get started
       </a>
       <a class="button alternate lg" href={figmaProfile}>
         <Icon name="figma-brand" />
@@ -220,7 +220,7 @@ const doors = [
     <Cards cards={related} />
   </Section>
 
-  <Facts label="Built on" facts={facts} />
+  <Facts label="At a glance" facts={facts} />
 
   <Section
     id="docs"
